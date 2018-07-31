@@ -1,0 +1,6178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbb2be698c926948831ff4e8f1d7162, type: 3}
+  m_Name: GR-Wetlands-GaiaSampler
+  m_EditorClassIdentifier: 
+  m_resourcesID: 6e5e94a3-b3da-47a9-8315-893d5692fcfb
+  m_name: Gaia Resource
+  m_seaLevel: 50
+  m_beachHeight: 2
+  m_terrainHeight: 2000
+  m_texturePrototypes:
+  - m_name: ground_desertSandDuneless_2k_alb_s
+    m_texture: {fileID: 2800000, guid: 2f62f6ecfefc4874bbb467cc0f06d39b, type: 3}
+    m_textureFileName: ground_desertSandDuneless_2k_alb_s.psd
+    m_normal: {fileID: 2800000, guid: 67b506b30e0f1034abbea05f1358e7f2, type: 3}
+    m_normalFileName: ground_desertSandDuneless_2k_n.jpg
+    m_sizeX: 15
+    m_sizeY: 15
+    m_offsetX: 0
+    m_offsetY: 0
+    m_metalic: 0
+    m_smoothness: 0
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 0
+      m_checkHeight: 1
+      m_minHeight: -50
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 0
+      m_minSlope: 0
+      m_maxSlope: 90
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: House
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0.00000017881393
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.49818182
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: -0.001267314
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Ground_ScrubGrassField_2k_alb_s
+    m_texture: {fileID: 2800000, guid: e6ed7967e053dca42bc29ca95fe6913d, type: 3}
+    m_textureFileName: Ground_ScrubGrassField_2k_alb_s.psd
+    m_normal: {fileID: 2800000, guid: 88fdb911a7014004d96eddeecfa52737, type: 3}
+    m_normalFileName: Ground_ScrubGrassField_2k_n.jpg
+    m_sizeX: 20
+    m_sizeY: 20
+    m_offsetX: 0
+    m_offsetY: 0
+    m_metalic: 0
+    m_smoothness: 0
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 0
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 0
+      m_minSlope: 0
+      m_maxSlope: 90
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Ground_MountainTerrain_2k_alb_s
+    m_texture: {fileID: 2800000, guid: 8f68608f83666164fbf6e734211df771, type: 3}
+    m_textureFileName: Ground_MountainTerrain_2k_alb_s.psd
+    m_normal: {fileID: 2800000, guid: 3c1924f221ec3db40a5b4ba7f7d1873a, type: 3}
+    m_normalFileName: Ground_MountainTerrain_2k_n.jpg
+    m_sizeX: 20
+    m_sizeY: 20
+    m_offsetX: 0
+    m_offsetY: 0
+    m_metalic: 0
+    m_smoothness: 0
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 0
+      m_checkHeight: 1
+      m_minHeight: 2
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.018253967
+          value: 0.993007
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 90
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.10299824
+          value: 0.993007
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Rock_GuiMossyRock_2k_alb_s
+    m_texture: {fileID: 2800000, guid: 88103395305ea8a42b481c637c6c753b, type: 3}
+    m_textureFileName: Rock_GuiMossyRock_2k_alb_s.psd
+    m_normal: {fileID: 2800000, guid: 9cdb4ffa1036743408edf7dfcc78d589, type: 3}
+    m_normalFileName: Rock_GuiMossyRock_2k_n.jpg
+    m_sizeX: 20
+    m_sizeY: 20
+    m_offsetX: 0
+    m_offsetY: 0
+    m_metalic: 0
+    m_smoothness: 0
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 0
+      m_checkHeight: 0
+      m_minHeight: -50
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 15
+      m_maxSlope: 90
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 18.692362
+          outSlope: 1.8503643
+          tangentMode: 1
+        - serializedVersion: 2
+          time: 0.19929403
+          value: 1.0069962
+          inSlope: 11.354733
+          outSlope: 0.047202628
+          tangentMode: 1
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  m_detailPrototypes:
+  - m_name: Grass 1 Wide
+    m_renderMode: 2
+    m_detailProtoype: {fileID: 0}
+    m_detailPrototypeFileName: 
+    m_detailTexture: {fileID: 2800000, guid: 0d85f7eb5a06e4a4fa7ccbd554dae100, type: 3}
+    m_detailTextureFileName: Grass 1 Wide.psd
+    m_minWidth: 2.5
+    m_maxWidth: 3.7
+    m_minHeight: 1
+    m_maxHeight: 1.5
+    m_noiseSpread: 1
+    m_bendFactor: 0.1
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 0.64705884, g: 0.64705884, b: 0.64705884, a: 1}
+    m_dna:
+      m_width: 3.7
+      m_height: 1.5
+      m_boundsRadius: 3.7
+      m_seedThrow: 11.1
+      m_minScale: 0.1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 0
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: -5
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.6083087
+          value: 0.4611683
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 20
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0.0018450185
+          value: 0.9965034
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Grass 1 Narrow
+    m_renderMode: 2
+    m_detailProtoype: {fileID: 0}
+    m_detailPrototypeFileName: 
+    m_detailTexture: {fileID: 2800000, guid: 3de024c95307eac41b262f784890e7bd, type: 3}
+    m_detailTextureFileName: Grass 1 Narrow.psd
+    m_minWidth: 0.8
+    m_maxWidth: 1.5
+    m_minHeight: 1.2
+    m_maxHeight: 1.9
+    m_noiseSpread: 1
+    m_bendFactor: 0.1
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 0.6985294, g: 0.6985294, b: 0.6985294, a: 1}
+    m_dna:
+      m_width: 1.5
+      m_height: 1.9
+      m_boundsRadius: 1.5
+      m_seedThrow: 5.7
+      m_minScale: 0.1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 1
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: -5
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.6083087
+          value: 0.4611683
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 45
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.048339482
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.8214434
+          value: 0.8345053
+          inSlope: -0.16761757
+          outSlope: -1.5443563
+          tangentMode: 1
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Grass 2
+    m_renderMode: 2
+    m_detailProtoype: {fileID: 0}
+    m_detailPrototypeFileName: 
+    m_detailTexture: {fileID: 2800000, guid: bb503aada258abc469adf32321580a76, type: 3}
+    m_detailTextureFileName: Grass 2.psd
+    m_minWidth: 0.9
+    m_maxWidth: 1.5
+    m_minHeight: 0.8
+    m_maxHeight: 1.3
+    m_noiseSpread: 1
+    m_bendFactor: 0.1
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 0.6838235, g: 0.6838235, b: 0.6838235, a: 1}
+    m_dna:
+      m_width: 1.5
+      m_height: 1.3
+      m_boundsRadius: 1.5
+      m_seedThrow: 4.5
+      m_minScale: 0.1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 2
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.6083087
+          value: 0.4611683
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 30
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.016974173
+          value: 1.0033498
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.75949615
+          value: 0.7607432
+          inSlope: -0.62223196
+          outSlope: -1.5839934
+          tangentMode: 1
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!3!0'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Grass 3
+    m_renderMode: 2
+    m_detailProtoype: {fileID: 0}
+    m_detailPrototypeFileName: 
+    m_detailTexture: {fileID: 2800000, guid: 90eb7b7804ec2f44781a3ef02ae28db4, type: 3}
+    m_detailTextureFileName: Grass 3.psd
+    m_minWidth: 0.6
+    m_maxWidth: 1.5
+    m_minHeight: 0.6
+    m_maxHeight: 1.5
+    m_noiseSpread: 1
+    m_bendFactor: 0.1
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_dna:
+      m_width: 1.5
+      m_height: 1.5
+      m_boundsRadius: 1.5
+      m_seedThrow: 4.5
+      m_minScale: 0.1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 3
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 0
+      m_minSlope: 0
+      m_maxSlope: 34
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.046494465
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!3!0'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Fern
+    m_renderMode: 2
+    m_detailProtoype: {fileID: 0}
+    m_detailPrototypeFileName: 
+    m_detailTexture: {fileID: 2800000, guid: 507afdee9be3847478166c60949a982c, type: 3}
+    m_detailTextureFileName: Fern.psd
+    m_minWidth: 0.7
+    m_maxWidth: 1.2
+    m_minHeight: 0.8
+    m_maxHeight: 1.4
+    m_noiseSpread: 1
+    m_bendFactor: 0.1
+    m_healthyColour: {r: 0.97794116, g: 0.97794116, b: 0.97794116, a: 1}
+    m_dryColour: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
+    m_dna:
+      m_width: 1.2
+      m_height: 1.4
+      m_boundsRadius: 1.2
+      m_seedThrow: 4.2
+      m_minScale: 0.1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 4
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0.9999998
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: -0.001267314
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 35
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0.9965034
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.039114393
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!0'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Flowers Purple
+    m_renderMode: 2
+    m_detailProtoype: {fileID: 0}
+    m_detailPrototypeFileName: 
+    m_detailTexture: {fileID: 2800000, guid: af54753c09d287841a3ba8584905e056, type: 3}
+    m_detailTextureFileName: Flowers Purple.psd
+    m_minWidth: 0.5
+    m_maxWidth: 1
+    m_minHeight: 0.6
+    m_maxHeight: 1.2
+    m_noiseSpread: 1
+    m_bendFactor: 0.1
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 0.7352941, g: 0.7352941, b: 0.7352941, a: 1}
+    m_dna:
+      m_width: 1
+      m_height: 1.2
+      m_boundsRadius: 1
+      m_seedThrow: 3.6000001
+      m_minScale: 0.1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 5
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.6083087
+          value: 0.4611683
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 36
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.53264403
+          value: 0.1577532
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!0'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Flowers Red
+    m_renderMode: 2
+    m_detailProtoype: {fileID: 0}
+    m_detailPrototypeFileName: 
+    m_detailTexture: {fileID: 2800000, guid: 2902993231d3d664abf44cfda4fe209a, type: 3}
+    m_detailTextureFileName: Flowers Red.psd
+    m_minWidth: 0.5
+    m_maxWidth: 1
+    m_minHeight: 0.7
+    m_maxHeight: 1.4
+    m_noiseSpread: 1
+    m_bendFactor: 0.1
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 0.7352941, g: 0.7352941, b: 0.7352941, a: 1}
+    m_dna:
+      m_width: 1
+      m_height: 1.4
+      m_boundsRadius: 1
+      m_seedThrow: 4.2
+      m_minScale: 0.1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 6
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 0
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.6083087
+          value: 0.4611683
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 1
+      m_maxSlope: 40
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!0!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  m_treePrototypes:
+  - m_name: Broadleaf_Desktop
+    m_desktopPrefab: {fileID: 100000, guid: c91c1eb85782d5748ace27eb4d7415bb, type: 3}
+    m_desktopPrefabFileName: Broadleaf_Desktop.spm
+    m_mobilePrefab: {fileID: 100000, guid: c91c1eb85782d5748ace27eb4d7415bb, type: 3}
+    m_mobilePrefabFileName: Broadleaf_Desktop.spm
+    m_bendFactor: 0
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dna:
+      m_width: 25.074068
+      m_height: 23.399921
+      m_boundsRadius: 5
+      m_seedThrow: 35
+      m_minScale: 0.5
+      m_maxScale: 1.1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 0
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 1
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 25
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!0!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+  - m_name: Conifer_Desktop
+    m_desktopPrefab: {fileID: 100016, guid: 469edab27ab6d004d84af2c4a851bd7f, type: 3}
+    m_desktopPrefabFileName: Conifer_Desktop.spm
+    m_mobilePrefab: {fileID: 100016, guid: 469edab27ab6d004d84af2c4a851bd7f, type: 3}
+    m_mobilePrefabFileName: Conifer_Desktop.spm
+    m_bendFactor: 0
+    m_healthyColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dryColour: {r: 1, g: 1, b: 1, a: 1}
+    m_dna:
+      m_width: 13.559455
+      m_height: 30.658916
+      m_boundsRadius: 2
+      m_seedThrow: 35
+      m_minScale: 0.7
+      m_maxScale: 1.1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 1
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 1
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0.5
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 30
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 1
+      m_matchingTextures: '!3!0'
+      m_isActive: 1
+    m_spawnExtensions: []
+  m_gameObjectPrototypes:
+  - m_name: Rock Pile 2
+    m_instances:
+    - m_name: rock3 lod
+      m_desktopPrefab: {fileID: 100006, guid: 8aa0c3769e7007d47a4e4bf4ecb74ad8, type: 2}
+      m_desktopPrefabFileName: rock3 lod.prefab
+      m_mobilePrefab: {fileID: 100006, guid: 8aa0c3769e7007d47a4e4bf4ecb74ad8, type: 2}
+      m_mobilePrefabFileName: rock3 lod.prefab
+      m_minInstances: 1
+      m_maxInstances: 10
+      m_failureRate: 0
+      m_minSpawnOffsetX: -15
+      m_maxSpawnOffsetX: 15
+      m_minSpawnOffsetY: -0.3
+      m_maxSpawnOffsetY: -0.2
+      m_minSpawnOffsetZ: -15
+      m_maxSpawnOffsetZ: 15
+      m_rotateToSlope: 0
+      m_minRotationOffsetX: -180
+      m_maxRotationOffsetX: 180
+      m_minRotationOffsetY: -180
+      m_maxRotationOffsetY: 180
+      m_minRotationOffsetZ: -180
+      m_maxRotationOffsetZ: 180
+      m_useParentScale: 0
+      m_minScale: 0.1
+      m_maxScale: 2
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0.9999998
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3598066
+          value: 0.36398816
+          inSlope: -1.5005469
+          outSlope: -1.5005469
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: -0.001267314
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 5
+      m_virginTerrain: 0
+      m_extParam: 
+    m_dna:
+      m_width: 8.624512
+      m_height: 8.190178
+      m_boundsRadius: 30
+      m_seedThrow: 90
+      m_minScale: 1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: 
+      m_protoIdx: 1
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 1
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: -2
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 17
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions: []
+    m_canSpawnAsTree: 0
+  - m_name: Small Farm 1
+    m_instances:
+    - m_name: fi_vil_GaiaForge01A
+      m_desktopPrefab: {fileID: 183232, guid: e3fef1de7e28ed34dba244a8deac65d5, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaForge01A.prefab
+      m_mobilePrefab: {fileID: 183232, guid: e3fef1de7e28ed34dba244a8deac65d5, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaForge01A.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -3.504156
+      m_maxSpawnOffsetX: -3.504156
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -0.35690308
+      m_maxSpawnOffsetZ: -0.35690308
+      m_rotateToSlope: 0
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -12.944458
+      m_maxRotationOffsetY: -12.944458
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 17.605328
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood06
+      m_desktopPrefab: {fileID: 199750, guid: b743a94e64fdba949b488f66a980231d, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood06.prefab
+      m_mobilePrefab: {fileID: 199750, guid: b743a94e64fdba949b488f66a980231d, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood06.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 2.5958443
+      m_maxSpawnOffsetX: 2.5958443
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -1.3569031
+      m_maxSpawnOffsetZ: -1.3569031
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 77.05557
+      m_maxRotationOffsetY: 77.05557
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.4201965
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWagon06
+      m_desktopPrefab: {fileID: 126492, guid: 53e653d8083a62a4cbfe56076878e075, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWagon06.prefab
+      m_mobilePrefab: {fileID: 126492, guid: 53e653d8083a62a4cbfe56076878e075, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWagon06.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 2.495844
+      m_maxSpawnOffsetX: 2.495844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 7.143097
+      m_maxSpawnOffsetZ: 7.143097
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -67.23782
+      m_maxRotationOffsetY: -67.23782
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.8645773
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood13
+      m_desktopPrefab: {fileID: 110028, guid: 9f2fe1e9cb73cd84ba9e3effc76035f8, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood13.prefab
+      m_mobilePrefab: {fileID: 110028, guid: 9f2fe1e9cb73cd84ba9e3effc76035f8, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood13.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 3.2958431
+      m_maxSpawnOffsetX: 3.2958431
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -2.4569016
+      m_maxSpawnOffsetZ: -2.4569016
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 54.793304
+      m_maxRotationOffsetY: 54.793304
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5446167
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaStable01
+      m_desktopPrefab: {fileID: 185346, guid: da06ef9c063b2644eb3f7ed4b3178aab, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaStable01.prefab
+      m_mobilePrefab: {fileID: 185346, guid: da06ef9c063b2644eb3f7ed4b3178aab, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaStable01.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -4.6041565
+      m_maxSpawnOffsetX: -4.6041565
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -9.156906
+      m_maxSpawnOffsetZ: -9.156906
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 77.644806
+      m_maxRotationOffsetY: 77.644806
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 5.1344633
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood03
+      m_desktopPrefab: {fileID: 148710, guid: c4039b0464243be4ba47435bf8cca039, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood03.prefab
+      m_mobilePrefab: {fileID: 148710, guid: c4039b0464243be4ba47435bf8cca039, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood03.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 4.5958443
+      m_maxSpawnOffsetX: 4.5958443
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 6.743099
+      m_maxSpawnOffsetZ: 6.743099
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -15.857056
+      m_maxRotationOffsetY: -15.857056
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.6792145
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood02
+      m_desktopPrefab: {fileID: 139662, guid: 794bd0555aaf92e45bce3e530d6b5e2e, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood02.prefab
+      m_mobilePrefab: {fileID: 139662, guid: 794bd0555aaf92e45bce3e530d6b5e2e, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood02.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 5.6958437
+      m_maxSpawnOffsetX: 5.6958437
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 6.8430977
+      m_maxSpawnOffsetZ: 6.8430977
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -15.857056
+      m_maxRotationOffsetY: -15.857056
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.3679428
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood11
+      m_desktopPrefab: {fileID: 156570, guid: bea17cc144b90b6419ed4ff038d2fb46, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood11.prefab
+      m_mobilePrefab: {fileID: 156570, guid: bea17cc144b90b6419ed4ff038d2fb46, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood11.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 3.6958447
+      m_maxSpawnOffsetX: 3.6958447
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 5.143097
+      m_maxSpawnOffsetZ: 5.143097
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 134.53241
+      m_maxRotationOffsetY: 134.53241
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 3.2307968
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaChick02B
+      m_desktopPrefab: {fileID: 165208, guid: cfab073b8b6a8af46b3bc25aaa43aea1, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaChick02B.prefab
+      m_mobilePrefab: {fileID: 165208, guid: cfab073b8b6a8af46b3bc25aaa43aea1, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaChick02B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.5958443
+      m_maxSpawnOffsetX: 6.5958443
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -8.956902
+      m_maxSpawnOffsetZ: -8.956902
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -82.481384
+      m_maxRotationOffsetY: -82.481384
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 4.096449
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWagon07
+      m_desktopPrefab: {fileID: 189180, guid: 120d67521fdef474eafcdbb01d41a1b2, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWagon07.prefab
+      m_mobilePrefab: {fileID: 189180, guid: 120d67521fdef474eafcdbb01d41a1b2, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWagon07.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -2.7041569
+      m_maxSpawnOffsetX: -2.7041569
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -5.4569016
+      m_maxSpawnOffsetZ: -5.4569016
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 78.58423
+      m_maxRotationOffsetY: 78.58423
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 5.6503334
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -8.804155
+      m_maxSpawnOffsetX: -8.804155
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 10.643097
+      m_maxSpawnOffsetZ: 10.643097
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -94.45233
+      m_maxRotationOffsetY: -94.45233
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.7073164
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -6.3041553
+      m_maxSpawnOffsetX: -6.3041553
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 10.643097
+      m_maxSpawnOffsetZ: 10.643097
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -82.27771
+      m_maxRotationOffsetY: -82.27771
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6364937
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -10.304155
+      m_maxSpawnOffsetX: -10.304155
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 9.343098
+      m_maxSpawnOffsetZ: 9.343098
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 10.553238
+      m_maxRotationOffsetY: 10.553238
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6255875
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 1.0958443
+      m_maxSpawnOffsetX: 1.0958443
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 9.843098
+      m_maxSpawnOffsetZ: 9.843098
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 97.75177
+      m_maxRotationOffsetY: 97.75177
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.636412
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 3.5958443
+      m_maxSpawnOffsetX: 3.5958443
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 9.4431
+      m_maxSpawnOffsetZ: 9.4431
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 97.75177
+      m_maxRotationOffsetY: 97.75177
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6364121
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.1958437
+      m_maxSpawnOffsetX: 6.1958437
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 9.243099
+      m_maxSpawnOffsetZ: 9.243099
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 94.50473
+      m_maxRotationOffsetY: 94.50473
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6410732
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.695844
+      m_maxSpawnOffsetX: 8.695844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 9.043098
+      m_maxSpawnOffsetZ: 9.043098
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 95.867035
+      m_maxRotationOffsetY: 95.867035
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.64015
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.295844
+      m_maxSpawnOffsetX: 10.295844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 5.0430984
+      m_maxSpawnOffsetZ: 5.0430984
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 3.0360565
+      m_maxRotationOffsetY: 3.0360565
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.640396
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.495844
+      m_maxSpawnOffsetX: 6.495844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 2.8430977
+      m_maxSpawnOffsetZ: 2.8430977
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 81.99988
+      m_maxRotationOffsetY: 81.99988
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6357079
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.995844
+      m_maxSpawnOffsetX: 8.995844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 3.4431
+      m_maxSpawnOffsetZ: 3.4431
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 73.303955
+      m_maxRotationOffsetY: 73.303955
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.579939
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.195844
+      m_maxSpawnOffsetX: 10.195844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 7.643097
+      m_maxSpawnOffsetZ: 7.643097
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -9.13855
+      m_maxRotationOffsetY: -9.13855
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6974335
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.795844
+      m_maxSpawnOffsetX: 10.795844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -1.4569016
+      m_maxSpawnOffsetZ: -1.4569016
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 1.1221619
+      m_maxRotationOffsetY: 1.1221619
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.636917
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.495844
+      m_maxSpawnOffsetX: 10.495844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -6.4569016
+      m_maxSpawnOffsetZ: -6.4569016
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 6.6133575
+      m_maxRotationOffsetY: 6.6133575
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.7050018
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.295844
+      m_maxSpawnOffsetX: 8.295844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -10.356903
+      m_maxSpawnOffsetZ: -10.356903
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 78.54718
+      m_maxRotationOffsetY: 78.54718
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6207771
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 5.6958437
+      m_maxSpawnOffsetX: 5.6958437
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -10.656906
+      m_maxSpawnOffsetZ: -10.656906
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 89.05588
+      m_maxRotationOffsetY: 89.05588
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6364384
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 3.1958447
+      m_maxSpawnOffsetX: 3.1958447
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -10.456902
+      m_maxSpawnOffsetZ: -10.456902
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 97.75177
+      m_maxRotationOffsetY: 97.75177
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6364121
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 0.69584465
+      m_maxSpawnOffsetX: 0.69584465
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -10.156906
+      m_maxSpawnOffsetZ: -10.156906
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 97.75177
+      m_maxRotationOffsetY: 97.75177
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.636412
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 9.8958435
+      m_maxSpawnOffsetX: 9.8958435
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -8.956902
+      m_maxSpawnOffsetZ: -8.956902
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 18.787994
+      m_maxRotationOffsetY: 18.787994
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.557602
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.8958435
+      m_maxSpawnOffsetX: 6.8958435
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -0.056900024
+      m_maxSpawnOffsetZ: -0.056900024
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 86.13165
+      m_maxRotationOffsetY: 86.13165
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.7072797
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 9.595844
+      m_maxSpawnOffsetX: 9.595844
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -0.056900024
+      m_maxSpawnOffsetZ: -0.056900024
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -86.44101
+      m_maxRotationOffsetY: -86.44101
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6408367
+      m_virginTerrain: 0
+      m_extParam: 
+    m_dna:
+      m_width: 21.898834
+      m_height: 10.867967
+      m_boundsRadius: 21.898834
+      m_seedThrow: 32.84825
+      m_minScale: 1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: nograss
+      m_protoIdx: 3
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 1
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.6083087
+          value: 0.4611683
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 5
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions:
+    - {fileID: 11480470, guid: f2bae38de5d688b46836e4e69dd923e8, type: 2}
+    - {fileID: 11458244, guid: dca06ed5385cd2548b4fb2386f16cf92, type: 2}
+    m_canSpawnAsTree: 0
+  - m_name: Small Farm 2
+    m_instances:
+    - m_name: fi_vil_GaiaStable02B
+      m_desktopPrefab: {fileID: 128672, guid: 4bd9d970814d4284d9f407bdf07a6745, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaStable02B.prefab
+      m_mobilePrefab: {fileID: 128672, guid: 4bd9d970814d4284d9f407bdf07a6745, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaStable02B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -4.6301537
+      m_maxSpawnOffsetX: -4.6301537
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -8.656359
+      m_maxSpawnOffsetZ: -8.656359
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -25.126953
+      m_maxRotationOffsetY: -25.126953
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 7.9470234
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaStable01
+      m_desktopPrefab: {fileID: 185346, guid: da06ef9c063b2644eb3f7ed4b3178aab, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaStable01.prefab
+      m_mobilePrefab: {fileID: 185346, guid: da06ef9c063b2644eb3f7ed4b3178aab, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaStable01.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -4.7001534
+      m_maxSpawnOffsetX: -4.7001534
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -2.12636
+      m_maxSpawnOffsetZ: -2.12636
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 36.452255
+      m_maxRotationOffsetY: 36.452255
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 5.485977
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWagon01
+      m_desktopPrefab: {fileID: 119862, guid: 13471ffc5e500724c98af771879832dc, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWagon01.prefab
+      m_mobilePrefab: {fileID: 119862, guid: 13471ffc5e500724c98af771879832dc, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWagon01.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 2.751544
+      m_maxSpawnOffsetX: 2.751544
+      m_minSpawnOffsetY: 0.023845673
+      m_maxSpawnOffsetY: 0.023845673
+      m_minSpawnOffsetZ: -12.099573
+      m_maxSpawnOffsetZ: -12.099573
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 0
+      m_maxRotationOffsetY: 0
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.2665863
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaChick01B
+      m_desktopPrefab: {fileID: 140904, guid: 42eb11032615577459971a150b14b292, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaChick01B.prefab
+      m_mobilePrefab: {fileID: 140904, guid: 42eb11032615577459971a150b14b292, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaChick01B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.831846
+      m_maxSpawnOffsetX: 6.831846
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -9.66836
+      m_maxSpawnOffsetZ: -9.66836
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -112.04715
+      m_maxRotationOffsetY: -112.04715
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 3.5521946
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaChick01
+      m_desktopPrefab: {fileID: 199138, guid: 6a81031bd0dcd3c4ea0ab8c3f5c552b2, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaChick01.prefab
+      m_mobilePrefab: {fileID: 199138, guid: 6a81031bd0dcd3c4ea0ab8c3f5c552b2, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaChick01.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.789847
+      m_maxSpawnOffsetX: 8.789847
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -8.736361
+      m_maxSpawnOffsetZ: -8.736361
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -117.76541
+      m_maxRotationOffsetY: -117.76541
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.793785
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 11.779847
+      m_maxSpawnOffsetX: 11.779847
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -4.496359
+      m_maxSpawnOffsetZ: -4.496359
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -19.192444
+      m_maxRotationOffsetY: -19.192444
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.615631
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 11.499846
+      m_maxSpawnOffsetX: 11.499846
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -8.96636
+      m_maxSpawnOffsetZ: -8.96636
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 52.741364
+      m_maxRotationOffsetY: 52.741364
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.2171211
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 9.289847
+      m_maxSpawnOffsetX: 9.289847
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -10.366358
+      m_maxSpawnOffsetZ: -10.366358
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 63.25006
+      m_maxRotationOffsetY: 63.25006
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.441688
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.9498463
+      m_maxSpawnOffsetX: 6.9498463
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -11.28636
+      m_maxSpawnOffsetZ: -11.28636
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 71.946
+      m_maxRotationOffsetY: 71.946
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.565825
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 2.6558466
+      m_maxSpawnOffsetX: 2.6558466
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -12.753359
+      m_maxSpawnOffsetZ: -12.753359
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -109.72998
+      m_maxRotationOffsetY: -109.72998
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.54642
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 12.329846
+      m_maxSpawnOffsetX: 12.329846
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -7.0163593
+      m_maxSpawnOffsetZ: -7.0163593
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -7.0178223
+      m_maxRotationOffsetY: -7.0178223
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6382084
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaForge01A
+      m_desktopPrefab: {fileID: 183232, guid: e3fef1de7e28ed34dba244a8deac65d5, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaForge01A.prefab
+      m_mobilePrefab: {fileID: 183232, guid: e3fef1de7e28ed34dba244a8deac65d5, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaForge01A.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 0.22984695
+      m_maxSpawnOffsetX: 0.22984695
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 7.6336403
+      m_maxSpawnOffsetZ: 7.6336403
+      m_rotateToSlope: 0
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 79.00824
+      m_maxRotationOffsetY: 79.00824
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 17.493896
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood06
+      m_desktopPrefab: {fileID: 199750, guid: b743a94e64fdba949b488f66a980231d, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood06.prefab
+      m_mobilePrefab: {fileID: 199750, guid: b743a94e64fdba949b488f66a980231d, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood06.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 4.743847
+      m_maxSpawnOffsetX: 4.743847
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 2.4476414
+      m_maxSpawnOffsetZ: 2.4476414
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 169.03308
+      m_maxRotationOffsetY: 169.03308
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.3927479
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood13
+      m_desktopPrefab: {fileID: 110028, guid: 9f2fe1e9cb73cd84ba9e3effc76035f8, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood13.prefab
+      m_mobilePrefab: {fileID: 110028, guid: 9f2fe1e9cb73cd84ba9e3effc76035f8, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood13.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 3.5678463
+      m_maxSpawnOffsetX: 3.5678463
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 1.8566399
+      m_maxSpawnOffsetZ: 1.8566399
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 146.77081
+      m_maxRotationOffsetY: 146.77081
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5304577
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaChick02B
+      m_desktopPrefab: {fileID: 165208, guid: cfab073b8b6a8af46b3bc25aaa43aea1, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaChick02B.prefab
+      m_mobilePrefab: {fileID: 165208, guid: cfab073b8b6a8af46b3bc25aaa43aea1, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaChick02B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.819846
+      m_maxSpawnOffsetX: 10.819846
+      m_minSpawnOffsetY: 0.01
+      m_maxSpawnOffsetY: 0.01
+      m_minSpawnOffsetZ: -5.4763603
+      m_maxSpawnOffsetZ: -5.4763603
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: -0.07104492
+      m_maxRotationOffsetX: -0.07104492
+      m_minRotationOffsetY: 169.77362
+      m_maxRotationOffsetY: 169.77362
+      m_minRotationOffsetZ: -0.22399902
+      m_maxRotationOffsetZ: -0.22399902
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 4.1740837
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWagon07
+      m_desktopPrefab: {fileID: 189180, guid: 120d67521fdef474eafcdbb01d41a1b2, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWagon07.prefab
+      m_mobilePrefab: {fileID: 189180, guid: 120d67521fdef474eafcdbb01d41a1b2, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWagon07.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.009847
+      m_maxSpawnOffsetX: 8.009847
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 2.5636387
+      m_maxSpawnOffsetZ: 2.5636387
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -141.24634
+      m_maxRotationOffsetY: -141.24634
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 5.390991
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -2.1901536
+      m_maxSpawnOffsetX: -2.1901536
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -14.546358
+      m_maxSpawnOffsetZ: -14.546358
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 77.327515
+      m_maxRotationOffsetY: 77.327515
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.613226
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -8.020153
+      m_maxSpawnOffsetX: -8.020153
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -7.3263607
+      m_maxSpawnOffsetZ: -7.3263607
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 156.29132
+      m_maxRotationOffsetY: 156.29132
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.491661
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -6.970153
+      m_maxSpawnOffsetX: -6.970153
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -9.616358
+      m_maxSpawnOffsetZ: -9.616358
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 156.29132
+      m_maxRotationOffsetY: 156.29132
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.4916687
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -5.8301535
+      m_maxSpawnOffsetX: -5.8301535
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -11.8563595
+      m_maxSpawnOffsetZ: -11.8563595
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 147.5954
+      m_maxRotationOffsetY: 147.5954
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.3306122
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -4.2201533
+      m_maxSpawnOffsetX: -4.2201533
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -13.916361
+      m_maxSpawnOffsetZ: -13.916361
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 137.08673
+      m_maxRotationOffsetY: 137.08673
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.0649338
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 0.2598467
+      m_maxSpawnOffsetX: 0.2598467
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -13.756357
+      m_maxSpawnOffsetZ: -13.756357
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 65.15292
+      m_maxRotationOffsetY: 65.15292
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5340583
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.419847
+      m_maxSpawnOffsetX: 10.419847
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 5.2336407
+      m_maxSpawnOffsetZ: 5.2336407
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -19.256226
+      m_maxRotationOffsetY: -19.256226
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.614853
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.969846
+      m_maxSpawnOffsetX: 10.969846
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 2.6936398
+      m_maxSpawnOffsetZ: 2.6936398
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -7.081543
+      m_maxRotationOffsetY: -7.081543
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6380692
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.689847
+      m_maxSpawnOffsetX: 8.689847
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 6.3436394
+      m_maxSpawnOffsetZ: 6.3436394
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 85.74939
+      m_maxRotationOffsetY: 85.74939
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6410818
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.1998463
+      m_maxSpawnOffsetX: 6.1998463
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 6.1036396
+      m_maxSpawnOffsetZ: 6.1036396
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 84.387115
+      m_maxRotationOffsetY: 84.387115
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.640436
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -12.420154
+      m_maxSpawnOffsetX: -12.420154
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 9.77364
+      m_maxSpawnOffsetZ: 9.77364
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 3.1439972
+      m_maxRotationOffsetY: 3.1439972
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6405048
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -8.620153
+      m_maxSpawnOffsetX: -8.620153
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 11.58364
+      m_maxSpawnOffsetZ: 11.58364
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -89.68698
+      m_maxRotationOffsetY: -89.68698
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.634552
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -11.100154
+      m_maxSpawnOffsetX: -11.100154
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 11.26364
+      m_maxSpawnOffsetZ: 11.26364
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -101.8616
+      m_maxRotationOffsetY: -101.8616
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6833992
+      m_virginTerrain: 0
+      m_extParam: 
+    m_dna:
+      m_width: 29.880177
+      m_height: 10.867967
+      m_boundsRadius: 29.880177
+      m_seedThrow: 44.820267
+      m_minScale: 1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: nograss
+      m_protoIdx: 4
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 1
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 1
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 8.146608
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions:
+    - {fileID: 11480470, guid: f2bae38de5d688b46836e4e69dd923e8, type: 2}
+    - {fileID: 11458244, guid: dca06ed5385cd2548b4fb2386f16cf92, type: 2}
+    m_canSpawnAsTree: 0
+  - m_name: Small Farm 3
+    m_instances:
+    - m_name: fi_vil_GaiaWagon01
+      m_desktopPrefab: {fileID: 119862, guid: 13471ffc5e500724c98af771879832dc, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWagon01.prefab
+      m_mobilePrefab: {fileID: 119862, guid: 13471ffc5e500724c98af771879832dc, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWagon01.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -4.734476
+      m_maxSpawnOffsetX: -4.734476
+      m_minSpawnOffsetY: 0.023845673
+      m_maxSpawnOffsetY: 0.023845673
+      m_minSpawnOffsetZ: -14.596529
+      m_maxSpawnOffsetZ: -14.596529
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 118.609314
+      m_maxRotationOffsetY: 118.609314
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.7028227
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaChick01B
+      m_desktopPrefab: {fileID: 140904, guid: 42eb11032615577459971a150b14b292, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaChick01B.prefab
+      m_mobilePrefab: {fileID: 140904, guid: 42eb11032615577459971a150b14b292, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaChick01B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 16.225523
+      m_maxSpawnOffsetX: 16.225523
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -2.7465305
+      m_maxSpawnOffsetZ: -2.7465305
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: -0.15808105
+      m_maxRotationOffsetX: -0.15808105
+      m_minRotationOffsetY: -161.20746
+      m_maxRotationOffsetY: -161.20746
+      m_minRotationOffsetZ: -0.1149292
+      m_maxRotationOffsetZ: -0.1149292
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 3.5034351
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaChick01
+      m_desktopPrefab: {fileID: 199138, guid: 6a81031bd0dcd3c4ea0ab8c3f5c552b2, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaChick01.prefab
+      m_mobilePrefab: {fileID: 199138, guid: 6a81031bd0dcd3c4ea0ab8c3f5c552b2, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaChick01.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 16.845524
+      m_maxSpawnOffsetX: 16.845524
+      m_minSpawnOffsetY: -0.01
+      m_maxSpawnOffsetY: -0.01
+      m_minSpawnOffsetZ: -0.7065296
+      m_maxSpawnOffsetZ: -0.7065296
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: -0.1687622
+      m_maxRotationOffsetX: -0.1687622
+      m_minRotationOffsetY: -166.92575
+      m_maxRotationOffsetY: -166.92575
+      m_minRotationOffsetZ: -0.09857178
+      m_maxRotationOffsetZ: -0.09857178
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5035563
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaStable02B
+      m_desktopPrefab: {fileID: 128672, guid: 4bd9d970814d4284d9f407bdf07a6745, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaStable02B.prefab
+      m_mobilePrefab: {fileID: 128672, guid: 4bd9d970814d4284d9f407bdf07a6745, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaStable02B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 4.1355243
+      m_maxSpawnOffsetX: 4.1355243
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 8.903469
+      m_maxSpawnOffsetZ: 8.903469
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 131.09906
+      m_maxRotationOffsetY: 131.09906
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 7.928234
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -1.7144756
+      m_maxSpawnOffsetX: -1.7144756
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -14.376532
+      m_maxSpawnOffsetZ: -14.376532
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -109.72998
+      m_maxRotationOffsetY: -109.72998
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.54642
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWagon07
+      m_desktopPrefab: {fileID: 189180, guid: 120d67521fdef474eafcdbb01d41a1b2, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWagon07.prefab
+      m_mobilePrefab: {fileID: 189180, guid: 120d67521fdef474eafcdbb01d41a1b2, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWagon07.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 4.675524
+      m_maxSpawnOffsetX: 4.675524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -7.13653
+      m_maxSpawnOffsetZ: -7.13653
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -149.90692
+      m_maxRotationOffsetY: -149.90692
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 5.6119804
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood06
+      m_desktopPrefab: {fileID: 199750, guid: b743a94e64fdba949b488f66a980231d, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood06.prefab
+      m_mobilePrefab: {fileID: 199750, guid: b743a94e64fdba949b488f66a980231d, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood06.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -6.6744757
+      m_maxSpawnOffsetX: -6.6744757
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -4.106531
+      m_maxSpawnOffsetZ: -4.106531
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 169.03308
+      m_maxRotationOffsetY: 169.03308
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.3927479
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood13
+      m_desktopPrefab: {fileID: 110028, guid: 9f2fe1e9cb73cd84ba9e3effc76035f8, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood13.prefab
+      m_mobilePrefab: {fileID: 110028, guid: 9f2fe1e9cb73cd84ba9e3effc76035f8, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood13.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -7.774476
+      m_maxSpawnOffsetX: -7.774476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -4.7065296
+      m_maxSpawnOffsetZ: -4.7065296
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 146.77081
+      m_maxRotationOffsetY: 146.77081
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5304575
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaChick02B
+      m_desktopPrefab: {fileID: 165208, guid: cfab073b8b6a8af46b3bc25aaa43aea1, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaChick02B.prefab
+      m_mobilePrefab: {fileID: 165208, guid: cfab073b8b6a8af46b3bc25aaa43aea1, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaChick02B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 14.785524
+      m_maxSpawnOffsetX: 14.785524
+      m_minSpawnOffsetY: -0.01
+      m_maxSpawnOffsetY: -0.01
+      m_minSpawnOffsetZ: 2.8234692
+      m_maxSpawnOffsetZ: 2.8234692
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: -0.2277832
+      m_maxRotationOffsetX: -0.2277832
+      m_minRotationOffsetY: 111.574036
+      m_maxRotationOffsetY: 111.574036
+      m_minRotationOffsetZ: -0.057678223
+      m_maxRotationOffsetZ: -0.057678223
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 4.3981915
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -6.614476
+      m_maxSpawnOffsetX: -6.614476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -16.17653
+      m_maxSpawnOffsetZ: -16.17653
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 77.327515
+      m_maxRotationOffsetY: 77.327515
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.613227
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -12.414476
+      m_maxSpawnOffsetX: -12.414476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -8.97653
+      m_maxSpawnOffsetZ: -8.97653
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 156.29132
+      m_maxRotationOffsetY: 156.29132
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.491661
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaHouse03A
+      m_desktopPrefab: {fileID: 150524, guid: 77ae1aff80ffe564b9f339ef78c5d3f2, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaHouse03A.prefab
+      m_mobilePrefab: {fileID: 150524, guid: 77ae1aff80ffe564b9f339ef78c5d3f2, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaHouse03A.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -6.944476
+      m_maxSpawnOffsetX: -6.944476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 10.693468
+      m_maxSpawnOffsetZ: 10.693468
+      m_rotateToSlope: 0
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 49.73117
+      m_maxRotationOffsetY: 49.73117
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 14.803053
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -11.414476
+      m_maxSpawnOffsetX: -11.414476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -11.276529
+      m_maxSpawnOffsetZ: -11.276529
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 156.29132
+      m_maxRotationOffsetY: 156.29132
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.491661
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -10.214476
+      m_maxSpawnOffsetX: -10.214476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -13.47653
+      m_maxSpawnOffsetZ: -13.47653
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 147.5954
+      m_maxRotationOffsetY: 147.5954
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.3306122
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -8.614476
+      m_maxSpawnOffsetX: -8.614476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -15.576532
+      m_maxSpawnOffsetZ: -15.576532
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 137.08673
+      m_maxRotationOffsetY: 137.08673
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.0649242
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -4.114476
+      m_maxSpawnOffsetX: -4.114476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -15.376532
+      m_maxSpawnOffsetZ: -15.376532
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 65.15292
+      m_maxRotationOffsetY: 65.15292
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5340576
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaStable02B
+      m_desktopPrefab: {fileID: 128672, guid: 4bd9d970814d4284d9f407bdf07a6745, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaStable02B.prefab
+      m_mobilePrefab: {fileID: 128672, guid: 4bd9d970814d4284d9f407bdf07a6745, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaStable02B.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 5.6155243
+      m_maxSpawnOffsetX: 5.6155243
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -0.4165306
+      m_maxSpawnOffsetZ: -0.4165306
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -142.93124
+      m_maxRotationOffsetY: -142.93124
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 7.991602
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 18.115524
+      m_maxSpawnOffsetX: 18.115524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 1.0934696
+      m_maxSpawnOffsetZ: 1.0934696
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 7.5544586
+      m_maxRotationOffsetY: 7.5544586
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.702797
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 17.515524
+      m_maxSpawnOffsetX: 17.515524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -1.3665314
+      m_maxSpawnOffsetZ: -1.3665314
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 19.729065
+      m_maxRotationOffsetY: 19.729065
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5464287
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 5.6555243
+      m_maxSpawnOffsetX: 5.6555243
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -8.766531
+      m_maxSpawnOffsetZ: -8.766531
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 35.03958
+      m_maxRotationOffsetY: 35.03958
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.2710295
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 17.085524
+      m_maxSpawnOffsetX: 17.085524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 2.8434696
+      m_maxSpawnOffsetZ: 2.8434696
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 112.56006
+      m_maxRotationOffsetY: 112.56006
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5087128
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 14.745524
+      m_maxSpawnOffsetX: 14.745524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 3.7634697
+      m_maxSpawnOffsetZ: 3.7634697
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 111.19772
+      m_maxRotationOffsetY: 111.19772
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.5276356
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 4.088524
+      m_maxSpawnOffsetX: 4.088524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -10.81053
+      m_maxSpawnOffsetZ: -10.81053
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 40.171967
+      m_maxRotationOffsetY: 40.171967
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.1413136
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.245524
+      m_maxSpawnOffsetX: 10.245524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 6.03347
+      m_maxSpawnOffsetZ: 6.03347
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 118.549194
+      m_maxRotationOffsetY: 118.549194
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.4088745
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 12.455524
+      m_maxSpawnOffsetX: 12.455524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 4.8334694
+      m_maxSpawnOffsetZ: 4.8334694
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 119.91153
+      m_maxRotationOffsetY: 119.91153
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.3824472
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.835524
+      m_maxSpawnOffsetX: 6.835524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -6.5365314
+      m_maxSpawnOffsetZ: -6.5365314
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 22.864975
+      m_maxRotationOffsetY: 22.864975
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.565506
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaHouse01A
+      m_desktopPrefab: {fileID: 165038, guid: c20e309bcff22ce4ba00ab495722a240, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaHouse01A.prefab
+      m_mobilePrefab: {fileID: 165038, guid: c20e309bcff22ce4ba00ab495722a240, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaHouse01A.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -11.354475
+      m_maxSpawnOffsetX: -11.354475
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -1.5465298
+      m_maxSpawnOffsetZ: -1.5465298
+      m_rotateToSlope: 0
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: -19.975464
+      m_maxRotationOffsetY: -19.975464
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 16.095232
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 7.539524
+      m_maxSpawnOffsetX: 7.539524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 4.0604687
+      m_maxSpawnOffsetZ: 4.0604687
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 34.40123
+      m_maxRotationOffsetY: 34.40123
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.3407288
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 10.911524
+      m_maxSpawnOffsetX: 10.911524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -6.422531
+      m_maxSpawnOffsetZ: -6.422531
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 105.294586
+      m_maxRotationOffsetY: 105.294586
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.592989
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 13.433524
+      m_maxSpawnOffsetX: 13.433524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -6.85153
+      m_maxSpawnOffsetZ: -6.85153
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 94.78592
+      m_maxRotationOffsetY: 94.78592
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.6410074
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood07
+      m_desktopPrefab: {fileID: 176328, guid: 8fbe68719e89aea4982064294ae132c7, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood07.prefab
+      m_mobilePrefab: {fileID: 176328, guid: 8fbe68719e89aea4982064294ae132c7, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood07.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.5055237
+      m_maxSpawnOffsetX: 6.5055237
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -3.4265308
+      m_maxSpawnOffsetZ: -3.4265308
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 52.858643
+      m_maxRotationOffsetY: 52.858643
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.3072596
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseFull
+      m_desktopPrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_mobilePrefab: {fileID: 101744, guid: 2cfd54bf0c46b2b4ea3a18a8fc902902, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseFull.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -1.248476
+      m_maxSpawnOffsetX: -1.248476
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: 10.637468
+      m_maxSpawnOffsetZ: 10.637468
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 45.39276
+      m_maxRotationOffsetY: 45.39276
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.062648
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWood03
+      m_desktopPrefab: {fileID: 148710, guid: c4039b0464243be4ba47435bf8cca039, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWood03.prefab
+      m_mobilePrefab: {fileID: 148710, guid: c4039b0464243be4ba47435bf8cca039, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWood03.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.305524
+      m_maxSpawnOffsetX: 8.305524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -4.0865307
+      m_maxSpawnOffsetZ: -4.0865307
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 0
+      m_maxRotationOffsetY: 0
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 1.5265198
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 8.541524
+      m_maxSpawnOffsetX: 8.541524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -5.6025314
+      m_maxSpawnOffsetZ: -5.6025314
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 113.99051
+      m_maxRotationOffsetY: 113.99051
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.48732
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 6.251524
+      m_maxSpawnOffsetX: 6.251524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -4.582531
+      m_maxSpawnOffsetZ: -4.582531
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 113.99051
+      m_maxRotationOffsetY: 113.99051
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.48732
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 15.323524
+      m_maxSpawnOffsetX: 15.323524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -5.9515305
+      m_maxSpawnOffsetZ: -5.9515305
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 35.02672
+      m_maxRotationOffsetY: 35.02672
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.2713318
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaWagon05
+      m_desktopPrefab: {fileID: 158224, guid: f043bd7187b88ce4f8b4bb0c06411ed8, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaWagon05.prefab
+      m_mobilePrefab: {fileID: 158224, guid: f043bd7187b88ce4f8b4bb0c06411ed8, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaWagon05.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: -7.5844765
+      m_maxSpawnOffsetX: -7.5844765
+      m_minSpawnOffsetY: 0.03354895
+      m_maxSpawnOffsetY: 0.03354895
+      m_minSpawnOffsetZ: -14.616529
+      m_maxSpawnOffsetZ: -14.616529
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 0
+      m_maxRotationOffsetY: 0
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.7142472
+      m_virginTerrain: 0
+      m_extParam: 
+    - m_name: fi_vil_GaiaFenseCrossingHalf
+      m_desktopPrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_desktopPrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_mobilePrefab: {fileID: 128142, guid: fdc563315018d384fa38ac8b344aa35c, type: 2}
+      m_mobilePrefabFileName: fi_vil_GaiaFenseCrossingHalf.prefab
+      m_minInstances: 1
+      m_maxInstances: 1
+      m_failureRate: 0
+      m_minSpawnOffsetX: 16.560524
+      m_maxSpawnOffsetX: 16.560524
+      m_minSpawnOffsetY: 0
+      m_maxSpawnOffsetY: 0
+      m_minSpawnOffsetZ: -3.7675304
+      m_maxSpawnOffsetZ: -3.7675304
+      m_rotateToSlope: 1
+      m_minRotationOffsetX: 0
+      m_maxRotationOffsetX: 0
+      m_minRotationOffsetY: 25.04068
+      m_maxRotationOffsetY: 25.04068
+      m_minRotationOffsetZ: 0
+      m_maxRotationOffsetZ: 0
+      m_useParentScale: 0
+      m_minScale: 1
+      m_maxScale: 1
+      m_scaleByDistance:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_localBounds: 2.4706268
+      m_virginTerrain: 0
+      m_extParam: 
+    m_dna:
+      m_width: 36.784298
+      m_height: 12.537938
+      m_boundsRadius: 36.784298
+      m_seedThrow: 55.176445
+      m_minScale: 1
+      m_maxScale: 1
+      m_rndScaleInfluence: 0
+      m_extParam: nograss
+      m_protoIdx: 5
+    m_spawnCriteria:
+    - m_name: 
+      m_checkType: 1
+      m_virginTerrain: 1
+      m_checkHeight: 1
+      m_minHeight: 0
+      m_maxHeight: 1950
+      m_heightFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.6083087
+          value: 0.4611683
+          inSlope: -1.4927983
+          outSlope: -1.4927983
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkSlope: 1
+      m_minSlope: 0
+      m_maxSlope: 5
+      m_slopeFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkProximity: 0
+      m_proximityTag: 
+      m_minProximity: 0
+      m_maxProximity: 100
+      m_proximityFitness:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_checkTexture: 0
+      m_matchingTextures: '!3'
+      m_isActive: 1
+    m_spawnExtensions:
+    - {fileID: 11480470, guid: f2bae38de5d688b46836e4e69dd923e8, type: 2}
+    - {fileID: 11458244, guid: dca06ed5385cd2548b4fb2386f16cf92, type: 2}
+    m_canSpawnAsTree: 0
