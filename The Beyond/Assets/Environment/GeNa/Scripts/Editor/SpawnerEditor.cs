@@ -1324,7 +1324,7 @@ namespace GeNa
                     {
                         Handles.color = Color.green;
                         Quaternion visRot = Quaternion.Euler(0f, m_spawner.m_minRotationY, 0f);
-                        Handles.ArrowCap(m_editor_control_id, m_spawner.m_spawnOriginLocation, visRot, Mathf.Clamp(m_spawner.m_maxSpawnRange / 3f, 3f, 5f));
+                        Handles.ArrowHandleCap(m_editor_control_id, m_spawner.m_spawnOriginLocation, visRot, Mathf.Clamp(m_spawner.m_maxSpawnRange / 3f, 3f, 5f), Event.current.type);
                     }
                     else
                     {
