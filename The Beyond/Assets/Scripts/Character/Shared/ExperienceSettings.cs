@@ -2,13 +2,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-[CreateAssetMenu(fileName = "EXP Settings", menuName = "EXP System/Settings", order = 0)]
+[System.Serializable]
+[CreateAssetMenu(fileName = "EXP Settings", menuName = "Settings/EXP System", order = 0)]
 public class ExperienceSettings : ScriptableObject
 {
     #region Public Variables
     [Tooltip("A customizable chart detailing the total experience needed to reach the given level")]
     public List<int>    levelChart;
+    public int          lastLevelEXP { get { return levelChart[levelChart.Count - 1]; } }
 
     [Space()]
     public AudioSource  soundSource;
@@ -19,9 +20,6 @@ public class ExperienceSettings : ScriptableObject
     public float        imageAndSoundDelay;
     public float        fadeAmount = 0.1f;
     public float        screenTime = 3f;
-
-    [HideInInspector]
-    public float        fade = 1;
     #endregion
 
 
@@ -49,5 +47,20 @@ public class ExperienceSettings : ScriptableObject
         }
 
         return newChart;
+    }
+
+    public int GetLevelByExperience(int experience)
+    {
+        return (levelChart.FindLastIndex(exp => experience > exp) + 1);
+    }
+
+    public int GetExperienceByLevel(int level)
+    {
+        if (level == 0)
+            return 0;
+        if (level >= levelChart.Count)
+            return lastLevelEXP;
+
+        return levelChart[level - 1];
     }
 }

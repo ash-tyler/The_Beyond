@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a020ffeb3c4a64087e5a9c9a479ded, type: 3}
+  m_Name: EXP Settings
+  m_EditorClassIdentifier: 
+  levelChart: f4010000e8030000d0070000a00f0000401f0000803e0000007d000000fa000000f40100f0c00300
+  soundSource: {fileID: 0}
+  levelUpSound: {fileID: 0}
+  levelUpImage: {fileID: 0}
+  imageAndSoundDelay: 0
+  fadeAmount: 0.1
+  screenTime: 3
