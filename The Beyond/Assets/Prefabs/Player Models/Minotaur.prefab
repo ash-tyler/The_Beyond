@@ -56,6 +56,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1167555331530980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4873372326251752}
+  m_Layer: 0
+  m_Name: Head (Stable)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1197386674492872
 GameObject:
   m_ObjectHideFlags: 1
@@ -171,6 +186,21 @@ GameObject:
   - component: {fileID: 4311920615297142}
   m_Layer: 0
   m_Name: QuickRigCharacter_Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1497576274838820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4111022554580670}
+  m_Layer: 0
+  m_Name: Crouch Head (Stable)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,10 +380,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4473347330193176}
+  - component: {fileID: 114219398425793954}
+  - component: {fileID: 114930136983980222}
   - component: {fileID: 114224997793967302}
   - component: {fileID: 95227285339733222}
   m_Layer: 0
-  m_Name: Minatour-ReRig
+  m_Name: Minotaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,6 +448,19 @@ Transform:
   - {fileID: 4380860121437746}
   m_Father: {fileID: 4149204337483956}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4111022554580670
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497576274838820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4473347330193176}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4149204337483956
 Transform:
@@ -523,6 +568,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4873372326251752}
+  - {fileID: 4111022554580670}
   - {fileID: 4552458405630844}
   - {fileID: 4553385992781896}
   m_Father: {fileID: 0}
@@ -580,7 +627,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4473347330193176}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4553385992781896
 Transform:
@@ -594,7 +641,7 @@ Transform:
   m_Children:
   - {fileID: 4828106915885816}
   m_Father: {fileID: 4473347330193176}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4569176024791992
 Transform:
@@ -724,6 +771,19 @@ Transform:
   m_Father: {fileID: 4380860121437746}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4873372326251752
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167555331530980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4473347330193176}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4884998215174466
 Transform:
   m_ObjectHideFlags: 1
@@ -755,6 +815,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114219398425793954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922981338945620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598be6f2531a2994c8a7e9a9552f9e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animHelper: {fileID: 0}
+  bodyReference: {fileID: 0}
 --- !u!114 &114224997793967302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -773,6 +846,21 @@ MonoBehaviour:
   maxCrouchSpeed: 0.8
   animationMultiplier: 1
   runAnimOffset: 0.2
+--- !u!114 &114930136983980222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922981338945620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b7673eabd428f4386cc9c3e49a3e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftFist: {fileID: 4468828210463072}
+  rightFist: {fileID: 4604693731282690}
+  head: {fileID: 4873372326251752}
+  crouchHead: {fileID: 4111022554580670}
 --- !u!137 &137721145877469238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

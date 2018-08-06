@@ -23,12 +23,6 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     #region Public Variables
     [Space()]
-    [Header("Necessary Transforms")]
-    public GameObject   _playerModel;
-    public Transform    _playerFocus;
-    public Transform    _cameraRig;
-
-    [Space()]
     [Header("Movement Speed")]
     public float        runSpeed;
     public float        walkSpeed;
@@ -54,8 +48,8 @@ public class ThirdPersonMovement : MonoBehaviour
     #endregion
 
     #region Private Variables
+    private PlayerSource            _playerSource;
     private CharacterController     _controller;
-    private AnimationHelper         _animHelper;
 
     private Vector3                 moveDir = Vector3.zero;
     private Vector3                 playerCenter;
@@ -64,19 +58,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
     #region Start & Update Functions
-    void Start()
+    public void Setup()
     {
+        _playerSource = GetComponent<PlayerSource>();
         _controller = GetComponent<CharacterController>();
         State = new ActionState();
         State.SetIdle();
-
-        if (AnimationHelper.SuitableModel(_playerModel))
-        {
-            _animHelper = _playerModel.GetComponent<AnimationHelper>();
-            _animHelper.SetAnimator(this);
-        }
-        else
-            gameObject.SetActive(false);
 
         playerCenter = _controller.center;
         playerHeight = _controller.height;
@@ -141,15 +128,15 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             IsMoving = true;
 
-            transform.rotation = Quaternion.Euler(0, _cameraRig.eulerAngles.y, 0);
+            transform.rotation = Quaternion.Euler(0, _playerSource.cameraRig.transform.eulerAngles.y, 0);
             Quaternion rot = Quaternion.LookRotation(new Vector3(moveDir.x, 0, moveDir.z));
-            _playerModel.transform.rotation = Quaternion.Slerp(_playerModel.transform.rotation, rot, turnSpeed * Time.deltaTime);
+            _playerSource.playerModel.transform.rotation = Quaternion.Slerp(_playerSource.playerModel.transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
         else
             IsMoving = false;
 
         //Sets various Animator variables to properly display the animation
-        _animHelper.HandleAnimator();
+        _playerSource.playerModel.animHelper.HandleAnimator();
     }
     #endregion
 
@@ -158,7 +145,7 @@ public class ThirdPersonMovement : MonoBehaviour
     /// <summary> Sets the appropriate variables to make the player crouch. </summary>
     private void Crouch()
     {
-        SetControllerHeight(-Vector3.up, crouchMultiplier);
+        SetControllerHeight(_playerSource.playerModel.bodyReference.crouchHead, crouchMultiplier);
         State.SetCrouching();
     }
 
@@ -168,7 +155,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (Physics.SphereCast(new Ray(transform.TransformPoint(_controller.center), Vector3.up), _controller.radius, playerHeight * 0.90f, collisionLayers))
             return;
 
-        SetControllerHeight(Vector3.up, 1);
+        SetControllerHeight(_playerSource.playerModel.bodyReference.head, 1);
         State.SetIdle();
     }
 
@@ -184,22 +171,20 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
     #region Helper Functions
-    /// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
-    public void ChangeModel(GameObject model)
-    {
-        if (!AnimationHelper.SuitableModel(model)) return;
+    ///// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
+    //public void ChangeModel(Model newPlayerModel)
+    //{
+    //    Quaternion rot = _playerModel.transform.rotation;
+    //    GameObject previousModel = _playerModel.gameObject;
+    //    Destroy(previousModel);
 
-        Quaternion rot = _playerModel.transform.rotation;
-        GameObject previousModel = _playerModel.gameObject;
-        Destroy(previousModel);
+    //    _playerModel = null;
+    //    _playerModel = Instantiate(newPlayerModel, transform.position, rot, transform);
 
-        _playerModel = null;
-        _playerModel = Instantiate(model, Vector3.zero, rot, transform);
-        _playerModel.transform.localPosition = Vector3.zero;
-
-        _animHelper = _playerModel.GetComponent<AnimationHelper>();
-        _animHelper.SetAnimator(this);
-    }
+    //    _playerModel.GetModelComponents();
+    //    _playerModel.animHelper.SetAnimator(this);
+    //    _playerFocus = (State.IsCrouching) ? _playerModel.bodyReference.crouchHead : _playerModel.bodyReference.head;
+    //}
 
     /// <summary> Returns the Character Controller velocity. </summary>
     public Vector3 GetVelocity()
@@ -207,9 +192,9 @@ public class ThirdPersonMovement : MonoBehaviour
         return _controller.velocity;
     }
 
-    private void SetControllerHeight(Vector3 vec, float multiplier)
+    private void SetControllerHeight(Transform newFocus, float multiplier)
     {
-        _playerFocus.position += vec * crouchMultiplier;
+        _playerSource.playerFocus = newFocus;
         _controller.center = playerCenter * multiplier;
         _controller.height = playerHeight * multiplier;
     }

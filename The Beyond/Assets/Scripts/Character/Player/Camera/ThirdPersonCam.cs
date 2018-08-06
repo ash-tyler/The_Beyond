@@ -20,11 +20,6 @@ public class ThirdPersonCam : MonoBehaviour
 {
     #region Public Variables
     [Space()]
-    [Header("Necessary Transforms")]
-    public Transform _target;
-    public Transform _targetFocus;
-
-    [Space()]
     [Header("Clamp Ranges")]
     public ClampRange pitchClamp;
     public ClampRange fpPitchClamp;
@@ -46,6 +41,9 @@ public class ThirdPersonCam : MonoBehaviour
     public bool lockYaw;
     public bool invertPitch;
     public bool invertYaw;
+
+    [HideInInspector]
+    public PlayerSource playerSource;
     #endregion
 
     #region Private Variables
@@ -53,16 +51,16 @@ public class ThirdPersonCam : MonoBehaviour
     private Camera      _camera;
     private RaycastHit  rayHit;
 
-    public float       zoom;
+    private float       zoom;
     private bool        firstPersonMode = false;
     #endregion
 
 
     #region Start & Update Functions
-    void Start()
+    public void Setup()
     {
         _cameraRig = transform.parent;
-        _cameraRig.position = _targetFocus.position;
+        _cameraRig.position = playerSource.playerFocus.position;
         _camera = GetComponent<Camera>();
 
         zoom = -zoomClamp.center;
@@ -71,7 +69,7 @@ public class ThirdPersonCam : MonoBehaviour
 
     private void LateUpdate()
     {
-        _cameraRig.position = _targetFocus.position;
+        _cameraRig.position = playerSource.playerFocus.position;
         Vector2 rotation = Vector2.zero;
 
         if (Input.GetButton("CameraSelect") || Input.GetJoystickNames().Length > 0 || firstPersonMode)
@@ -141,22 +139,15 @@ public class ThirdPersonCam : MonoBehaviour
         invertYaw = false;
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.02f);
         zoom = -0.02f;
-        SetObjectLayer(_target, LayerMask.NameToLayer("Invisible"));
+        playerSource.SetObjectLayer(playerSource.transform, LayerMask.NameToLayer("Invisible"));
         _camera.cullingMask &= ~(1 << LayerMask.NameToLayer("Invisible"));
     }
 
     private void SwitchToThirdPerson()
     {
         firstPersonMode = false;
-        SetObjectLayer(_target, LayerMask.NameToLayer("Default"));
+        playerSource.SetObjectLayer(playerSource.transform, LayerMask.NameToLayer("Default"));
         _camera.cullingMask |= 1 << LayerMask.NameToLayer("Invisible");
-    }
-
-    private void SetObjectLayer(Transform obj, int layer)
-    {
-        obj.gameObject.layer = layer;
-        foreach (Transform child in obj)
-            SetObjectLayer(child, layer);
     }
     #endregion
 }

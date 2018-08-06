@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c77698f86c2274cb2ddbc08f742e1d, type: 3}
+  m_Name: Melee
+  m_EditorClassIdentifier: 
+  inventoryImage: {fileID: 0}
+  lootModel: {fileID: 0}
+  model: {fileID: 1269272436964530, guid: 6d139bb96f4e1034689b46dd5a5720aa, type: 2}
+  defaultValue: 20
+  damage: 2

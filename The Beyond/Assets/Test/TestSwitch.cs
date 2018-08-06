@@ -2,22 +2,15 @@
 
 public class TestSwitch : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject playerModelOne;
-    public GameObject playerModelTwo;
+    public PlayerSource  player;
+    public Model                playerModelOne;
+    public Model                playerModelTwo;
 
-    private ThirdPersonMovement tpm;
     private bool useModelOne = true;
-
-    private void Start()
-    {
-        if (player)
-            tpm = player.GetComponent<ThirdPersonMovement>();
-    }
 
     private void Update()
     {
-        if (!tpm)
+        if (!player)
             return;
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -29,9 +22,9 @@ public class TestSwitch : MonoBehaviour
         }
     }
 
-    private void SwitchModel(GameObject model)
+    private void SwitchModel(Model model)
     {
-        tpm.ChangeModel(model);
+        player.ChangeModel(model);
         useModelOne = !useModelOne;
     }
 }

@@ -21,6 +21,8 @@ public class Stats : MonoBehaviour
         }
     }
 
+
+
     private void OnDrawGizmos()
     {
         UnityEditor.Handles.color = Color.magenta;
