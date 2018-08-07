@@ -43,7 +43,7 @@ public class ThirdPersonCam : MonoBehaviour
     public bool invertYaw;
 
     [HideInInspector]
-    public PlayerSource playerSource;
+    public PlayerModule playerSource;
     #endregion
 
     #region Private Variables

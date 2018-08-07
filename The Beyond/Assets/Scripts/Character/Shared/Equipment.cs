@@ -9,11 +9,11 @@ public class Equipment : MonoBehaviour
 
     public Weapon wep;
 
-    private PlayerSource playerSource;
+    private CharacterModule module;
 
-    private void Start()
+    public void Setup()
     {
-        playerSource = GetComponent<PlayerSource>();
+        module = GetComponent<CharacterModule>();
 
         if (wep.GetType() == typeof(MeleeWeapon))
         {
@@ -23,8 +23,8 @@ public class Equipment : MonoBehaviour
             WeaponCollider leftCollider = _leftHand.GetComponent<WeaponCollider>();
             WeaponCollider rightCollider = _rightHand.GetComponent<WeaponCollider>();
 
-            leftCollider.anchor = playerSource.playerModel.bodyReference.leftFist;
-            rightCollider.anchor = playerSource.playerModel.bodyReference.rightFist;
+            leftCollider.anchor = module.model.bodyReference.leftFist;
+            rightCollider.anchor = module.model.bodyReference.rightFist;
         }
     }
 }

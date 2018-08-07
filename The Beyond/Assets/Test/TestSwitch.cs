@@ -2,9 +2,9 @@
 
 public class TestSwitch : MonoBehaviour
 {
-    public PlayerSource  player;
-    public Model                playerModelOne;
-    public Model                playerModelTwo;
+    public PlayerModule     player;
+    public PlayerModel      playerModelOne;
+    public PlayerModel      playerModelTwo;
 
     private bool useModelOne = true;
 
@@ -22,7 +22,7 @@ public class TestSwitch : MonoBehaviour
         }
     }
 
-    private void SwitchModel(Model model)
+    private void SwitchModel(PlayerModel model)
     {
         player.ChangeModel(model);
         useModelOne = !useModelOne;
