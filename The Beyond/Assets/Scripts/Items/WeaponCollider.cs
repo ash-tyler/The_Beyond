@@ -16,7 +16,8 @@ public class WeaponCollider : MonoBehaviour
 
     void Update()
     {
-        transform.position = anchor.position;
+        if (anchor)
+            transform.position = anchor.position;
     }
 
     private void OnTriggerEnter(Collider other)

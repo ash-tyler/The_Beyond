@@ -1,4 +1,5 @@
 ﻿using Beyond.States;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>   [Script information | Delete on Final Build]
@@ -24,43 +25,47 @@ public class ThirdPersonMovement : MonoBehaviour
     #region Public Variables
     [Space()]
     [Header("Movement Speed")]
-    public float        runSpeed;
-    public float        walkSpeed;
-    public float        crouchSpeed;
-    public float        jumpSpeed;
-    public float        turnSpeed;
+    public float runSpeed;
+    public float walkSpeed;
+    public float crouchSpeed;
+    public float jumpSpeed;
+    public float turnSpeed;
 
     [Space()]
     [Header("Multipliers")]
-    public float        gravityMultiplier;
-    public float        crouchMultiplier = 0.55f;
+    public float gravityMultiplier;
+    public float crouchMultiplier = 0.55f;
 
     [Space()]
     [Header("Etc")]
-    public LayerMask    collisionLayers = -1;
+    public LayerMask collisionLayers = -1;
 
-    public bool         IsMoving { get; private set; }
-    public bool         IsNearGround { get; private set; }
-    public ActionState  State { get; private set; }
+    public bool IsMoving { get; private set; }
+    public bool IsNearGround { get; private set; }
+    public ActionState State { get; private set; }
 
-    public float        CurrentSpeed { get { return (State.IsCrouching) ? crouchSpeed : ((State.IsWalking) ? walkSpeed : runSpeed); } }
-    public Vector3      CurrentGravity { get { return Physics.gravity * gravityMultiplier * Time.deltaTime; } }
+    public float CurrentSpeed { get { return (State.IsCrouching) ? crouchSpeed : ((State.IsWalking) ? walkSpeed : runSpeed); } }
+    public Vector3 CurrentGravity { get { return Physics.gravity * gravityMultiplier * Time.deltaTime; } }
     #endregion
 
     #region Private Variables
-    private PlayerSource            _playerSource;
-    private CharacterController     _controller;
+    private PlayerModule _module;
+    private CharacterController _controller;
 
-    private Vector3                 moveDir = Vector3.zero;
-    private Vector3                 playerCenter;
-    private float                   playerHeight;
+    private Vector3 moveDir = Vector3.zero;
+    private Vector3 playerCenter;
+    private float playerHeight;
     #endregion
+
+
+
+    private bool isAttacking = false;
 
 
     #region Start & Update Functions
     public void Setup()
     {
-        _playerSource = GetComponent<PlayerSource>();
+        _module = GetComponent<PlayerModule>();
         _controller = GetComponent<CharacterController>();
         State = new ActionState();
         State.SetIdle();
@@ -84,6 +89,19 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 addedMovement = (transform.forward * vertical) + (transform.right * horizontal);
         moveDir = (addedMovement.normalized * CurrentSpeed) + gravity;
 
+
+        //TEST
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!isAttacking)
+            {
+                (_module.model as PlayerModel).animHelper.SetAttack(true);
+                isAttacking = true;
+                StartCoroutine("ControlAttack");
+            }
+        }
+
+        ///
 
         //Handle grounded logic
         if (_controller.isGrounded)
@@ -128,15 +146,15 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             IsMoving = true;
 
-            transform.rotation = Quaternion.Euler(0, _playerSource.cameraRig.transform.eulerAngles.y, 0);
+            transform.rotation = Quaternion.Euler(0, _module.cameraRig.transform.eulerAngles.y, 0);
             Quaternion rot = Quaternion.LookRotation(new Vector3(moveDir.x, 0, moveDir.z));
-            _playerSource.playerModel.transform.rotation = Quaternion.Slerp(_playerSource.playerModel.transform.rotation, rot, turnSpeed * Time.deltaTime);
+            _module.model.transform.rotation = Quaternion.Slerp(_module.model.transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
         else
             IsMoving = false;
 
         //Sets various Animator variables to properly display the animation
-        _playerSource.playerModel.animHelper.HandleAnimator();
+        (_module.model as PlayerModel).animHelper.HandleAnimator();
     }
     #endregion
 
@@ -145,7 +163,7 @@ public class ThirdPersonMovement : MonoBehaviour
     /// <summary> Sets the appropriate variables to make the player crouch. </summary>
     private void Crouch()
     {
-        SetControllerHeight(_playerSource.playerModel.bodyReference.crouchHead, crouchMultiplier);
+        SetControllerHeight(_module.model.bodyReference.crouchHead, crouchMultiplier);
         State.SetCrouching();
     }
 
@@ -155,7 +173,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (Physics.SphereCast(new Ray(transform.TransformPoint(_controller.center), Vector3.up), _controller.radius, playerHeight * 0.90f, collisionLayers))
             return;
 
-        SetControllerHeight(_playerSource.playerModel.bodyReference.head, 1);
+        SetControllerHeight(_module.model.bodyReference.head, 1);
         State.SetIdle();
     }
 
@@ -168,6 +186,25 @@ public class ThirdPersonMovement : MonoBehaviour
         State.SetJumping();
     }
     #endregion
+
+
+
+
+    IEnumerator ControlAttack()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        while ((_module.model as PlayerModel).animHelper.IsPlayingAttackAnimation())
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+        (_module.model as PlayerModel).animHelper.SetAttack(false);
+        isAttacking = false;
+    }
+
+
+
 
 
     #region Helper Functions
@@ -194,7 +231,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void SetControllerHeight(Transform newFocus, float multiplier)
     {
-        _playerSource.playerFocus = newFocus;
+        _module.playerFocus = newFocus;
         _controller.center = playerCenter * multiplier;
         _controller.height = playerHeight * multiplier;
     }

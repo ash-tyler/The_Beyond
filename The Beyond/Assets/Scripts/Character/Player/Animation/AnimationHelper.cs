@@ -75,6 +75,16 @@ public class AnimationHelper : MonoBehaviour
 
         _animator.speed = (_moveScript.IsNearGround && velocity.magnitude > 0) ? animationMultiplier : 1;
     }
+
+    public void SetAttack(bool value)
+    {
+        _animator.SetBool("Attack", value);
+    }
+
+    public bool IsPlayingAttackAnimation()
+    {
+        return _animator.GetCurrentAnimatorStateInfo(1).IsName("Punch");
+    }
     #endregion
 
 
