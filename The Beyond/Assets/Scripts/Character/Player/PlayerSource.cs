@@ -12,7 +12,7 @@ public class PlayerSource : MonoBehaviour
     [HideInInspector] public Model playerModel;
     [HideInInspector] public Transform playerFocus;
     [HideInInspector] public PlayerStats statsScript;
-    [HideInInspector] public Equipment equipmentScript;
+    //[HideInInspector] public Equipment equipmentScript;
 
 
 	void Start ()
@@ -27,9 +27,9 @@ public class PlayerSource : MonoBehaviour
         camScript = cameraRig.GetComponentInChildren<ThirdPersonCam>();
         playerModel = moveScript.GetComponentInChildren<Model>();
         statsScript = GetComponent<PlayerStats>();
-        equipmentScript = GetComponent<Equipment>();
+        //equipmentScript = GetComponent<Equipment>();
 
-        if (!moveScript || !camScript || !playerModel || !statsScript || !equipmentScript)
+        if (!moveScript || !camScript || !playerModel || !statsScript/* || !equipmentScript*/)
         {
             gameObject.SetActive(false);
             return;
