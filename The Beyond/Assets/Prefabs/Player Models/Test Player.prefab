@@ -395,8 +395,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4570011127501734}
   - component: {fileID: 114934742873094954}
-  - component: {fileID: 114811595779317488}
-  - component: {fileID: 114148036559515934}
   - component: {fileID: 95746445005184986}
   m_Layer: 0
   m_Name: Ethan
@@ -2561,24 +2559,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114148036559515934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1287747315277324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624e9e5e0ba43ea4fb4a60334f78e81e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
-  avatar: {fileID: 9000000, guid: b235179bd2a63d1468dd430670338c55, type: 3}
-  maxRunSpeed: 8
-  maxWalkSpeed: 4
-  maxCrouchSpeed: 1
-  animationMultiplier: 1
-  runAnimOffset: 0.2
 --- !u!114 &114376599344530096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2609,7 +2589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: {fileID: 0}
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
   wep: {fileID: 11400000, guid: 745f9b89f9ddb4d4aaefa802ab464ae9, type: 2}
 --- !u!114 &114685673412946020
 MonoBehaviour:
@@ -2632,21 +2613,6 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &114811595779317488
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1287747315277324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b7673eabd428f4386cc9c3e49a3e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftFist: {fileID: 4020615297288890}
-  rightFist: {fileID: 4777454616976478}
-  head: {fileID: 4895395425194326}
-  crouchHead: {fileID: 4126817689399264}
 --- !u!114 &114934742873094954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2658,8 +2624,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598be6f2531a2994c8a7e9a9552f9e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animHelper: {fileID: 0}
-  bodyReference: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  head: {fileID: 0}
+  crouchHead: {fileID: 0}
+  animHelper:
+    controller: {fileID: 0}
+    avatar: {fileID: 0}
+    maxRunSpeed: 0
+    maxWalkSpeed: 0
+    maxCrouchSpeed: 0
+    animationMultiplier: 1
+    runAnimOffset: 0.2
 --- !u!114 &114950068206238264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2677,7 +2653,6 @@ MonoBehaviour:
   playerModel: {fileID: 0}
   playerFocus: {fileID: 0}
   statsScript: {fileID: 0}
-  equipmentScript: {fileID: 0}
 --- !u!137 &137402120071602238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

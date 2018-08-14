@@ -1,20 +1,15 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(AnimationHelper))]
-[RequireComponent(typeof(QuickBodyReference))]
+[System.Serializable]
+[RequireComponent(typeof(Animator))]
 public class PlayerModel : CharacterModel
 {
+    [Space]
     public AnimationHelper animHelper;
 
-	void Start ()
+    public void SetupAnimationHelper(ThirdPersonMovement move)
     {
-        GetModelComponents();
-    }
-
-    public override void GetModelComponents()
-    {
-        animHelper = GetComponent<AnimationHelper>();
-        bodyReference = GetComponent<QuickBodyReference>();
+        animHelper.SetAnimator(move, GetComponent<Animator>());
     }
 
     public static bool SuitablePlayerModel(GameObject model)

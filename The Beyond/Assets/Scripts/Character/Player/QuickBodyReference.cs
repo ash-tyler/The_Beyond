@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class QuickBodyReference : MonoBehaviour
+[System.Serializable]
+public class QuickBodyReference
 {
     public Transform leftFist;
     public Transform rightFist;

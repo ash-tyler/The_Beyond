@@ -12,9 +12,8 @@
 /// 
 /// </summary>
 
-
-[RequireComponent(typeof(Animator))]
-public class AnimationHelper : MonoBehaviour
+[System.Serializable]
+public class AnimationHelper
 {
     #region Public Variables
     [Space()]
@@ -41,9 +40,12 @@ public class AnimationHelper : MonoBehaviour
 
 
     #region Setup & Update Functions
-    public void SetAnimator(ThirdPersonMovement move)
+    public void SetAnimator(ThirdPersonMovement move, Animator anim)
     {
-        _animator = GetComponent<Animator>();
+        if (!anim)
+            throw new System.ArgumentException("Given Animator is invalid (NULL). Please check that given Model has an Animator", "anim");
+
+        _animator = anim;
 
         _animator.avatar = avatar;
         _animator.runtimeAnimatorController = controller;
@@ -84,14 +86,6 @@ public class AnimationHelper : MonoBehaviour
     public bool IsPlayingAttackAnimation()
     {
         return _animator.GetCurrentAnimatorStateInfo(1).IsName("Punch");
-    }
-    #endregion
-
-
-    #region Helper Functions
-    public static bool SuitableModel(GameObject model)
-    {
-        return (model && model.GetComponent<AnimationHelper>());
     }
     #endregion
 }

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(ThirdPersonMovement))]
 [RequireComponent(typeof(PlayerStats))]
-[RequireComponent(typeof(Equipment))]
 public class PlayerModule : CharacterModule
 {
     public GameObject cameraRig;
@@ -20,42 +20,28 @@ public class PlayerModule : CharacterModule
             return;
         }
 
+        model = GetComponentInChildren<PlayerModel>();
+        equipment = GetComponent<Equipment>();
+        stats = GetComponent<Stats>();
+
         playerMovement = GetComponent<ThirdPersonMovement>();
         playerCamera = cameraRig.GetComponentInChildren<ThirdPersonCam>();
-        model = playerMovement.GetComponentInChildren<PlayerModel>();
-        stats = GetComponent<PlayerStats>();
-        equipment = GetComponent<Equipment>();
 
-        if (!playerMovement || !playerCamera || !model || !stats || !equipment)
+        if (!playerCamera || !model)
         {
             gameObject.SetActive(false);
             return;
         }
 
         playerCamera.playerSource = this;
-        model.GetModelComponents();
-        equipment.Setup();
-        (model as PlayerModel).animHelper.SetAnimator(playerMovement);
-        playerFocus = model.bodyReference.head;
+        equipment.Setup(model.leftHand, model.rightHand);
+        (model as PlayerModel).SetupAnimationHelper(playerMovement);
+        playerFocus = model.head;
 
         playerMovement.Setup();
         playerCamera.Setup();
     }
 
-    /// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
-    public void ChangeModel(PlayerModel newPlayerModel)
-    {
-        Quaternion rot = model.transform.rotation;
-        GameObject previousModel = model.gameObject;
-        Destroy(previousModel);
-
-        model = null;
-        model = Instantiate(newPlayerModel, transform.position, rot, transform);
-
-        model.GetModelComponents();
-        (model as PlayerModel).animHelper.SetAnimator(playerMovement);
-        playerFocus = (playerMovement.State.IsCrouching) ? model.bodyReference.crouchHead : model.bodyReference.head;
-    }
 
     public void SetObjectLayer(Transform obj, int layer)
     {
@@ -64,5 +50,25 @@ public class PlayerModule : CharacterModule
             SetObjectLayer(child, layer);
     }
 
+    public void ChangePlayerModel(CharacterModel newPlayerModel)
+    {
+        IEnumerator cm = ChangeModel(newPlayerModel);
+        StartCoroutine(cm);
+    }
 
+    /// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
+    private IEnumerator ChangeModel(CharacterModel newPlayerModel)
+    {
+        while (playerMovement.State.IsCrouching)
+            yield return new WaitForSeconds(.5f);
+
+        Quaternion rot = model.transform.rotation;
+        GameObject previousModel = model.gameObject;
+        Destroy(previousModel);
+
+        model = null;
+        model = Instantiate(newPlayerModel, transform.position, rot, transform);
+
+        (model as PlayerModel).SetupAnimationHelper(playerMovement);
+    }
 }

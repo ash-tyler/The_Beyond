@@ -1,22 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[System.Serializable]
 public class CharacterModel : MonoBehaviour
 {
-    public QuickBodyReference bodyReference;
+    public Transform leftHand;
+    public Transform rightHand;
+    public Transform head;
+    public Transform crouchHead;
 
-    private void Start()
-    {
-        GetModelComponents();
-    }
 
-    public virtual void GetModelComponents()
-    {
-        bodyReference = GetComponent<QuickBodyReference>();
-    }
-
-    public static bool SuitableModel(GameObject model)
+    public static bool SuitableCharacterModel(GameObject model)
     {
         return (model && model.GetComponent<CharacterModel>());
     }

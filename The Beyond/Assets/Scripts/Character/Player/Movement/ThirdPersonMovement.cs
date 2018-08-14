@@ -25,15 +25,15 @@ public class ThirdPersonMovement : MonoBehaviour
     #region Public Variables
     [Space()]
     [Header("Movement Speed")]
-    public float runSpeed;
-    public float walkSpeed;
-    public float crouchSpeed;
-    public float jumpSpeed;
-    public float turnSpeed;
+    public float runSpeed = 8;
+    public float walkSpeed = 2;
+    public float crouchSpeed = 1;
+    public float jumpSpeed = 10;
+    public float turnSpeed = 6;
 
     [Space()]
     [Header("Multipliers")]
-    public float gravityMultiplier;
+    public float gravityMultiplier = 2;
     public float crouchMultiplier = 0.55f;
 
     [Space()]
@@ -163,7 +163,7 @@ public class ThirdPersonMovement : MonoBehaviour
     /// <summary> Sets the appropriate variables to make the player crouch. </summary>
     private void Crouch()
     {
-        SetControllerHeight(_module.model.bodyReference.crouchHead, crouchMultiplier);
+        SetControllerHeight(_module.model.crouchHead, crouchMultiplier);
         State.SetCrouching();
     }
 
@@ -173,7 +173,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (Physics.SphereCast(new Ray(transform.TransformPoint(_controller.center), Vector3.up), _controller.radius, playerHeight * 0.90f, collisionLayers))
             return;
 
-        SetControllerHeight(_module.model.bodyReference.head, 1);
+        SetControllerHeight(_module.model.head, 1);
         State.SetIdle();
     }
 
@@ -198,7 +198,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
         }
-        
+
         (_module.model as PlayerModel).animHelper.SetAttack(false);
         isAttacking = false;
     }
@@ -208,20 +208,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
     #region Helper Functions
-    ///// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
-    //public void ChangeModel(Model newPlayerModel)
-    //{
-    //    Quaternion rot = _playerModel.transform.rotation;
-    //    GameObject previousModel = _playerModel.gameObject;
-    //    Destroy(previousModel);
 
-    //    _playerModel = null;
-    //    _playerModel = Instantiate(newPlayerModel, transform.position, rot, transform);
-
-    //    _playerModel.GetModelComponents();
-    //    _playerModel.animHelper.SetAnimator(this);
-    //    _playerFocus = (State.IsCrouching) ? _playerModel.bodyReference.crouchHead : _playerModel.bodyReference.head;
-    //}
 
     /// <summary> Returns the Character Controller velocity. </summary>
     public Vector3 GetVelocity()

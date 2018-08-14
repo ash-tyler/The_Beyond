@@ -381,8 +381,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4473347330193176}
   - component: {fileID: 114219398425793954}
-  - component: {fileID: 114930136983980222}
-  - component: {fileID: 114224997793967302}
   - component: {fileID: 95227285339733222}
   m_Layer: 0
   m_Name: Minotaur
@@ -826,41 +824,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598be6f2531a2994c8a7e9a9552f9e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animHelper: {fileID: 0}
-  bodyReference: {fileID: 0}
---- !u!114 &114224997793967302
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922981338945620}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624e9e5e0ba43ea4fb4a60334f78e81e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
-  avatar: {fileID: 9000000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
-  maxRunSpeed: 8
-  maxWalkSpeed: 4
-  maxCrouchSpeed: 0.8
-  animationMultiplier: 1
-  runAnimOffset: 0.2
---- !u!114 &114930136983980222
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922981338945620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b7673eabd428f4386cc9c3e49a3e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftFist: {fileID: 4468828210463072}
-  rightFist: {fileID: 4604693731282690}
-  head: {fileID: 4873372326251752}
-  crouchHead: {fileID: 4111022554580670}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  head: {fileID: 0}
+  crouchHead: {fileID: 0}
+  animHelper:
+    controller: {fileID: 0}
+    avatar: {fileID: 0}
+    maxRunSpeed: 0
+    maxWalkSpeed: 0
+    maxCrouchSpeed: 0
+    animationMultiplier: 1
+    runAnimOffset: 0.2
 --- !u!137 &137721145877469238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

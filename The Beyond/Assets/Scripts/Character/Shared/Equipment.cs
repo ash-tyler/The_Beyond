@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Equipment : MonoBehaviour
 {
     public GameObject _leftHand;
@@ -9,12 +10,8 @@ public class Equipment : MonoBehaviour
 
     public Weapon wep;
 
-    private CharacterModule module;
-
-    public void Setup()
+    public void Setup(Transform leftHand, Transform rightHand)
     {
-        module = GetComponent<CharacterModule>();
-
         if (wep.GetType() == typeof(MeleeWeapon))
         {
             _leftHand = wep.GetInstance(transform);
@@ -23,8 +20,8 @@ public class Equipment : MonoBehaviour
             WeaponCollider leftCollider = _leftHand.GetComponent<WeaponCollider>();
             WeaponCollider rightCollider = _rightHand.GetComponent<WeaponCollider>();
 
-            leftCollider.anchor = module.model.bodyReference.leftFist;
-            rightCollider.anchor = module.model.bodyReference.rightFist;
+            leftCollider.anchor = leftHand;
+            rightCollider.anchor = rightHand;
         }
     }
 }
