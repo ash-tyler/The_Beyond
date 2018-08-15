@@ -78,14 +78,19 @@ public class AnimationHelper
         _animator.speed = (_moveScript.IsNearGround && velocity.magnitude > 0) ? animationMultiplier : 1;
     }
 
-    public void SetAttack(bool value)
+    public bool AnimationComplete()
     {
-        _animator.SetBool("Attack", value);
+        return _animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 1 /*&& !_animator.IsInTransition(1)*/;
     }
 
-    public bool IsPlayingAttackAnimation()
+    public void SetState(string stateName)
     {
-        return _animator.GetCurrentAnimatorStateInfo(1).IsName("Punch");
+        _animator.Play(stateName, 1);
     }
+
+    //public bool IsPlayingAttackAnimation()
+    //{
+    //    return _animator.GetCurrentAnimatorStateInfo(1).IsName("Punch");
+    //}
     #endregion
 }

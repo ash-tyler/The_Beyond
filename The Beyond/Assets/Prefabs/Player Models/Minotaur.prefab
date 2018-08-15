@@ -824,16 +824,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598be6f2531a2994c8a7e9a9552f9e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
-  head: {fileID: 0}
-  crouchHead: {fileID: 0}
+  leftHand: {fileID: 4468828210463072}
+  rightHand: {fileID: 4604693731282690}
+  head: {fileID: 4873372326251752}
+  crouchHead: {fileID: 4111022554580670}
   animHelper:
-    controller: {fileID: 0}
-    avatar: {fileID: 0}
-    maxRunSpeed: 0
-    maxWalkSpeed: 0
-    maxCrouchSpeed: 0
+    controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+    avatar: {fileID: 9000000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
+    maxRunSpeed: 10
+    maxWalkSpeed: 6
+    maxCrouchSpeed: 1
     animationMultiplier: 1
     runAnimOffset: 0.2
 --- !u!137 &137721145877469238

@@ -58,10 +58,6 @@ public class ThirdPersonMovement : MonoBehaviour
     #endregion
 
 
-
-    private bool isAttacking = false;
-
-
     #region Start & Update Functions
     public void Setup()
     {
@@ -92,16 +88,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
         //TEST
         if (Input.GetMouseButtonDown(0))
-        {
-            if (!isAttacking)
-            {
-                (_module.model as PlayerModel).SetAttack(true);
-                isAttacking = true;
-                StartCoroutine("ControlAttack");
-            }
-        }
+            (_module.model as PlayerModel).SetAnimationState("Punch");
 
-        ///
 
         //Handle grounded logic
         if (_controller.isGrounded)
@@ -186,26 +174,6 @@ public class ThirdPersonMovement : MonoBehaviour
         State.SetJumping();
     }
     #endregion
-
-
-
-
-    IEnumerator ControlAttack()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        while ((_module.model as PlayerModel).IsPlayingAttackAnimation())
-        {
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        (_module.model as PlayerModel).SetAttack(false);
-        isAttacking = false;
-    }
-
-
-
-
 
     #region Helper Functions
 

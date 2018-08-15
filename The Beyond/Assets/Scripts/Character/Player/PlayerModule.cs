@@ -47,7 +47,8 @@ public class PlayerModule : CharacterModule
     {
         obj.gameObject.layer = layer;
         foreach (Transform child in obj)
-            SetObjectLayer(child, layer);
+            if (child.tag != Equipment.weaponTag)
+                SetObjectLayer(child, layer);
     }
 
     public void ChangePlayerModel(CharacterModel newPlayerModel)

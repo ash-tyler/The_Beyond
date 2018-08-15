@@ -1013,7 +1013,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4705910034275750}
   - component: {fileID: 143992263150961686}
-  - component: {fileID: 114950068206238264}
   - component: {fileID: 114685673412946020}
   - component: {fileID: 114376599344530096}
   - component: {fileID: 114676911641684682}
@@ -2613,6 +2612,7 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 256
+  isAttacking: 0
 --- !u!114 &114934742873094954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2636,23 +2636,6 @@ MonoBehaviour:
     maxCrouchSpeed: 0
     animationMultiplier: 1
     runAnimOffset: 0.2
---- !u!114 &114950068206238264
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1793564989015788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab8cbfa39933c64c8cc8bf6962fb208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraRig: {fileID: 0}
-  moveScript: {fileID: 0}
-  camScript: {fileID: 0}
-  playerModel: {fileID: 0}
-  playerFocus: {fileID: 0}
-  statsScript: {fileID: 0}
 --- !u!137 &137402120071602238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

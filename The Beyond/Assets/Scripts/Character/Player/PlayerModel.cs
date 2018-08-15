@@ -21,16 +21,15 @@ public class PlayerModel : CharacterModel
         animHelper.HandleAnimator();
     }
 
-    public void SetAttack(bool value)
+    public bool AttackIsComplete()
     {
-        animHelper.SetAttack(value);
+        return animHelper.AnimationComplete();
     }
 
-    public bool IsPlayingAttackAnimation()
+    public void SetAnimationState(string stateName)
     {
-        return animHelper.IsPlayingAttackAnimation();
+        animHelper.SetState(stateName);
     }
-
 
     public static bool SuitablePlayerModel(GameObject model)
     {

@@ -10,6 +10,8 @@ public class Equipment : MonoBehaviour
 
     public Weapon wep;
 
+    public static string weaponTag = "Weapon Collider";
+
     public void Setup(Transform leftHand, Transform rightHand)
     {
         if (wep.GetType() == typeof(MeleeWeapon))
@@ -22,6 +24,8 @@ public class Equipment : MonoBehaviour
 
             leftCollider.anchor = leftHand;
             rightCollider.anchor = rightHand;
+            leftCollider.gameObject.tag = weaponTag;
+            rightCollider.gameObject.tag = weaponTag;
         }
     }
 }
