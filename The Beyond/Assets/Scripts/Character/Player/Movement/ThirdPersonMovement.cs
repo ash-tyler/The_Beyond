@@ -95,7 +95,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             if (!isAttacking)
             {
-                (_module.model as PlayerModel).animHelper.SetAttack(true);
+                (_module.model as PlayerModel).SetAttack(true);
                 isAttacking = true;
                 StartCoroutine("ControlAttack");
             }
@@ -154,7 +154,7 @@ public class ThirdPersonMovement : MonoBehaviour
             IsMoving = false;
 
         //Sets various Animator variables to properly display the animation
-        (_module.model as PlayerModel).animHelper.HandleAnimator();
+        (_module.model as PlayerModel).HandleAnimator();
     }
     #endregion
 
@@ -194,12 +194,12 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        while ((_module.model as PlayerModel).animHelper.IsPlayingAttackAnimation())
+        while ((_module.model as PlayerModel).IsPlayingAttackAnimation())
         {
             yield return new WaitForSeconds(0.1f);
         }
 
-        (_module.model as PlayerModel).animHelper.SetAttack(false);
+        (_module.model as PlayerModel).SetAttack(false);
         isAttacking = false;
     }
 
