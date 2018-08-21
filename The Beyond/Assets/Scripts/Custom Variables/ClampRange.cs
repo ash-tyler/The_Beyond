@@ -22,12 +22,37 @@ public class ClampRange
         return Mathf.Clamp(floatToClamp, -max, -min);
     }
 
+    public float GetNegativeClampMaxOverride(float floatToClamp, float maxOverride)
+    {
+        return Mathf.Clamp(floatToClamp, -maxOverride, -min);
+    }
+
+    public float GetNegativeClampMinOverride(float floatToClamp, float minOverride)
+    {
+        return Mathf.Clamp(floatToClamp, -max, -minOverride);
+    }
+
     public float GetEulerClamp(float angleToClamp)
     {
         if (angleToClamp > 180f)
             angleToClamp = -(360 - angleToClamp);
 
         return GetClamp(angleToClamp);
+    }
+
+    public Quaternion GetEulerXClamp(float x, float y, float z)
+    {
+        return Quaternion.Euler(GetEulerClamp(x), y, z);
+    }
+
+    public Quaternion GetEulerYClamp(float x, float y, float z)
+    {
+        return Quaternion.Euler(x, GetEulerClamp(y), z);
+    }
+
+    public Quaternion GetEulerZClamp(float x, float y, float z)
+    {
+        return Quaternion.Euler(x, y, GetEulerClamp(z));
     }
 
 

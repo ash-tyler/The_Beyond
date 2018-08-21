@@ -7,31 +7,25 @@ public class Weapon : Item
 
     public override GameObject GetInstance()
     {
-
         GameObject obj = Instantiate(model);
 
         WeaponCollider weaponCollider = obj.GetComponent<WeaponCollider>();
-
-        if (weaponCollider)
-            weaponCollider.weapon = this as Weapon;
-        else
+        if (!weaponCollider)
             return null;
 
+        weaponCollider.weapon = this as Weapon;
         return obj;
     }
 
     public override GameObject GetInstance(Transform parent)
     {
-
-        GameObject obj = Instantiate(model, parent);
+        GameObject obj = Instantiate(model, parent.position, parent.rotation, parent);
 
         WeaponCollider weaponCollider = obj.GetComponent<WeaponCollider>();
-
-        if (weaponCollider)
-                weaponCollider.weapon = this as Weapon;
-        else
+        if (!weaponCollider)
             return null;
 
+        weaponCollider.weapon = this as Weapon;
         return obj;
     }
 

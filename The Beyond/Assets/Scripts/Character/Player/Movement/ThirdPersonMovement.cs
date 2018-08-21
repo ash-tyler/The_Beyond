@@ -59,7 +59,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
     #region Start & Update Functions
-    public void Setup()
+    void Start()
     {
         _module = GetComponent<PlayerModule>();
         _controller = GetComponent<CharacterController>();
@@ -134,9 +134,10 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             IsMoving = true;
 
-            transform.rotation = Quaternion.Euler(0, _module.cameraRig.transform.eulerAngles.y, 0);
-            Quaternion rot = Quaternion.LookRotation(new Vector3(moveDir.x, 0, moveDir.z));
-            _module.model.transform.rotation = Quaternion.Slerp(_module.model.transform.rotation, rot, turnSpeed * Time.deltaTime);
+            transform.rotation = _module.GetMovementQuaternion();
+            _module.RotateModel(new Vector3(moveDir.x, 0, moveDir.z), turnSpeed);
+            //Quaternion rot = Quaternion.LookRotation(new Vector3(moveDir.x, 0, moveDir.z));
+            //_module.model.transform.rotation = Quaternion.Slerp(_module.model.transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
         else
             IsMoving = false;

@@ -14,11 +14,11 @@ public class WeaponCollider : MonoBehaviour
     public bool         currentlyAttacking = false;
 
 
-    void Update()
-    {
-        if (anchor)
-            transform.position = anchor.position;
-    }
+    //void Update()
+    //{
+    //    if (anchor)
+    //        transform.position = anchor.position;
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

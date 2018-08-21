@@ -5,27 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStats))]
 public class PlayerModule : CharacterModule
 {
-    public GameObject cameraRig;
+    //public GameObject cameraRig;
 
     [HideInInspector] public ThirdPersonMovement playerMovement;
-    [HideInInspector] public ThirdPersonCam playerCamera;
+    public ThirdPersonCam playerCamera;
     [HideInInspector] public Transform playerFocus;
 
+    [HideInInspector] public bool firstPerson;
 
-	void Start ()
+
+    void Start ()
     {
-        if (!cameraRig)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
         model = GetComponentInChildren<PlayerModel>();
-        equipment = GetComponent<Equipment>();
-        stats = GetComponent<Stats>();
-
-        playerMovement = GetComponent<ThirdPersonMovement>();
-        playerCamera = cameraRig.GetComponentInChildren<ThirdPersonCam>();
 
         if (!playerCamera || !model)
         {
@@ -33,13 +24,16 @@ public class PlayerModule : CharacterModule
             return;
         }
 
+        equipment = GetComponent<Equipment>();
+        stats = GetComponent<Stats>();
+
+        playerMovement = GetComponent<ThirdPersonMovement>();
+
+
         playerCamera.playerSource = this;
-        equipment.Setup(model.leftHand, model.rightHand);
+        equipment.EquipMelee(model.leftHand, model.rightHand);
         (model as PlayerModel).SetupAnimationHelper(playerMovement);
         playerFocus = model.head;
-
-        playerMovement.Setup();
-        playerCamera.Setup();
     }
 
 
@@ -71,5 +65,33 @@ public class PlayerModule : CharacterModule
         model = Instantiate(newPlayerModel, transform.position, rot, transform);
 
         (model as PlayerModel).SetupAnimationHelper(playerMovement);
+
+        equipment.ReEquipWeapon(model.leftHand, model.rightHand);
+    }
+
+    public Quaternion GetMovementQuaternion()
+    {
+        return Quaternion.Euler(0, playerCamera.GetRigYRotation(), 0);
+    }
+
+    public void RotateModel(Vector3 lookRotation, float turnSpeed)
+    {
+        model.RotateModel(Quaternion.LookRotation(lookRotation), turnSpeed);
+    }
+
+    public void SwitchToFirstPerson()
+    {
+        //invertPitch = true;
+        //invertYaw = false;
+        firstPerson = true;
+        SetObjectLayer(transform, LayerMask.NameToLayer("Invisible"));
+        playerCamera.SetFirstPersonMode(firstPerson);
+    }
+
+    public void SwitchToThirdPerson()
+    {
+        firstPerson = false;
+        SetObjectLayer(transform, LayerMask.NameToLayer("Default"));
+        playerCamera.SetFirstPersonMode(firstPerson);
     }
 }

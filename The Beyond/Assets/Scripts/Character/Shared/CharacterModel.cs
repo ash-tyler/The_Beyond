@@ -13,4 +13,9 @@ public class CharacterModel : MonoBehaviour
     {
         return (model && model.GetComponent<CharacterModel>());
     }
+
+    public void RotateModel(Quaternion lookRot, float turnSpeed)
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, turnSpeed * Time.deltaTime);
+    }
 }

@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521901290388880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 102, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4844069316239434}
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1925009561022416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 80.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4007388270762614}
@@ -220,14 +220,14 @@ MonoBehaviour:
   pitchClamp:
     min: -30
     max: 70
-  fpPitchClamp:
+  firstPersonPitchClamp:
     min: 0
     max: 1
   zoomClamp:
     min: 1
     max: 7
   mouseSensitivity: 10
-  zoomSensitivity: 40
+  zoomSensitivity: 140
   collisionLayers:
     serializedVersion: 2
     m_Bits: 768
