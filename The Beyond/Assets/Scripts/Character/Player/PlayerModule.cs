@@ -14,7 +14,7 @@ public class PlayerModule : CharacterModule
     [HideInInspector] public bool firstPerson;
 
 
-    void Start ()
+    void Start()
     {
         model = GetComponentInChildren<PlayerModel>();
 
@@ -81,8 +81,6 @@ public class PlayerModule : CharacterModule
 
     public void SwitchToFirstPerson()
     {
-        //invertPitch = true;
-        //invertYaw = false;
         firstPerson = true;
         SetObjectLayer(transform, LayerMask.NameToLayer("Invisible"));
         playerCamera.SetFirstPersonMode(firstPerson);
@@ -91,7 +89,7 @@ public class PlayerModule : CharacterModule
     public void SwitchToThirdPerson()
     {
         firstPerson = false;
-        SetObjectLayer(transform, LayerMask.NameToLayer("Default"));
+        SetObjectLayer(transform, LayerMask.NameToLayer("Player"));
         playerCamera.SetFirstPersonMode(firstPerson);
     }
 }

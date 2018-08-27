@@ -865,8 +865,8 @@ MonoBehaviour:
   animHelper:
     controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
     avatar: {fileID: 9000000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
-    maxRunSpeed: 10
-    maxWalkSpeed: 6
+    maxRunSpeed: 8
+    maxWalkSpeed: 4
     maxCrouchSpeed: 1
     animationMultiplier: 1
     runAnimOffset: 0.2
