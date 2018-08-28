@@ -1,5 +1,4 @@
 ﻿using Beyond.States;
-using System.Collections;
 using UnityEngine;
 
 /// <summary>   [Script information | Delete on Final Build]
