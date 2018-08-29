@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4126159077170782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Breast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4337411182339580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Ring31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4910190511518924}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Pinky40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4215459954365610}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4537499746336098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4150413772827444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Middler21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4290992693868858}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Middle22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4808877146667842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Upperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4261971602239612}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Index11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4518608754818484}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4679713314607762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Thumb00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4363242724150146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4926313296496154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Pinky41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4631417610871258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_LowerLip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4138845405231586}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Index1Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4920662814891406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4178855220547460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4581479924404280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4134264779010470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4851736581210706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MinotaurL_ToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4012782839027266}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Upperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4429204912673122}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_Spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4046484026254234}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Ring31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4696220852650862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_NeckTwist03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4746990589419168}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Ring32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4961405444298760}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_LeftLowerLip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4059859550685200}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Ring30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4673933439613432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4379143664789352}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4645618200515826}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Index10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4348268265698396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Ring3Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4723249320752058}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Index1Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4402291509725990}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_RightBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4664372511631806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_LeftBlink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4566386236278726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Pinky42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4413047249637892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Pinky41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4561132133958086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Ring30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4781294272504362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_RightBlink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4684466004296196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Pinky40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4439575010600692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Breast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4144264038477730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 4877308713377110}
   - component: {fileID: 114716590672955820}
   - component: {fileID: 95201805063719602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4566808229421874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Index11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4181647502280200}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_RibsTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +731,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4748560157940158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_LeftBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4701135648142482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Ring3Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +761,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4123209989325978}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Pinky4Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590186667786206}
   - component: {fileID: 137786181093436422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MinotaurBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4887314275503326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Pinky42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -807,7 +807,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4825004454910396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_MiddleNub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4139736238375896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Index12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4984555752008060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_End 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4012753436997198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Middle2Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4925950015903336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4806841463838350}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4328933741508332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Thumb00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4894898616580070}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_NeckTwist02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +927,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4640946198489630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Middle22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4023519850837566}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4211256740805306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_LibsTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4637890572703440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MinotaurL_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4836588557024386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_ToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1002,7 +1002,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4669172037889394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,7 +1017,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4565475047915408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4876220029294102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1047,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4798795682611230}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_NeckTwist01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1062,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4715464472686554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Index10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4223589795939486}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Pinky4Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1092,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4312883059144788}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Finger0Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,7 +1107,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4844488456827834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Thum02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4897872498838612}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1137,7 +1137,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4890213085740176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Finger02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1152,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4132971439547314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Indexr12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1167,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4625288367509230}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4648639725460538}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Middle20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,7 +1197,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4723408873785546}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Middle21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1212,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4737462088910800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,7 +1227,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4572053062360648}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Finger01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,7 +1242,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4782925108463880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,7 +1257,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4866027511363578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,7 +1272,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4500400573786806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1287,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4779947240444842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Ring32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1302,7 +1302,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4598081883615426}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: End_Tail_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1317,7 +1317,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4411085600722468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_RightLowerLip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4592464907917052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Middle20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1347,7 +1347,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4067842781306496}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1362,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4165107781552840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4873307062867578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Thum01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1392,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4178849423663852}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mid_Waist_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4954784849038990}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1422,7 +1422,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4214564885944440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_L_Thum0Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1437,7 +1437,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4270674926309208}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail_JNT2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1452,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4501619414724974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minotaur_R_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1467,7 +1467,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4202235762554642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1482,7 +1482,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4872059289673176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,7 +1537,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008497686319238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1811.147, y: 57.906, z: 2074.2}
+  m_LocalPosition: {x: -1811.147, y: 58, z: 2074.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4877308713377110}
@@ -2696,7 +2696,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442003418215612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4665662106692412}
@@ -2869,10 +2869,10 @@ Animator:
   m_GameObject: {fileID: 1442003418215612}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
-  m_Controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 01e6bd069e8af3b49b63f4909bba9cea, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   head: {fileID: 4665662106692412}
   crouchHead: {fileID: 4182201861577676}
   animHelper:
-    controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+    controller: {fileID: 9100000, guid: 01e6bd069e8af3b49b63f4909bba9cea, type: 2}
     avatar: {fileID: 9000000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
     maxRunSpeed: 10
     maxWalkSpeed: 6
@@ -2987,7 +2987,9 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
+  - {fileID: 2100000, guid: 94ba810ef5d983247bb9dedd75f4ede6, type: 2}
+  - {fileID: 2100000, guid: a938146f2b381a44884dfb4ccaeb7d73, type: 2}
+  - {fileID: 2100000, guid: b9a8c1d3019e83141b24ea086c75d877, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3118,10 +3120,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.98
+  m_Height: 2.2
   m_Radius: 0.4
   m_SlopeLimit: 50
   m_StepOffset: 0.2
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.01
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.22, z: 0}
