@@ -2869,7 +2869,7 @@ Animator:
   m_GameObject: {fileID: 1442003418215612}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
-  m_Controller: {fileID: 9100000, guid: 01e6bd069e8af3b49b63f4909bba9cea, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6d3c0de986f19a94aaced990d5125479, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   head: {fileID: 4665662106692412}
   crouchHead: {fileID: 4182201861577676}
   animHelper:
-    controller: {fileID: 9100000, guid: 01e6bd069e8af3b49b63f4909bba9cea, type: 2}
+    controller: {fileID: 9100000, guid: 6d3c0de986f19a94aaced990d5125479, type: 2}
     avatar: {fileID: 9000000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
     maxRunSpeed: 10
     maxWalkSpeed: 6

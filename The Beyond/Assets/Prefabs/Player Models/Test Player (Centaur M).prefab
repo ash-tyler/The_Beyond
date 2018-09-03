@@ -3371,7 +3371,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773024202273780}
-  m_LocalRotation: {x: -0.15655325, y: 0.7206717, z: -0.14336725, w: 0.65997666}
+  m_LocalRotation: {x: -0.15655327, y: 0.7206717, z: -0.14336726, w: 0.65997666}
   m_LocalPosition: {x: -0.18298492, y: 0.11735542, z: -0.07280057}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
   m_Children:
@@ -3581,7 +3581,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1676563981536994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1811.147, y: 57.906, z: 2082.44}
+  m_LocalPosition: {x: -1813.9294, y: 57.53061, z: 2083.121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4261712135876840}
@@ -3597,7 +3597,7 @@ Animator:
   m_GameObject: {fileID: 1623826828488390}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e0b7d2b26e1fde74a936b05b3c278fe6, type: 3}
-  m_Controller: {fileID: 9100000, guid: a942fae6e91f9a94db40850684db68ce, type: 2}
+  m_Controller: {fileID: 9100000, guid: 29e76dcb913f81240ba4d252afd098e9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3621,7 +3621,7 @@ MonoBehaviour:
   head: {fileID: 4148156898715292}
   crouchHead: {fileID: 4887026784861138}
   animHelper:
-    controller: {fileID: 9100000, guid: a942fae6e91f9a94db40850684db68ce, type: 2}
+    controller: {fileID: 9100000, guid: 29e76dcb913f81240ba4d252afd098e9, type: 2}
     avatar: {fileID: 9000000, guid: e0b7d2b26e1fde74a936b05b3c278fe6, type: 3}
     maxRunSpeed: 10
     maxWalkSpeed: 6
@@ -3695,7 +3695,7 @@ MonoBehaviour:
   walkSpeed: 2
   crouchSpeed: 1
   jumpSpeed: 10
-  turnSpeed: 6
+  turnSpeed: 10
   gravityMultiplier: 2
   crouchMultiplier: 0.55
   collisionLayers:

@@ -41,7 +41,7 @@ public class PlayerModule : CharacterModule
     {
         obj.gameObject.layer = layer;
         foreach (Transform child in obj)
-            if (child.tag != Equipment.weaponTag)
+            if (child.gameObject.layer != LayerMask.NameToLayer("Loot"))
                 SetObjectLayer(child, layer);
     }
 
@@ -91,5 +91,23 @@ public class PlayerModule : CharacterModule
         firstPerson = false;
         SetObjectLayer(transform, LayerMask.NameToLayer("Player"));
         playerCamera.SetFirstPersonMode(firstPerson);
+    }
+
+    public void Attack()
+    {
+        StartCoroutine("DoAttack");
+    }
+
+    IEnumerator DoAttack()
+    {
+        equipment.currentlyAttacking = true;
+        (model as PlayerModel).SetAnimationState("Punch");
+
+        yield return new WaitForSeconds(0.1f);
+
+        while (!(model as PlayerModel).AttackIsComplete())
+            yield return new WaitForSeconds(0.1f);
+
+        equipment.currentlyAttacking = false;
     }
 }

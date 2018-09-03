@@ -7,26 +7,46 @@ public class Weapon : Item
 
     public override GameObject GetInstance()
     {
-        GameObject obj = Instantiate(model);
-
-        WeaponCollider weaponCollider = obj.GetComponent<WeaponCollider>();
-        if (!weaponCollider)
-            return null;
-
-        weaponCollider.weapon = this as Weapon;
-        return obj;
+        return SetGenericObject(Instantiate(model));
     }
 
     public override GameObject GetInstance(Transform parent)
     {
-        GameObject obj = Instantiate(model, parent.position, parent.rotation, parent);
+        return SetGenericObject(Instantiate(model, parent.position, parent.rotation, parent));
+    }
 
-        WeaponCollider weaponCollider = obj.GetComponent<WeaponCollider>();
+    public GameObject GetEquipedInstance(Transform parent, Equipment user)
+    {
+        return SetEquipedObject(Instantiate(model, parent.position, parent.rotation, parent), user);
+    }
+
+    public GameObject GetLootInstance(Transform parent)
+    {
+        GameObject weaponObj = GetInstance(parent);
+        weaponObj.layer = LayerMask.NameToLayer("Loot");
+        return weaponObj;
+    }
+
+    private GameObject SetGenericObject(GameObject weaponObj)
+    {
+        WeaponCollider weaponCollider = weaponObj.GetComponent<WeaponCollider>();
         if (!weaponCollider)
             return null;
 
         weaponCollider.weapon = this as Weapon;
-        return obj;
+        return weaponObj;
+    }
+
+    private GameObject SetEquipedObject(GameObject weaponObj, Equipment user)
+    {
+        WeaponCollider weaponCollider = weaponObj.GetComponent<WeaponCollider>();
+        if (!weaponCollider)
+            return null;
+
+        weaponObj.layer = LayerMask.NameToLayer("Weapon");
+        weaponCollider.weapon = this as Weapon;
+        weaponCollider.equipment = user;
+        return weaponObj;
     }
 
     //public AttackType weaponType;
@@ -84,4 +104,14 @@ public class Weapon : Item
     //            break;
     //    }
     //}
+
+    public enum AttackRange
+    {
+        CIRCLE = 0,
+        FRONT,
+        BACK
+    }
+
+    public AttackRange rangeType;
+    public float range;
 }

@@ -8,6 +8,7 @@ public class PlayerModel : CharacterModel
     [SerializeField]
     private AnimationHelper animHelper;
 
+
     public void SetupAnimationHelper(ThirdPersonMovement move)
     {
         Animator anim = GetComponent<Animator>();

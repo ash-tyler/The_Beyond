@@ -42,8 +42,6 @@ Shader "Custom/SelectiveTransparency"
 			o.Alpha = output_col.a;
 
 			o.Normal = lerp(UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap)), fixed3(0, 0, 1), -_Intensity + 1);
-
-			//o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
 		}
 	
 		ENDCG

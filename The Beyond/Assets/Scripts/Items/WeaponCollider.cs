@@ -4,35 +4,35 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class WeaponCollider : MonoBehaviour
 {
-    public Transform    anchor;
-
     [HideInInspector]
     public Weapon       weapon;
     [HideInInspector]
     public List<Stats>  enemiesHit = new List<Stats>();
     [HideInInspector]
-    public bool         currentlyAttacking = false;
+    public Equipment    equipment;
 
-
-    //void Update()
-    //{
-    //    if (anchor)
-    //        transform.position = anchor.position;
-    //}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!weapon) return;
+        if (!CanHit(other.gameObject)) return;
 
-        if (currentlyAttacking && (other.tag == "Player" || other.tag == "Enemy"))
+        Stats enemyStats = other.GetComponent<Stats>();
+        if (enemyStats && !enemiesHit.Contains(enemyStats))
         {
-            Stats enemyStats = other.GetComponent<Stats>();
+            Debug.Log("ENEMY HIT!");
 
-            if (enemyStats && !enemiesHit.Contains(enemyStats))
-            {
-                enemyStats.hp.Damage(weapon.damage);
-                enemiesHit.Add(enemyStats);
-            }
+            enemyStats.hp.Damage(weapon.damage);
+            enemiesHit.Add(enemyStats);
         }
+    }
+
+    public void ClearHitList()
+    {
+        enemiesHit.Clear();
+    }
+
+    private bool CanHit(GameObject obj)
+    {
+        return (!weapon || !equipment || !equipment.currentlyAttacking || obj == equipment.gameObject);
     }
 }

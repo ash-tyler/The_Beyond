@@ -11,8 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c77698f86c2274cb2ddbc08f742e1d, type: 3}
   m_Name: Melee
   m_EditorClassIdentifier: 
-  inventoryImage: {fileID: 0}
-  lootModel: {fileID: 0}
+  inventoryImage: {fileID: 2800000, guid: 7b8934816b8c6be4e95fd09b9348fe7a, type: 3}
+  lootModel: {fileID: 100000, guid: 2f5e3d3462b9fba43a427722efd79127, type: 3}
   model: {fileID: 1269272436964530, guid: 6d139bb96f4e1034689b46dd5a5720aa, type: 2}
   defaultValue: 20
   damage: 2
+  rangeType: 1
+  range: 2

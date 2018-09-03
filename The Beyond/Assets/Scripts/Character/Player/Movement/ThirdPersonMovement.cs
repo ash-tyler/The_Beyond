@@ -76,6 +76,7 @@ public class ThirdPersonMovement : MonoBehaviour
         bool crouch = Input.GetButton("Crouch");
         bool jump = Input.GetButtonDown("Jump");
         bool walk = Input.GetButton("Walk");
+        bool attack = Input.GetButtonDown("Attack");
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
@@ -85,9 +86,9 @@ public class ThirdPersonMovement : MonoBehaviour
         moveDir = (addedMovement.normalized * CurrentSpeed) + gravity;
 
 
-        //TEST
-        if (Input.GetMouseButtonDown(0))
-            (_module.model as PlayerModel).SetAnimationState("Punch");
+        ////TEST
+        //if (Input.GetMouseButtonDown(0))
+        //    (_module.model as PlayerModel).SetAnimationState("Punch");
 
 
         //Handle grounded logic
@@ -119,8 +120,17 @@ public class ThirdPersonMovement : MonoBehaviour
                 else if (jump)
                     Jump();
 
-                else if (walk)
-                    State.SetWalking();
+                //else if (walk)
+                //    State.SetWalking();
+
+                else
+                {
+                    if (walk)
+                        State.SetWalking();
+
+                    if (attack)
+                        _module.Attack();
+                }
             }
         }
 

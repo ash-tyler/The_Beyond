@@ -58,6 +58,8 @@ public class AnimationHelper
     /// <summary> Ensures the proper animations line up with player movement. </summary>
     public void HandleAnimator()
     {
+        if (!_animator.gameObject.activeSelf) return;
+
         Vector3 velocity = _moveScript.GetVelocity();
         float speed = (_moveScript.State.IsCrouching) ? maxCrouchSpeed : ((_moveScript.State.IsWalking) ? maxWalkSpeed : maxRunSpeed);
 
@@ -67,20 +69,13 @@ public class AnimationHelper
         if (_moveScript.State.IsJumping)
             _animator.SetFloat("Jump", velocity.y);
 
-        if (_moveScript.IsNearGround && _moveScript.IsMoving)
-        {
-            float runCycle = Mathf.Repeat(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime + runAnimOffset, 1);
-            _animator.SetFloat("JumpLeg", (runCycle < 0.5f) ? 1 : -1);
-        }
-        else
-            _animator.SetFloat("JumpLeg", 0);
-
         _animator.speed = (_moveScript.IsNearGround && velocity.magnitude > 0) ? animationMultiplier : 1;
     }
 
     public bool AnimationComplete()
     {
-        return _animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 1 /*&& !_animator.IsInTransition(1)*/;
+        //return (_animator.GetCurrentAnimatorStateInfo(1).IsName("Punch") && _animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 1 /*&& !_animator.IsInTransition(1)*/ );
+        return _animator.GetCurrentAnimatorStateInfo(1).IsName("Default");
     }
 
     public void SetState(string stateName)
