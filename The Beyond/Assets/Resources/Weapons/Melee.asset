@@ -16,5 +16,4 @@ MonoBehaviour:
   model: {fileID: 1269272436964530, guid: 6d139bb96f4e1034689b46dd5a5720aa, type: 2}
   defaultValue: 20
   damage: 2
-  rangeType: 1
-  range: 2
+  ComboList: 0000000001000000

@@ -13,6 +13,8 @@ public class PlayerModule : CharacterModule
 
     [HideInInspector] public bool firstPerson;
 
+    public AttackTracker attackTracker = new AttackTracker();
+
 
     void Start()
     {
@@ -30,7 +32,11 @@ public class PlayerModule : CharacterModule
         playerMovement = GetComponent<ThirdPersonMovement>();
 
 
+        attackTracker.model = model as PlayerModel;
+        attackTracker.Setup();
+
         playerCamera.playerSource = this;
+        equipment.module = this;
         equipment.EquipMelee(model.leftHand, model.rightHand);
         (model as PlayerModel).SetupAnimationHelper(playerMovement);
         playerFocus = model.head;
@@ -69,6 +75,11 @@ public class PlayerModule : CharacterModule
         equipment.ReEquipWeapon(model.leftHand, model.rightHand);
     }
 
+    public void SetAnimatorAttackIndex(int index)
+    {
+        (model as PlayerModel).SetAttackIndex(index);
+    }
+
     public Quaternion GetMovementQuaternion()
     {
         return Quaternion.Euler(0, playerCamera.GetRigYRotation(), 0);
@@ -95,19 +106,20 @@ public class PlayerModule : CharacterModule
 
     public void Attack()
     {
-        StartCoroutine("DoAttack");
+        attackTracker.ClickEvent();
+        //StartCoroutine("DoAttack");
     }
 
-    IEnumerator DoAttack()
-    {
-        equipment.currentlyAttacking = true;
-        (model as PlayerModel).SetAnimationState("Punch");
+    //IEnumerator DoAttack()
+    //{
+    //    equipment.currentlyAttacking = true;
+    //    (model as PlayerModel).SetAnimationState("Punch");
 
-        yield return new WaitForSeconds(0.1f);
+    //    yield return new WaitForSeconds(0.1f);
 
-        while (!(model as PlayerModel).AttackIsComplete())
-            yield return new WaitForSeconds(0.1f);
+    //    while (!(model as PlayerModel).AttackIsComplete())
+    //        yield return new WaitForSeconds(0.1f);
 
-        equipment.currentlyAttacking = false;
-    }
+    //    equipment.currentlyAttacking = false;
+    //}
 }

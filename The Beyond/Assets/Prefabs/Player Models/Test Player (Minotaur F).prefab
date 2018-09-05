@@ -685,10 +685,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4877308713377110}
   - component: {fileID: 114716590672955820}
+  - component: {fileID: 114580195705948494}
   - component: {fileID: 95201805063719602}
   m_Layer: 10
   m_Name: Minotaur
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2917,6 +2918,18 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &114580195705948494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442003418215612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf72709de5be0a4f92e44c51175535b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  module: {fileID: 0}
 --- !u!114 &114716590672955820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2940,6 +2953,7 @@ MonoBehaviour:
     maxCrouchSpeed: 1
     animationMultiplier: 1
     runAnimOffset: 0.2
+  animEventManager: {fileID: 0}
 --- !u!114 &114750160954275420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2955,6 +2969,8 @@ MonoBehaviour:
   _rightHand: {fileID: 0}
   weaponInfo: {fileID: 11400000, guid: 745f9b89f9ddb4d4aaefa802ab464ae9, type: 2}
   weaponIsEquiped: 0
+  currentlyAttacking: 0
+  module: {fileID: 0}
 --- !u!114 &114786553423459486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2973,6 +2989,10 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   playerFocus: {fileID: 0}
   firstPerson: 0
+  attackTracker:
+    waitTime: 0.2
+    ComboList: 
+    model: {fileID: 0}
 --- !u!137 &137786181093436422
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

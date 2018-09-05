@@ -14,6 +14,9 @@ public class Equipment : MonoBehaviour
     [HideInInspector]
     public bool currentlyAttacking = false;
 
+    [HideInInspector]
+    public PlayerModule module;
+
     private GameObject EquipMeleeHand(Transform handTransform)
     {
         GameObject hand = weaponInfo.GetEquipedInstance(handTransform, this);
@@ -40,6 +43,7 @@ public class Equipment : MonoBehaviour
             Debug.Log("Equip Melee FAILED", this);
 
         weaponIsEquiped = false;
+        module.attackTracker.ComboList = weaponInfo.ComboList;
     }
 
     public void EquipOneHanded()
@@ -115,17 +119,17 @@ public class Equipment : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos()
-    {
-        if (weaponInfo)
-        {
-            UnityEditor.Handles.color = Color.cyan;
-            if (weaponInfo.rangeType == Weapon.AttackRange.CIRCLE)
-                UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.up, weaponInfo.range);
-            else
-            {
-                UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, transform.right, 40, weaponInfo.range);
-            }
-        }
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    if (weaponInfo)
+    //    {
+    //        UnityEditor.Handles.color = Color.cyan;
+    //        if (weaponInfo.rangeType == Weapon.AttackRange.CIRCLE)
+    //            UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.up, weaponInfo.range);
+    //        else
+    //        {
+    //            UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, transform.right, 40, weaponInfo.range);
+    //        }
+    //    }
+    //}
 }

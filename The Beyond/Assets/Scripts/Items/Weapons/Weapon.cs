@@ -1,9 +1,27 @@
 ﻿using System.Collections.Generic;
+using TheBeyond.Enums;
 using UnityEngine;
+
+
+namespace TheBeyond.Enums
+{
+    public enum WeaponAnimation
+    {
+        PunchLeft = 0,
+        PunchRight
+    }
+}
+
 
 public class Weapon : Item
 {
     public int damage;
+
+    [Space]
+    public List<WeaponAnimation> ComboList;
+    public int LastComboIndex { get { return ComboList.Count - 1; } }
+
+
 
     public override GameObject GetInstance()
     {
@@ -105,13 +123,13 @@ public class Weapon : Item
     //    }
     //}
 
-    public enum AttackRange
-    {
-        CIRCLE = 0,
-        FRONT,
-        BACK
-    }
+    //public enum AttackRange
+    //{
+    //    CIRCLE = 0,
+    //    FRONT,
+    //    BACK
+    //}
 
-    public AttackRange rangeType;
-    public float range;
+    //public AttackRange rangeType;
+    //public float range;
 }
