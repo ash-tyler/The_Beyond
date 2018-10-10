@@ -40,6 +40,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public LayerMask collisionLayers = -1;
 
     public bool IsMoving { get; private set; }
+    public bool InCombat { get; private set; }
     public bool IsNearGround { get; private set; }
     public ActionState State { get; private set; }
 
@@ -73,12 +74,14 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         //Detect Input
         IsNearGround = Physics.Raycast(transform.TransformPoint(playerCenter) - new Vector3(0, 0.2f, 0), Vector3.down, playerHeight, collisionLayers);
+        bool combatPressed = Input.GetButtonDown("ReadyCombat");
         bool crouch = Input.GetButton("Crouch");
         bool jump = Input.GetButtonDown("Jump");
         bool walk = Input.GetButton("Walk");
         bool attack = Input.GetButtonDown("Attack");
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+
 
         //Add gravity and player movement to moveDir
         Vector3 gravity = new Vector3(0, moveDir.y, 0) + CurrentGravity;
@@ -128,8 +131,24 @@ public class ThirdPersonMovement : MonoBehaviour
                     if (walk)
                         State.SetWalking();
 
+                    if (combatPressed)
+                    {
+                        if (!InCombat)
+                            _module.EnterCombat();
+
+                        else
+                            _module.ExitCombat();
+
+                        InCombat = !InCombat;
+                    }
+
                     if (attack)
-                        _module.Attack();
+                    {
+                        if (!InCombat)
+                            _module.EnterCombat();
+
+                       _module.TriggerAttack();
+                    }
                 }
             }
         }

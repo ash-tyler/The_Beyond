@@ -72,16 +72,26 @@ public class AnimationHelper
         _animator.speed = (_moveScript.IsNearGround && velocity.magnitude > 0) ? animationMultiplier : 1;
     }
 
-    public void SetAttackIndex(int index)
+    public void SetInCombat(bool value)
     {
-        _animator.SetInteger("AttackIndex", index);
+        _animator.SetBool("InCombat", value);
     }
 
-    public bool AnimationComplete()
+    public void TriggerAttack()
     {
-        //return (_animator.GetCurrentAnimatorStateInfo(1).IsName("Punch") && _animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 1 /*&& !_animator.IsInTransition(1)*/ );
-        return _animator.GetCurrentAnimatorStateInfo(1).IsName("Default");
+        _animator.SetTrigger("AttackTrigger");
     }
+
+    //public void SetAttackIndex(int index)
+    //{
+    //    _animator.SetInteger("AttackIndex", index);
+    //}
+
+    //public bool AnimationComplete()
+    //{
+    //    //return (_animator.GetCurrentAnimatorStateInfo(1).IsName("Punch") && _animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 1 /*&& !_animator.IsInTransition(1)*/ );
+    //    return _animator.GetCurrentAnimatorStateInfo(1).IsName("Default");
+    //}
 
     //public void SetState(string stateName)
     //{

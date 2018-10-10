@@ -8,6 +8,7 @@ public class HitpointsSystem
 
 	public void Damage(int damage)
     {
+        Debug.Log("Ouch! We took " + damage + " damage!");
         _hitpoints = Mathf.Max(_hitpoints - damage, 0);
     }
 

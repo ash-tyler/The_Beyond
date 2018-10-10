@@ -33,7 +33,7 @@ public class Weapon : Item
         return SetGenericObject(Instantiate(model, parent.position, parent.rotation, parent));
     }
 
-    public GameObject GetEquipedInstance(Transform parent, Equipment user)
+    public GameObject GetEquipedInstance(Transform parent, GameObject user)
     {
         return SetEquipedObject(Instantiate(model, parent.position, parent.rotation, parent), user);
     }
@@ -55,7 +55,7 @@ public class Weapon : Item
         return weaponObj;
     }
 
-    private GameObject SetEquipedObject(GameObject weaponObj, Equipment user)
+    private GameObject SetEquipedObject(GameObject weaponObj, GameObject user)
     {
         WeaponCollider weaponCollider = weaponObj.GetComponent<WeaponCollider>();
         if (!weaponCollider)
@@ -63,7 +63,8 @@ public class Weapon : Item
 
         weaponObj.layer = LayerMask.NameToLayer("Weapon");
         weaponCollider.weapon = this as Weapon;
-        weaponCollider.equipment = user;
+        weaponCollider.user = user.gameObject;
+
         return weaponObj;
     }
 

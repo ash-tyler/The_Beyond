@@ -7,20 +7,24 @@ public class PlayerModule : CharacterModule
 {
     //public GameObject cameraRig;
 
-    [HideInInspector] public ThirdPersonMovement playerMovement;
     public ThirdPersonCam playerCamera;
     [HideInInspector] public Transform playerFocus;
 
+    [HideInInspector] public ThirdPersonMovement playerMovement;
+
+    [HideInInspector] public PlayerModel pModel;
     [HideInInspector] public bool firstPerson;
 
-    public AttackTracker attackTracker = new AttackTracker();
+    //public AttackTracker attackTracker = new AttackTracker();
 
 
     void Start()
     {
         model = GetComponentInChildren<PlayerModel>();
+        model.module = this;
+        pModel = (model as PlayerModel);
 
-        if (!playerCamera || !model)
+        if (!playerCamera || !pModel)
         {
             gameObject.SetActive(false);
             return;
@@ -32,13 +36,13 @@ public class PlayerModule : CharacterModule
         playerMovement = GetComponent<ThirdPersonMovement>();
 
 
-        attackTracker.model = model as PlayerModel;
-        attackTracker.Setup();
+        //attackTracker.model = model as PlayerModel;
+        //attackTracker.Setup();
 
         playerCamera.playerSource = this;
         equipment.module = this;
         equipment.EquipMelee(model.leftHand, model.rightHand);
-        (model as PlayerModel).SetupAnimationHelper(playerMovement);
+        pModel.SetupAnimationHelper(playerMovement);
         playerFocus = model.head;
     }
 
@@ -69,16 +73,18 @@ public class PlayerModule : CharacterModule
 
         model = null;
         model = Instantiate(newPlayerModel, transform.position, rot, transform);
+        model.module = this;
+        pModel = (model as PlayerModel);
 
-        (model as PlayerModel).SetupAnimationHelper(playerMovement);
+        pModel.SetupAnimationHelper(playerMovement);
 
-        equipment.ReEquipWeapon(model.leftHand, model.rightHand);
+        equipment.ReEquipWeapon(pModel.leftHand, pModel.rightHand);
     }
 
-    public void SetAnimatorAttackIndex(int index)
-    {
-        (model as PlayerModel).SetAttackIndex(index);
-    }
+    //public void SetAnimatorAttackIndex(int index)
+    //{
+    //    pModel.SetAttackIndex(index);
+    //}
 
     public Quaternion GetMovementQuaternion()
     {
@@ -87,7 +93,7 @@ public class PlayerModule : CharacterModule
 
     public void RotateModel(Vector3 lookRotation, float turnSpeed)
     {
-        model.RotateModel(Quaternion.LookRotation(lookRotation), turnSpeed);
+        pModel.RotateModel(Quaternion.LookRotation(lookRotation), turnSpeed);
     }
 
     public void SwitchToFirstPerson()
@@ -104,10 +110,23 @@ public class PlayerModule : CharacterModule
         playerCamera.SetFirstPersonMode(firstPerson);
     }
 
-    public void Attack()
+    public void EnterCombat()
     {
-        attackTracker.ClickEvent();
+        pModel.SetInCombat(true);
+        equipment.currentlyAttacking = true;
+
+        //attackTracker.ClickEvent();
         //StartCoroutine("DoAttack");
+    }
+
+    public void ExitCombat()
+    {
+        pModel.SetInCombat(false);
+    }
+
+    public void TriggerAttack()
+    {
+        pModel.TriggerAttack();
     }
 
     //IEnumerator DoAttack()

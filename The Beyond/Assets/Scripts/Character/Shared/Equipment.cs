@@ -17,17 +17,19 @@ public class Equipment : MonoBehaviour
     [HideInInspector]
     public PlayerModule module;
 
+    //[HideInInspector]
+    List<WeaponCollider> weaponColliders = new List<WeaponCollider>();
+
     private GameObject EquipMeleeHand(Transform handTransform)
     {
-        GameObject hand = weaponInfo.GetEquipedInstance(handTransform, this);
+        GameObject hand = weaponInfo.GetEquipedInstance(handTransform, gameObject);
         if (!hand)
             return null;
 
         hand.transform.parent = handTransform;
-        
 
         WeaponCollider wepCol = hand.GetComponent<WeaponCollider>();
-        wepCol.equipment = this;
+        weaponColliders.Add(wepCol);
 
         return hand;
     }
@@ -43,7 +45,7 @@ public class Equipment : MonoBehaviour
             Debug.Log("Equip Melee FAILED", this);
 
         weaponIsEquiped = false;
-        module.attackTracker.ComboList = weaponInfo.ComboList;
+        //module.attackTracker.ComboList = weaponInfo.ComboList;
     }
 
     public void EquipOneHanded()
@@ -96,6 +98,8 @@ public class Equipment : MonoBehaviour
 
     private void EmptyHands()
     {
+        weaponColliders.Clear();
+
         if (_leftHand)
             DestroyObject(_leftHand);
         if (_rightHand)
@@ -117,6 +121,23 @@ public class Equipment : MonoBehaviour
     public void ClearHitList()
     {
 
+    }
+
+    public void EnableColliders()
+    { 
+        foreach(WeaponCollider wc in weaponColliders)
+        {
+            wc.enabled = true;
+        }
+    }
+
+    public void DisableColliders()
+    {
+        foreach (WeaponCollider wc in weaponColliders)
+        {
+            wc.enabled = false;
+            wc.enemiesHit.Clear();
+        }
     }
 
     //private void OnDrawGizmos()

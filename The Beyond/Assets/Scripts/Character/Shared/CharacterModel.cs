@@ -8,6 +8,12 @@ public class CharacterModel : MonoBehaviour
     public Transform head;
     public Transform crouchHead;
 
+    [HideInInspector]
+    public CharacterModule module;
+
+    //[HideInInspector]
+    //public bool canDamage = false;
+
 
     public static bool SuitableCharacterModel(GameObject model)
     {
@@ -17,5 +23,15 @@ public class CharacterModel : MonoBehaviour
     public void RotateModel(Quaternion lookRot, float turnSpeed)
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, turnSpeed * Time.deltaTime);
+    }
+
+    public void EnableColliders()
+    {
+        module.equipment.EnableColliders();
+    }
+
+    public void DisableColliders()
+    {
+        module.equipment.DisableColliders();
     }
 }

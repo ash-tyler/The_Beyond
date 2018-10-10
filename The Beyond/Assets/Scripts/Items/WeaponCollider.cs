@@ -5,11 +5,11 @@ using UnityEngine;
 public class WeaponCollider : MonoBehaviour
 {
     [HideInInspector]
-    public Weapon       weapon;
+    public Weapon           weapon;
     [HideInInspector]
-    public List<Stats>  enemiesHit = new List<Stats>();
+    public List<Stats>      enemiesHit = new List<Stats>();
     [HideInInspector]
-    public Equipment    equipment;
+    public GameObject       user;
 
 
     private void OnTriggerEnter(Collider other)
@@ -19,20 +19,13 @@ public class WeaponCollider : MonoBehaviour
         Stats enemyStats = other.GetComponent<Stats>();
         if (enemyStats && !enemiesHit.Contains(enemyStats))
         {
-            Debug.Log("ENEMY HIT!");
-
             enemyStats.hp.Damage(weapon.damage);
             enemiesHit.Add(enemyStats);
         }
     }
 
-    public void ClearHitList()
-    {
-        enemiesHit.Clear();
-    }
-
     private bool CanHit(GameObject obj)
     {
-        return (!weapon || !equipment || !equipment.currentlyAttacking || obj == equipment.gameObject);
+        return (weapon && obj != user);
     }
 }
