@@ -2,7 +2,7 @@
 
 public class Item : ScriptableObject
 {
-    public Texture2D    inventoryImage;
+    public Sprite       inventoryImage;
     public GameObject   lootModel;
     public GameObject   model;
     public int          defaultValue = 0;
