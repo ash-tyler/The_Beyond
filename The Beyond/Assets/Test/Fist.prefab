@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4661207118335616}
   - component: {fileID: 65320087299294918}
-  - component: {fileID: 114835346566804356}
   m_Layer: 0
   m_Name: Fist
   m_TagString: Untagged
@@ -53,18 +52,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114835346566804356
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269272436964530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c6e249a8fc6a44c970176b46e560a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anchor: {fileID: 0}
-  weapon: {fileID: 0}
-  enemiesHit: []
-  currentlyAttacking: 0

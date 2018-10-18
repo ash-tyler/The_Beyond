@@ -1,41 +1,23 @@
-﻿using System.Collections.Generic;
-using TheBeyond.Enums;
-using UnityEngine;
-
-
-namespace TheBeyond.Enums
-{
-    public enum WeaponAnimation
-    {
-        PunchLeft = 0,
-        PunchRight
-    }
-}
+﻿using UnityEngine;
 
 
 public class Weapon : Item
 {
-    public int damage;
-
+    public float damage;
     [Space]
-    public List<WeaponAnimation> ComboList;
-    public int LastComboIndex { get { return ComboList.Count - 1; } }
 
+    public float damageRadius;
+    public float angle = 45;
 
 
     public override GameObject GetInstance()
     {
-        return SetGenericObject(Instantiate(model));
+        return Instantiate(model);
     }
 
     public override GameObject GetInstance(Transform parent)
     {
-        return SetGenericObject(Instantiate(model, parent.position, parent.rotation, parent));
-    }
-
-    public GameObject GetEquipedInstance(Transform parent, GameObject user)
-    {
-        return SetEquipedObject(Instantiate(model, parent.position, parent.rotation, parent), user);
+        return Instantiate(model, parent.position, parent.rotation, parent);
     }
 
     public GameObject GetLootInstance(Transform parent)
@@ -44,93 +26,4 @@ public class Weapon : Item
         weaponObj.layer = LayerMask.NameToLayer("Loot");
         return weaponObj;
     }
-
-    private GameObject SetGenericObject(GameObject weaponObj)
-    {
-        WeaponCollider weaponCollider = weaponObj.GetComponent<WeaponCollider>();
-        if (!weaponCollider)
-            return null;
-
-        weaponCollider.weapon = this as Weapon;
-        return weaponObj;
-    }
-
-    private GameObject SetEquipedObject(GameObject weaponObj, GameObject user)
-    {
-        WeaponCollider weaponCollider = weaponObj.GetComponent<WeaponCollider>();
-        if (!weaponCollider)
-            return null;
-
-        weaponObj.layer = LayerMask.NameToLayer("Weapon");
-        weaponCollider.weapon = this as Weapon;
-        weaponCollider.user = user.gameObject;
-
-        return weaponObj;
-    }
-
-    //public AttackType weaponType;
-    //private List<WeaponCollider> colliders = new List<WeaponCollider>();
-
-    //private void Awake()
-    //{
-    //    if (model)
-    //    {
-    //        WeaponCollider[] modelColliders = model.GetComponents<WeaponCollider>();
-
-    //        if (modelColliders.Length > 0)
-    //            colliders.AddRange(modelColliders);
-    //    }
-    //}
-
-    //public override void MakeInstance()
-    //{
-
-    //}
-
-    //public void StartAttack()
-    //{
-    //    if (colliders.Count == 0) return;
-
-    //    for (int i = 0; i < colliders.Count; i++)
-    //    {
-    //        colliders[i].currentlyAttacking = true;
-    //        colliders[i].collider.
-    //    }
-    //}
-
-    //public void EndAttack()
-    //{
-    //    if (colliders.Count == 0) return;
-
-    //    for (int i = 0; i < colliders.Count; i++)
-    //    {
-    //        colliders[i].currentlyAttacking = false;
-    //        colliders[i].enemiesHit.Clear();
-    //    }
-    //}
-
-    //void OnTriggerEnter(Collider colidedObj)
-    //{
-    //    switch (weaponType)
-    //    {
-    //        case AttackType.MELEE:
-    //            break;
-    //        case AttackType.ONE_HANDED:
-    //            break;
-    //        case AttackType.TWO_HANDED:
-    //            break;
-    //        case AttackType.RANGED:
-    //            break;
-    //    }
-    //}
-
-    //public enum AttackRange
-    //{
-    //    CIRCLE = 0,
-    //    FRONT,
-    //    BACK
-    //}
-
-    //public AttackRange rangeType;
-    //public float range;
 }

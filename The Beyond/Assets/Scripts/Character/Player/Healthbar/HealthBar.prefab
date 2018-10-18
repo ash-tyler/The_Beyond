@@ -161,11 +161,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec75bf635e06d9c4cbe7506eccd3e867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
-  image: {fileID: 114126992049421898}
+  healthStat: {fileID: 0}
+  healthBar: {fileID: 114126992049421898}
   manaBar: {fileID: 0}
   nameText: {fileID: 114246532802551264}
   screenPos: {x: 0, y: 0, z: 0}
+  playerBar: 0
 --- !u!222 &222314291533190260
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -3,22 +3,47 @@
 [System.Serializable]
 public class HitpointsSystem
 {
-    public int _hitpoints;
-    public int maximumHitpoints;
+    public float Hitpoints { get { return points; } private set { points = value; } }
+    public float MaximumHitpoints { get { return maxPoints; } private set { maxPoints = value; } }
+    [SerializeField]
+    private float points;
+    [SerializeField]
+    private float maxPoints;
 
-	public void Damage(int damage)
+    [HideInInspector]
+    public string characterName;
+    [HideInInspector]
+    public string barName;
+
+    public void Setup(float startHealth, float maxHealth, string enteredName, string barTypeName)
     {
-        Debug.Log("Ouch! We took " + damage + " damage!");
-        _hitpoints = Mathf.Max(_hitpoints - damage, 0);
+        MaximumHitpoints = maxHealth;
+        Hitpoints = Mathf.Clamp(startHealth, 0, MaximumHitpoints);
+        characterName = enteredName;
+        barName = barTypeName;
     }
 
-    public void Restore(int restoration)
+    public void Damage(float damage)
     {
-        _hitpoints = Mathf.Min(_hitpoints + restoration, maximumHitpoints);
+        Debug.Log(GetName() + " took " + damage + " " + barName + " damage!");
+        Hitpoints = Mathf.Max(Hitpoints - damage, 0);
+    }
+
+    public void Restore(float restoration)
+    {
+        Hitpoints = Mathf.Min(Hitpoints + restoration, MaximumHitpoints);
     }
 
     public void SetToMaximum()
     {
-        _hitpoints = maximumHitpoints;
+        Hitpoints = MaximumHitpoints;
+    }
+
+    private string GetName()
+    {
+        if (characterName.Length > 0)
+            return characterName;
+
+        return "Unnamed Object";
     }
 }

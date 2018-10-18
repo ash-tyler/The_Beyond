@@ -13,6 +13,8 @@ public class PlayerModule : CharacterModule
     [HideInInspector] public ThirdPersonMovement playerMovement;
 
     [HideInInspector] public PlayerModel pModel;
+    [HideInInspector] public WeaponUser weaponUser;
+
     [HideInInspector] public bool firstPerson;
 
     //public AttackTracker attackTracker = new AttackTracker();
@@ -44,6 +46,9 @@ public class PlayerModule : CharacterModule
         equipment.EquipMelee(model.leftHand, model.rightHand);
         pModel.SetupAnimationHelper(playerMovement);
         playerFocus = model.head;
+
+        weaponUser = pModel.GetComponent<WeaponUser>();
+        weaponUser.equipment = equipment;
     }
 
 
@@ -79,6 +84,7 @@ public class PlayerModule : CharacterModule
         pModel.SetupAnimationHelper(playerMovement);
 
         equipment.ReEquipWeapon(pModel.leftHand, pModel.rightHand);
+        weaponUser.equipment = equipment;
     }
 
     //public void SetAnimatorAttackIndex(int index)
@@ -114,9 +120,6 @@ public class PlayerModule : CharacterModule
     {
         pModel.SetInCombat(true);
         equipment.currentlyAttacking = true;
-
-        //attackTracker.ClickEvent();
-        //StartCoroutine("DoAttack");
     }
 
     public void ExitCombat()

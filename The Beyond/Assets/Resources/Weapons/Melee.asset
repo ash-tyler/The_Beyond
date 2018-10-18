@@ -15,5 +15,6 @@ MonoBehaviour:
   lootModel: {fileID: 100000, guid: 2f5e3d3462b9fba43a427722efd79127, type: 3}
   model: {fileID: 1269272436964530, guid: 6d139bb96f4e1034689b46dd5a5720aa, type: 2}
   defaultValue: 20
-  damage: 2
-  ComboList: 0000000001000000
+  damage: 10
+  damageRadius: 2
+  angle: 180

@@ -3,42 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour {
-
-    public Health health;
+public class HealthBar : MonoBehaviour
+{
+    public Stats healthStat;
 
     // this is the image we'll grow and shrink as the character's health changes
-    public Image image;
+    public Image healthBar;
     public Image manaBar;
 
     public Text nameText;
 
     public Vector3 screenPos;
 
-    Rect initialRect;
+    public bool playerBar = false;
+
 	
-	// Update is called once per frame
+    // Update is called once per frame
 	void Update ()
     {
-        if (health == null)
+        if (healthStat == null)
             return;
 
         // set the character's name
         if (nameText)
-            nameText.text = health.name;
+            nameText.text = healthStat.characterName;
 
-        // position the health bar 2m above the character's root (between their feet)
-        // improve this by having a height field in Health for large or small characters
-        transform.position = health.transform.position + Vector3.up * 2.2f;
+        if (!playerBar)
+        {
+         // position the health bar 2m above the character's root (between their feet)
+         // improve this by having a height field in Health for large or small characters
+            transform.position = healthStat.transform.position + Vector3.up * 2.2f;
 
-        // billboard the UI element towards the camera every frame
-        transform.forward = Camera.main.transform.forward;
+            // billboard the UI element towards the camera every frame
+            transform.forward = Camera.main.transform.forward;
+        }
 
         // scale the meter
-        float pct = Mathf.Clamp01(health.health / health.maxHealth);
-        image.fillAmount = pct;
+        if (healthBar)
+        {
+            float pctHealth = Mathf.Clamp01(healthStat.hp.Hitpoints / healthStat.hp.MaximumHitpoints);
+            healthBar.fillAmount = pctHealth;
+        }
+
+        if (manaBar)
+        {
+            float pctMana = Mathf.Clamp01(healthStat.mana.Hitpoints / healthStat.mana.MaximumHitpoints);
+            manaBar.fillAmount = pctMana;
+        }
 
         // store the position in screen space of the health bar for sorting purposes
-        screenPos = Camera.main.WorldToScreenPoint(health.transform.position);
+        screenPos = Camera.main.WorldToScreenPoint(healthStat.transform.position);
     }
 }

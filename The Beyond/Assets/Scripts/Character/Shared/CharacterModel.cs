@@ -24,14 +24,4 @@ public class CharacterModel : MonoBehaviour
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, turnSpeed * Time.deltaTime);
     }
-
-    public void EnableColliders()
-    {
-        module.equipment.EnableColliders();
-    }
-
-    public void DisableColliders()
-    {
-        module.equipment.DisableColliders();
-    }
 }

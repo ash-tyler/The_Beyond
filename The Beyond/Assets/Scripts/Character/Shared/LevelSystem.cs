@@ -10,9 +10,22 @@ public class LevelSystem
     #endregion
 
     #region Private Variables
+    [SerializeField]
     private int currentEXP = 0;
     private int level = 0;
     #endregion
+
+
+    public void Setup(int newLevel, int newBuff)
+    {
+        SetNewLevel(newLevel);
+        buff = newBuff;
+    }
+
+    public string GetLevelText()
+    {
+        return level.ToString();
+    }
 
     public void SetNewLevel(int newLevel)
     {
@@ -49,6 +62,11 @@ public class LevelSystem
 
         else
            return 1 - (buff / 100);
+    }
+
+    public float GetEXPPercent()
+    {
+        return (float)(currentEXP - _settings.GetExperienceByLevel(level)) /  (float)(_settings.GetExperienceByLevel(level + 1) - _settings.GetExperienceByLevel(level));
     }
 
     //Needs to be tested

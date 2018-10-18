@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class Equipment : MonoBehaviour
@@ -17,19 +15,14 @@ public class Equipment : MonoBehaviour
     [HideInInspector]
     public PlayerModule module;
 
-    //[HideInInspector]
-    List<WeaponCollider> weaponColliders = new List<WeaponCollider>();
 
     private GameObject EquipMeleeHand(Transform handTransform)
     {
-        GameObject hand = weaponInfo.GetEquipedInstance(handTransform, gameObject);
+        GameObject hand = weaponInfo.GetInstance(handTransform);
         if (!hand)
             return null;
 
         hand.transform.parent = handTransform;
-
-        WeaponCollider wepCol = hand.GetComponent<WeaponCollider>();
-        weaponColliders.Add(wepCol);
 
         return hand;
     }
@@ -45,7 +38,6 @@ public class Equipment : MonoBehaviour
             Debug.Log("Equip Melee FAILED", this);
 
         weaponIsEquiped = false;
-        //module.attackTracker.ComboList = weaponInfo.ComboList;
     }
 
     public void EquipOneHanded()
@@ -98,8 +90,6 @@ public class Equipment : MonoBehaviour
 
     private void EmptyHands()
     {
-        weaponColliders.Clear();
-
         if (_leftHand)
             DestroyObject(_leftHand);
         if (_rightHand)
@@ -118,39 +108,15 @@ public class Equipment : MonoBehaviour
             DestroyObject(_rightHand);
     }
 
-    public void ClearHitList()
+
+    private void OnDrawGizmos()
     {
-
-    }
-
-    public void EnableColliders()
-    { 
-        foreach(WeaponCollider wc in weaponColliders)
+        if (weaponInfo && module)
         {
-            wc.enabled = true;
+            Vector3 from = -module.model.transform.right;
+
+            UnityEditor.Handles.color = Color.cyan;
+            UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, from, weaponInfo.angle, weaponInfo.damageRadius);
         }
     }
-
-    public void DisableColliders()
-    {
-        foreach (WeaponCollider wc in weaponColliders)
-        {
-            wc.enabled = false;
-            wc.enemiesHit.Clear();
-        }
-    }
-
-    //private void OnDrawGizmos()
-    //{
-    //    if (weaponInfo)
-    //    {
-    //        UnityEditor.Handles.color = Color.cyan;
-    //        if (weaponInfo.rangeType == Weapon.AttackRange.CIRCLE)
-    //            UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.up, weaponInfo.range);
-    //        else
-    //        {
-    //            UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, transform.right, 40, weaponInfo.range);
-    //        }
-    //    }
-    //}
 }

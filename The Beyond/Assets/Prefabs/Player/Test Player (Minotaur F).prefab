@@ -2888,9 +2888,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc803baa24a838d469a07022ba41261f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: Player
   hp:
-    _hitpoints: 100
-    maximumHitpoints: 100
+    points: 100
+    maxPoints: 100
+    characterName: 
+    barName: 
+  mana:
+    points: 50
+    maxPoints: 50
+    characterName: 
+    barName: 
   level:
     _settings: {fileID: 0}
     buff: 0
@@ -2932,6 +2940,7 @@ MonoBehaviour:
   rightHand: {fileID: 4648639725460538}
   head: {fileID: 4665662106692412}
   crouchHead: {fileID: 4182201861577676}
+  module: {fileID: 0}
   animHelper:
     controller: {fileID: 9100000, guid: 8438ea470c2406647a6ac46bca3570ec, type: 2}
     avatar: {fileID: 9000000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}

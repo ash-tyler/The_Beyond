@@ -7,27 +7,20 @@ public class ComboNext : StateMachineBehaviour
     public bool lastInCombo = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        animator.GetComponent<CharacterModel>().EnableColliders();
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
 
-        // TODO
-        // PASS NAME OF COLLIDER THROUGH
-
-        //TODO
-        //MAKE HIT BASED ON ANIMATION EVENT INSTEAD
-    }
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) 
+    //{
     //
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<CharacterModel>().DisableColliders();
-
         if (!lastInCombo)
             animator.SetInteger("AttackIndex", animator.GetInteger("AttackIndex") + 1);
         else

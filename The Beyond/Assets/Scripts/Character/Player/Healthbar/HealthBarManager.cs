@@ -34,13 +34,13 @@ public class HealthBarManager : MonoBehaviour {
             hb.transform.SetAsFirstSibling();
     }
 
-    public void AddHealthBar(Health health)
+    public void AddHealthBar(Stats stat)
     {
         // make a copy of our helath bar prefab and attach it to the character
         GameObject go = Instantiate(prefab);
-        go.transform.parent = transform;
+        go.transform.SetParent(transform);
         HealthBar hb = go.GetComponent<HealthBar>();
-        hb.health = health;
+        hb.healthStat = stat;
 
         // add to our global list for sorting. 
         // For a dynamic game, you'll need to be able to remove from this list too when a character dies or disappears
