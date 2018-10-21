@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelChart: f4010000e8030000d0070000a00f0000401f0000803e0000007d000000fa000000f40100f0c00300
   soundSource: {fileID: 0}
-  levelUpSound: {fileID: 0}
+  levelUpSound: {fileID: 8300000, guid: 4e44e54a7843332488751c1d44253487, type: 3}
   levelUpImage: {fileID: 0}
   imageAndSoundDelay: 0
   fadeAmount: 0.1

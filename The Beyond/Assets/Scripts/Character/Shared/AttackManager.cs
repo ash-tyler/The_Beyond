@@ -1,15 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class WeaponUser : MonoBehaviour
+public class AttackManager : MonoBehaviour
 {
     public Equipment equipment;
 
 
+    public void Start()
+    {
+        equipment = GetComponent<CharacterModel>().character.equipment;
+    }
+
     public void WeaponHit()
     {
-        Transform user = equipment.module.model.transform;
+        Transform user = transform;
 
         Collider[] targetsInRadius = Physics.OverlapSphere(user.position, equipment.weaponInfo.damageRadius, ~LayerMask.NameToLayer("NPC"));
 
@@ -40,7 +43,7 @@ public class WeaponUser : MonoBehaviour
 
             float distance = Vector3.Distance(user.position, enemy.transform.position);
             if (!Physics.Raycast(user.position, direction, distance, LayerMask.NameToLayer("Scenery")))
-                enemyStats.hp.Damage(equipment.weaponInfo.damage);
+                enemyStats.hp.Damage(equipment.weaponInfo.damage, equipment.character);
         }
     }
 }

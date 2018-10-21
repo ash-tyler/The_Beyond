@@ -2,7 +2,7 @@
 
 public class TestSwitch : MonoBehaviour
 {
-    public PlayerModule     player;
+    public Player           player;
     public PlayerModel      playerModelOne;
     public PlayerModel      playerModelTwo;
 

@@ -43,14 +43,13 @@ public class ThirdPersonCam : MonoBehaviour
     public bool invertPitch;
     public bool invertYaw;
 
-    [HideInInspector]
-    public PlayerModule playerSource;
+    [HideInInspector] public Player player;
 
     public Transform Rig { get { return transform.parent; } }
     #endregion
 
     #region Private Variables
-    private Camera      _camera;
+    //private Camera      _camera;
     private float       zoom;
 
     private static float firstPersonZoom = -0.02f;
@@ -61,16 +60,18 @@ public class ThirdPersonCam : MonoBehaviour
 
 
     #region Start & Update Functions
-    void Start()
+    public void Setup(Player newPlayer)
     {
+        player = newPlayer;
+
         if (!Rig)
         {
             Debug.LogError("ERROR: Camera has no parent object. Please ensure this object is the child of an empty object!", this);
             return;
         }
 
-        Rig.position = playerSource.playerFocus.position;
-        _camera = GetComponent<Camera>();
+        Rig.position = player.cameraFocus.position;
+        //_camera = GetComponent<Camera>();
 
         zoom = -zoomClamp.center;
         transform.localPosition = GetZoomVector(zoom);
@@ -78,8 +79,8 @@ public class ThirdPersonCam : MonoBehaviour
 
     void LateUpdate()
     {
-        Rig.position = playerSource.playerFocus.position;
-        if (Input.GetButton("CameraSelect") || Input.GetJoystickNames().Length > 0 || playerSource.firstPerson)
+        Rig.position = player.cameraFocus.position;
+        if (Input.GetButton("CameraSelect") || Input.GetJoystickNames().Length > 0 || player.firstPerson)
             Rig.Rotate(Xrotation * mouseSensitivity, Yrotation * mouseSensitivity, 0);
 
         Rig.rotation = pitchClamp.GetEulerXClamp(Rig.eulerAngles.x, Rig.eulerAngles.y, 0);
@@ -87,14 +88,14 @@ public class ThirdPersonCam : MonoBehaviour
         
         zoom += Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity * Time.deltaTime;
         if (transform.localPosition.z > -(zoomClamp.min + 0.5f) && zoom > -zoomClamp.min && Input.GetAxis("Mouse ScrollWheel") > 0.18f)
-            playerSource.SwitchToFirstPerson();
+            player.SwitchToFirstPerson();
 
 
-        if (playerSource.firstPerson)
+        if (player.firstPerson)
         {
             zoom = Mathf.Min(zoom, firstPersonZoom);    //Don't allow the player to zoom in
             if (-zoom > zoomClamp.min)                  //Exit first person mode if the player zooms out enough
-                playerSource.SwitchToThirdPerson();
+                player.SwitchToThirdPerson();
         }
         else
         {
@@ -117,7 +118,7 @@ public class ThirdPersonCam : MonoBehaviour
     private void Zoom(float zoomMax)
     {
         if (zoomMax < zoomClamp.min)
-            playerSource.SwitchToFirstPerson();
+            player.SwitchToFirstPerson();
         else
             transform.localPosition = GetZoomVector(zoomClamp.GetNegativeClampMaxOverride(Mathf.Lerp(transform.localPosition.z, zoom, Time.deltaTime * 2), zoomMax));
     }
@@ -128,10 +129,10 @@ public class ThirdPersonCam : MonoBehaviour
         {
             zoom = firstPersonZoom;
             transform.localPosition = GetZoomVector(firstPersonZoom);
-            _camera.cullingMask &= ~(1 << LayerMask.NameToLayer("Invisible"));
+            //_camera.cullingMask &= ~(1 << LayerMask.NameToLayer("Invisible"));
         }
-        else
-            _camera.cullingMask |= 1 << LayerMask.NameToLayer("Invisible");
+        //else
+            //_camera.cullingMask |= 1 << LayerMask.NameToLayer("Invisible");
     }
 
     public float GetRigYRotation()

@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
-[RequireComponent(typeof(GUIText))]
-public class FadingMessage : MonoBehaviour {
+using UnityEngine.UI;
+
+[RequireComponent(typeof(Text))]
+public class FadingMessage : MonoBehaviour
+{
     const float DURATION = 2.5f;
-    GUIText gt;
+    Text gt;
 	// Use this for initialization
-	void Awake () {
-        gt = GetComponent<GUIText>();
+	void Awake ()
+    {
+        gt = GetComponent<Text>();
     }
 
     // Update is called once per frame

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,22 +9,24 @@ using UnityEngine.UI;
 // HealthBars like all UI components are rendered in sibling order, so we sort them in our Update every frame.
 
 // The healthbar prefab provided is a simple black rectangle with a smaller red rectangle isnide which changes size, as the meter.
-public class HealthBarManager : MonoBehaviour {
-
+public class HealthBarManager : MonoBehaviour
+{
     public GameObject prefab;
-
-     public static HealthBarManager instance;
+    public static HealthBarManager instance;
 
     List<HealthBar> bars = new List<HealthBar>();
 
+
 	// Use this for initialization
-	void Awake () {
+	void Awake ()
+    {
         instance = this;	
 	}
 
-    
     private void Update()
     {
+        bars.RemoveAll(b => b == null);
+
         // sort the health bars in order of camera distance
         bars.Sort(delegate (HealthBar a, HealthBar b) { return a.screenPos.z.CompareTo(b.screenPos.z); });
 
@@ -40,7 +41,7 @@ public class HealthBarManager : MonoBehaviour {
         GameObject go = Instantiate(prefab);
         go.transform.SetParent(transform);
         HealthBar hb = go.GetComponent<HealthBar>();
-        hb.healthStat = stat;
+        hb.stats = stat;
 
         // add to our global list for sorting. 
         // For a dynamic game, you'll need to be able to remove from this list too when a character dies or disappears

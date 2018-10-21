@@ -13,7 +13,17 @@ public class Equipment : MonoBehaviour
     public bool currentlyAttacking = false;
 
     [HideInInspector]
-    public PlayerModule module;
+    public Character character;
+
+
+    public void Setup(Character newCharacter)
+    {
+        character = newCharacter;
+        character.model.attackManager.equipment = this;
+
+        if (weaponInfo)
+            ReEquipWeapon(character.model.leftHand, character.model.rightHand);
+    }
 
 
     private GameObject EquipMeleeHand(Transform handTransform)
@@ -111,9 +121,9 @@ public class Equipment : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (weaponInfo && module)
+        if (weaponInfo && character)
         {
-            Vector3 from = -module.model.transform.right;
+            Vector3 from = -character.model.transform.right;
 
             UnityEditor.Handles.color = Color.cyan;
             UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, from, weaponInfo.angle, weaponInfo.damageRadius);

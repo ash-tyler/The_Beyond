@@ -46,10 +46,15 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float CurrentSpeed { get { return (State.IsCrouching) ? crouchSpeed : ((State.IsWalking) ? walkSpeed : runSpeed); } }
     public Vector3 CurrentGravity { get { return Physics.gravity * gravityMultiplier * Time.deltaTime; } }
+
+    public bool isCrouching { get { return State.IsCrouching; } }
+    public bool isJumping { get { return State.IsJumping; } }
+    public bool isWalking { get { return State.IsWalking; } }
+    public bool isIdle { get { return State.IsIdle; } }
     #endregion
 
     #region Private Variables
-    private PlayerModule _module;
+    private Player player;
     private CharacterController _controller;
 
     private Vector3 moveDir = Vector3.zero;
@@ -59,13 +64,14 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
     #region Start & Update Functions
-    void Start()
+    public void Setup(Player newPlayer)
     {
-        _module = GetComponent<PlayerModule>();
-        _controller = GetComponent<CharacterController>();
+        player = newPlayer;
+
         State = new ActionState();
         State.SetIdle();
 
+        _controller = GetComponent<CharacterController>();
         playerCenter = _controller.center;
         playerHeight = _controller.height;
     }
@@ -123,9 +129,6 @@ public class ThirdPersonMovement : MonoBehaviour
                 else if (jump)
                     Jump();
 
-                //else if (walk)
-                //    State.SetWalking();
-
                 else
                 {
                     if (walk)
@@ -134,10 +137,10 @@ public class ThirdPersonMovement : MonoBehaviour
                     if (combatPressed)
                     {
                         if (!InCombat)
-                            _module.EnterCombat();
+                            player.EnterCombat();
 
                         else
-                            _module.ExitCombat();
+                            player.ExitCombat();
 
                         InCombat = !InCombat;
                     }
@@ -145,9 +148,9 @@ public class ThirdPersonMovement : MonoBehaviour
                     if (attack)
                     {
                         if (!InCombat)
-                            _module.EnterCombat();
+                            player.EnterCombat();
 
-                       _module.TriggerAttack();
+                        player.TriggerAttack();
                     }
                 }
             }
@@ -162,8 +165,8 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             IsMoving = true;
 
-            transform.rotation = _module.GetMovementQuaternion();
-            _module.RotateModel(new Vector3(moveDir.x, 0, moveDir.z), turnSpeed);
+            transform.rotation = player.GetMovementQuaternion();
+            player.RotateModel(new Vector3(moveDir.x, 0, moveDir.z), turnSpeed);
             //Quaternion rot = Quaternion.LookRotation(new Vector3(moveDir.x, 0, moveDir.z));
             //_module.model.transform.rotation = Quaternion.Slerp(_module.model.transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
@@ -171,7 +174,7 @@ public class ThirdPersonMovement : MonoBehaviour
             IsMoving = false;
 
         //Sets various Animator variables to properly display the animation
-        (_module.model as PlayerModel).HandleAnimator();
+        player.pModel.animManager.HandleAnimator(State, _controller.velocity, IsNearGround);
     }
     #endregion
 
@@ -180,7 +183,7 @@ public class ThirdPersonMovement : MonoBehaviour
     /// <summary> Sets the appropriate variables to make the player crouch. </summary>
     private void Crouch()
     {
-        SetControllerHeight(_module.model.crouchHead, crouchMultiplier);
+        SetControllerHeight(crouchMultiplier);
         State.SetCrouching();
     }
 
@@ -190,7 +193,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (Physics.SphereCast(new Ray(transform.TransformPoint(_controller.center), Vector3.up), _controller.radius, playerHeight * 0.90f, collisionLayers))
             return;
 
-        SetControllerHeight(_module.model.head, 1);
+        SetControllerHeight(1);
         State.SetIdle();
     }
 
@@ -213,9 +216,8 @@ public class ThirdPersonMovement : MonoBehaviour
         return _controller.velocity;
     }
 
-    private void SetControllerHeight(Transform newFocus, float multiplier)
+    private void SetControllerHeight(float multiplier)
     {
-        _module.playerFocus = newFocus;
         _controller.center = playerCenter * multiplier;
         _controller.height = playerHeight * multiplier;
     }

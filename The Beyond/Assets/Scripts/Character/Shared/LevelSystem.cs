@@ -7,6 +7,7 @@ public class LevelSystem
     #region Public Variables
     public ExperienceSettings   _settings;
     public float                buff = 0;
+    public int                  killEXP = 0;
     #endregion
 
     #region Private Variables
@@ -35,12 +36,12 @@ public class LevelSystem
         level = newLevel;
     }
 
-    public bool AddExperience(int exp, ref bool hasLeveledUp)
+    public bool AddExperience(int exp)
     {
         if (!_settings || level == _settings.levelChart.Count)
             return false;
 
-        currentEXP += Mathf.Max(1, (int)(exp * GetEXPMultiplier()));
+        currentEXP += Mathf.Max(0, (int)(exp * GetEXPMultiplier()));
 
         int newLevel = _settings.GetLevelByExperience(currentEXP);
         if (newLevel > level)
@@ -66,7 +67,7 @@ public class LevelSystem
 
     public float GetEXPPercent()
     {
-        return (float)(currentEXP - _settings.GetExperienceByLevel(level)) /  (float)(_settings.GetExperienceByLevel(level + 1) - _settings.GetExperienceByLevel(level));
+        return (float)(currentEXP - _settings.GetExperienceByLevel(level)) / (float)(_settings.GetExperienceByLevel(level + 1) - _settings.GetExperienceByLevel(level));
     }
 
     //Needs to be tested

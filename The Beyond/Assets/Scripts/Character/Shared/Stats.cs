@@ -7,6 +7,9 @@ public class Stats : MonoBehaviour
     public string characterName;
     [Space]
     [Space]
+    public StatsSettings    startingStats;
+    public float            awarenessRadius;
+    [Space]
 
     public HitpointsSystem  hp;
     [Space]
@@ -14,12 +17,9 @@ public class Stats : MonoBehaviour
     [Space]
 
     public LevelSystem      level;
-    [Space]
 
-    public StatsSettings    startingStats;
-    public float            awarenessRadius;
 
-    private void Start()
+    public void Setup()
     {
         if (HealthBarManager.instance && this as PlayerStats == null)
             HealthBarManager.instance.AddHealthBar(this);
@@ -37,11 +37,6 @@ public class Stats : MonoBehaviour
             mana.Setup(mana.Hitpoints, mana.MaximumHitpoints, characterName, "Mana");
             level.Setup(1, 0);
         }
-    }
-
-    private void Setup()
-    {
-
     }
 
     private void OnDrawGizmos()
