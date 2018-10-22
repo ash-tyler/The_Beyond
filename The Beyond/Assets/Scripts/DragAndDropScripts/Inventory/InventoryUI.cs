@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
 using UnityEngine;
 
 public class InventoryUI : ObjectContainerArray
@@ -9,6 +8,8 @@ public class InventoryUI : ObjectContainerArray
     // Use this for initialization
     void Start()
     {
-        CreateSlots(inventory.items);
+        Item[] itemsToDisplay = inventory.items.Where(i => !i.invisibleInInventory).ToArray();
+
+        CreateSlots(itemsToDisplay);
     }
 }

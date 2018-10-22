@@ -2892,7 +2892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Player
   startingStats: {fileID: 0}
-  awarenessRadius: 0
+  awarenessRadius: 5
   hp:
     points: 100
     maxPoints: 100
@@ -2997,6 +2997,12 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
+  eyesight:
+    layermask:
+      serializedVersion: 2
+      m_Bits: 17462
+    lastObjectSeen: {fileID: 0}
+    raycastHitObj: {fileID: 0}
   pCamera: {fileID: 0}
   controller: {fileID: 0}
   firstPerson: 0

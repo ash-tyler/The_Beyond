@@ -70,7 +70,7 @@ public class ThirdPersonCam : MonoBehaviour
             return;
         }
 
-        Rig.position = player.cameraFocus.position;
+        Rig.position = player.CameraFocus.position;
         //_camera = GetComponent<Camera>();
 
         zoom = -zoomClamp.center;
@@ -79,7 +79,7 @@ public class ThirdPersonCam : MonoBehaviour
 
     void LateUpdate()
     {
-        Rig.position = player.cameraFocus.position;
+        Rig.position = player.CameraFocus.position;
         if (Input.GetButton("CameraSelect") || Input.GetJoystickNames().Length > 0 || player.firstPerson)
             Rig.Rotate(Xrotation * mouseSensitivity, Yrotation * mouseSensitivity, 0);
 

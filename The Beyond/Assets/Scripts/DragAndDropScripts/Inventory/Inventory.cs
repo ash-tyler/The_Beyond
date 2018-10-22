@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public Item[] items;
+    public List<Item> items;
 
+    private void Start()
+    {
+        
+    }
 }

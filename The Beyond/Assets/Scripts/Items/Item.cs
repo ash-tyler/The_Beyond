@@ -6,6 +6,8 @@ public class Item : ScriptableObject
     public GameObject   lootModel;
     public GameObject   model;
     public int          defaultValue = 0;
+    public bool         canAddToInventory = true;
+    public bool         invisibleInInventory = false;
 
     void Start()
     {

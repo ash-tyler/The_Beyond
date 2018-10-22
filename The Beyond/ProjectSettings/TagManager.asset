@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Weapon Collider
   - Enemy
+  - Useable
   layers:
   - Default
   - TransparentFX

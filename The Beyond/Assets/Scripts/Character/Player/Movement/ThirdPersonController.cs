@@ -19,7 +19,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(CharacterController))]
-public class ThirdPersonMovement : MonoBehaviour
+public class ThirdPersonController : MonoBehaviour
 {
     #region Public Variables
     [Space()]
@@ -47,10 +47,10 @@ public class ThirdPersonMovement : MonoBehaviour
     public float CurrentSpeed { get { return (State.IsCrouching) ? crouchSpeed : ((State.IsWalking) ? walkSpeed : runSpeed); } }
     public Vector3 CurrentGravity { get { return Physics.gravity * gravityMultiplier * Time.deltaTime; } }
 
-    public bool isCrouching { get { return State.IsCrouching; } }
-    public bool isJumping { get { return State.IsJumping; } }
-    public bool isWalking { get { return State.IsWalking; } }
-    public bool isIdle { get { return State.IsIdle; } }
+    public bool IsCrouching { get { return State.IsCrouching; } }
+    public bool IsJumping { get { return State.IsJumping; } }
+    public bool IsWalking { get { return State.IsWalking; } }
+    public bool IsIdle { get { return State.IsIdle; } }
     #endregion
 
     #region Private Variables
@@ -94,10 +94,6 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 addedMovement = (transform.forward * vertical) + (transform.right * horizontal);
         moveDir = (addedMovement.normalized * CurrentSpeed) + gravity;
 
-
-        ////TEST
-        //if (Input.GetMouseButtonDown(0))
-        //    (_module.model as PlayerModel).SetAnimationState("Punch");
 
 
         //Handle grounded logic
@@ -167,14 +163,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
             transform.rotation = player.GetMovementQuaternion();
             player.RotateModel(new Vector3(moveDir.x, 0, moveDir.z), turnSpeed);
-            //Quaternion rot = Quaternion.LookRotation(new Vector3(moveDir.x, 0, moveDir.z));
-            //_module.model.transform.rotation = Quaternion.Slerp(_module.model.transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
         else
             IsMoving = false;
 
         //Sets various Animator variables to properly display the animation
-        player.pModel.animManager.HandleAnimator(State, _controller.velocity, IsNearGround);
+        player.PModel.animManager.HandleAnimator(State, _controller.velocity, IsNearGround);
     }
     #endregion
 
@@ -200,8 +194,6 @@ public class ThirdPersonMovement : MonoBehaviour
     /// <summary> Sets the appropriate variables to make the player jump. </summary>
     private void Jump()
     {
-        //if (!_controller.isGrounded) return;
-
         moveDir.y = jumpSpeed;
         State.SetJumping();
     }

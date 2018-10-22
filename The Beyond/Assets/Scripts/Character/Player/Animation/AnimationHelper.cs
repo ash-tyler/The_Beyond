@@ -34,13 +34,13 @@ public class AnimationHelper
     #endregion
 
     #region Private Variables
-    private ThirdPersonMovement _moveScript;
+    private ThirdPersonController _playerController;
     private Animator _animator;
     #endregion
 
 
     #region Setup & Update Functions
-    public void SetAnimator(ThirdPersonMovement move, Animator anim)
+    public void SetAnimator(ThirdPersonController pController, Animator anim)
     {
         if (!anim)
             throw new System.ArgumentException("Given Animator is invalid (NULL). Please check that given Model has an Animator", "anim");
@@ -52,7 +52,7 @@ public class AnimationHelper
         _animator.Rebind();
         _animator.applyRootMotion = false;
 
-        _moveScript = move;
+        _playerController = pController;
     }
 
     /// <summary> Ensures the proper animations line up with player movement. </summary>
@@ -60,16 +60,16 @@ public class AnimationHelper
     {
         if (!_animator.gameObject.activeSelf) return;
 
-        Vector3 velocity = _moveScript.GetVelocity();
-        float speed = (_moveScript.State.IsCrouching) ? maxCrouchSpeed : ((_moveScript.State.IsWalking) ? maxWalkSpeed : maxRunSpeed);
+        Vector3 velocity = _playerController.GetVelocity();
+        float speed = (_playerController.State.IsCrouching) ? maxCrouchSpeed : ((_playerController.State.IsWalking) ? maxWalkSpeed : maxRunSpeed);
 
         _animator.SetFloat("Forward", (Mathf.Abs(velocity.x) + Mathf.Abs(velocity.z)) / speed, 0.1f, Time.fixedDeltaTime);
-        _animator.SetBool("Crouch", _moveScript.State.IsCrouching);
-        _animator.SetBool("OnGround", _moveScript.IsNearGround);
-        if (_moveScript.State.IsJumping)
+        _animator.SetBool("Crouch", _playerController.State.IsCrouching);
+        _animator.SetBool("OnGround", _playerController.IsNearGround);
+        if (_playerController.State.IsJumping)
             _animator.SetFloat("Jump", velocity.y);
 
-        _animator.speed = (_moveScript.IsNearGround && velocity.magnitude > 0) ? animationMultiplier : 1;
+        _animator.speed = (_playerController.IsNearGround && velocity.magnitude > 0) ? animationMultiplier : 1;
     }
 
     public void SetInCombat(bool value)

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Name: Melee
   m_EditorClassIdentifier: 
   inventoryImage: {fileID: 21300000, guid: f78025427c22e00449db8e847f20af1c, type: 3}
-  lootModel: {fileID: 100000, guid: 2f5e3d3462b9fba43a427722efd79127, type: 3}
+  lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
   model: {fileID: 1269272436964530, guid: 6d139bb96f4e1034689b46dd5a5720aa, type: 2}
   defaultValue: 0
+  canAddToInventory: 1
+  invisibleInInventory: 1
   damage: 8
   damageRadius: 2
   angle: 180

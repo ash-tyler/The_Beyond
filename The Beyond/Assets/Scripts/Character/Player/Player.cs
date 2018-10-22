@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(ThirdPersonMovement))]
+[RequireComponent(typeof(ThirdPersonController))]
 [RequireComponent(typeof(PlayerStats))]
 public class Player : Character
 {
+    public Sight eyesight = new Sight();
     [HideInInspector] public ThirdPersonCam pCamera;
-    [HideInInspector] public ThirdPersonMovement controller;
+    [HideInInspector] public ThirdPersonController controller;
     [HideInInspector] public bool firstPerson;
 
-    public PlayerModel  pModel { get { return (model as PlayerModel); } }
-    public Transform    cameraFocus { get { return (controller.isCrouching) ? model.crouchHead : model.head; } }
+    public PlayerModel  PModel { get { return (model as PlayerModel); } }
+    public Transform    CameraFocus { get { return (controller.IsCrouching) ? model.crouchHead : model.head; } }
+    
 
     void Start()
     {
@@ -24,13 +26,19 @@ public class Player : Character
         stats = GetComponent<Stats>();
         equipment = GetComponent<Equipment>();
         inventory = GetComponent<Inventory>();
-        controller = GetComponent<ThirdPersonMovement>();
+        controller = GetComponent<ThirdPersonController>();
 
-        pModel.Setup();
+        PModel.Setup();
         stats.Setup();
         equipment.Setup(this);
+        eyesight.Setup(this);
         controller.Setup(this);
         pCamera.Setup(this);
+    }
+
+    private void Update()
+    {
+        eyesight.Update();
     }
 
 
@@ -62,10 +70,10 @@ public class Player : Character
         model = Instantiate(newPlayerModel, transform.position, rot, transform);
         model.character = this;
 
-        pModel.SetupAnimationHelper();
+        PModel.SetupAnimationHelper();
 
-        equipment.ReEquipWeapon(pModel.leftHand, pModel.rightHand);
-        pModel.attackManager.equipment = equipment;
+        equipment.ReEquipWeapon(PModel.leftHand, PModel.rightHand);
+        PModel.attackManager.equipment = equipment;
     }
 
     public Quaternion GetMovementQuaternion()
@@ -75,7 +83,7 @@ public class Player : Character
 
     public void RotateModel(Vector3 lookRotation, float turnSpeed)
     {
-        pModel.RotateModel(Quaternion.LookRotation(lookRotation), turnSpeed);
+        PModel.RotateModel(Quaternion.LookRotation(lookRotation), turnSpeed);
     }
 
     public void SwitchToFirstPerson()

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Name: One Handed
   m_EditorClassIdentifier: 
   inventoryImage: {fileID: 21300000, guid: 3870c7dbf0dfb4e4d948354096a393dc, type: 3}
-  lootModel: {fileID: 100002, guid: 2f5e3d3462b9fba43a427722efd79127, type: 3}
+  lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
   model: {fileID: 100000, guid: fac81ae7ce88d464797bb0ab8619b67a, type: 3}
   defaultValue: 30
+  canAddToInventory: 1
+  invisibleInInventory: 0
   damage: 12
   damageRadius: 3.5
   angle: 180
