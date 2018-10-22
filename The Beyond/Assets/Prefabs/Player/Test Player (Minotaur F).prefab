@@ -2906,7 +2906,7 @@ MonoBehaviour:
   level:
     _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
     buff: 0
-    killExperience: 0
+    killEXP: 0
     currentEXP: 1000
 --- !u!114 &114542430732751326
 MonoBehaviour:

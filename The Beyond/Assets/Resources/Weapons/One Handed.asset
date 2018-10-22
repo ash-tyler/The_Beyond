@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3103a7ddc3dc13043936613082e263a6, type: 3}
+  m_Name: One Handed
+  m_EditorClassIdentifier: 
+  inventoryImage: {fileID: 21300000, guid: 3870c7dbf0dfb4e4d948354096a393dc, type: 3}
+  lootModel: {fileID: 100002, guid: 2f5e3d3462b9fba43a427722efd79127, type: 3}
+  model: {fileID: 100000, guid: fac81ae7ce88d464797bb0ab8619b67a, type: 3}
+  defaultValue: 30
+  damage: 12
+  damageRadius: 3.5
+  angle: 180
