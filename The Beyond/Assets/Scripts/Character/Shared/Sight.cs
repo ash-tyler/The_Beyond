@@ -9,32 +9,29 @@ public class Sight
     public LayerMask layermask;
     public GameObject LastObjectSeen
     {
-        get { return objSeen; }
+        get { return obj; }
         private set
         {
-            if (objSeen == value) return;
+            if (obj == value) return;
 
 
-            if (UseableObject(objSeen))
-                objSeen.GetComponent<cakeslice.Outline>().enabled = false;
+            if (UseableObject(obj))
+                obj.GetComponent<cakeslice.Outline>().enabled = false;
 
             if (UseableObject(value))
             {
                 value.GetComponent<cakeslice.Outline>().enabled = true;
-                objSeen = value;
+                obj = value;
             }
             else
-                objSeen = null;
+                obj = null;
         }
     }
 
 
-    [Space]
-    [SerializeField] private GameObject objSeen;
-
+    private GameObject obj;
     private Player player;
     private Transform playerCamera;
-
 
     public void Setup(Player newPlayer)
     {
@@ -48,23 +45,24 @@ public class Sight
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hit;
 
-        Vector3 playerAwarenessLimit = player.transform.position + (player.transform.forward * player.stats.awarenessRadius);
-        float dist = (player.firstPerson) ? player.stats.awarenessRadius : Vector3.Distance(Camera.main.transform.position, playerAwarenessLimit);
+        //Vector3 playerAwarenessLimit = player.transform.position + (player.transform.forward * player.stats.awarenessRadius);
+        //float dist = (player.firstPerson) ? player.stats.awarenessRadius : Vector3.Distance(Camera.main.transform.position, playerAwarenessLimit);
 
+        float dist = (player.firstPerson) ? 0 : Vector3.Distance(Camera.main.transform.position, player.CameraFocus.position);
 
-        if (Physics.Raycast(ray, out hit, dist, ~layermask))
+        if (Physics.Raycast(ray, out hit, dist + player.stats.awarenessRadius, ~layermask))
             LastObjectSeen = hit.transform.gameObject;
         else
             LastObjectSeen = null;
 
-        Debug.DrawRay(ray.origin, ray.direction * dist, Color.cyan);
+        Debug.DrawRay(ray.origin, ray.direction * (dist + player.stats.awarenessRadius), Color.cyan);
 
         Use();
 	}
 
-    public static bool UseableObject(GameObject obj)
+    public static bool UseableObject(GameObject objectToTest)
     {
-        return obj && obj.tag == "Useable";
+        return objectToTest && objectToTest.tag == "Useable";
     }
 
     private void Use()

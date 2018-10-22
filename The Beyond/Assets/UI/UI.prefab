@@ -2544,6 +2544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackObject: {fileID: 0}
+  hoverHeight: 150
 --- !u!114 &114288169888103664
 MonoBehaviour:
   m_ObjectHideFlags: 1
