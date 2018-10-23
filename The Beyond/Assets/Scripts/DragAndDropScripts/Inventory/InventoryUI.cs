@@ -1,16 +1,16 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-public class InventoryUI : ObjectContainerArray
+public class InventoryUI : ObjectContainerList<Item>
 {
     public Inventory inventory;
 
     // Use this for initialization
     void Start()
     {
-        Item[] itemsToDisplay = inventory.items.Where(i => !i.invisibleInInventory).ToArray();
+        //Item[] itemsToDisplay = inventory.items.Where(i => !i.invisibleInInventory).ToArray();
 
-        CreateSlots(itemsToDisplay);
+        CreateSlots(inventory.items);
         //CreateSlots(inventory.items);
     }
 }
