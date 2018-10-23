@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Stats))]
 [RequireComponent(typeof(Equipment))]
@@ -7,11 +8,19 @@ public class Character : MonoBehaviour
 {
     [HideInInspector] public CharacterModel model;
 
-    [HideInInspector] public Stats          stats;
-    [HideInInspector] public Equipment      equipment;
-    [HideInInspector] public Inventory      inventory;
+    [HideInInspector] public Stats stats;
+    [HideInInspector] public Equipment equipment;
+    [HideInInspector] public Inventory inventory;
 
     private bool dead = false;
+    
+    [System.Serializable]
+    public class DeathEvent : UnityEvent<Character> { };
+
+    // uncomment this if you want to hook things up to individual character's deaths
+    // public DeathEvent onDead;
+    public static DeathEvent onAnyDead = new DeathEvent();
+
 
     private void Start()
     {
@@ -29,6 +38,9 @@ public class Character : MonoBehaviour
         equipment.Setup(this);
     }
 
+
+
+
     private void Update()
     {
 
@@ -39,6 +51,9 @@ public class Character : MonoBehaviour
 
             dead = true;
             Destroy(gameObject, 5);
+
+            //onDead.Invoke(this);
+            onAnyDead.Invoke(this);
         }
     }
 
