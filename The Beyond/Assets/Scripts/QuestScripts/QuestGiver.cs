@@ -33,6 +33,14 @@ public class QuestGiver : MonoBehaviour
         Quest.onQuestComplete.AddListener(CheckQuests);
     }
 
+
+    void Update()
+    {
+        // TODO fix Sight and remove this function
+        if (Input.GetKeyDown(KeyCode.Q))
+            TalkTo();
+    }
+
     // talking to a questgiver...
     public void TalkTo()
     {

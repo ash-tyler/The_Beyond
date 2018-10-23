@@ -81,6 +81,13 @@ public class Sight
 
                 GameObject.Destroy(LastObjectSeen);
             }
+
+            // TODO why isnt this getting called?
+            QuestGiver giver = LastObjectSeen.GetComponent<QuestGiver>();
+            if (giver)
+            {
+                giver.TalkTo();
+            }
         }
     }
 }
