@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class Door : MonoBehaviour
 {
 
     public Vector3 endPosition;
     public Vector3 endEulerRotation;
+    [Space]
+    public Vector3 endPositionOpposite;
+    public Vector3 endEulerRotationOpposite;
 
     [Space]
     public float positionSpeed = 0.1f;
@@ -17,6 +21,9 @@ public class Door : MonoBehaviour
     private Vector3 startEulerRotation;
     private bool useDoor = false;
     private bool isOpen = false;
+
+    private bool doorTrigger = false;
+    private bool openOpposite = false;
 
     private static float range = 0.001f;
 
@@ -35,9 +42,17 @@ public class Door : MonoBehaviour
                 MoveDoor(startPosition, startEulerRotation);
 
             else
-                MoveDoor(endPosition, endEulerRotation);
+            {
+                if (openOpposite)
+                    MoveDoor(endPositionOpposite, endEulerRotationOpposite);
+                else
+                    MoveDoor(endPosition, endEulerRotation);
+            }
         }
-	}
+
+        else
+            openOpposite = doorTrigger;
+    }
 
     public void ActivateDoor()
     {
@@ -47,20 +62,26 @@ public class Door : MonoBehaviour
             useDoor = true;
     }
 
+    public void OpenOpposite(bool value)
+    {
+        if (doorTrigger != value)
+            doorTrigger = value;
+    }
 
-    private void MoveDoor(Vector3 endPos, Vector3 endRot)
+
+    private void MoveDoor(Vector3 toPos, Vector3 toRot)
     {
         bool correctPos = false;
         bool correctRot = false;
 
 
-        if (Vector3.Distance(transform.localPosition, endPos) > range)
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, endPos, positionSpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.localPosition, toPos) > range)
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, toPos, positionSpeed * Time.deltaTime);
         else
             correctPos = true;
 
 
-        Quaternion euler = Quaternion.Euler(endRot);
+        Quaternion euler = Quaternion.Euler(toRot);
 
         if (Quaternion.Angle(transform.localRotation, euler) > range)
             transform.localRotation = Quaternion.RotateTowards(transform.localRotation, euler, rotationSpeed * Time.deltaTime);

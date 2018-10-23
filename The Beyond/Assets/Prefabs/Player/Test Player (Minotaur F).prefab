@@ -3001,8 +3001,6 @@ MonoBehaviour:
     layermask:
       serializedVersion: 2
       m_Bits: 17462
-    lastObjectSeen: {fileID: 0}
-    raycastHitObj: {fileID: 0}
   pCamera: {fileID: 0}
   controller: {fileID: 0}
   firstPerson: 0

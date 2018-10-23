@@ -13,4 +13,9 @@ public class ItemRef : MonoBehaviour
     {
         return item;
     }
+
+    public bool CanAddToInventory()
+    {
+        return item.canAddToInventory;
+    }
 }

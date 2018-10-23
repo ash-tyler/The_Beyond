@@ -16,11 +16,11 @@ public class Sight
 
 
             if (UseableObject(obj))
-                obj.GetComponent<cakeslice.Outline>().enabled = false;
+                SetOutline(obj, false);
 
             if (UseableObject(value))
             {
-                value.GetComponent<cakeslice.Outline>().enabled = true;
+                SetOutline(value, true);
                 obj = value;
             }
             else
@@ -29,7 +29,7 @@ public class Sight
     }
 
 
-    private GameObject obj;
+    public GameObject obj;
     private Player player;
     private Transform playerCamera;
 
@@ -45,8 +45,6 @@ public class Sight
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hit;
 
-        //Vector3 playerAwarenessLimit = player.transform.position + (player.transform.forward * player.stats.awarenessRadius);
-        //float dist = (player.firstPerson) ? player.stats.awarenessRadius : Vector3.Distance(Camera.main.transform.position, playerAwarenessLimit);
 
         float dist = (player.firstPerson) ? 0 : Vector3.Distance(Camera.main.transform.position, player.CameraFocus.position);
 
@@ -62,7 +60,7 @@ public class Sight
 
     public static bool UseableObject(GameObject objectToTest)
     {
-        return objectToTest && objectToTest.tag == "Useable";
+        return objectToTest && objectToTest.CompareTag("Useable");
     }
 
     private void Use()
@@ -72,22 +70,26 @@ public class Sight
 
         if (Input.GetButtonDown("Use"))
         {
-            if (LastObjectSeen.GetComponent<ItemRef>())
-            {
-                Item item = LastObjectSeen.GetComponent<ItemRef>().GetItem();
+            ItemRef itemRef;
+            Door door;
+            QuestGiver questGiver;
 
-                if (item.canAddToInventory)
-                    player.inventory.items.Add(item);
+            if (itemRef = LastObjectSeen.GetComponent<ItemRef>())
+                player.inventory.AddItem(itemRef);
 
-                GameObject.Destroy(LastObjectSeen);
-            }
+            else if (door = LastObjectSeen.GetComponent<Door>())
+                LastObjectSeen.GetComponent<Door>().ActivateDoor();
 
-            // TODO why isnt this getting called?
-            QuestGiver giver = LastObjectSeen.GetComponent<QuestGiver>();
-            if (giver)
-            {
-                giver.TalkTo();
-            }
+            else if (questGiver = LastObjectSeen.GetComponent<QuestGiver>())
+                LastObjectSeen.GetComponent<QuestGiver>().TalkTo();
         }
+    }
+
+    private void SetOutline(GameObject gameObj, bool value)
+    {
+        Outline outliner = gameObj.GetComponent<Outline>();
+
+        if (outliner)
+            outliner.enabled = value;
     }
 }

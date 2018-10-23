@@ -11,4 +11,18 @@ public class Inventory : MonoBehaviour
     {
         
     }
+
+    public void AddItem(Item item)
+    {
+        items.Add(item);
+    }
+
+    public void AddItem(ItemRef itemRef)
+    {
+        if (!itemRef || !itemRef.CanAddToInventory())
+            return;
+
+        items.Add(itemRef.GetItem());
+        Destroy(itemRef.gameObject);
+    }
 }
