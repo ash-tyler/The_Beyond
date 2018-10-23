@@ -11,5 +11,6 @@ public class InventoryUI : ObjectContainerArray
         Item[] itemsToDisplay = inventory.items.Where(i => !i.invisibleInInventory).ToArray();
 
         CreateSlots(itemsToDisplay);
+        //CreateSlots(inventory.items);
     }
 }
