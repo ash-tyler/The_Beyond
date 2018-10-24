@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DoorScripts.Main;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,7 +79,7 @@ public class Sight
                 player.inventory.AddItem(itemRef);
 
             else if (door = LastObjectSeen.GetComponent<Door>())
-                LastObjectSeen.GetComponent<Door>().ActivateDoor();
+                LastObjectSeen.GetComponent<Door>().UseDoor();
 
             else if (questGiver = LastObjectSeen.GetComponent<QuestGiver>())
                 LastObjectSeen.GetComponent<QuestGiver>().TalkTo();
