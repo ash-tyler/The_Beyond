@@ -1,97 +1,144 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
-public class Door : MonoBehaviour
+
+namespace DoorScripts.Main
 {
+    public enum DoorState { CLOSED = 0, OPEN, OPEN_OPPOSITE };
 
-    public Vector3 endPosition;
-    public Vector3 endEulerRotation;
-    [Space]
-    public Vector3 endPositionOpposite;
-    public Vector3 endEulerRotationOpposite;
-
-    [Space]
-    public float positionSpeed = 0.1f;
-    public float rotationSpeed = 160f;
-
-
-    private Vector3 startPosition;
-    private Vector3 startEulerRotation;
-    private bool useDoor = false;
-    private bool isOpen = false;
-
-    private bool doorTrigger = false;
-    private bool openOpposite = false;
-
-    private static float range = 0.001f;
-
-
-    void Start()
+    public class Door : MonoBehaviour
     {
-        startPosition = transform.localPosition;
-        startEulerRotation = transform.localEulerAngles;
-	}
-	
-	void Update()
-    {
-        if (useDoor)
+        public Vector3 endPosition;
+        public Vector3 endEulerRotation;
+        [Space]
+        public Vector3 endPositionOpposite;
+        public Vector3 endEulerRotationOpposite;
+        [Space]
+        public float positionSpeed = 0.1f;
+        public float rotationSpeed = 160f;
+        [Space]
+        public bool autoDoor = false;
+
+
+        public bool useDoor = false;
+
+        private Vector3 startPosition;
+        private Vector3 startEulerRotation;
+
+        public DoorState state = DoorState.CLOSED;
+        public DoorState targetState = DoorState.CLOSED;
+        public DoorState useTargetState = DoorState.CLOSED;
+
+        private static float range = 0.001f;
+
+
+        void Start()
         {
-            if (isOpen)
-                MoveDoor(startPosition, startEulerRotation);
+            startPosition = transform.localPosition;
+            startEulerRotation = transform.localEulerAngles;
+        }
 
-            else
+        void Update()
+        {
+            if (useDoor)
+                Activate(useTargetState);
+
+            else if (autoDoor)
+                Activate(targetState);
+        }
+
+
+        public void SwitchTargetState(DoorState newState)
+        {
+            if (state != newState)
+                targetState = newState;
+        }
+
+        public void SwitchUseTargetState(DoorState newState)
+        {
+            if (state != newState)
+                useTargetState = newState;
+        }
+
+        public bool UseStateIsSame(DoorState manualState)
+        {
+            return state == manualState;
+        }
+
+        public void UseDoor()
+        {
+            if (!autoDoor)
+                useDoor = true;
+        }
+
+
+        private void Activate(DoorState target)
+        {
+            if (state == target) return;
+
+            switch (target)
             {
-                if (openOpposite)
-                    MoveDoor(endPositionOpposite, endEulerRotationOpposite);
-                else
-                    MoveDoor(endPosition, endEulerRotation);
+                default:
+                    CloseDoor();
+                    break;
+                case DoorState.CLOSED:
+                    CloseDoor();
+                    break;
+                case DoorState.OPEN:
+                    OpenDoor();
+                    break;
+                case DoorState.OPEN_OPPOSITE:
+                    OpenDoorOpposite();
+                    break;
             }
         }
 
-        else
-            openOpposite = doorTrigger;
-    }
+        private void CloseDoor()
+        {
+            if (MoveDoor(startPosition, startEulerRotation))
+            {
+                state = DoorState.CLOSED;
+                useDoor = false;
+            }
+        }
 
-    public void ActivateDoor()
-    {
-        if (useDoor)
-            isOpen = !isOpen;
-        else
-            useDoor = true;
-    }
+        private void OpenDoor()
+        {
+            if (MoveDoor(endPosition, endEulerRotation))
+            {
+                state = DoorState.OPEN;
+                useDoor = false;
+            }
+        }
 
-    public void OpenOpposite(bool value)
-    {
-        if (doorTrigger != value)
-            doorTrigger = value;
-    }
+        private void OpenDoorOpposite()
+        {
+            if (MoveDoor(endPositionOpposite, endEulerRotationOpposite))
+            {
+                state = DoorState.OPEN_OPPOSITE;
+                useDoor = false;
+            }
+        }
 
-
-    private void MoveDoor(Vector3 toPos, Vector3 toRot)
-    {
-        bool correctPos = false;
-        bool correctRot = false;
-
-
-        if (Vector3.Distance(transform.localPosition, toPos) > range)
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, toPos, positionSpeed * Time.deltaTime);
-        else
-            correctPos = true;
-
-
-        Quaternion euler = Quaternion.Euler(toRot);
-
-        if (Quaternion.Angle(transform.localRotation, euler) > range)
-            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, euler, rotationSpeed * Time.deltaTime);
-        else
-            correctRot = true;
+        private bool MoveDoor(Vector3 toPos, Vector3 toRot)
+        {
+            bool correctPos = false;
+            bool correctRot = false;
 
 
-        if (!correctPos || !correctRot) return;
+            if (Vector3.Distance(transform.localPosition, toPos) > range)
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, toPos, positionSpeed * Time.deltaTime);
+            else
+                correctPos = true;
 
-        useDoor = false;
-        isOpen = !isOpen;
+
+            Quaternion euler = Quaternion.Euler(toRot);
+
+            if (Quaternion.Angle(transform.localRotation, euler) > range)
+                transform.localRotation = Quaternion.RotateTowards(transform.localRotation, euler, rotationSpeed * Time.deltaTime);
+            else
+                correctRot = true;
+
+            return (correctPos && correctRot);
+        }
     }
 }
