@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using DoorScripts.Main;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace DoorScripts.Main
+
+namespace DoorScripts.Triggers
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class AutoDoorTrigger : MonoBehaviour
+    public class DoorTrigger : MonoBehaviour
     {
-        public Door door;
-        [Space]
         public DoorState triggeredState;
         public DoorState untriggeredState;
         [Space]
@@ -25,14 +25,32 @@ namespace DoorScripts.Main
                 col.isTrigger = true;
         }
 
-        private void Update()
+        public void UpdateAutoTrigger(Door door)
+        {
+            objectsInTrigger.RemoveAll(col => col == null);
+
+            if (objectsInTrigger.Count > 0 && door.StateIsSame(untriggeredState))
+                door.SwitchTargetState(triggeredState);
+            else if (objectsInTrigger.Count == 0 && door.StateIsSame(triggeredState))
+                door.SwitchTargetState(untriggeredState);
+        }
+
+        public void UpdateManualTrigger(Door door)
         {
             objectsInTrigger.RemoveAll(col => col == null);
 
             if (objectsInTrigger.Count > 0)
-                door.SwitchTargetState(triggeredState);
-            else
-                door.SwitchTargetState(untriggeredState);
+            {
+                if (door.StateIsSame(untriggeredState))
+                    door.SwitchTargetState(triggeredState);
+                else 
+                    door.SwitchTargetState(untriggeredState);
+            }
+        }
+
+        public bool TriggerIsActive()
+        {
+            return objectsInTrigger.Count > 0;
         }
 
         private void OnTriggerEnter(Collider other)

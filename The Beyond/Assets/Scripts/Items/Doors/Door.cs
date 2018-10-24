@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using DoorScripts.Triggers;
+using System.Collections.Generic;
+using UnityEngine;
 
 
 namespace DoorScripts.Main
@@ -17,17 +19,17 @@ namespace DoorScripts.Main
         public float rotationSpeed = 160f;
         [Space]
         public bool autoDoor = false;
+        [Space]
+        public List<DoorTrigger> triggers = new List<DoorTrigger>();
 
-
-        public bool useDoor = false;
 
         private Vector3 startPosition;
         private Vector3 startEulerRotation;
 
-        public DoorState state = DoorState.CLOSED;
-        public DoorState targetState = DoorState.CLOSED;
-        public DoorState useTargetState = DoorState.CLOSED;
+        private DoorState state = DoorState.CLOSED;
+        private DoorState targetState = DoorState.CLOSED;
 
+        private bool useDoor = false;
         private static float range = 0.001f;
 
 
@@ -37,45 +39,35 @@ namespace DoorScripts.Main
             startEulerRotation = transform.localEulerAngles;
         }
 
-        void Update()
+        private void Update()
         {
-            if (useDoor)
-                Activate(useTargetState);
-
-            else if (autoDoor)
-                Activate(targetState);
-        }
+            if (triggers.Count == 0) return;
+            triggers.RemoveAll(t => t == null);
 
 
-        public void SwitchTargetState(DoorState newState)
-        {
-            if (state != newState)
-                targetState = newState;
-        }
+            if (autoDoor)
+            {
+                DoorTrigger activeTrigger = triggers.Find(t => t.TriggerIsActive());
 
-        public void SwitchUseTargetState(DoorState newState)
-        {
-            if (state != newState)
-                useTargetState = newState;
-        }
+                if (activeTrigger)
+                    activeTrigger.UpdateAutoTrigger(this);
+                else
+                    SwitchTargetState(DoorState.CLOSED);
+            }
 
-        public bool UseStateIsSame(DoorState manualState)
-        {
-            return state == manualState;
-        }
+            else
+            {
+                if (!useDoor)
+                    foreach (DoorTrigger doorTrigger in triggers)
+                        doorTrigger.UpdateManualTrigger(this);
 
-        public void UseDoor()
-        {
-            if (!autoDoor)
-                useDoor = true;
-        }
+                if (!useDoor) return;
+            }
 
 
-        private void Activate(DoorState target)
-        {
-            if (state == target) return;
+            if (state == targetState) return;
 
-            switch (target)
+            switch (targetState)
             {
                 default:
                     CloseDoor();
@@ -91,6 +83,25 @@ namespace DoorScripts.Main
                     break;
             }
         }
+
+
+        public void UseDoor()
+        {
+            if (!useDoor && !autoDoor)
+                useDoor = true;
+        }
+
+        public void SwitchTargetState(DoorState newState)
+        {
+            if (state != newState)
+                targetState = newState;
+        }
+
+        public bool StateIsSame(DoorState otherState)
+        {
+            return state == otherState;
+        }
+
 
         private void CloseDoor()
         {

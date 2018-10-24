@@ -79,10 +79,10 @@ public class Sight
                 player.inventory.AddItem(itemRef);
 
             else if (door = LastObjectSeen.GetComponent<Door>())
-                LastObjectSeen.GetComponent<Door>().UseDoor();
+                door.UseDoor();
 
             else if (questGiver = LastObjectSeen.GetComponent<QuestGiver>())
-                LastObjectSeen.GetComponent<QuestGiver>().TalkTo();
+                questGiver.TalkTo();
         }
     }
 
