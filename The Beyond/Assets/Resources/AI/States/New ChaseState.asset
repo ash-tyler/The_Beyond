@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66b3cd303d11f64193b9b91476e2742, type: 3}
+  m_Name: New ChaseState
+  m_EditorClassIdentifier: 
+  transitions:
+  - checks:
+    - {fileID: 11400000, guid: 63d0c3790eec9b84caf15ceca674f5b5, type: 2}
+    trueState: {fileID: 11400000, guid: c025d14ef66bdd04da7d227d01669105, type: 2}
+    falseState: {fileID: 0}
+  - checks:
+    - {fileID: 11400000, guid: 6485fa16b5482d344b425fd51ca89d57, type: 2}
+    trueState: {fileID: 0}
+    falseState: {fileID: 11400000, guid: 7d68be1ef834b8f40a8ae036f03d6c86, type: 2}

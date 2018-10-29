@@ -52,6 +52,16 @@ public class AnimationManager
         _animator.speed = (grounded && velocity.magnitude > 0) ? animationMultiplier : 1;
     }
 
+    public void SetDead()
+    {
+        _animator.SetBool("IsDead", true);
+    }
+
+    public void SetEquipmentType(int equipmentType)
+    {
+        _animator.SetInteger("EquipType", equipmentType);
+    }
+
     public void SetInCombat(bool value)
     {
         _animator.SetBool("InCombat", value);

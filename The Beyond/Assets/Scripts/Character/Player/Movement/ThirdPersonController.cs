@@ -19,47 +19,20 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(CharacterController))]
-public class ThirdPersonController : MonoBehaviour
+public class ThirdPersonController : ControllerBase
 {
     #region Public Variables
-    [Space()]
-    [Header("Movement Speed")]
-    public float runSpeed = 8;
-    public float walkSpeed = 2;
-    public float crouchSpeed = 1;
-    public float jumpSpeed = 10;
-    public float turnSpeed = 6;
-
-    [Space()]
-    [Header("Multipliers")]
-    public float gravityMultiplier = 2;
-    public float crouchMultiplier = 0.55f;
-
-    [Space()]
-    [Header("Etc")]
-    public LayerMask collisionLayers = -1;
-
-    public bool IsMoving { get; private set; }
-    public bool InCombat { get; private set; }
-    public bool IsNearGround { get; private set; }
-    public ActionState State { get; private set; }
-
     public float CurrentSpeed { get { return (State.IsCrouching) ? crouchSpeed : ((State.IsWalking) ? walkSpeed : runSpeed); } }
-    public Vector3 CurrentGravity { get { return Physics.gravity * gravityMultiplier * Time.deltaTime; } }
-
-    public bool IsCrouching { get { return State.IsCrouching; } }
-    public bool IsJumping { get { return State.IsJumping; } }
-    public bool IsWalking { get { return State.IsWalking; } }
-    public bool IsIdle { get { return State.IsIdle; } }
     #endregion
 
-    #region Private Variables
-    private Player player;
-    private CharacterController _controller;
 
+    #region Private Variables
     private Vector3 moveDir = Vector3.zero;
-    private Vector3 playerCenter;
-    private float playerHeight;
+    private CharacterController _controller;
+    private Vector3 characterCenter;
+    private float characterHeight;
+
+    private Player player { get { return character as Player; } set { character = value; } }
     #endregion
 
 
@@ -72,14 +45,14 @@ public class ThirdPersonController : MonoBehaviour
         State.SetIdle();
 
         _controller = GetComponent<CharacterController>();
-        playerCenter = _controller.center;
-        playerHeight = _controller.height;
+        characterCenter = _controller.center;
+        characterHeight = _controller.height;
     }
 
     void Update()
     {
         //Detect Input
-        IsNearGround = Physics.Raycast(transform.TransformPoint(playerCenter) - new Vector3(0, 0.2f, 0), Vector3.down, playerHeight, collisionLayers);
+        IsNearGround = NearGround();
         bool combatPressed = Input.GetButtonDown("ReadyCombat");
         bool crouch = Input.GetButton("Crouch");
         bool jump = Input.GetButtonDown("Jump");
@@ -168,39 +141,44 @@ public class ThirdPersonController : MonoBehaviour
             IsMoving = false;
 
         //Sets various Animator variables to properly display the animation
-        player.PModel.animManager.HandleAnimator(State, _controller.velocity, IsNearGround);
+        player.model.HandleAnimator(State, _controller.velocity, IsNearGround);
     }
     #endregion
 
 
-    #region Player Action Functions
-    /// <summary> Sets the appropriate variables to make the player crouch. </summary>
-    private void Crouch()
+    #region Character Action Functions
+    /// <summary> Sets the appropriate variables to make the Character crouch. </summary>
+    protected void Crouch()
     {
         SetControllerHeight(crouchMultiplier);
         State.SetCrouching();
     }
 
-    /// <summary> Sets the appropriate variables to make the player stand. </summary>
-    private void Stand()
+    /// <summary> Sets the appropriate variables to make the Character stand. </summary>
+    protected void Stand()
     {
-        if (Physics.SphereCast(new Ray(transform.TransformPoint(_controller.center), Vector3.up), _controller.radius, playerHeight * 0.90f, collisionLayers))
+        if (Physics.SphereCast(new Ray(transform.TransformPoint(_controller.center), Vector3.up), _controller.radius, characterHeight * 0.90f, collisionLayers))
             return;
 
         SetControllerHeight(1);
         State.SetIdle();
     }
 
-    /// <summary> Sets the appropriate variables to make the player jump. </summary>
-    private void Jump()
+    /// <summary> Sets the appropriate variables to make the Character jump. </summary>
+    protected void Jump()
     {
         moveDir.y = jumpSpeed;
         State.SetJumping();
     }
     #endregion
 
-    #region Helper Functions
 
+    #region Helper Functions
+    /// <summary> Raycasts to the ground. Returns if the Character is near the ground (near relative to Character height). </summary>
+    public bool NearGround()
+    {
+        return Physics.Raycast(transform.TransformPoint(characterCenter) - new Vector3(0, 0.2f, 0), Vector3.down, characterHeight, collisionLayers);
+    }
 
     /// <summary> Returns the Character Controller velocity. </summary>
     public Vector3 GetVelocity()
@@ -208,10 +186,11 @@ public class ThirdPersonController : MonoBehaviour
         return _controller.velocity;
     }
 
-    private void SetControllerHeight(float multiplier)
+    /// <summary> Sets the Character Controller center and height. </summary>
+    protected void SetControllerHeight(float multiplier)
     {
-        _controller.center = playerCenter * multiplier;
-        _controller.height = playerHeight * multiplier;
+        _controller.center = characterCenter * multiplier;
+        _controller.height = characterHeight * multiplier;
     }
     #endregion
 }

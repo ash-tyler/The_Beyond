@@ -3,130 +3,145 @@
 [System.Serializable]
 public class Equipment : MonoBehaviour
 {
-    public GameObject _leftHand;
-    public GameObject _rightHand;
+    public Weapon   mainWeapon;
+    public Weapon   offhand;
+    [Space]
+    public Fists    fistInfo;
 
-    public Weapon   weaponInfo;
-    public bool     weaponIsEquiped = false;
+    public bool     weaponIsEquiped { get { return !mainWeapon.IsFist; } }
 
     [HideInInspector]
-    public bool currentlyAttacking = false;
+    public bool     currentlyAttacking = false;
 
     [HideInInspector]
     public Character character;
+
+    //should be private
+    public GameObject _leftHand;
+    public GameObject _rightHand;
 
 
     public void Setup(Character newCharacter)
     {
         character = newCharacter;
-        character.model.attackManager.equipment = this;
 
-        if (weaponInfo)
-            ReEquipWeapon(character.model.leftHand, character.model.rightHand);
+        if (!fistInfo)
+            Debug.Log("Warning! This character has no default weapon (fists)", this);
+
+        ReEquip();
+
+        if (!mainWeapon || mainWeapon.IsFist) return;
+
+        _rightHand.transform.parent = character.model.back;
+        _rightHand.transform.localPosition = Vector3.zero;
+        _rightHand.transform.localEulerAngles = Vector3.zero;
     }
 
 
-    private GameObject EquipMeleeHand(Transform handTransform)
+    public void Equip(Weapon newWeapon)
     {
-        GameObject hand = weaponInfo.GetInstance(handTransform);
-        if (!hand)
-            return null;
+        if (!newWeapon || currentlyAttacking) return;
 
-        hand.transform.parent = handTransform;
+        if (newWeapon.IsOneHanded && (newWeapon as OneHandedWeapon).isOffhand)
+            SetOffhand(newWeapon, newWeapon.GetInstance(character.model.leftHand));
 
-        return hand;
+        else if (newWeapon.IsFist)
+            mainWeapon = fistInfo;
+
+        else
+            SetMainhand(newWeapon, newWeapon.GetInstance(character.model.rightHand));
     }
 
-    public void EquipMelee(Transform leftHand, Transform rightHand)
+    public void Unequip(Weapon weapon)
     {
-        EmptyHands();
+        if (weapon.IsFist || currentlyAttacking) return;
 
-        _leftHand = EquipMeleeHand(leftHand);
-        _rightHand = EquipMeleeHand(rightHand);
-
-        if (!_leftHand || !_rightHand)
-            Debug.Log("Equip Melee FAILED", this);
-
-        weaponIsEquiped = false;
+        if (mainWeapon == weapon)
+            SetMainhand(fistInfo, null);
+        if (offhand == weapon)
+            SetOffhand(fistInfo, null);
     }
 
-    public void EquipOneHanded()
+    public void ReEquip()
     {
-        EmptyHands();
-    }
+        if (currentlyAttacking) return;
 
-    public void EquipTwoHanded()
-    {
-        EmptyHands();
-    }
-
-    public void EquipRanged()
-    {
-        EmptyHands();
-    }
-
-    public void ReEquipWeapon(Transform leftHand, Transform rightHand)
-    {
-        if (WeaponIsTypeOf(typeof(MeleeWeapon)))
+        if (!mainWeapon && !offhand)
+            mainWeapon = fistInfo;
+        else
         {
-            EquipMelee(leftHand, rightHand);
-            return;
-        }
-
-        else if (WeaponIsTypeOf(typeof(OneHandedWeapon)))
-        {
-            EquipOneHanded();
-            return;
-        }
-
-        else if (WeaponIsTypeOf(typeof(TwoHandedWeapon)))
-        {
-            EquipTwoHanded();
-            return;
-        }
-
-        else if (WeaponIsTypeOf(typeof(RangedWeapon)))
-        {
-            EquipRanged();
-            return;
+            Equip(mainWeapon);
+            Equip(offhand);
         }
     }
 
-    public bool WeaponIsTypeOf(System.Type type)
+    public void EnterCombat()
     {
-        return weaponInfo.GetType() == type;
+        currentlyAttacking = true;
+    }
+
+    public void ExitCombat()
+    {
+        currentlyAttacking = false;
+    }
+
+    public void SetMainWeaponParent(Transform newParent, Vector3 pos, Vector3 rot)
+    {
+        _rightHand.transform.SetParent(newParent, true);
+        _rightHand.transform.localPosition = pos;
+        _rightHand.transform.localEulerAngles = rot;
+        _rightHand.transform.localScale = mainWeapon.scaleAdjust;
+    }
+
+    public Weapon GetWeaponInfo()
+    {
+        return mainWeapon;
+    }
+
+    public int GetEquipmentType()
+    {
+        if (mainWeapon.IsFist)
+            return 0;
+        if (mainWeapon.IsOneHanded)
+            return 1;
+        if (mainWeapon.IsTwoHanded)
+            return 2;
+
+        return 3;
     }
 
 
-    private void EmptyHands()
+    private void SetMainhand(Weapon weapon, GameObject model)
     {
-        if (_leftHand)
-            DestroyObject(_leftHand);
+        mainWeapon = weapon;
         if (_rightHand)
-            DestroyObject(_rightHand);
+            DestroyImmediate(_rightHand);
+
+        _rightHand = model;
+        //_rightHand.transform.parent = character.model.rightHand;
     }
 
-    private void EmptyLeftHand()
+    private void SetOffhand(Weapon weapon, GameObject model)
     {
+        offhand = weapon;
         if (_leftHand)
-            DestroyObject(_leftHand);
-    }
+            DestroyImmediate(_leftHand);
 
-    private void EmptyRightHand()
-    {
-        if (_rightHand)
-            DestroyObject(_rightHand);
+        _leftHand = model;
+        //_leftHand.transform.parent = character.model.leftHand;
     }
 
 
     private void OnDrawGizmos()
     {
-        if (weaponInfo && character)
-        {
-            Vector3 from = -character.model.transform.right;
+        if (!character) return;
 
-            UnityEditor.Handles.color = Color.cyan;
-            UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, from, weaponInfo.angle, weaponInfo.damageRadius);
-        }
+        Vector3 from = -character.model.transform.right;
+        UnityEditor.Handles.color = Color.cyan;
+
+        if (mainWeapon)
+            UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, from, mainWeapon.angle, mainWeapon.damageRadius);
+        if (offhand)
+            UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, from, mainWeapon.angle, mainWeapon.damageRadius);
     }
 }

@@ -25,8 +25,6 @@ public class HealthBarManager : MonoBehaviour
 
     private void Update()
     {
-        bars.RemoveAll(b => b == null);
-
         // sort the health bars in order of camera distance
         bars.Sort(delegate (HealthBar a, HealthBar b) { return a.screenPos.z.CompareTo(b.screenPos.z); });
 
@@ -42,9 +40,25 @@ public class HealthBarManager : MonoBehaviour
         go.transform.SetParent(transform);
         HealthBar hb = go.GetComponent<HealthBar>();
         hb.stats = stat;
+        hb.manager = this;
 
         // add to our global list for sorting. 
         // For a dynamic game, you'll need to be able to remove from this list too when a character dies or disappears
         bars.Add(hb);
+    }
+
+    public void RemoveHealthBar(HealthBar bar)
+    {
+        bars.Remove(bar);
+        Destroy(bar);
+    }
+
+    public void RemoveHealthBar(Stats stats)
+    {
+        HealthBar bar = bars.Find(b => b.stats = stats);
+        if (!bar) return;
+
+        bars.Remove(bar);
+        Destroy(bar);
     }
 }

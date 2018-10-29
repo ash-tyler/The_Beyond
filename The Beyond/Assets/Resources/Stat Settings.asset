@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69c439a7004090448804e29d20e2a54, type: 3}
   m_Name: Stat Settings
   m_EditorClassIdentifier: 
-  startHitpoints: 100
-  startMaximumHitpoints: 100
-  startMana: 0
-  startMaximumMana: 0
-  startLevel: 2
-  startBuff: 0
+  hitpoints: 100
+  maximumHitpoints: 100
+  mana: 50
+  maximumMana: 50
+  level: 1
+  buff: 0

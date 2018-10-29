@@ -24,7 +24,7 @@ public class TestSwitch : MonoBehaviour
 
     private void SwitchModel(PlayerModel model)
     {
-        player.ChangePlayerModel(model);
+        player.ChangeCharacterModel(model);
         useModelOne = !useModelOne;
     }
 }

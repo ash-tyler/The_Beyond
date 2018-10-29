@@ -1,0 +1,274 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SkeletonMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: PROTECTION
+    m_Weight: 0
+  - m_Path: skeleton_knight
+    m_Weight: 0
+  - m_Path: skeleton_knight_
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ L Thigh
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ L Thigh/skeleton_knight_
+      L Calf
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ L Thigh/skeleton_knight_
+      L Calf/skeleton_knight_ L Foot
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ L Thigh/skeleton_knight_
+      L Calf/skeleton_knight_ L Foot/skeleton_knight_ L Toe0
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ L Thigh/skeleton_knight_
+      L Calf/skeleton_knight_ L Foot/skeleton_knight_ L Toe0/skeleton_knight_ L Toe01
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ L Thigh/skeleton_knight_
+      L Calf/skeleton_knight_ L Foot/skeleton_knight_ L Toe0/skeleton_knight_ L Toe01/skeleton_knight_
+      L Toe02
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ R Thigh
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ R Thigh/skeleton_knight_
+      R Calf
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ R Thigh/skeleton_knight_
+      R Calf/skeleton_knight_ R Foot
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ R Thigh/skeleton_knight_
+      R Calf/skeleton_knight_ R Foot/skeleton_knight_ R Toe0
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ R Thigh/skeleton_knight_
+      R Calf/skeleton_knight_ R Foot/skeleton_knight_ R Toe0/skeleton_knight_ R Toe01
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ R Thigh/skeleton_knight_
+      R Calf/skeleton_knight_ R Foot/skeleton_knight_ R Toe0/skeleton_knight_ R Toe01/skeleton_knight_
+      R Toe02
+    m_Weight: 0
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/SHIELD
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger0
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger0/skeleton_knight_ L Finger01
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger0/skeleton_knight_ L Finger01/skeleton_knight_ L Finger02
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger1
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger1/skeleton_knight_ L Finger11
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger1/skeleton_knight_ L Finger11/skeleton_knight_ L Finger12
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger2
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger2/skeleton_knight_ L Finger21
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger2/skeleton_knight_ L Finger21/skeleton_knight_ L Finger22
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger3
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger3/skeleton_knight_ L Finger31
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger3/skeleton_knight_ L Finger31/skeleton_knight_ L Finger32
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger4
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger4/skeleton_knight_ L Finger41
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ L Clavicle/skeleton_knight_
+      L UpperArm/skeleton_knight_ L Forearm/skeleton_knight_ L Hand/skeleton_knight_
+      L Finger4/skeleton_knight_ L Finger41/skeleton_knight_ L Finger42
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ Neck1
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ Neck1/skeleton_knight_
+      Head
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ Neck1/skeleton_knight_
+      Head/HELMET
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/2HANDED_SWORD
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger0
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger0/skeleton_knight_ R Finger01
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger0/skeleton_knight_ R Finger01/skeleton_knight_ R Finger02
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger1
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger1/skeleton_knight_ R Finger11
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger1/skeleton_knight_ R Finger11/skeleton_knight_ R Finger12
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger2
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger2/skeleton_knight_ R Finger21
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger2/skeleton_knight_ R Finger21/skeleton_knight_ R Finger22
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger3
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger3/skeleton_knight_ R Finger31
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger3/skeleton_knight_ R Finger31/skeleton_knight_ R Finger32
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger4
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger4/skeleton_knight_ R Finger41
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/skeleton_knight_
+      R Finger4/skeleton_knight_ R Finger41/skeleton_knight_ R Finger42
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/SWORD
+    m_Weight: 1
+  - m_Path: skeleton_knight_/skeleton_knight_ Pelvis/skeleton_knight_ Spine/skeleton_knight_
+      Spine1/skeleton_knight_ Spine2/skeleton_knight_ Neck/skeleton_knight_ R Clavicle/skeleton_knight_
+      R UpperArm/skeleton_knight_ R Forearm/skeleton_knight_ R Hand/WEAPON_BONE
+    m_Weight: 1

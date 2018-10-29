@@ -17,17 +17,26 @@ public class HealthBar : MonoBehaviour
 
     public bool playerBar = false;
 
-	
+    public HealthBarManager manager;
+
+
+    private void Start()
+    {
+        if (!stats && !playerBar)
+        {
+            if (manager)
+                manager.RemoveHealthBar(this);
+            else
+                Destroy(this.gameObject);
+        }
+    }
+
     // Update is called once per frame
-	void Update ()
+    void Update ()
     {
         if (stats == null)
-        {
-            if (!playerBar)
-                Destroy(gameObject, 0.1f);
-
             return;
-        }
+
 
         // set the character's name
         if (nameText)
@@ -45,16 +54,10 @@ public class HealthBar : MonoBehaviour
 
         // scale the meter
         if (healthBar)
-        {
-            float pctHealth = Mathf.Clamp01(stats.hp.Hitpoints / stats.hp.MaximumHitpoints);
-            healthBar.fillAmount = pctHealth;
-        }
+            healthBar.fillAmount = stats.health.GetPointsAsPercent();
 
         if (manaBar)
-        {
-            float pctMana = Mathf.Clamp01(stats.mana.Hitpoints / stats.mana.MaximumHitpoints);
-            manaBar.fillAmount = pctMana;
-        }
+            manaBar.fillAmount = stats.mana.GetPointsAsPercent();
 
         // store the position in screen space of the health bar for sorting purposes
         screenPos = Camera.main.WorldToScreenPoint(stats.transform.position);

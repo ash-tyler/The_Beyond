@@ -8,9 +8,12 @@ public class InventoryUI : ObjectContainerList<Item>
     // Use this for initialization
     void Start()
     {
-        //Item[] itemsToDisplay = inventory.items.Where(i => !i.invisibleInInventory).ToArray();
-
+        inventory.userInterface = this;
         CreateSlots(inventory.items);
-        //CreateSlots(inventory.items);
+    }
+
+    public void CreateSlots(int index)
+    {
+        slots[index].item.SetObject(objects[index]);
     }
 }

@@ -2078,7 +2078,7 @@ MonoBehaviour:
   endEulerRotationOpposite: {x: 0, y: 10, z: 0}
   positionSpeed: 0
   rotationSpeed: 200
-  autoDoor: 0
+  autoDoor: 1
   triggers:
   - {fileID: 114439537048022056}
   - {fileID: 114676557137062444}

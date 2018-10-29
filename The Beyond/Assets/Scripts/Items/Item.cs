@@ -3,11 +3,13 @@
 public class Item : ScriptableObject
 {
     public Sprite       inventoryImage;
+    [Space]
     public GameObject   lootModel;
     public GameObject   model;
+    [Space]
     public int          defaultValue = 0;
     public bool         canAddToInventory = true;
-    public bool         invisibleInInventory = false;
+
 
     void Start()
     {

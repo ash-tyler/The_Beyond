@@ -13,10 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryImage: {fileID: 21300000, guid: 3870c7dbf0dfb4e4d948354096a393dc, type: 3}
   lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
-  model: {fileID: 100000, guid: fac81ae7ce88d464797bb0ab8619b67a, type: 3}
+  model: {fileID: 1026959995326938, guid: de318551f17d03b4996f0ca2e1e9befe, type: 2}
   defaultValue: 30
   canAddToInventory: 1
-  invisibleInInventory: 0
   damage: 12
   damageRadius: 3.5
   angle: 180
+  positionAdjust: {x: 0.098, y: 0.028, z: 0.041}
+  rotationAdjust: {x: 180.88, y: 15.6, z: 320.8}
+  scaleAdjust: {x: 2.45, y: 2.12, z: 1.61}
+  isOffhand: 0

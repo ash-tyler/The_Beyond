@@ -5,10 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStats))]
 public class Player : Character
 {
-    public Sight eyesight = new Sight();
+    [Space] public Sight eyesight = new Sight();
+
     [HideInInspector] public ThirdPersonCam pCamera;
     [HideInInspector] public ThirdPersonController controller;
+
     [HideInInspector] public bool firstPerson;
+
 
     public PlayerModel  PModel { get { return (model as PlayerModel); } }
     public Transform    CameraFocus { get { return (controller.IsCrouching) ? model.crouchHead : model.head; } }
@@ -36,54 +39,18 @@ public class Player : Character
         pCamera.Setup(this);
     }
 
-    private void Update()
+    void Update()
     {
         eyesight.Update();
+
+        if (canDie && !dead && stats.health.points <= 0)
+            Kill();
     }
-
-
-    public void SetObjectLayer(Transform obj, int layer)
-    {
-        obj.gameObject.layer = layer;
-        foreach (Transform child in obj)
-            if (child.gameObject.layer != LayerMask.NameToLayer("Loot"))
-                SetObjectLayer(child, layer);
-    }
-
-    public void ChangePlayerModel(CharacterModel newPlayerModel)
-    {
-        IEnumerator cm = ChangeModel(newPlayerModel);
-        StartCoroutine(cm);
-    }
-
-    /// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
-    private IEnumerator ChangeModel(CharacterModel newPlayerModel)
-    {
-        while (controller.State.IsCrouching)
-            yield return new WaitForSeconds(.5f);
-
-        Quaternion rot = model.transform.rotation;
-        GameObject previousModel = model.gameObject;
-        Destroy(previousModel);
-
-        model = null;
-        model = Instantiate(newPlayerModel, transform.position, rot, transform);
-        model.character = this;
-
-        PModel.SetupAnimationHelper();
-
-        equipment.ReEquipWeapon(PModel.leftHand, PModel.rightHand);
-        PModel.attackManager.equipment = equipment;
-    }
+   
 
     public Quaternion GetMovementQuaternion()
     {
         return Quaternion.Euler(0, pCamera.GetRigYRotation(), 0);
-    }
-
-    public void RotateModel(Vector3 lookRotation, float turnSpeed)
-    {
-        PModel.RotateModel(Quaternion.LookRotation(lookRotation), turnSpeed);
     }
 
     public void SwitchToFirstPerson()
@@ -100,19 +67,12 @@ public class Player : Character
         pCamera.SetFirstPersonMode(firstPerson);
     }
 
-    //public void EnterCombat()
-    //{
-    //    pModel.SetInCombat(true);
-    //    equipment.currentlyAttacking = true;
-    //}
+    public override void Kill()
+    {
+        dead = true;
+        model.SetDead();
 
-    //public void ExitCombat()
-    //{
-    //    pModel.SetInCombat(false);
-    //}
-
-    //public void TriggerAttack()
-    //{
-    //    pModel.TriggerAttack();
-    //}
+        //onDead.Invoke(this);
+        onAnyDead.Invoke(this);
+    }
 }

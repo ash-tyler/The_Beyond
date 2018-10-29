@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Beyond.States;
+using UnityEngine;
 
 [System.Serializable]
 [RequireComponent(typeof(Animator))]
@@ -9,20 +10,28 @@ public class CharacterModel : MonoBehaviour
     public Transform rightHand;
     public Transform head;
     public Transform crouchHead;
+    public Transform back;
 
     [Space] public AnimationManager         animManager;
     [HideInInspector] public AttackManager  attackManager;
+
     [HideInInspector] public Character      character;
 
     public void Setup()
     {
         animManager.SetAnimator(GetComponent<Animator>());
         attackManager = GetComponent<AttackManager>();
+        attackManager.Setup(character);
     }
 
-    public void SetupAnimationHelper()
+    public void SetDead()
     {
-        animManager.SetAnimator(GetComponent<Animator>());
+        animManager.SetDead();
+    }
+
+    public void SetEquipmentType(int equipmentType)
+    {
+        animManager.SetEquipmentType(equipmentType);
     }
 
     public void SetInCombat(bool value)
@@ -35,13 +44,23 @@ public class CharacterModel : MonoBehaviour
         animManager.TriggerAttack();
     }
 
-    public static bool SuitableCharacterModel(GameObject model)
+    public void HandleAnimator(ActionState state, Vector3 velocity, bool grounded)
     {
-        return (model && model.GetComponent<CharacterModel>());
+        animManager.HandleAnimator(state, velocity, grounded);
     }
 
     public void RotateModel(Quaternion lookRot, float turnSpeed)
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, turnSpeed * Time.deltaTime);
+    }
+
+    public void SetMainWeaponParentCombat()
+    {
+        character.equipment.SetMainWeaponParent(rightHand, character.equipment.mainWeapon.positionAdjust, character.equipment.mainWeapon.rotationAdjust);
+    }
+
+    public void SetMainWeaponParentIdle()
+    {
+        character.equipment.SetMainWeaponParent(back, Vector3.zero, Vector3.zero);
     }
 }

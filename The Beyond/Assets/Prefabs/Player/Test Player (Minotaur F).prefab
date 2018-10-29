@@ -770,6 +770,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1533059091210476
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4213465420346754}
+  m_Layer: 10
+  m_Name: Back (Stable)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1534445316183736
 GameObject:
   m_ObjectHideFlags: 1
@@ -1793,6 +1808,19 @@ Transform:
   m_Father: {fileID: 4429204912673122}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4213465420346754
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533059091210476}
+  m_LocalRotation: {x: -0.5762985, y: 0.071652405, z: 0.79131424, w: 0.19122729}
+  m_LocalPosition: {x: 0.13, y: 0.4, z: -0.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4429204912673122}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -160.5, y: 110.2, z: -13.5}
 --- !u!4 &4214564885944440
 Transform:
   m_ObjectHideFlags: 1
@@ -2011,6 +2039,7 @@ Transform:
   - {fileID: 4798795682611230}
   - {fileID: 4023519850837566}
   - {fileID: 4181647502280200}
+  - {fileID: 4213465420346754}
   m_Father: {fileID: 4178849423663852}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2891,16 +2920,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Player
-  startingStats: {fileID: 0}
+  disableHealthBar: 1
+  statPreset: {fileID: 11400000, guid: b30cd4ae5b827064c820746f0741af1a, type: 2}
   awarenessRadius: 5
-  hp:
+  health:
     points: 100
-    maxPoints: 100
+    maximumPoints: 100
     characterName: 
     barName: 
   mana:
     points: 50
-    maxPoints: 50
+    maximumPoints: 50
     characterName: 
     barName: 
   level:
@@ -2940,7 +2970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ab4a4a6de27f4ea3112caec46453c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipment: {fileID: 0}
 --- !u!114 &114716590672955820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2952,10 +2981,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598be6f2531a2994c8a7e9a9552f9e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 4592464907917052}
-  rightHand: {fileID: 4648639725460538}
+  leftHand: {fileID: 4637890572703440}
+  rightHand: {fileID: 4501619414724974}
   head: {fileID: 4665662106692412}
   crouchHead: {fileID: 4182201861577676}
+  back: {fileID: 4213465420346754}
   animManager:
     controller: {fileID: 9100000, guid: 8438ea470c2406647a6ac46bca3570ec, type: 2}
     avatar: {fileID: 9000000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
@@ -2976,12 +3006,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  weaponInfo: {fileID: 11400000, guid: 745f9b89f9ddb4d4aaefa802ab464ae9, type: 2}
-  weaponIsEquiped: 0
+  mainWeapon: {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}
+  offhand: {fileID: 0}
+  fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
 --- !u!114 &114786553423459486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2993,6 +3024,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9890e167c40874da5da4da562784da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterType:
+    typeSingular: Minotaur
+    typeMultiple: Minotaurs
+  canDie: 1
   model: {fileID: 0}
   stats: {fileID: 0}
   equipment: {fileID: 0}
@@ -3001,6 +3036,7 @@ MonoBehaviour:
     layermask:
       serializedVersion: 2
       m_Bits: 17462
+    obj: {fileID: 0}
   pCamera: {fileID: 0}
   controller: {fileID: 0}
   firstPerson: 0
@@ -3015,7 +3051,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  userInterface: {fileID: 0}
 --- !u!137 &137786181093436422
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -6,19 +6,22 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Inventory))]
 public class Character : MonoBehaviour
 {
-    [HideInInspector] public CharacterModel model;
+    public CharacterType characterType;
+    [Space]
+    public bool canDie = true;
 
+    [HideInInspector] public CharacterModel model;
     [HideInInspector] public Stats stats;
     [HideInInspector] public Equipment equipment;
     [HideInInspector] public Inventory inventory;
 
-    private bool dead = false;
-    
+    protected bool dead = false;
+
+
     [System.Serializable]
     public class DeathEvent : UnityEvent<Character> { };
 
-    // uncomment this if you want to hook things up to individual character's deaths
-    // public DeathEvent onDead;
+    // public DeathEvent onDead;        //uncomment this if you want to hook things up to individual character's deaths
     public static DeathEvent onAnyDead = new DeathEvent();
 
 
@@ -38,38 +41,98 @@ public class Character : MonoBehaviour
         equipment.Setup(this);
     }
 
-
-
-
     private void Update()
     {
-
-        if (stats.hp.Hitpoints <= 0 && !dead)
-        {
-            Character attacker = stats.hp.lastAttacker;
-            attacker.stats.level.AddExperience(stats.level.killEXP);
-
-            dead = true;
-            Destroy(gameObject, 5);
-
-            //onDead.Invoke(this);
-            onAnyDead.Invoke(this);
-        }
+        if (canDie && !dead && stats.health.points <= 0)
+            Kill();
     }
+
 
     public void EnterCombat()
     {
+        model.SetEquipmentType(equipment.GetEquipmentType());
         model.SetInCombat(true);
-        equipment.currentlyAttacking = true;
+        equipment.EnterCombat();
     }
 
     public void ExitCombat()
     {
         model.SetInCombat(false);
+        equipment.ExitCombat();
     }
 
     public void TriggerAttack()
     {
         model.TriggerAttack();
     }
+
+    public void SetObjectLayer(Transform obj, int layer)
+    {
+        obj.gameObject.layer = layer;
+        foreach (Transform child in obj)
+            if (child.gameObject.layer != LayerMask.NameToLayer("Loot"))
+                SetObjectLayer(child, layer);
+    }
+
+    public void RotateModel(Vector3 lookRotation, float turnSpeed)
+    {
+        model.RotateModel(Quaternion.LookRotation(lookRotation), turnSpeed);
+    }
+
+    public void RotateModelLookAt(Vector3 position)
+    {
+        model.transform.LookAt(new Vector3(position.x, model.transform.position.y, position.z));
+    }
+
+    /// <summary> Sets up the given model to be used as the CharacterModel. </summary>
+    public void ChangeCharacterModel(CharacterModel newModel)
+    {
+        Quaternion rot = model.transform.rotation;
+        Destroy(model.gameObject);
+
+        model = Instantiate(newModel, transform.position, rot, transform);
+        model.character = this;
+        model.Setup();
+
+        equipment.ReEquip();
+    }
+
+    public virtual void Kill()
+    {
+        Character attacker = stats.health.lastAttacker;
+        attacker.stats.level.AddExperience(stats.level.killEXP);
+
+        dead = true;
+        model.SetDead();
+        Destroy(gameObject, 5);
+
+        //onDead.Invoke(this);
+        onAnyDead.Invoke(this);
+    }
+
+    //public void ChangePlayerModel(CharacterModel newPlayerModel)
+    //{
+    //    IEnumerator cm = ChangeModel(newPlayerModel);
+    //    StartCoroutine(cm);
+    //}
+
+    ///// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
+    //private IEnumerator ChangeModel(CharacterModel newPlayerModel)
+    //{
+    //    while (controller.State.IsCrouching)
+    //        yield return new WaitForSeconds(.5f);
+
+    //    Quaternion rot = model.transform.rotation;
+    //    GameObject previousModel = model.gameObject;
+    //    Destroy(previousModel);
+
+    //    model = null;
+    //    model = Instantiate(newPlayerModel, transform.position, rot, transform);
+    //    model.character = this;
+
+    //    PModel.SetupAnimationHelper();
+
+    //    equipment.ReEquipWeapon(PModel.leftHand, PModel.rightHand);
+    //    PModel.attackManager.equipment = equipment;
+    //}
 }
