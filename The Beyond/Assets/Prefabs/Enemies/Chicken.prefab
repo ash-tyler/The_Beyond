@@ -1188,7 +1188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019711387652684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1789.71, y: 58.858, z: 2070.03}
+  m_LocalPosition: {x: -1789.71, y: 58.858, z: 2081.75}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4206027709630138}
@@ -1473,7 +1473,7 @@ MonoBehaviour:
   characterName: 
   disableHealthBar: 0
   statPreset: {fileID: 11400000, guid: 8fafd5dbcdc2598439119ccdfd94f60f, type: 2}
-  awarenessRadius: 2
+  awarenessRadius: 4
   health:
     points: 0
     maximumPoints: 0

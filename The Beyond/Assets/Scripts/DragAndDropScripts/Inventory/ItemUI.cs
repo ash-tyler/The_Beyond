@@ -11,10 +11,15 @@ public class ItemUI : Draggable
         Item item = obj as Item;
         if (icon)
         {
-            if (item!=null)
+            if (item != null)
                 icon.sprite = item.inventoryImage;
         }
         gameObject.SetActive(item != null);
 
+    }
+
+    public override void OnRightClick()
+    {
+        Item item = obj as Item;
     }
 }

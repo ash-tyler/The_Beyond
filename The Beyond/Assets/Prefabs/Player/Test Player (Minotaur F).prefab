@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114501055897937130}
   - component: {fileID: 114750160954275420}
   - component: {fileID: 114870500819141144}
+  - component: {fileID: 114721070158039840}
   m_Layer: 10
   m_Name: Test Player (Minotaur F)
   m_TagString: Player
@@ -2995,6 +2996,23 @@ MonoBehaviour:
     animationMultiplier: 1
   attackManager: {fileID: 0}
   character: {fileID: 0}
+--- !u!114 &114721070158039840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008497686319238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  userInterface: {fileID: 0}
 --- !u!114 &114750160954275420
 MonoBehaviour:
   m_ObjectHideFlags: 1

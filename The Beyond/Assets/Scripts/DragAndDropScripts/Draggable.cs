@@ -22,6 +22,12 @@ public abstract class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            OnRightClick();
+            return;
+        }
+
         dragging = true;
 
         if (dragging)
@@ -132,4 +138,7 @@ public abstract class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler
             }
         }
     }
+
+
+    public virtual void OnRightClick() { }
 }

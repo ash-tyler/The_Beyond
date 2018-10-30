@@ -4,10 +4,18 @@ public class PanelActivator : MonoBehaviour
 {
     public GameObject panel;
     public bool pauseWhileActive = false;
+    public bool startActive = false;
     [HideInInspector]
     public bool panelOn = false;
     [HideInInspector]
     public Toolbar toolbar;
+
+
+    private void Start()
+    {
+        panel.SetActive(startActive);
+        panelOn = startActive;
+    }
 
     public void TogglePanel()
     {
