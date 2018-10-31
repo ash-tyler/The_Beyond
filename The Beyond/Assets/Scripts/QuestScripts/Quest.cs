@@ -19,11 +19,11 @@ public abstract class Quest : MonoBehaviour
     };
 
     // dialog text to display at various points in the quest
-    [Multiline]
+    [TextArea(3,20)]
     public string introText;
-    [Multiline]
+    [TextArea(3, 20)]
     public string inProgressText;
-    [Multiline]
+    [TextArea(3, 20)]
     public string completeText;
 
     public State state;

@@ -37,8 +37,12 @@ public class QuestGiver : MonoBehaviour
     void Update()
     {
         // TODO fix Sight and remove this function
-        if (Input.GetKeyDown(KeyCode.Q))
-            TalkTo();
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (Vector3.Distance(player.position, transform.position) < 5.0f)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+                TalkTo();
+        }
     }
 
     // talking to a questgiver...
