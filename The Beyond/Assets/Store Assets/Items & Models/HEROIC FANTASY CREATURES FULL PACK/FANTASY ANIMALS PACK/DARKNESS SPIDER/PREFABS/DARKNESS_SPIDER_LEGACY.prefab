@@ -23,7 +23,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 491674}
-  - component: {fileID: 95373382922098352}
+  - component: {fileID: 114853910022061036}
+  - component: {fileID: 114574098840825132}
+  - component: {fileID: 114642853535273240}
+  - component: {fileID: 195307713680777954}
+  - component: {fileID: 114688073620573178}
+  - component: {fileID: 114498575994709416}
+  - component: {fileID: 114036305809461568}
+  - component: {fileID: 136630196526166544}
   m_Layer: 0
   m_Name: DARKNESS_SPIDER_LEGACY
   m_TagString: Untagged
@@ -760,6 +767,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 484820}
+  - component: {fileID: 95793377293938686}
+  - component: {fileID: 114541540176805930}
+  - component: {fileID: 114881271530123170}
   m_Layer: 0
   m_Name: DARKNESS_SPIDER_ROOT
   m_TagString: Untagged
@@ -1653,14 +1663,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185796}
-  m_LocalRotation: {x: -0.7071066, y: -0.00000016858746, z: -0.00000016858735, w: 0.70710707}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429328}
   m_Father: {fileID: 491674}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &484864
 Transform:
   m_ObjectHideFlags: 1
@@ -1722,15 +1732,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100846}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.1276679, z: -0, w: 0.991817}
+  m_LocalPosition: {x: -1487.2201, y: 125.965, z: 2336.96}
+  m_LocalScale: {x: 0.9543381, y: 0.9543381, z: 0.9543381}
   m_Children:
   - {fileID: 438372}
   - {fileID: 484820}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -14.670001, z: 0}
 --- !u!4 &492308
 Transform:
   m_ObjectHideFlags: 1
@@ -1945,13 +1955,13 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100846}
   m_IsPrefabParent: 1
---- !u!95 &95373382922098352
+--- !u!95 &95793377293938686
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100846}
+  m_GameObject: {fileID: 185796}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: aa45771edf70475439a64aec39a3a8d1, type: 3}
   m_Controller: {fileID: 9100000, guid: 4a8d1dff899932b46949043c6b56a3c8, type: 2}
@@ -1962,3 +1972,215 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114036305809461568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22ab4a4a6de27f4ea3112caec46453c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114498575994709416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainWeapon: {fileID: 0}
+  offhand: {fileID: 0}
+  fistInfo: {fileID: 0}
+  currentlyAttacking: 0
+  character: {fileID: 0}
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
+--- !u!114 &114541540176805930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22ab4a4a6de27f4ea3112caec46453c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114574098840825132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b8271250835014b9929c445ca998ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Spider
+  disableHealthBar: 0
+  statPreset: {fileID: 11400000, guid: b30cd4ae5b827064c820746f0741af1a, type: 2}
+  awarenessRadius: 5
+  health:
+    points: 10
+    maximumPoints: 10
+    characterName: 
+    barName: 
+  mana:
+    points: 10
+    maximumPoints: 10
+    characterName: 
+    barName: 
+  level:
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
+    buff: 0
+    killEXP: 500
+    currentEXP: 0
+--- !u!114 &114642853535273240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32ddf554b5133e46a0601d708731a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 8
+  walkSpeed: 6
+  crouchSpeed: 1
+  jumpSpeed: 10
+  turnSpeed: 6
+  gravityMultiplier: 2
+  crouchMultiplier: 0.55
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackWait: 1.6
+  target: {fileID: 0}
+  aiManager:
+    enableAI: 1
+    startState: {fileID: 11400000, guid: 7d68be1ef834b8f40a8ae036f03d6c86, type: 2}
+    currentState: {fileID: 0}
+    controller: {fileID: 0}
+    npc: {fileID: 0}
+  navMeshAgent: {fileID: 0}
+--- !u!114 &114688073620573178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231e038caefe61848ac9a79a2aa25117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterType:
+    typeSingular: Spider
+    typeMultiple: Spiders
+  canDie: 1
+  model: {fileID: 0}
+  stats: {fileID: 0}
+  equipment: {fileID: 0}
+  inventory: {fileID: 0}
+  controller: {fileID: 0}
+--- !u!114 &114853910022061036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  userInterface: {fileID: 0}
+--- !u!114 &114881271530123170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d7f0ce28b643e429d00eec235e7a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  head: {fileID: 0}
+  crouchHead: {fileID: 0}
+  back: {fileID: 0}
+  animManager:
+    controller: {fileID: 9100000, guid: 4a8d1dff899932b46949043c6b56a3c8, type: 2}
+    avatar: {fileID: 9000000, guid: aa45771edf70475439a64aec39a3a8d1, type: 3}
+    maxRunSpeed: 10
+    maxWalkSpeed: 6
+    maxCrouchSpeed: 1
+    animationMultiplier: 1
+  attackManager: {fileID: 0}
+  character: {fileID: 0}
+--- !u!136 &136630196526166544
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &195307713680777954
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100846}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

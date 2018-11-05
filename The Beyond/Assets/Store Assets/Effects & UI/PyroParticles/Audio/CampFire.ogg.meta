@@ -3,6 +3,7 @@ guid: d0d0b7f865e3a50448df4610cf2681dd
 timeCreated: 1430435828
 licenseType: Store
 AudioImporter:
+  externalObjects: {}
   serializedVersion: 6
   defaultSettings:
     loadType: 0
@@ -13,8 +14,10 @@ AudioImporter:
     conversionMode: 0
   platformSettingOverrides: {}
   forceToMono: 1
+  normalize: 1
   preloadAudioData: 1
-  loadInBackground: 0
+  loadInBackground: 1
+  ambisonic: 1
   3D: 1
   userData: 
   assetBundleName: 
