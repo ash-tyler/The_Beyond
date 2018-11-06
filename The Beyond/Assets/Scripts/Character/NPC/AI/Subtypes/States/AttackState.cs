@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "AI/States/Attack", fileName = "New AttackState")]
@@ -8,7 +9,9 @@ public class AttackState : AIState
 
     public override void Action(AIManager manager)
     {
-        manager.npc.RotateModelLookAt(manager.controller.target.transform.position);
+        Character closestEnemy = (manager.controller.enemiesInRadius.Count > 0) ? manager.controller.enemiesInRadius.First() : GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        manager.npc.RotateModelLookAt(closestEnemy.transform.position);
 
         if ((Time.time - lastTime) > manager.controller.attackWait)
         {

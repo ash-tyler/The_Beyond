@@ -31,7 +31,7 @@ public class AIManager
     {
         if (enableAI)
         {
-            currentState.Action(this);
+            //currentState.Action(this);
             currentState.UpdateState(this);
         }
     }

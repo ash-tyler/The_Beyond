@@ -2,49 +2,65 @@
 
 public class AttackManager : MonoBehaviour
 {
-    private Equipment equipment;
-    private static LayerMask attackLayers;
+    private Character character;
+
 
     public void Setup(Character newCharacter)
     {
-        equipment = newCharacter.equipment;
-        attackLayers = ~(LayerMask.NameToLayer("Player") | LayerMask.NameToLayer("NPC") | LayerMask.NameToLayer("Invisible"));
+        character = newCharacter;
     }
 
     public void WeaponHit()
     {
-        Transform user = transform;
-        Weapon weapon = equipment.GetWeaponInfo();
-
+        Weapon weapon = character.equipment.GetWeaponInfo();
         if (!weapon) return;
 
 
-        Collider[] targetsInRadius = Physics.OverlapSphere(user.position, weapon.damageRadius, attackLayers);
+        if (character as NPC)
+            foreach (Character otherCharacter in (character as NPC).GetAttackableCharacters(weapon.damageRadius))
+                Attack(weapon, otherCharacter);
 
-        foreach (Collider enemy in targetsInRadius)
-        {
-            Stats enemyStats = enemy.GetComponent<Stats>();
-
-            if (enemyStats && enemy.transform != equipment.transform)
-                if (WithinAttackAngle(enemy.transform.position, weapon.angle) && !BlockedByScenery(enemy.transform.position))
-                    enemyStats.health.Damage(weapon.damage, equipment.character);
-
-            //Vector3 direction = enemy.transform.position - user.position;
-            //float angle = (equipment.weaponInfo.angle < 0) ? Vector3.Angle(user.forward, direction) * -1 : Vector3.Angle(user.forward, direction);
-
-            //if (angle < (equipment.weaponInfo.angle * 0.5f))
-            //    if (!Physics.Raycast(user.position, direction, Vector3.Distance(user.position, enemy.transform.position), LayerMask.NameToLayer("Scenery")))
-            //        enemyStats.health.Damage(equipment.weaponInfo.damage, equipment.character);
-        }
+        else
+            foreach (Character otherCharacter in character.GetAttackableCharacters(weapon.damageRadius))
+                Attack(weapon, otherCharacter);
     }
 
-    private bool WithinAttackAngle(Vector3 enemyPos, float weaponAngle)
+
+    private void Attack(Weapon weapon, Character otherCharacter)
     {
-        return (Vector3.Angle(transform.forward, enemyPos - transform.position) < Mathf.Abs(weaponAngle * 0.5f));
+        Vector3 enemyPos = otherCharacter.model.transform.position;
+        if (character != otherCharacter && InAttackAngle(enemyPos) && !SceneryBlocked(enemyPos))
+            otherCharacter.stats.health.Damage(weapon.damage, character);
     }
 
-    private bool BlockedByScenery(Vector3 enemyPos)
+    private bool InAttackAngle(Vector3 otherPos)
     {
-        return Physics.Linecast(transform.position, enemyPos, LayerMask.NameToLayer("Scenery"));
+        return (Vector3.Angle(transform.forward, otherPos - transform.position) < Mathf.Abs(character.equipment.mainWeapon.angle * 0.5f));
     }
+
+    private bool SceneryBlocked(Vector3 otherPos)
+    {
+        return Physics.Linecast(transform.position, otherPos, LayerMask.NameToLayer("Scenery"));
+    }
+
+    //private bool CanHit(Character otherCharacter, float weaponAngle)
+    //{
+    //    Vector3 enemyPos = otherCharacter.model.transform.position;
+    //    return character != otherCharacter && (Vector3.Angle(transform.forward, enemyPos - transform.position) < Mathf.Abs(weaponAngle * 0.5f))
+    //                        && Physics.Linecast(transform.position, enemyPos, LayerMask.NameToLayer("Scenery"));
+    //}
+
+    //private void AttackAsNPC(Weapon weapon, NPC npc)
+    //{
+    //    foreach (Character ch in npc.GetAttackableCharacters(weapon))
+    //        if (CanHit(ch, weapon.angle) && npc.aggroTypes.Contains(ch.characterType))
+    //            ch.stats.health.Damage(weapon.damage, npc);
+    //}
+
+
+    //private void AttackAsPlayer(Weapon weapon)
+    //{
+    //    foreach (Character ch in character.GetAttackableCharacters(weapon))
+
+    //}
 }

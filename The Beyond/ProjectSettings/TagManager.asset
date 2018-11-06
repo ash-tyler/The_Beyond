@@ -22,7 +22,7 @@ TagManager:
   - Player
   - Loot
   - NPC
-  - Weapon
+  - InvisibleToCamera
   - Minimap
   - 
   - 

@@ -56,7 +56,7 @@ public class Player : Character
     public void SwitchToFirstPerson()
     {
         firstPerson = true;
-        SetObjectLayer(transform, LayerMask.NameToLayer("Invisible"));
+        SetObjectLayer(transform, LayerMask.NameToLayer("InvisibleToCamera"));
         pCamera.SetFirstPersonMode(firstPerson);
     }
 

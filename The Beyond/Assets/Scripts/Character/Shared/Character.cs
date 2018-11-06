@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using TheBeyond.CharacterTypeEnum;
+using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Stats))]
@@ -9,6 +13,9 @@ public class Character : MonoBehaviour
     public CharacterType characterType;
     [Space]
     public bool canDie = true;
+    [Space]
+    public LayerMask attackLayers;
+    public LayerMask visibleLayers;
 
     [HideInInspector] public CharacterModel model;
     [HideInInspector] public Stats stats;
@@ -108,6 +115,43 @@ public class Character : MonoBehaviour
 
         //onDead.Invoke(this);
         onAnyDead.Invoke(this);
+    }
+
+
+    //public IEnumerable<Character> GetVisibleCharacters()
+    //{
+    //    return GetNearbyCharacters(stats.awarenessRadius, visibleLayers);
+    //}
+
+    //public virtual IEnumerable<Character> GetAttackableCharacters(Weapon weapon)
+    //{
+    //    if (!weapon) return new Character[0];
+
+    //    return GetNearbyCharacters(weapon.damageRadius, attackLayers);
+    //}
+
+    //public virtual IEnumerable<Character> GetNearbyCharacters(float radius, LayerMask layers)
+    //{
+    //    Collider[] collidersInRange = Physics.OverlapSphere(model.transform.position, radius, ~layers);
+    //    return collidersInRange.Select(col => col.GetComponent<Character>()).Where(ch => ch);
+    //}
+
+    public virtual IEnumerable<Character> GetAttackableCharacters(float radius)
+    {
+        Collider[] collidersInRange = Physics.OverlapSphere(model.transform.position, radius, attackLayers);
+        return collidersInRange.Select(col => col.GetComponent<Character>()).Where(ch => ch);
+    }
+
+    public virtual IEnumerable<Character> GetVisibleCharacters()
+    {
+        Collider[] collidersInRange = Physics.OverlapSphere(model.transform.position, stats.awarenessRadius, visibleLayers);
+        return collidersInRange.Select(col => col.GetComponent<Character>()).Where(ch => ch);
+    }
+
+    public virtual IEnumerable<Character> GetVisibleCharacters(float radius)
+    {
+        Collider[] collidersInRange = Physics.OverlapSphere(model.transform.position, radius, visibleLayers);
+        return collidersInRange.Select(col => col.GetComponent<Character>()).Where(ch => ch);
     }
 
     //public void ChangePlayerModel(CharacterModel newPlayerModel)

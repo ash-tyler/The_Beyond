@@ -8,6 +8,9 @@ public class TargetInRange : AITransition
 
     public override bool Decide(AIController controller)
     {
-        return (Vector3.Distance(controller.ZeroHeightPosition, controller.TargetZeroHeightPosition) < range);
+        foreach (Character ch in controller.npc.GetVisibleCharacters())
+            return true;
+
+        return false;
     }
 }

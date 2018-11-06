@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "AI/States/FleeState", fileName = "New FleeState")]
@@ -6,7 +7,10 @@ public class FleeState : AIState
 {
     public override void Action(AIManager manager)
     {
-        Vector3 dir = (manager.npc.transform.position - manager.controller.target.transform.position) * 3;
+        Character closestEnemy = (manager.controller.enemiesInRadius.Count > 0) ? manager.controller.enemiesInRadius.First() : GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+
+        Vector3 dir = (manager.npc.transform.position - closestEnemy.transform.position) * 3;
         manager.controller.navMeshAgent.SetDestination(manager.npc.transform.position + dir);
     }
 

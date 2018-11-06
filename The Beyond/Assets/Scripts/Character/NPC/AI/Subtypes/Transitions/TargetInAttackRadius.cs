@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "AI/Transitions/TargetInAttackRadius", fileName = "New TargetInAttackRadius")]
 public class TargetInAttackRadius : AITransition
 {
     public float multiplier = 1.2f;
-    private Player player;
+    //public AggroList types = new AggroList();
 
     public override bool Decide(AIController controller)
     {
-        if (Vector3.Distance(controller.ZeroHeightPosition, controller.TargetZeroHeightPosition) < controller.CurrentWeapon.damageRadius * multiplier)
+        Weapon weapon = controller.npc.equipment.mainWeapon;
+        if (!weapon) return false;
+
+        foreach(Character target in controller.npc.GetAttackableCharacters(weapon.damageRadius * multiplier))
             return true;
 
         return false;

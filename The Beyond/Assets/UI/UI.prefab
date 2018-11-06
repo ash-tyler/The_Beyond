@@ -1299,7 +1299,6 @@ GameObject:
   - component: {fileID: 4809257185553484}
   - component: {fileID: 20571846953009128}
   - component: {fileID: 114517833341023826}
-  - component: {fileID: 124529641904511570}
   m_Layer: 10
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -2026,7 +2025,7 @@ Camera:
   m_GameObject: {fileID: 1726943710422456}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -2038,7 +2037,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 144.52
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -2049,7 +2048,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -6625,13 +6624,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!124 &124529641904511570
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726943710422456}
-  m_Enabled: 1
 --- !u!222 &222039007780990856
 CanvasRenderer:
   m_ObjectHideFlags: 1

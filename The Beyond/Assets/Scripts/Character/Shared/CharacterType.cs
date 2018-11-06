@@ -2,14 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class CharacterType
+namespace TheBeyond.CharacterTypeEnum
 {
-    public string typeSingular = "Example";
-    public string typeMultiple = "Exampli";
-
-    public bool TypeIsSame(CharacterType otherType)
+    public enum CharacterType
     {
-        return (typeSingular == otherType.typeSingular || typeMultiple == otherType.typeMultiple);
+        Player = 0,
+        Chicken,
+        Villager,
+        Wolf,
+        Skeleton,
+        Ghoul,
+        Spider
     }
+
+    public static class CharacterTypeFunction
+    {
+        public static string GetNameMultiple(CharacterType type)
+        {
+            if (type == CharacterType.Wolf)
+                return "Wolves";
+
+            return type.ToString() + "s";
+        }
+    }
+
+    //public string typeSingular = "Example";
+    //public string typeMultiple = "Exampli";
+
+    //public bool TypeIsSame(CharacterType otherType)
+    //{
+    //    return (typeSingular == otherType.typeSingular || typeMultiple == otherType.typeMultiple);
+    //}
 }

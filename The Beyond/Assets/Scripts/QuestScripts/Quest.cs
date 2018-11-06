@@ -28,7 +28,7 @@ public abstract class Quest : MonoBehaviour
 
     public State state;
     public int target; // how many things do we need to do?
-    public int current; // how many we've doen so far
+    public int current; // how many we've done so far
     public float GetPercentage() { return ((float)current) / target; } //returns betwen 0 and 1
     public Quest[] prerequisites;
 

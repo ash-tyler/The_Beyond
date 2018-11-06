@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "AI/States/Chase", fileName = "New ChaseState")]
@@ -6,9 +7,11 @@ public class ChaseState : AIState
 {
     public override void Action(AIManager manager)
     {
-        Vector3 nudgeAmount = (manager.controller.target.transform.position - manager.npc.transform.position).normalized;
-        manager.npc.RotateModelLookAt(manager.controller.target.transform.position);
-        manager.controller.navMeshAgent.SetDestination(manager.controller.target.transform.position - nudgeAmount);
+        Character closestEnemy = (manager.controller.enemiesInRadius.Count > 0) ? manager.controller.enemiesInRadius.First() : GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        Vector3 nudgeAmount = (closestEnemy.transform.position - manager.npc.transform.position).normalized;
+        manager.npc.RotateModelLookAt(closestEnemy.transform.position);
+        manager.controller.navMeshAgent.SetDestination(closestEnemy.transform.position - nudgeAmount);
     }
 
     public override void OnEnter(AIManager manager)
