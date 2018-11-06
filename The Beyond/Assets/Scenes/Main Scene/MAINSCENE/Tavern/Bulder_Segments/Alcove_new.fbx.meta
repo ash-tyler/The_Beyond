@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 4feb23d17cc0c1242b94d1ff2d4186f3
+timeCreated: 1446312595
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Form11
+    100004: Form151
+    100006: Form198
+    100008: Form201
+    100010: Form248
+    100012: Form9
+    100014: Glass
+    100016: AlcoveWalls
+    100018: Ceiling
+    100020: CurtainHolder
+    100022: Floor
+    100024: SurroundWalls
+    100026: SurroundWallsSeat
+    100028: Window
+    400000: //RootNode
+    400002: Form11
+    400004: Form151
+    400006: Form198
+    400008: Form201
+    400010: Form248
+    400012: Form9
+    400014: Glass
+    400016: AlcoveWalls
+    400018: Ceiling
+    400020: CurtainHolder
+    400022: Floor
+    400024: SurroundWalls
+    400026: SurroundWallsSeat
+    400028: Window
+    2300000: Form11
+    2300002: Form151
+    2300004: Form198
+    2300006: Form201
+    2300008: Form248
+    2300010: Form9
+    2300012: Glass
+    2300014: AlcoveWalls
+    2300016: Ceiling
+    2300018: CurtainHolder
+    2300020: Floor
+    2300022: SurroundWalls
+    2300024: SurroundWallsSeat
+    2300026: Window
+    3300000: Form11
+    3300002: Form151
+    3300004: Form198
+    3300006: Form201
+    3300008: Form248
+    3300010: Form9
+    3300012: Glass
+    3300014: AlcoveWalls
+    3300016: Ceiling
+    3300018: CurtainHolder
+    3300020: Floor
+    3300022: SurroundWalls
+    3300024: SurroundWallsSeat
+    3300026: Window
+    4300000: Form151
+    4300002: Form198
+    4300004: Form201
+    4300006: Form248
+    4300008: Glass
+    4300010: Form9
+    4300012: Form11
+    4300014: AlcoveWalls
+    4300016: SurroundWalls
+    4300018: SurroundWallsSeat
+    4300020: CurtainHolder
+    4300022: Ceiling
+    4300024: Floor
+    4300026: Window
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

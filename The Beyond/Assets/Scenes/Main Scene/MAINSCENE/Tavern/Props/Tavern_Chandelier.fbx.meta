@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: f3df4db3080080c46954f2096bc6bdf9
+timeCreated: 1445424401
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Form65
+    100002: Form88
+    100004: Form95
+    100006: Form98
+    100008: Group4_Candle
+    100010: Group4_CandleWick
+    100012: Group4_Form68
+    100014: Group4_Form71
+    100016: Group4_Form85
+    100018: Group4_Shape29
+    100020: Shape29
+    100022: //RootNode
+    100024: Group3_Group4_Form68
+    100026: Group3_Group4_Form71
+    100028: Group3_Group4_Form85
+    100030: Group3_Group4_Shape29
+    400000: Form65
+    400002: Form88
+    400004: Form95
+    400006: Form98
+    400008: Group4_Candle
+    400010: Group4_CandleWick
+    400012: Group4_Form68
+    400014: Group4_Form71
+    400016: Group4_Form85
+    400018: Group4_Shape29
+    400020: Shape29
+    400022: //RootNode
+    400024: Group3_Group4_Form68
+    400026: Group3_Group4_Form71
+    400028: Group3_Group4_Form85
+    400030: Group3_Group4_Shape29
+    2300000: Form65
+    2300002: Form88
+    2300004: Form95
+    2300006: Form98
+    2300008: Group4_Candle
+    2300010: Group4_CandleWick
+    2300012: Group4_Form68
+    2300014: Group4_Form71
+    2300016: Group4_Form85
+    2300018: Group4_Shape29
+    2300020: Shape29
+    2300022: Group3_Group4_Form68
+    2300024: Group3_Group4_Form71
+    2300026: Group3_Group4_Form85
+    2300028: Group3_Group4_Shape29
+    3300000: Form65
+    3300002: Form88
+    3300004: Form95
+    3300006: Form98
+    3300008: Group4_Candle
+    3300010: Group4_CandleWick
+    3300012: Group4_Form68
+    3300014: Group4_Form71
+    3300016: Group4_Form85
+    3300018: Group4_Shape29
+    3300020: Shape29
+    3300022: Group3_Group4_Form68
+    3300024: Group3_Group4_Form71
+    3300026: Group3_Group4_Form85
+    3300028: Group3_Group4_Shape29
+    4300000: Form88
+    4300002: Group4_Shape29
+    4300004: Group4_Form68
+    4300006: Group4_Form71
+    4300008: Group4_Candle
+    4300010: Group4_CandleWick
+    4300012: Group4_Form85
+    4300014: Form95
+    4300016: Form65
+    4300018: Form98
+    4300020: Shape29
+    4300022: Group3_Group4_Shape29
+    4300024: Group3_Group4_Form68
+    4300026: Group3_Group4_Form71
+    4300028: Group3_Group4_Form85
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
