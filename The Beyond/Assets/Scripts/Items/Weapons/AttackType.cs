@@ -1,5 +1,6 @@
 ﻿
-namespace TheBeyond.Enums.AttackType
+
+namespace TheBeyond.Weapons.Enums
 {
     public enum AttackType
     {
