@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitions:
   - checks:
-    - {fileID: 11400000, guid: 63d0c3790eec9b84caf15ceca674f5b5, type: 2}
+    - {fileID: 11400000, guid: 4e31df04003ed0e4a8a3760ac69ecab0, type: 2}
     trueState: {fileID: 0}
     falseState: {fileID: 11400000, guid: 26675b14facf1eb468b1bb86209b3a41, type: 2}

@@ -19,13 +19,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4651438800296726}
+  - component: {fileID: 136876958806490122}
   - component: {fileID: 195776008213298524}
+  - component: {fileID: 114852212811771016}
   - component: {fileID: 114063664392508574}
-  - component: {fileID: 114934823362418104}
   - component: {fileID: 114785379405286802}
   - component: {fileID: 114497641536454736}
-  - component: {fileID: 114852212811771016}
-  - component: {fileID: 136876958806490122}
+  - component: {fileID: 114934823362418104}
   m_Layer: 12
   m_Name: Chicken
   m_TagString: Untagged
@@ -1188,7 +1188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019711387652684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1789.71, y: 58.858, z: 2081.75}
+  m_LocalPosition: {x: -1793.938, y: 58.858, z: 2067.53}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4206027709630138}
@@ -1422,7 +1422,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackWait: 2
-  target: {fileID: 0}
   aiManager:
     enableAI: 1
     startState: {fileID: 11400000, guid: cdac5e859a4bd80499db5513b2995616, type: 2}
@@ -1470,7 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b8271250835014b9929c445ca998ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Chicken
   disableHealthBar: 0
   statPreset: {fileID: 11400000, guid: 8fafd5dbcdc2598439119ccdfd94f60f, type: 2}
   awarenessRadius: 4
@@ -1500,14 +1499,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231e038caefe61848ac9a79a2aa25117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType:
-    typeSingular: Chicken
-    typeMultiple: Chickens
+  characterType: 1
   canDie: 1
+  attackLayers:
+    serializedVersion: 2
+    m_Bits: 9216
+  visibleLayers:
+    serializedVersion: 2
+    m_Bits: 9216
   model: {fileID: 0}
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
+  aggroTypes:
+    aggroTypes: 00000000
   controller: {fileID: 0}
 --- !u!114 &114934823362418104
 MonoBehaviour:
@@ -1720,7 +1725,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d964ab1c00a4a940a0579ed22be456d, type: 3}
-  m_Name: Skeleton Greatsword 1
+  m_Name: Skeleton Greatsword
   m_EditorClassIdentifier: 
   inventoryImage: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
   lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
