@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4beab60d43552cb4d89247b229ee1117, type: 3}
   m_Name: Enviro Profile Default
   m_EditorClassIdentifier: 
-  version: 2.0.4
+  version: 2.0.5
   lightSettings:
     LightColor:
       serializedVersion: 2
@@ -897,12 +897,12 @@ MonoBehaviour:
   qualitySettings:
     GlobalParticleEmissionRates: 1
     UpdateInterval: 0.5
-  viewMode: 5
-  showPlayerSetup: 0
+  viewMode: 1
+  showPlayerSetup: 1
   showRenderingSetup: 0
   showComponentsSetup: 0
-  showTimeUI: 1
-  showWeatherUI: 1
+  showTimeUI: 0
+  showWeatherUI: 0
   showAudioUI: 0
-  showEffectsUI: 1
-  modified: 1
+  showEffectsUI: 0
+  modified: 0

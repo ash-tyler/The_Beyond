@@ -90,14 +90,14 @@ Material:
     - _EnableCustomFog: 0
     - _EnableReflections: 1
     - _Fade: 0.85
-    - _FoamBlend: 0.64
-    - _FoamContrast: 0.403
+    - _FoamBlend: 0.5
+    - _FoamContrast: 0.318
     - _FoamDistFade: 2.87
-    - _FoamDistFalloff: 20
-    - _FoamIntensity: 12
+    - _FoamDistFalloff: 20.1
+    - _FoamIntensity: 10
     - _FoamSpeed: -200
     - _FoamTiling: 30
-    - _FoamVisibility: 0.473
+    - _FoamVisibility: 0.547
     - _FogDistance: 1000
     - _FogFade: 1.5
     - _FullTransparency: 0
@@ -138,7 +138,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepWaterColor: {r: 0.12802768, g: 0.27205884, b: 0.24821919, a: 1}
+    - _DeepWaterColor: {r: 0.01135381, g: 0.11889393, b: 0.1544118, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.3823529, g: 0.3879758, b: 0.3879758, a: 1}
     - _FogColor: {r: 0.8014706, g: 0.8014706, b: 0.8014706, a: 1}

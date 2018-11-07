@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99eb650cb4a5984bbd1dd226dd17d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabVersion: 2.0.4
+  prefabVersion: 2.0.5
   Player: {fileID: 0}
   PlayerCamera: {fileID: 0}
   AssignInRuntime: 0
@@ -1552,7 +1552,8 @@ MonoBehaviour:
   lastInteriorZone: {fileID: 0}
   cloudAnim: {x: 0.1, y: 0.1}
   cloudAnimNonScaled: {x: 0, y: 0}
-  showSettings: 0
+  skyMat: {fileID: 2100000, guid: 6bc7728bbc4bfb647a39b428626a9293, type: 2}
+  showSettings: 1
 --- !u!182 &182000013702015936
 WindZone:
   m_ObjectHideFlags: 1

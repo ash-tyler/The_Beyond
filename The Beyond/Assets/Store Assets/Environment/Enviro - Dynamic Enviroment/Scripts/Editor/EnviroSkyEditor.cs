@@ -8,7 +8,7 @@ using UnityEditorInternal;
 [CustomEditor(typeof(EnviroSky))]
 public class EnviroSkyEditor : Editor {
 
-	private string latestVersion = "2.0.4";
+	private string latestVersion = "2.0.5";
 	// GUI Styles
 	private GUIStyle boxStyle;
 	private GUIStyle boxStyleModified;

@@ -559,7 +559,7 @@ public static class EnviroProfileCreation {
 	{
 		EnviroProfile profile = ScriptableObject.CreateInstance<EnviroProfile>();
 
-		profile.version = "2.0.4";
+		profile.version = "2.0.5";
 		// Setup new profile with default settings
 		SetupDefaults (profile);
 
@@ -758,7 +758,7 @@ public static class EnviroProfileCreation {
 		if (profile == null)
 			return false;
 
-		if ((fromV == "1.9.0" || fromV == "1.9.1") && toV == "2.0.4") {
+		if ((fromV == "1.9.0" || fromV == "1.9.1") && toV == "2.0.5") {
 			//Sun Intensity
 			profile.lightSettings.directLightSunIntensity = new AnimationCurve();
 			profile.lightSettings.directLightSunIntensity.AddKey (CreateKey (0f, 0f));
@@ -856,7 +856,7 @@ public static class EnviroProfileCreation {
 			return true;
 		}
 
-        if ((fromV == "2.0.0" || fromV == "2.0.1" || fromV == "2.0.2") && toV == "2.0.4")
+        if ((fromV == "2.0.0" || fromV == "2.0.1" || fromV == "2.0.2") && toV == "2.0.5")
         {
             //Galaxy
             profile.skySettings.galaxyIntensity = new AnimationCurve();
@@ -873,11 +873,17 @@ public static class EnviroProfileCreation {
             return true;
         }
 
-        if (fromV == "2.0.3" && toV == "2.0.4")
+        if (fromV == "2.0.3" && toV == "2.0.5")
         {
             //Lightning
             profile.weatherSettings.lightningEffect = GetAssetPrefab("Enviro_Lightning_Strike");
 
+            profile.version = toV;
+            return true;
+        }
+
+        if (fromV == "2.0.4" && toV == "2.0.5")
+        {
             profile.version = toV;
             return true;
         }

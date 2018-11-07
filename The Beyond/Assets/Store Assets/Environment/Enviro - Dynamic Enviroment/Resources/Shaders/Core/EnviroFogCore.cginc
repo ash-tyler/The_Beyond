@@ -63,7 +63,7 @@
 	}
 
 	// Distance fog
-	/*float ComputeDistance (float3 camDir, float zdepth)
+	float ComputeDistance (float3 camDir, float zdepth)
 	{
 		float dist; 
 		if (_SceneFogMode.y == 1)
@@ -75,7 +75,7 @@
 		// if near plane is very large, but good enough.
 		dist -= _ProjectionParams.y;
 		return dist;
-	}*/
+	}
 
 	float ComputeDistance(float depth)
 	{
@@ -237,7 +237,7 @@
 		float g = _DistanceParams.x;
 			if (_EnviroParams.y > 0)
 			{
-				g += ComputeDistance (depth);
+				g += ComputeDistance (wsDir,depth);
 				g *= _distanceFogIntensity ;
 			}
 

@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99eb650cb4a5984bbd1dd226dd17d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabVersion: 2.0.4
+  prefabVersion: 2.0.5
   Player: {fileID: 0}
   PlayerCamera: {fileID: 0}
   AssignInRuntime: 0
@@ -541,7 +541,7 @@ MonoBehaviour:
   globalFog: 1
   profile: {fileID: 11400000, guid: 123c203b6412a434ba1f50ccc42730dd, type: 2}
   GameTime:
-    ProgressTime: 0
+    ProgressTime: 1
     Seconds: 0
     Minutes: 0
     Hours: 12
@@ -1100,7 +1100,7 @@ MonoBehaviour:
     useWindZoneDirection: 1
     cloudsTimeScale: 1
     cloudsWindStrengthModificator: 0.005
-    cloudsWindDirectionX: -0
+    cloudsWindDirectionX: 0
     cloudsWindDirectionY: -1
     raymarchSteps: 75
     stepsInDepthModificator: 0.7
@@ -1562,6 +1562,7 @@ MonoBehaviour:
   lastInteriorZone: {fileID: 0}
   cloudAnim: {x: 0.1, y: 0.1}
   cloudAnimNonScaled: {x: 0, y: 0}
+  skyMat: {fileID: 0}
   showSettings: 1
 --- !u!182 &182397712496852334
 WindZone:

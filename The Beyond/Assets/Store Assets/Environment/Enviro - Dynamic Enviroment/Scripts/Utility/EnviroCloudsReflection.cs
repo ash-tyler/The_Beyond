@@ -18,6 +18,7 @@ public class EnviroCloudsReflection : MonoBehaviour {
     private RenderTexture prevFrameTex;
     private Texture2D curlMap;
     private Texture3D noiseTexture = null;
+    private Texture3D noiseTextureHigh = null;
     private Texture3D detailNoiseTexture = null;
     private Texture3D detailNoiseTextureHigh = null;
 
@@ -67,8 +68,11 @@ public class EnviroCloudsReflection : MonoBehaviour {
         if (curlMap == null)
             curlMap = Resources.Load("tex_enviro_curl") as Texture2D;
 
+        if (noiseTextureHigh == null)
+            noiseTextureHigh = Resources.Load("enviro_clouds_base") as Texture3D;
+
         if (noiseTexture == null)
-            noiseTexture = Resources.Load("enviro_clouds_base") as Texture3D;
+            noiseTexture = Resources.Load("enviro_clouds_base_low") as Texture3D;
 
         if (detailNoiseTexture == null)
             detailNoiseTexture = Resources.Load("enviro_clouds_detail_low") as Texture3D;
@@ -79,7 +83,8 @@ public class EnviroCloudsReflection : MonoBehaviour {
 
     private void SetCloudProperties()
     {
-        mat.SetTexture("_Noise", noiseTexture);
+        mat.SetTexture("_Noise", noiseTextureHigh);
+        mat.SetTexture("_NoiseLow", noiseTexture);
 
         if (EnviroSky.instance.cloudsSettings.detailQuality == EnviroCloudSettings.CloudDetailQuality.Low)
             mat.SetTexture("_DetailNoise", detailNoiseTexture);
@@ -153,6 +158,7 @@ public class EnviroCloudsReflection : MonoBehaviour {
         mat.SetFloat("_Tonemapping", tonemapping ? 0f : 1f);
         mat.SetFloat("_stepsInDepth", EnviroSky.instance.cloudsSettings.stepsInDepthModificator);
         mat.SetFloat("_LODDistance", EnviroSky.instance.cloudsSettings.lodDistance);
+
     }
 
     public void SetBlitmaterialProperties()

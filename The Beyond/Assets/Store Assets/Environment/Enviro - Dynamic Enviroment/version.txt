@@ -365,7 +365,14 @@ v 2.0.4
 	* Updated pdf guides.
 	* Removed fog in edit mode on modified materials.
 		
+----------------------------------------------------------------------------------
+v 2.0.5
 
+	* Fixed transparent fog support.
+	* Fixed temporal reprojection of volume clouds in multi-pass rendering.
+	* Fixed wrong rendering of none stereo camera while rendering in stereo mode.
+	* Fixed Volume Clouds Reflection component.
+	* Send moon render texture to skybox when using custom skybox mode.
 
 
 
