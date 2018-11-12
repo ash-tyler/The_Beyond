@@ -9,6 +9,9 @@ public class NPC : Character
 {
     [Space]
     public AggroList aggroTypes = new AggroList();
+    [Space]
+    public List<GoldDrop> goldDropList = new List<GoldDrop>();
+    public List<LootDrop> dropList = new List<LootDrop>();
     [HideInInspector]
     public AIController controller;
 
@@ -41,6 +44,7 @@ public class NPC : Character
     {
         controller.aiManager.enableAI = false;
         base.Kill();
+        DropLoot();
     }
 
     public override IEnumerable<Character> GetAttackableCharacters(float radius)
@@ -59,5 +63,31 @@ public class NPC : Character
     {
         Collider[] collidersInRange = Physics.OverlapSphere(model.transform.position, radius, visibleLayers);
         return collidersInRange.Select(col => col.GetComponent<Character>()).Where(ch => ch && aggroTypes.Contains(ch.characterType));
+    }
+
+    public void DropLoot()
+    {
+        if (goldDropList.Count == 0) return;
+
+        foreach (GoldDrop gd in goldDropList)
+        {
+            if (Random.Range(0, 100) <= gd.dropChance)
+            {
+                GameObject loot = gd.gold.GetLootInstance();
+                loot.transform.position = transform.position + Vector3.up;
+            }
+        }
+
+
+        if (dropList.Count == 0) return;
+
+        foreach (LootDrop ld in dropList)
+        {
+            if (Random.Range(0, 100) <= ld.dropChance)
+            {
+                GameObject loot = ld.lootItem.GetLootInstance();
+                loot.transform.position = transform.position + Vector3.up * 6;
+            }
+        }
     }
 }

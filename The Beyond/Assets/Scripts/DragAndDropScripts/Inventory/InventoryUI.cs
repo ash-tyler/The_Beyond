@@ -5,11 +5,30 @@ public class InventoryUI : ObjectContainerList<Item>
 {
     public Inventory inventory;
     public bool isReadOnly = false;
+    public bool isQuickBar = false;
     public KeyCode firstKey = KeyCode.None;
 
     // Use this for initialization
     void Start()
     {
+        GameObject pmObj = GameObject.FindGameObjectWithTag("PlayerManager");
+
+        if (pmObj)
+        {
+            PlayerManager playerManager = pmObj.GetComponent<PlayerManager>();
+            if (!playerManager || !playerManager.currentPlayer)
+                return;
+
+            Inventory[] inventories = playerManager.currentPlayer.GetComponents<Inventory>();
+            if (inventories.Length > 0)
+            {
+                if (isQuickBar)
+                    inventory = inventories.Where(x => x.items.Count == 4).First();
+                else
+                    inventory = inventories.Where(x => x.items.Count > 4).First();
+            }
+        }
+
         inventory.userInterface = this;
         CreateSlots(inventory.items);
     }

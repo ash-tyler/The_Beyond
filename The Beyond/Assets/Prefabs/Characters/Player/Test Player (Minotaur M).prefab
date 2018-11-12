@@ -155,6 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4666556097178820}
   - component: {fileID: 114080286099978578}
+  - component: {fileID: 114420253005468594}
   - component: {fileID: 95936507649822656}
   m_Layer: 10
   m_Name: Minotaur
@@ -296,9 +297,11 @@ GameObject:
   - component: {fileID: 114103236977770780}
   - component: {fileID: 114151931293727678}
   - component: {fileID: 114576136835289222}
+  - component: {fileID: 114121663225814948}
+  - component: {fileID: 114677296028336746}
   m_Layer: 10
   m_Name: Test Player (Minotaur M)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,7 +690,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1809846205054024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1811.147, y: 57.906, z: 2074.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4666556097178820}
@@ -839,7 +842,7 @@ Animator:
   m_GameObject: {fileID: 1308115946119136}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
-  m_Controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8438ea470c2406647a6ac46bca3570ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -862,14 +865,16 @@ MonoBehaviour:
   rightHand: {fileID: 4166633746590102}
   head: {fileID: 4952699071166132}
   crouchHead: {fileID: 4367390841740154}
-  animHelper:
-    controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+  back: {fileID: 0}
+  animManager:
+    controller: {fileID: 9100000, guid: 8438ea470c2406647a6ac46bca3570ec, type: 2}
     avatar: {fileID: 9000000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
-    maxRunSpeed: 8
-    maxWalkSpeed: 4
+    maxRunSpeed: 10
+    maxWalkSpeed: 6
     maxCrouchSpeed: 1
     animationMultiplier: 1
-    runAnimOffset: 0.2
+  attackManager: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &114103236977770780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -891,6 +896,39 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &114121663225814948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809846205054024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  userInterface: {fileID: 0}
 --- !u!114 &114151931293727678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -902,14 +940,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc803baa24a838d469a07022ba41261f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp:
-    _hitpoints: 0
-    maximumHitpoints: 0
+  characterName: Player
+  disableHealthBar: 1
+  statPreset: {fileID: 11400000, guid: b30cd4ae5b827064c820746f0741af1a, type: 2}
+  awarenessRadius: 5
+  health:
+    points: 100
+    maximumPoints: 100
+    characterName: 
+    barName: 
+  mana:
+    points: 50
+    maximumPoints: 50
+    characterName: 
+    barName: 
   level:
-    _settings: {fileID: 0}
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
     buff: 0
-  startingStats: {fileID: 0}
-  awarenessRadius: 0
+    killEXP: 0
+    currentEXP: 1000
 --- !u!114 &114408344439215712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -921,13 +970,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9890e167c40874da5da4da562784da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterType: 0
+  canDie: 1
+  attackLayers:
+    serializedVersion: 2
+    m_Bits: 4608
+  visibleLayers:
+    serializedVersion: 2
+    m_Bits: 4096
   model: {fileID: 0}
-  equipment: {fileID: 0}
   stats: {fileID: 0}
-  playerMovement: {fileID: 114103236977770780}
-  playerCamera: {fileID: 0}
-  playerFocus: {fileID: 0}
+  equipment: {fileID: 0}
+  inventory: {fileID: 0}
+  eyesight:
+    layermask:
+      serializedVersion: 2
+      m_Bits: 17462
+    obj: {fileID: 0}
+  pCamera: {fileID: 0}
+  controller: {fileID: 0}
   firstPerson: 0
+--- !u!114 &114420253005468594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308115946119136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22ab4a4a6de27f4ea3112caec46453c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114576136835289222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -939,10 +1012,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainWeapon: {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}
+  offhand: {fileID: 0}
+  fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
+  currentlyAttacking: 0
+  character: {fileID: 0}
   _leftHand: {fileID: 0}
   _rightHand: {fileID: 0}
-  weaponInfo: {fileID: 11400000, guid: 745f9b89f9ddb4d4aaefa802ab464ae9, type: 2}
-  weaponIsEquiped: 0
+--- !u!114 &114677296028336746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809846205054024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  userInterface: {fileID: 0}
 --- !u!137 &137405220169519490
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -957,7 +1050,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cd66f1272c3110542b98805bad4f81db, type: 2}
+  - {fileID: 2100000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1021,8 +1114,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.98
-  m_Radius: 0.4
+  m_Height: 1.9
+  m_Radius: 0.45
   m_SlopeLimit: 50
   m_StepOffset: 0.2
   m_SkinWidth: 0.1

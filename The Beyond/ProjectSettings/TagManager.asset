@@ -8,6 +8,7 @@ TagManager:
   - Weapon Collider
   - Enemy
   - Useable
+  - PlayerManager
   layers:
   - Default
   - TransparentFX

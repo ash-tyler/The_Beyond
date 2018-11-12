@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public float gold;
+    [Space]
     public List<Item> items;
     [HideInInspector]
     public InventoryUI userInterface;
@@ -12,6 +14,49 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         
+    }
+
+
+    public void AddGold(GoldRef goldRef)
+    {
+        if (gold < 99999)
+        {
+            gold += goldRef.gold.defaultValue;
+            Destroy(goldRef.gameObject);
+        }
+        else
+        {
+            Debug.Log("Wallet Full!", this);
+        }
+    }
+
+    public void RemoveGold(GoldRef goldRef)
+    {
+        if (goldRef.gold.defaultValue < gold)
+        {
+            gold -= goldRef.gold.defaultValue;
+            Destroy(goldRef.gameObject);
+        }
+        else
+        {
+            Debug.Log("Not Enough Gold!", this);
+        }
+    }
+
+    public void AddGold(float goldToAdd)
+    {
+        if (gold < 99999)
+            gold += goldToAdd;
+        else
+            Debug.Log("Wallet Full!", this);
+    }
+
+    public void RemoveGold(float goldToRemove)
+    {
+        if (goldToRemove < gold)
+            gold -= goldToRemove;
+        else
+            Debug.Log("Not Enough Gold!", this);
     }
 
     public void AddItem(Item item)

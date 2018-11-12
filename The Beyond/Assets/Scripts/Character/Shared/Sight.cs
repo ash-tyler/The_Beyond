@@ -71,18 +71,27 @@ public class Sight
 
         if (Input.GetButtonDown("Use"))
         {
-            ItemRef itemRef;
-            Door door;
-            QuestGiver questGiver;
+            TravelObject to;
+            GoldRef gr;
+            ItemRef ir;
+            Door dr;
+            QuestGiver qg;
 
-            if (itemRef = LastObjectSeen.GetComponent<ItemRef>())
-                player.inventory.AddItem(itemRef);
 
-            else if (door = LastObjectSeen.GetComponent<Door>())
-                door.UseDoor();
+            if (to = LastObjectSeen.GetComponent<TravelObject>())
+                to.TriggerFade(player.gameObject);
 
-            else if (questGiver = LastObjectSeen.GetComponent<QuestGiver>())
-                questGiver.TalkTo();
+            else if (gr = LastObjectSeen.GetComponent<GoldRef>())
+                player.inventory.AddGold(gr);
+
+            else if (ir = LastObjectSeen.GetComponent<ItemRef>())
+                player.inventory.AddItem(ir);
+
+            else if (dr = LastObjectSeen.GetComponent<Door>())
+                dr.UseDoor();
+
+            else if (qg = LastObjectSeen.GetComponent<QuestGiver>())
+                qg.TalkTo();
         }
     }
 

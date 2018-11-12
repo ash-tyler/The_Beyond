@@ -1188,7 +1188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019711387652684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1793.938, y: 58.858, z: 2067.53}
+  m_LocalPosition: {x: -1789.71, y: 58.858, z: 2081.75}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4206027709630138}
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   canDie: 1
   attackLayers:
     serializedVersion: 2
-    m_Bits: 9216
+    m_Bits: 9728
   visibleLayers:
     serializedVersion: 2
     m_Bits: 9216
@@ -1513,6 +1513,8 @@ MonoBehaviour:
   inventory: {fileID: 0}
   aggroTypes:
     aggroTypes: 00000000
+  goldDropList: []
+  dropList: []
   controller: {fileID: 0}
 --- !u!114 &114934823362418104
 MonoBehaviour:
@@ -1525,6 +1527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: 0
   items: []
   userInterface: {fileID: 0}
 --- !u!136 &136876958806490122

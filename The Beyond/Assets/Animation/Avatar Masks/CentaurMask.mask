@@ -1,0 +1,401 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: CentaurMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Bip01
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Footsteps
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 L Thigh
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 L Thigh/Bip01 L Calf
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 L Thigh/Bip01 L Calf/Bip01 L HorseLink
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 L Thigh/Bip01 L Calf/Bip01 L HorseLink/Bip01
+      L Foot
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 L Thigh/Bip01 L Calf/Bip01 L HorseLink/Bip01
+      L Foot/Bip01 L Toe0
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 L Thigh/Bip01 L Calf/Bip01 L HorseLink/Bip01
+      L Foot/Bip01 L Toe0/Bip01 L Toe0Nub
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 R Thigh
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 R Thigh/Bip01 R Calf
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 R Thigh/Bip01 R Calf/Bip01 R HorseLink
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 R Thigh/Bip01 R Calf/Bip01 R HorseLink/Bip01
+      R Foot
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 R Thigh/Bip01 R Calf/Bip01 R HorseLink/Bip01
+      R Foot/Bip01 R Toe0
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 R Thigh/Bip01 R Calf/Bip01 R HorseLink/Bip01
+      R Foot/Bip01 R Toe0/Bip01 R Toe0Nub
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      L Clavicle
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      L Clavicle/Bip01 L UpperArm
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      L Clavicle/Bip01 L UpperArm/Bip01 L Forearm
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      L Clavicle/Bip01 L UpperArm/Bip01 L Forearm/Bip01 L Hand
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      L Clavicle/Bip01 L UpperArm/Bip01 L Forearm/Bip01 L Hand/Bip01 L Finger0
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      L Clavicle/Bip01 L UpperArm/Bip01 L Forearm/Bip01 L Hand/Bip01 L Finger0/Bip01
+      L Finger0Nub
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LArmNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LIndex
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LIndex/Bip01 LIndex02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LIndex/Bip01 LIndex02/Bip01 LIndex03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LIndex/Bip01 LIndex02/Bip01 LIndex03/Bip01 LIndexNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LMiddle
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LMiddle/Bip01 LMiddle02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LMiddle/Bip01 LMiddle02/Bip01 LMiddle03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LMiddle/Bip01 LMiddle02/Bip01 LMiddle03/Bip01 LMiddleNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LPinky
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LPinky/Bip01 LPinky02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LPinky/Bip01 LPinky02/Bip01 LPinky03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LPinky/Bip01 LPinky02/Bip01 LPinky03/Bip01 LPinkyNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LRing
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LRing/Bip01 LRing02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LRing/Bip01 LRing02/Bip01 LRing03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LRing/Bip01 LRing02/Bip01 LRing03/Bip01 LRingNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LThumb
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LThumb/Bip01 LThumb02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LThumb/Bip01 LThumb02/Bip01 LThumb03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 LArm/Bip01 LArm02/Bip01 LArm03/Bip01 LArm04/Bip01
+      LThumb/Bip01 LThumb02/Bip01 LThumb03/Bip01 LThumbNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Hair
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Hair/Bip01 Hair02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Hair/Bip01 Hair02/Bip01
+      Hair03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Hair/Bip01 Hair02/Bip01
+      Hair03/Bip01 Hair04
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Hair/Bip01 Hair02/Bip01
+      Hair03/Bip01 Hair04/Bip01 Hair05
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Hair/Bip01 Hair02/Bip01
+      Hair03/Bip01 Hair04/Bip01 Hair05/Bip01 Hair06
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Hair/Bip01 Hair02/Bip01
+      Hair03/Bip01 Hair04/Bip01 Hair05/Bip01 Hair06/Bip01 HairNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 HeadNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Jaw
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Jaw/Bip01 JawNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 LBrow
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 LBrow/Bip01 LBrowNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 LCheek
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 LCheek/Bip01 LCheekNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Ponytail1
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Ponytail1/Bip01 Ponytail1Nub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Ponytail2
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 Ponytail2/Bip01 Ponytail2Nub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 RBrow
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 RBrow/Bip01 RBrowNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 RCheek
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 Neck4/Bip01 Head/Bip01 RCheek/Bip01 RCheekNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 ArmNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Index
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Index/Bip01 Index02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Index/Bip01 Index02/Bip01 Index03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Index/Bip01 Index02/Bip01 Index03/Bip01 IndexNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Middle
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Middle/Bip01 Middle02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Middle/Bip01 Middle02/Bip01 Middle03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Middle/Bip01 Middle02/Bip01 Middle03/Bip01 MiddleNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Pinky
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Pinky/Bip01 Pinky02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Pinky/Bip01 Pinky02/Bip01 Pinky03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Pinky/Bip01 Pinky02/Bip01 Pinky03/Bip01 PinkyNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Ring
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Ring/Bip01 Ring02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Ring/Bip01 Ring02/Bip01 Ring03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Ring/Bip01 Ring02/Bip01 Ring03/Bip01 RingNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Thumb
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Thumb/Bip01 Thumb02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Thumb/Bip01 Thumb02/Bip01 Thumb03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RArm_Collar/Bip01 RArm_Shoulder/Bip01 RArm_ForeArm/Bip01
+      RArm_Hand/Bip01 Thumb/Bip01 Thumb02/Bip01 Thumb03/Bip01 ThumbNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RChest
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RChest/Bip01 RChestNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RChestOpp
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      Neck1/Bip01 Neck2/Bip01 Neck3/Bip01 RChestOpp/Bip01 RChestOppNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      R Clavicle
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      R Clavicle/Bip01 R UpperArm
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      R Clavicle/Bip01 R UpperArm/Bip01 R Forearm
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand/Bip01 R Finger0
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 Neck/Bip01
+      R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand/Bip01 R Finger0/Bip01
+      R Finger0Nub
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Tail
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Tail/Bip01 Tail1
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Tail/Bip01 Tail1/Bip01 Tail2
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Tail/Bip01 Tail1/Bip01 Tail2/Bip01
+      Tail3
+    m_Weight: 0
+  - m_Path: Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Tail/Bip01 Tail1/Bip01 Tail2/Bip01
+      Tail3/Bip01 TailNub
+    m_Weight: 0
+  - m_Path: Centaur
+    m_Weight: 1
+  - m_Path: Spear
+    m_Weight: 1

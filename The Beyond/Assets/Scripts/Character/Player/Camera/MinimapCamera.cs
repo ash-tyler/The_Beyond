@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class MinimapCamera : MonoBehaviour
 {
@@ -9,10 +8,20 @@ public class MinimapCamera : MonoBehaviour
     private Vector3 trackVec;
 
 
-	void Start ()
+	void Start()
     {
-        trackObject = GameObject.FindGameObjectWithTag("Player");
         transform.rotation.Set(90, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+
+        GameObject pmObj = GameObject.FindGameObjectWithTag("PlayerManager");
+
+        if (pmObj)
+        {
+            PlayerManager playerManager = pmObj.GetComponent<PlayerManager>();
+            if (!playerManager || playerManager.currentPlayer) return;
+
+
+            trackObject = playerManager.currentPlayer.gameObject;
+        }
 	}
 	
 	void Update ()

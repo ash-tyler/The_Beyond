@@ -921,7 +921,10 @@ GameObject:
   - component: {fileID: 114328410880820354}
   - component: {fileID: 114376770642849168}
   - component: {fileID: 114922662075739764}
+  - component: {fileID: 114547082070594196}
   - component: {fileID: 114575653506588202}
+  - component: {fileID: 114986740102463596}
+  - component: {fileID: 114267286280103864}
   - component: {fileID: 114346428153786282}
   m_Layer: 0
   m_Name: MainCanvas
@@ -2380,6 +2383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  playerManager: {fileID: 0}
 --- !u!114 &114063673598808260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2561,6 +2565,7 @@ MonoBehaviour:
     type: 2}
   inventory: {fileID: 0}
   isReadOnly: 0
+  isQuickBar: 1
   firstKey: 282
 --- !u!114 &114094825976600270
 MonoBehaviour:
@@ -3316,6 +3321,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114267286280103864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421091360381382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b945a70badfa09342bfa496dfa8b76fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen: {fileID: 1979903341100798}
+  key: 111
 --- !u!114 &114276585970927986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3539,7 +3557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 114254534973835988}
-  stats: {fileID: 0}
+  playerManager: {fileID: 0}
 --- !u!114 &114334054845886688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3713,8 +3731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b945a70badfa09342bfa496dfa8b76fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screen: {fileID: 1383403229800698}
-  key: 99
+  screen: {fileID: 1199752885818636}
+  key: 109
 --- !u!114 &114351718372427134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4685,6 +4703,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114547082070594196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421091360381382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b945a70badfa09342bfa496dfa8b76fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen: {fileID: 1210559595344300}
+  key: 27
 --- !u!114 &114558525658609914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5295,6 +5326,7 @@ MonoBehaviour:
     type: 2}
   inventory: {fileID: 0}
   isReadOnly: 1
+  isQuickBar: 0
   firstKey: 0
 --- !u!114 &114708251016083716
 MonoBehaviour:
@@ -5650,7 +5682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14920b03fae5cb44fab6143a178eafd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
+  playerManager: {fileID: 0}
   expBar: {fileID: 114497787268907780}
   fillSpeed: 1.75
 --- !u!114 &114800513343671486
@@ -5937,10 +5969,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panels:
-  - {fileID: 114654953382509270}
-  - {fileID: 114494812048530730}
-  - {fileID: 114986681871881858}
-  - {fileID: 114584296051599456}
+  - panel: {fileID: 114654953382509270}
+    keyCode: 27
+  - panel: {fileID: 114494812048530730}
+    keyCode: 105
+  - panel: {fileID: 114986681871881858}
+    keyCode: 113
+  - panel: {fileID: 114957863251920116}
+    keyCode: 109
+  - panel: {fileID: 114584296051599456}
+    keyCode: 107
 --- !u!114 &114852993105648832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6202,7 +6240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dae1e80f298e04f93797844d7ee47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerManager: {fileID: 0}
   image: {fileID: 114683814568630546}
 --- !u!114 &114924726712038956
 MonoBehaviour:
@@ -6490,6 +6528,19 @@ MonoBehaviour:
   startActive: 0
   panelOn: 1
   toolbar: {fileID: 114852580029994984}
+--- !u!114 &114986740102463596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421091360381382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b945a70badfa09342bfa496dfa8b76fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen: {fileID: 1652737897043912}
+  key: 113
 --- !u!114 &114989953584715008
 MonoBehaviour:
   m_ObjectHideFlags: 1
