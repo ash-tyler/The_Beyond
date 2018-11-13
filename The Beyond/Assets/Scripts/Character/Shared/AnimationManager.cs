@@ -54,7 +54,7 @@ public class AnimationManager
 
     public void SetDead()
     {
-        _animator.SetBool("IsDead", true);
+        _animator.SetTrigger("IsDead");
     }
 
     public void SetEquipmentType(int equipmentType)

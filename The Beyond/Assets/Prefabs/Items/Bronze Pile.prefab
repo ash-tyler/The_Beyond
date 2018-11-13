@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 114048423986767432}
   m_Layer: 0
   m_Name: Bronze Pile
-  m_TagString: Untagged
+  m_TagString: Useable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673016707328768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1808.141, y: 58.06, z: 2062.689}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4307730646102330}
@@ -500,8 +500,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.05, z: 0.1}
-  m_Center: {x: 0.010301728, y: 0.01, z: -0.002133023}
+  m_Size: {x: 1, y: 0.2, z: 1}
+  m_Center: {x: 0, y: 0.02, z: 0.2}
 --- !u!65 &65525623497450644
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -512,8 +512,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15298319, y: 0.21562506, z: 0.16654572}
-  m_Center: {x: 0.010301728, y: 0.10678055, z: -0.002133023}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: -0, y: 0, z: 0.2}
 --- !u!114 &114048423986767432
 MonoBehaviour:
   m_ObjectHideFlags: 1

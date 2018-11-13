@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 public class MoveTrigger : MonoBehaviour
@@ -8,6 +9,14 @@ public class MoveTrigger : MonoBehaviour
 
     public LayerMask triggerableLayers;
 
+
+    private TravelObjectSwitch travelObjectSwitcher;
+
+
+    private void Start()
+    {
+        travelObjectSwitcher = GetComponent<TravelObjectSwitch>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +29,9 @@ public class MoveTrigger : MonoBehaviour
             objectToMove.transform.position = moveTo.position;
             objectToMove.transform.rotation = moveTo.rotation;
         }
+
+        if (travelObjectSwitcher)
+            travelObjectSwitcher.SwitchTransform();
     }
 }
 

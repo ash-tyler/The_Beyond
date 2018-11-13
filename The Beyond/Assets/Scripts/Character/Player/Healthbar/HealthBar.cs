@@ -48,7 +48,16 @@ public class HealthBar : MonoBehaviour
     void Update ()
     {
         if (!stats)
+        {
+            if (!playerBar)
+            {
+                if (manager)
+                    manager.RemoveHealthBar(this);
+                else
+                    Destroy(this.gameObject);
+            }
             return;
+        }
 
 
         // set the character's name

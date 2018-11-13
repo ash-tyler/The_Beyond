@@ -1,5 +1,6 @@
 ﻿using Beyond.States;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>   [Script information | Delete on Final Build]
 /// 
@@ -61,6 +62,12 @@ public class ThirdPersonController : ControllerBase
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
+        // don't trigger attack when we're over a UI object
+        if (EventSystem.current && EventSystem.current.IsPointerOverGameObject())
+        {
+            combatPressed = false;
+            attack = false;
+        }
 
         //Add gravity and player movement to moveDir
         Vector3 gravity = new Vector3(0, moveDir.y, 0) + CurrentGravity;

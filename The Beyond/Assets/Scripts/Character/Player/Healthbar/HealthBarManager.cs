@@ -50,7 +50,7 @@ public class HealthBarManager : MonoBehaviour
     public void RemoveHealthBar(HealthBar bar)
     {
         bars.Remove(bar);
-        Destroy(bar);
+        Destroy(bar.gameObject);
     }
 
     public void RemoveHealthBar(Stats stats)
@@ -59,6 +59,6 @@ public class HealthBarManager : MonoBehaviour
         if (!bar) return;
 
         bars.Remove(bar);
-        Destroy(bar);
+        Destroy(bar.gameObject);
     }
 }
