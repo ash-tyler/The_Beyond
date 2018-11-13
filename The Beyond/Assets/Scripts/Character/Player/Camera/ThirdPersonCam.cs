@@ -85,7 +85,14 @@ public class ThirdPersonCam : MonoBehaviour
 
         Rig.rotation = pitchClamp.GetEulerXClamp(Rig.eulerAngles.x, Rig.eulerAngles.y, 0);
 
-        
+        // do a raycast to pull the camera in if there's something between us and the rig
+        //Ray ray = new Ray(Rig.position, -Rig.forward);
+        //RaycastHit hit;
+        //if (Physics.Raycast(ray, out hit, zoom))
+        //{
+        //    zoom = hit.distance;
+        //}
+
         zoom += Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity * Time.deltaTime;
         if (transform.localPosition.z > -(zoomClamp.min + 0.5f) && zoom > -zoomClamp.min && Input.GetAxis("Mouse ScrollWheel") > 0.18f)
             player.SwitchToFirstPerson();
@@ -103,7 +110,10 @@ public class ThirdPersonCam : MonoBehaviour
             
             RaycastHit hit;         //Check for any obstacles in the way of the camera, adjust zoom
             if (Physics.SphereCast(Rig.position, collisionRadius, -Rig.forward, out hit, zoomClamp.max + 1, collisionLayers))
+            {
+                Debug.Log("Distance = " + hit.distance);
                 Zoom(hit.distance);
+            }
             else if (!Mathf.Approximately(transform.localPosition.z, zoom))
                 Zoom(zoomClamp.max);
 
