@@ -3,23 +3,37 @@ using UnityEngine;
 
 public class Toolbar : MonoBehaviour
 {
-    public List<PanelActivator> panels = new List<PanelActivator>();
+    public List<PanelKey> panels = new List<PanelKey>();
+
 
     private void Start()
     {
-        foreach (PanelActivator pa in panels)
+        foreach (PanelKey pk in panels)
         {
-            pa.toolbar = this;
-            pa.SetPanel(false);
+            pk.panel.toolbar = this;
+            pk.panel.SetPanel(pk.panel.startActive ? true : false);
         }
     }
 
+    private void Update()
+    {
+        foreach (PanelKey pk in panels)
+        {
+            if (Input.GetKeyDown(pk.keyCode))
+            {
+                pk.panel.TogglePanel();
+                return;
+            }
+        }
+    }
+
+
     public void SetOthersInactive(PanelActivator panelToCheck)
     {
-        foreach (PanelActivator pa in panels)
+        foreach (PanelKey pk in panels)
         {
-            if (pa != panelToCheck)
-                pa.SetPanel(false);
+            if (pk.panel != panelToCheck)
+                pk.panel.SetPanel(false);
         }
     }
 }

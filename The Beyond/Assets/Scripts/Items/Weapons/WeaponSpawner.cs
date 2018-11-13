@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class WeaponSpawner : MonoBehaviour
 {
     public Weapon weaponToSpawn;

@@ -22,6 +22,19 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
+        if (playerBar)
+        {
+            GameObject pmObj = GameObject.FindGameObjectWithTag("PlayerManager");
+
+            if (pmObj)
+            {
+                PlayerManager pm = GetComponent<PlayerManager>();
+                if (pm && pm.currentPlayer)
+                    stats = pm.currentPlayer.stats;
+            }
+        }
+
+
         if (!stats && !playerBar)
         {
             if (manager)
@@ -34,7 +47,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (stats == null)
+        if (!stats)
             return;
 
 

@@ -6,10 +6,21 @@ using UnityEngine.UI;
 public class LevelDisplay : MonoBehaviour
 {
     public Text textBox;
-    public Stats stats;
+    public PlayerManager playerManager;
+
+
+    private void Start()
+    {
+        GameObject pmObj = GameObject.FindGameObjectWithTag("PlayerManager");
+
+        if (pmObj)
+            playerManager = pmObj.GetComponent<PlayerManager>();
+    }
 
     private void Update()
     {
-        textBox.text = stats.level.GetLevelText();
+        if (!playerManager || !playerManager.currentPlayer) return;
+
+        textBox.text = playerManager.currentPlayer.stats.level.GetLevelText();
     }
 }

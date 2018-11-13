@@ -44,5 +44,14 @@ public class PanelActivator : MonoBehaviour
     public void SetPanel(bool value)
     {
         panel.SetActive(value);
+
+
+        if (pauseWhileActive)
+        {
+            if (value)
+                Time.timeScale = 0;
+            else
+                Time.timeScale = 1;
+        }
     }
 }

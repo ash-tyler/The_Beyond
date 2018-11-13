@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 
-public class Item : ScriptableObject
+public class Item : ItemValue
 {
-    public Sprite       inventoryImage;
-    [Space]
-    public GameObject   lootModel;
     public GameObject   model;
     [Space]
-    public int          defaultValue = 0;
+    public Sprite       inventoryImage;
+    [Space]
     public bool         canAddToInventory = true;
 
 
@@ -27,6 +25,28 @@ public class Item : ScriptableObject
     public virtual GameObject GetInstance(Transform parent)
     {
         GameObject obj = Instantiate(model, parent);
+        return obj;
+    }
+
+    public override GameObject GetLootInstance()
+    {
+        if (!lootModel) return null;
+
+        GameObject obj = Instantiate(lootModel);
+        obj.layer = LayerMask.NameToLayer("Loot");
+        obj.AddComponent<ItemRef>();
+        obj.GetComponent<ItemRef>().Setup(this);
+        return obj;
+    }
+
+    public override GameObject GetLootInstance(Transform parent)
+    {
+        if (!lootModel) return null;
+
+        GameObject obj = Instantiate(lootModel, parent.position, parent.rotation, parent);
+        obj.layer = LayerMask.NameToLayer("Loot");
+        obj.AddComponent<ItemRef>();
+        obj.GetComponent<ItemRef>().Setup(this);
         return obj;
     }
 }

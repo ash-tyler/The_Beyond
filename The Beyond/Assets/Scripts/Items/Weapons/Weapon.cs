@@ -38,7 +38,7 @@ public class Weapon : Item
         return obj;
     }
 
-    public GameObject GetLootInstance()
+    public override GameObject GetLootInstance()
     {
         if (!lootModel) return null;
 
@@ -49,7 +49,7 @@ public class Weapon : Item
         return weaponObj;
     }
 
-    public GameObject GetLootInstance(Transform parent)
+    public override GameObject GetLootInstance(Transform parent)
     {
         if (!lootModel) return null;
 
