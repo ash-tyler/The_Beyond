@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class QuestLocation : Quest {
 
-    public GameObject location;
-    public float radius;
+    public float radius = 5;
     Transform player;
 
     public string playerNameDesignator = "(PlayerName)";
@@ -23,6 +22,8 @@ public class QuestLocation : Quest {
         introText = introText.Replace(playerNameDesignator, player.GetComponent<Player>().stats.characterName);
         inProgressText = inProgressText.Replace(playerNameDesignator, player.GetComponent<Player>().stats.characterName);
         completeText = completeText.Replace(playerNameDesignator, player.GetComponent<Player>().stats.characterName);
+
+        target = 1;
     }
 
     private void Update()

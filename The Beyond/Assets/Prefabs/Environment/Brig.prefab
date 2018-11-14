@@ -102,8 +102,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4218927649872920}
-  - component: {fileID: 114956557762400656}
   - component: {fileID: 65969032566909594}
+  - component: {fileID: 114956557762400656}
   - component: {fileID: 114351965227597292}
   m_Layer: 11
   m_Name: Brig
@@ -47090,6 +47090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTo: {fileID: 0}
+  teleportThisObject: 0
+  teleportTravelObjectTo: {fileID: 0}
   useFade: 1
   fader:
     fadePanel: {fileID: 0}

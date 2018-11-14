@@ -134,9 +134,9 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 0.48471078, g: 1, b: 0.3024485, a: -0.3236994}
-          power: {r: 0.6934284, g: 1, b: 0.7408927, a: -0.023121387}
-          offset: {r: 0.7455877, g: 1, b: 0.7994774, a: 0}
+          slope: {r: 0.7634901, g: 0.818916, b: 1, a: -0.3236994}
+          power: {r: 0.6377837, g: 0.6949689, b: 1, a: -0.023121387}
+          offset: {r: 0.5830082, g: 0.64646375, b: 1, a: 0}
         linear:
           lift: {r: 1, g: 1, b: 1, a: 0}
           gamma: {r: 1, g: 1, b: 1, a: 0}
@@ -286,10 +286,10 @@ MonoBehaviour:
       spectralTexture: {fileID: 0}
       intensity: 0.1
   grain:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       colored: 1
-      intensity: 0.5
+      intensity: 0.4
       size: 1
       luminanceContribution: 0.8
   vignette:
