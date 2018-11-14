@@ -17,7 +17,7 @@ public class MinimapCamera : MonoBehaviour
         if (pmObj)
         {
             PlayerManager playerManager = pmObj.GetComponent<PlayerManager>();
-            if (!playerManager || playerManager.currentPlayer) return;
+            if (!playerManager || !playerManager.currentPlayer) return;
 
 
             trackObject = playerManager.currentPlayer.gameObject;
@@ -26,10 +26,7 @@ public class MinimapCamera : MonoBehaviour
 	
 	void Update ()
     {
-        if (!trackObject) return;
-
-        trackVec = trackObject.transform.position;
-        trackVec.y += hoverHeight;
-        transform.position = trackVec;
+        if (trackObject)
+            transform.position = trackObject.transform.position + (Vector3.up * hoverHeight);
 	}
 }

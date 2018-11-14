@@ -6,9 +6,13 @@ public class TravelObjectSwitch : MonoBehaviour
 {
     public TravelObject travelObject;
     public Transform teleportTo;
+    public Transform teleportTravelObjectTo;
 
     public void SwitchTransform()
     {
-        travelObject.teleportTo = teleportTo;
+        if (teleportTo)
+            travelObject.teleportTo = teleportTo;
+        if (teleportTravelObjectTo)
+            travelObject.teleportTravelObjectTo = teleportTravelObjectTo;
     }
 }

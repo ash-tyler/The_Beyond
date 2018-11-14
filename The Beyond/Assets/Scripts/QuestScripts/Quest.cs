@@ -27,16 +27,20 @@ public abstract class Quest : MonoBehaviour
     public string completeText;
 
     public State state;
-    public int target; // how many things do we need to do?
+    public int target = 1; // how many things do we need to do?
     public int current; // how many we've done so far
     public float GetPercentage() { return ((float)current) / target; } //returns betwen 0 and 1
     public Quest[] prerequisites;
+
+    public GameObject location;
 
     public abstract string GetDescription();
 
     // general purpose event for when any quest has changed
     public static UnityEvent onQuestUpdate = new UnityEvent();
     public static UnityEvent onQuestComplete = new UnityEvent();
+
+    public bool autoComplete = false;
 
     // modify the current value
     protected void Increment(int delta = 1)
@@ -45,8 +49,12 @@ public abstract class Quest : MonoBehaviour
         if (current > target)
         {
             current = target;
+            if (autoComplete)
+                Complete();
         }
         onQuestUpdate.Invoke();
+
+       
     }
 
     // called when a quest is turned in to the quest giver
