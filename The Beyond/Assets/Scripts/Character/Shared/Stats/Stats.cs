@@ -12,13 +12,17 @@ public class Stats : MonoBehaviour
     public StatsSettings    statPreset;
     public float            awarenessRadius;
     [Space]
+    public Attributes attributes = new Attributes();
 
+    [Space]
     public HitpointsSystem  health;
     [Space]
     public HitpointsSystem  mana;
     [Space]
 
     public LevelSystem      level;
+
+
 
 
     public void Setup()

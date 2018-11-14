@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.39170605, g: 0.51132613, b: 0.6429498, a: 1}
+  m_IndirectSpecularColor: {r: 0.035844315, g: 0.032080065, b: 0.027121618, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ Prefab:
     - target: {fileID: 9500000, guid: e0b7d2b26e1fde74a936b05b3c278fe6, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 29e76dcb913f81240ba4d252afd098e9, type: 2}
+      objectReference: {fileID: 9100000, guid: 7e7c37d2ae322634fa9683897f17d3f5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0b7d2b26e1fde74a936b05b3c278fe6, type: 3}
   m_IsPrefabParent: 0
@@ -932,10 +932,10 @@ Prefab:
     - target: {fileID: 9500000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8438ea470c2406647a6ac46bca3570ec, type: 2}
+      objectReference: {fileID: 9100000, guid: 28070c1ef21983a48b6a4ffe704b9a48, type: 2}
     - target: {fileID: 100008, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
       propertyPath: m_Name
-      value: Mino(F)
+      value: Minotaur (F)
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 4b71da4d74346b5469664b6b44beac12, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2561,7 +2561,7 @@ Prefab:
     - target: {fileID: 9500000, guid: 36587725f4d27d84e8e85bed1b0a100a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 13cdeba1ede05584c8ad31a9da7d78b0, type: 2}
+      objectReference: {fileID: 9100000, guid: 6eb008df22ed49345b03ab7ff8ffe915, type: 2}
     - target: {fileID: 400180, guid: 36587725f4d27d84e8e85bed1b0a100a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -91.689
@@ -2712,12 +2712,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
       propertyPath: m_Name
-      value: Minatour (M)
+      value: Minotaur (M)
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8438ea470c2406647a6ac46bca3570ec, type: 2}
+      objectReference: {fileID: 9100000, guid: 28070c1ef21983a48b6a4ffe704b9a48, type: 2}
     - target: {fileID: 13700000, guid: e25f3d4f716f43a4e91709cdb2e8f493, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
