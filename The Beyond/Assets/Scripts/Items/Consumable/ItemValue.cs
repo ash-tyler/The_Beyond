@@ -1,12 +1,19 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "Gold", menuName = "Consumables/Gold", order = 1)]
 public class ItemValue : ScriptableObject
 {
+    [Header("Item Options")]
+    public bool canAddToInventory = true;
+    [ShowIf("canAddToInventory")]
+    [Header("Value")]
     public int defaultValue = 0;
-    [Space]
+    [Header("Display")]
+    public GameObject model;
+    [ShowIf("canAddToInventory")]
     public GameObject lootModel;
 
     public virtual GameObject GetLootInstance()

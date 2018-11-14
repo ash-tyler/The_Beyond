@@ -106,7 +106,7 @@ public class Character : MonoBehaviour
 
     public virtual void Kill()
     {
-        Character attacker = stats.health.lastAttacker;
+        Character attacker = stats.health.LastAttacker;
         attacker.stats.level.AddExperience(stats.level.killEXP);
 
         dead = true;

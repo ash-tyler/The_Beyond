@@ -1,12 +1,10 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 
 public class Item : ItemValue
 {
-    public GameObject   model;
-    [Space]
+    [ShowIf("canAddToInventory")]
     public Sprite       inventoryImage;
-    [Space]
-    public bool         canAddToInventory = true;
 
 
     void Start()

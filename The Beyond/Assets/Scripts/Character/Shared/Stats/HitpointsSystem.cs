@@ -9,7 +9,7 @@ public class HitpointsSystem
     [HideInInspector] public string characterName;
     [HideInInspector] public string barName;
 
-    public Character lastAttacker { get; private set; }
+    public Character LastAttacker { get; private set; }
 
 
     public void Setup(float startHealth, float maxHealth, string enteredName, string barTypeName)
@@ -23,16 +23,13 @@ public class HitpointsSystem
 
     public void Damage(float damage)
     {
-        Debug.Log(GetName() + " took " + damage + " " + barName + " damage!");
         points = Mathf.Max(points - damage, 0);
     }
 
-    public void Damage(float damage, Character character)
+    public void Damage(float damage, Character attacker)
     {
-        Debug.Log(GetName() + " took " + damage + " " + barName + " damage!");
         points = Mathf.Max(points - damage, 0);
-
-        lastAttacker = character;
+        LastAttacker = attacker;
     }
 
     public void Restore(float restoration)

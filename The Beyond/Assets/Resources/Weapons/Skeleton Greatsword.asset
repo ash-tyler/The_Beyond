@@ -11,12 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d964ab1c00a4a940a0579ed22be456d, type: 3}
   m_Name: Skeleton Greatsword
   m_EditorClassIdentifier: 
-  inventoryImage: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
-  lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
-  model: {fileID: 1364778665972506, guid: 69e6fc1c22b413b47b6c8050ec44d2e9, type: 2}
-  defaultValue: 50
   canAddToInventory: 1
-  damage: 10
+  defaultValue: 50
+  model: {fileID: 1364778665972506, guid: 69e6fc1c22b413b47b6c8050ec44d2e9, type: 2}
+  lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
+  inventoryImage: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
+  baseDamage: 0
+  Bonus: 3
+  strengthBonusPercent: 15
+  dexterityBonusPercent: 5
+  constitutionBonusPercent: 0
+  intelligenceBonusPercent: 0
+  wisdomBonusPercent: 0
+  charismaBonusPercent: 0
   damageRadius: 3
   angle: 180
   positionAdjust: {x: 0, y: 0, z: 0}
