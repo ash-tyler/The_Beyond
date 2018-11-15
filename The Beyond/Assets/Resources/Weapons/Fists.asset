@@ -11,11 +11,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc9c14f9349f0846b530d9943a0f275, type: 3}
   m_Name: Fists
   m_EditorClassIdentifier: 
-  inventoryImage: {fileID: 0}
-  lootModel: {fileID: 0}
-  model: {fileID: 0}
-  defaultValue: 0
   canAddToInventory: 0
-  damage: 10
+  defaultValue: 0
+  model: {fileID: 0}
+  lootModel: {fileID: 0}
+  inventoryImage: {fileID: 0}
+  baseDamage: 5
+  Bonus: 1
+  strengthBonusPercent: 100
+  dexterityBonusPercent: 0
+  constitutionBonusPercent: 0
+  intelligenceBonusPercent: 0
+  wisdomBonusPercent: 0
+  charismaBonusPercent: 0
   damageRadius: 2
   angle: 180
+  positionAdjust: {x: 0, y: 0, z: 0}
+  rotationAdjust: {x: 0, y: 0, z: 0}
+  scaleAdjust: {x: 0, y: 0, z: 0}

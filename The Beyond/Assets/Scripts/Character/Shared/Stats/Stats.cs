@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    public string characterName;
-    [Space]
-    [Space]
-    public bool disableHealthBar = false;
-    [Space]
-    public StatsSettings    statPreset;
-    public float            awarenessRadius;
-    [Space]
-    public Attributes attributes = new Attributes();
+    public string   characterName;
+    public float    awarenessRadius;
 
     [Space]
-    public HitpointsSystem  health;
-    [Space]
-    public HitpointsSystem  mana;
-    [Space]
-
-    public LevelSystem      level;
-
-
+    [Space] public bool             disableHealthBar = false;
+    [Space] public StatsSettings    statPreset;
+    [Space] public Attributes       attributes = new Attributes();
+    [Space] public HitpointsSystem  health;
+    [Space] public HitpointsSystem  mana;
+    [Space] public LevelSystem      level;
 
 
     public void Setup()
