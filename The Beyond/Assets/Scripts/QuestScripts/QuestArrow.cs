@@ -33,7 +33,7 @@ public class QuestArrow : MonoBehaviour {
             transform.forward = quest.location.transform.position - player.transform.position;
 
             // position ourselves at the player, plus 1m up, plus forward towards the quest
-            transform.position = player.transform.position + Vector3.up + 3 * transform.forward;
+            transform.position = player.transform.position + 2 * Vector3.up + 3 * transform.forward;
         }
 	}
 }
