@@ -79,10 +79,16 @@ public class Attributes
 
     public int GetIntPercent(AttributeType attribute, float percent)
     {
+        if (!attributeList.ContainsKey(attribute))
+            return 0;
+
         return (int)((attributeList[attribute] / attributeCap) * percent);
     }
     public float GetFloatPercent(AttributeType attribute, float percent)
     {
+        if (!attributeList.ContainsKey(attribute))
+            return 0;
+
         return (attributeList[attribute] / attributeCap) * percent;
     }
 }

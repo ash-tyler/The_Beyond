@@ -17,8 +17,8 @@ MonoBehaviour:
   lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
   inventoryImage: {fileID: 21300000, guid: 3870c7dbf0dfb4e4d948354096a393dc, type: 3}
   baseDamage: 10
-  Bonus: 1
-  strengthBonusPercent: 25
+  Bonus: 0
+  strengthBonusPercent: 0
   dexterityBonusPercent: 0
   constitutionBonusPercent: 0
   intelligenceBonusPercent: 0
