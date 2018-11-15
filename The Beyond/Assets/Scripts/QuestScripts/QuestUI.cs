@@ -21,5 +21,7 @@ public class QuestUI : MonoBehaviour {
         // show its completion %age
         if (progress)
             progress.fillAmount = quest.GetPercentage();
+
+        gameObject.SetActive(quest.state != Quest.State.Complete);
     }
 }
