@@ -16,11 +16,11 @@ public class CheckHealth : AITransition
     public override bool Decide(AIController controller)
     {
         if (variableIs == CheckType.GREATER_THAN)
-            return controller.npc.stats.health.points > health;
+            return controller.Npc.stats.health.points > health;
 
         if (variableIs == CheckType.LESS_THAN)
-            return controller.npc.stats.health.points < health;
+            return controller.Npc.stats.health.points < health;
 
-        return controller.npc.stats.health.points == health;
+        return controller.Npc.stats.health.points == health;
     }
 }

@@ -12,6 +12,9 @@ public class Toolbar : MonoBehaviour
         {
             pk.panel.toolbar = this;
             pk.panel.SetPanel(pk.panel.startActive ? true : false);
+                pk.panel.buttonKey.text = pk.keyCode.ToString().ToUpper();
+            if (pk.panel.buttonKey.text.Length > 3)
+                pk.panel.buttonKey.text = pk.panel.buttonKey.text.Remove(3);
         }
     }
 
@@ -32,7 +35,7 @@ public class Toolbar : MonoBehaviour
     {
         foreach (PanelKey pk in panels)
         {
-            if (pk.panel != panelToCheck)
+            if (pk.panel != panelToCheck && !pk.panel.dontChangeOnToggle)
                 pk.panel.SetPanel(false);
         }
     }

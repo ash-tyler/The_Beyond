@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NaughtyAttributes;
+using System;
 using System.Collections.Generic;
 using TheBeyond.Enums;
 using UnityEngine;
@@ -31,24 +32,45 @@ namespace TheBeyond.Enums
 [System.Serializable]
 public class Attributes
 {
+    public const int attributeCap = 100;
 
+    [Header("Attribute Settings")]
+    [MinValue(0), MaxValue(attributeCap)] public int strength = 5;
+    [MinValue(0), MaxValue(attributeCap)] public int dexterity = 5;
+    [MinValue(0), MaxValue(attributeCap)] public int constitution = 5;
+    [MinValue(0), MaxValue(attributeCap)] public int intelligence = 5;
+    [MinValue(0), MaxValue(attributeCap)] public int wisdom = 5;
+    [MinValue(0), MaxValue(attributeCap)] public int charisma = 5;
+
+    [Header("Health & Mana Settings")]
+    [MinValue(0)] [Tooltip(hTip)] public float healthPercent = 10;
+    [MinValue(0)] [Tooltip(mTip)] public float manaPercent = 10;
+    [Space]
+    [MinValue(0), MaxValue(100)] [Tooltip(shTip)] public float startHealthPercent = 100;
+    [MinValue(0), MaxValue(100)] [Tooltip(smTip)] public float startManaPercent = 100;
+    [Space]
+    public bool disableHealthBar = false;
+
+
+    private const string hTip = "Health will be 1000% plus this percent of Constitution";
+    private const string mTip = "Mana will be 1000% plus this percent of Wisdom";
+    private const string shTip = "Health at start will be this percent of Constitution";
+    private const string smTip = "Mana at start will be this percent of Wisdom";
 
     private Dictionary<AttributeType, int> attributeList = new Dictionary<AttributeType, int>();
 
-    public static int attributeCap = 100;
+    private float Multiply { get { return 1000; } }
 
-    public int strength;
-    public int dexterity;
-    public int constitution;
-    public int intelligence;
-    public int wisdom;
-    public int charisma;
 
 
     public void Start()
     {
-        for (int i = 0; i < AttributeType.GetNames(typeof(AttributeType)).Length; i++)
-            attributeList.Add((AttributeType)i, 0);
+        attributeList.Add(AttributeType.Strength, Mathf.Clamp(strength, 0, attributeCap));
+        attributeList.Add(AttributeType.Dexterity, Mathf.Clamp(dexterity, 0, attributeCap));
+        attributeList.Add(AttributeType.Constitution, Mathf.Clamp(constitution, 0, attributeCap));
+        attributeList.Add(AttributeType.Intelligence, Mathf.Clamp(intelligence, 0, attributeCap));
+        attributeList.Add(AttributeType.Wisdom, Mathf.Clamp(wisdom, 0, attributeCap));
+        attributeList.Add(AttributeType.Charisma, Mathf.Clamp(charisma, 0, attributeCap));
     }
 
     public void FillDictionary()
@@ -82,13 +104,25 @@ public class Attributes
         if (!attributeList.ContainsKey(attribute))
             return 0;
 
-        return (int)((attributeList[attribute] / attributeCap) * percent);
+        return (int)(((float)attributeList[attribute] / attributeCap) * percent);
     }
     public float GetFloatPercent(AttributeType attribute, float percent)
     {
         if (!attributeList.ContainsKey(attribute))
             return 0;
 
-        return (attributeList[attribute] / attributeCap) * percent;
+        return ((float)attributeList[attribute] / attributeCap) * percent;
+    }
+
+    public float GetMaxHealth()
+    {
+        float max = GetFloatPercent(AttributeType.Constitution, Multiply);
+        return max + (max * (healthPercent / 100));
+    }
+
+    public float GetMaxMana()
+    {
+        float max = GetFloatPercent(AttributeType.Wisdom, Multiply);
+        return max + (max * (manaPercent / 100));
     }
 }

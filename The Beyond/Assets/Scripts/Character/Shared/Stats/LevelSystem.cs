@@ -1,21 +1,29 @@
-﻿using System.Collections;
+﻿using NaughtyAttributes;
+using System.Collections;
 using UnityEngine;
 
 [System.Serializable]
 public class LevelSystem
 {
     #region Public Variables
-    public ExperienceSettings   _settings;
-    public float                buff = 0;
-    public int                  killEXP = 0;
+    [Header("Level Settings")]
+                    public ExperienceSettings   _settings;
+    [MinValue(0)]   public float  buff = 0;
+    [Space]
+    [MinValue(0)]   public int    killEXP = 0;
     #endregion
 
     #region Private Variables
     [SerializeField]
-    private int currentEXP = 0;
-    private int level = 0;
+    [MinValue(1), MaxValue(100)]    private int level = 1;
+    [MinValue(0)]                   private int currentEXP = 0;
     #endregion
 
+
+    public void Setup()
+    {
+        SetNewLevel(level);
+    }
 
     public void Setup(int newLevel, int newBuff)
     {

@@ -1820,7 +1820,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178514066907984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1811.148, y: 57.6, z: 2056.99}
+  m_LocalPosition: {x: -1803.14, y: 57.6, z: 2050.27}
   m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
   m_Children:
   - {fileID: 4851968233745118}
@@ -2042,8 +2042,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231e038caefe61848ac9a79a2aa25117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 4
   canDie: 1
+  characterType: 16
   attackLayers:
     serializedVersion: 2
     m_Bits: 9728
@@ -2054,14 +2054,13 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
-  aggroTypes:
-    aggroTypes: 00000000
+  AggroTypes: 1
   goldDropList:
   - dropChance: 100
     gold: {fileID: 11400000, guid: e335f1c6582f28c45b69dfc5a35ca4f9, type: 2}
   - dropChance: 40
     gold: {fileID: 11400000, guid: a0da976eaa2761a4fbec38bf69f44f54, type: 2}
-  dropList: []
+  itemDropList: []
   controller: {fileID: 0}
 --- !u!114 &114329199503573170
 MonoBehaviour:
@@ -2128,13 +2127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableEquipment: 0
   mainWeapon: {fileID: 11400000, guid: 1dac388d1d6e8564b8134f34db68b4e4, type: 2}
   offhand: {fileID: 0}
   fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
 --- !u!114 &114816270842532110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2146,6 +2144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 1
   gold: 0
   items:
   - {fileID: 0}
@@ -2192,9 +2191,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Undead Knight
-  disableHealthBar: 0
-  statPreset: {fileID: 11400000, guid: 6d316fd7cb7ace44cad6f83f51dfa2b8, type: 2}
   awarenessRadius: 8
+  attributes:
+    strength: 5
+    dexterity: 5
+    constitution: 5
+    intelligence: 5
+    wisdom: 5
+    charisma: 5
+    healthPercent: 10
+    manaPercent: 10
+    startHealthPercent: 100
+    startManaPercent: 100
+    disableHealthBar: 0
+  level:
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
+    buff: 0
+    killEXP: 500
+    level: 1
   health:
     points: 0
     maximumPoints: 0
@@ -2205,11 +2219,6 @@ MonoBehaviour:
     maximumPoints: 0
     characterName: 
     barName: 
-  level:
-    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
-    buff: 0
-    killEXP: 500
-    currentEXP: 0
 --- !u!136 &136073772062352088
 CapsuleCollider:
   m_ObjectHideFlags: 1

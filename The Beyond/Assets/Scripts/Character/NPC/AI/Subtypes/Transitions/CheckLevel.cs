@@ -11,11 +11,11 @@ public class CheckLevel : AITransition
     public override bool Decide(AIController controller)
     {
         if (variableIs == CheckType.GREATER_THAN)
-            return controller.npc.stats.level.GetLevel() > level;
+            return controller.Npc.stats.level.GetLevel() > level;
 
         if (variableIs == CheckType.LESS_THAN)
-            return controller.npc.stats.level.GetLevel() < level;
+            return controller.Npc.stats.level.GetLevel() < level;
 
-        return controller.npc.stats.level.GetLevel() == level;
+        return controller.Npc.stats.level.GetLevel() == level;
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Sight
 {
     [SerializeField]
-    public LayerMask layermask;
+    public LayerMask visibleLayers;
     public GameObject LastObjectSeen
     {
         get { return obj; }
@@ -29,10 +29,13 @@ public class Sight
         }
     }
 
-
+    [HideInInspector]
     public GameObject obj;
+
+
     private Player player;
     private Transform playerCamera;
+
 
     public void Setup(Player newPlayer)
     {
@@ -49,7 +52,7 @@ public class Sight
 
         float dist = (player.firstPerson) ? 0 : Vector3.Distance(Camera.main.transform.position, player.CameraFocus.position);
 
-        if (Physics.Raycast(ray, out hit, dist + player.stats.awarenessRadius, ~layermask))
+        if (Physics.Raycast(ray, out hit, dist + player.stats.awarenessRadius, visibleLayers))
             LastObjectSeen = hit.transform.gameObject;
         else
             LastObjectSeen = null;

@@ -1,13 +1,15 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 
 [System.Serializable]
 public class HitpointsSystem
 {
+
     public float points;
     public float maximumPoints;
 
-    [HideInInspector] public string characterName;
-    [HideInInspector] public string barName;
+    public string characterName;
+    public string barName;
 
     public Character LastAttacker { get; private set; }
 

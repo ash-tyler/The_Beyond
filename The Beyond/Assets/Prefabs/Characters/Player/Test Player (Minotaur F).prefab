@@ -2922,8 +2922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Player
   awarenessRadius: 5
-  disableHealthBar: 1
-  statPreset: {fileID: 11400000, guid: b30cd4ae5b827064c820746f0741af1a, type: 2}
   attributes:
     strength: 8
     dexterity: 4
@@ -2931,6 +2929,16 @@ MonoBehaviour:
     intelligence: 5
     wisdom: 2
     charisma: 3
+    healthPercent: 20
+    manaPercent: 5
+    startHealthPercent: 100
+    startManaPercent: 100
+    disableHealthBar: 1
+  level:
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
+    buff: 0
+    killEXP: 0
+    level: 1
   health:
     points: 100
     maximumPoints: 100
@@ -2941,11 +2949,11 @@ MonoBehaviour:
     maximumPoints: 50
     characterName: 
     barName: 
-  level:
-    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
-    buff: 0
-    killEXP: 0
-    currentEXP: 1000
+  showForDebug: 0
+  currentHealth: 0
+  maxHealth: 0
+  currentMana: 0
+  maxMana: 0
 --- !u!114 &114542430732751326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3014,6 +3022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 0
   gold: 0
   items:
   - {fileID: 0}
@@ -3032,13 +3041,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableEquipment: 0
   mainWeapon: {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}
   offhand: {fileID: 0}
   fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
 --- !u!114 &114786553423459486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3050,8 +3058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9890e167c40874da5da4da562784da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 0
   canDie: 1
+  characterType: 1
   attackLayers:
     serializedVersion: 2
     m_Bits: 4608
@@ -3063,9 +3071,9 @@ MonoBehaviour:
   equipment: {fileID: 0}
   inventory: {fileID: 0}
   eyesight:
-    layermask:
+    visibleLayers:
       serializedVersion: 2
-      m_Bits: 17462
+      m_Bits: 6400
     obj: {fileID: 0}
   pCamera: {fileID: 0}
   controller: {fileID: 0}
@@ -3081,6 +3089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 0
   gold: 0
   items:
   - {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}

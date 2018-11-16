@@ -80,12 +80,14 @@ public class Weapon : Item
 
     public float GetDamage(Attributes attributes)
     {
-        float bonusDamage = strengthBonusPercent + dexterityBonusPercent + constitutionBonusPercent + intelligenceBonusPercent + wisdomBonusPercent + charismaBonusPercent;
+        float[] bonusPercent = { 0, strengthBonusPercent, dexterityBonusPercent, constitutionBonusPercent, intelligenceBonusPercent, wisdomBonusPercent, charismaBonusPercent };
+
+        float bonusDamage = 0;
 
         for (int i = 0; i < AttributeType.GetNames(typeof(AttributeType)).Length; i++)
         {
             if (AttributeTypeExtension.HasFlag((AttributeType)i, Bonus))
-                bonusDamage += attributes.GetFloatPercent((AttributeType)i, 1);
+                bonusDamage += attributes.GetFloatPercent((AttributeType)i, bonusPercent[i]);
         }
 
         return baseDamage + bonusDamage;

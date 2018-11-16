@@ -11,11 +11,11 @@ public class CheckMana : AITransition
     public override bool Decide(AIController controller)
     {
         if (variableIs == CheckType.GREATER_THAN)
-            return controller.npc.stats.mana.points > mana;
+            return controller.Npc.stats.mana.points > mana;
 
         if (variableIs == CheckType.LESS_THAN)
-            return controller.npc.stats.mana.points < mana;
+            return controller.Npc.stats.mana.points < mana;
 
-        return controller.npc.stats.mana.points == mana;
+        return controller.Npc.stats.mana.points == mana;
     }
 }

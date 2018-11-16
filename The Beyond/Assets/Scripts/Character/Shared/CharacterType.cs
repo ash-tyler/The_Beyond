@@ -1,19 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
+
 
 namespace TheBeyond.CharacterTypeEnum
 {
-    public enum CharacterType
+    [Flags] public enum CharacterType : int
     {
-        Player = 0,
-        Chicken,
-        Villager,
-        Wolf,
-        Skeleton,
-        Ghoul,
-        Spider
+        None = 0,
+        Player = 1,
+        Chicken = 2,
+        Villager = 4,
+        Wolf = 8,
+        Skeleton = 16,
+        Ghoul = 32,
+        Spider = 64
     }
+
 
     public static class CharacterTypeFunction
     {
@@ -24,13 +25,10 @@ namespace TheBeyond.CharacterTypeEnum
 
             return type.ToString() + "s";
         }
+
+        public static CharacterType SetFlag(CharacterType a, CharacterType b) { return a | b; }
+        public static CharacterType UnsetFlag(CharacterType a, CharacterType b) { return a & (~b); }
+        public static CharacterType ToogleFlag(CharacterType a, CharacterType b) { return a ^ b; }
+        public static bool HasFlag(CharacterType a, CharacterType b) { return (a & b) == b; }
     }
-
-    //public string typeSingular = "Example";
-    //public string typeMultiple = "Exampli";
-
-    //public bool TypeIsSame(CharacterType otherType)
-    //{
-    //    return (typeSingular == otherType.typeSingular || typeMultiple == otherType.typeMultiple);
-    //}
 }
