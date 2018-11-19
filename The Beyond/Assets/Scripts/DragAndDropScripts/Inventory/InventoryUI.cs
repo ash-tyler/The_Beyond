@@ -65,8 +65,8 @@ public class InventoryUI : ObjectContainerList<Item>
                     if (item as Weapon)
                         PlayerManager.instance.currentPlayer.equipment.Equip(item as Weapon);
 
-                    else if (item as Consumable)
-                        ;
+                    else if (item as Restore)
+                        PlayerManager.instance.currentPlayer.stats.UseRestorative(item as Restore);
                 }
                 else
                     slots[i].item = null;

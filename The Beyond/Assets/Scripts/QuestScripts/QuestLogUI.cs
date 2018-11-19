@@ -23,6 +23,8 @@ public class QuestLogUI : MonoBehaviour
 	
 	void UpdateQuests()
     {
+        if (!QuestLog.inst) return;
+
         foreach (Quest q in QuestLog.inst.quests)
         {
             //Make a prefab if we dont have one yet

@@ -67,12 +67,12 @@ public class Attributes
 
     public void Start()
     {
-        attributeList.Add(AttributeType.Strength, Mathf.Clamp(strength, 0, attributeCap));
-        attributeList.Add(AttributeType.Dexterity, Mathf.Clamp(dexterity, 0, attributeCap));
-        attributeList.Add(AttributeType.Constitution, Mathf.Clamp(constitution, 0, attributeCap));
-        attributeList.Add(AttributeType.Intelligence, Mathf.Clamp(intelligence, 0, attributeCap));
-        attributeList.Add(AttributeType.Wisdom, Mathf.Clamp(wisdom, 0, attributeCap));
-        attributeList.Add(AttributeType.Charisma, Mathf.Clamp(charisma, 0, attributeCap));
+        if (!attributeList.ContainsKey(AttributeType.Strength))     attributeList.Add(AttributeType.Strength, Mathf.Clamp(strength, 0, attributeCap));
+        if (!attributeList.ContainsKey(AttributeType.Dexterity))    attributeList.Add(AttributeType.Dexterity, Mathf.Clamp(dexterity, 0, attributeCap));
+        if (!attributeList.ContainsKey(AttributeType.Constitution)) attributeList.Add(AttributeType.Constitution, Mathf.Clamp(constitution, 0, attributeCap));
+        if (!attributeList.ContainsKey(AttributeType.Intelligence)) attributeList.Add(AttributeType.Intelligence, Mathf.Clamp(intelligence, 0, attributeCap));
+        if (!attributeList.ContainsKey(AttributeType.Wisdom))       attributeList.Add(AttributeType.Wisdom, Mathf.Clamp(wisdom, 0, attributeCap));
+        if (!attributeList.ContainsKey(AttributeType.Charisma))     attributeList.Add(AttributeType.Charisma, Mathf.Clamp(charisma, 0, attributeCap));
     }
 
     public void FillDictionary()

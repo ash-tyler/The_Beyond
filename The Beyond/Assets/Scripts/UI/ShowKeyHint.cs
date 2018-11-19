@@ -5,8 +5,8 @@ public class ShowKeyHint : MonoBehaviour
 {
     public static ShowKeyHint instance = null;
 
-    public Text pressBox;
-    public Text keyCodeBox;
+    public Text pressBox = null;
+    public Text keyCodeBox = null;
 
 
     private void Awake()
@@ -21,15 +21,20 @@ public class ShowKeyHint : MonoBehaviour
 
     public void ActivateAndSet(string newKey)
     {
-        keyCodeBox.text = newKey;
-
-        keyCodeBox.enabled = true;
-        pressBox.enabled = true;
+        if (keyCodeBox)
+        {
+            keyCodeBox.text = newKey;
+            keyCodeBox.enabled = true;
+        }
+        if (pressBox)
+            pressBox.enabled = true;
     }
 
     public void Hide()
     {
-        keyCodeBox.enabled = false;
-        pressBox.enabled = false;
+        if (keyCodeBox)
+            keyCodeBox.enabled = false;
+        if (pressBox)
+            pressBox.enabled = false;
     }
 }

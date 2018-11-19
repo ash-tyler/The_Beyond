@@ -310,6 +310,8 @@ GameObject:
   - component: {fileID: 114446985849319842}
   - component: {fileID: 114167737933982534}
   - component: {fileID: 95409516974418810}
+  - component: {fileID: 114372722462573870}
+  - component: {fileID: 82973441225541918}
   m_Layer: 0
   m_Name: Succubus Model
   m_TagString: Untagged
@@ -2899,6 +2901,86 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522956826720838}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &82973441225541918
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1118754322060616}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95409516974418810
 Animator:
   serializedVersion: 3
@@ -3006,6 +3088,47 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   userInterface: {fileID: 0}
+--- !u!114 &114372722462573870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1118754322060616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cd83c2164918e4c810671778ec5fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelUp: {fileID: 8300000, guid: 1b0a47b1c0ffb49c7b33f40bcae7fbe8, type: 3}
+  idle:
+    clips: []
+    index: 0
+  effort:
+    clips: []
+    index: 0
+  pain:
+    clips: []
+    index: 0
+  death:
+    clips: []
+    index: 0
+  struck:
+    clips: []
+    index: 0
+  combat:
+    clips: []
+    index: 0
+  footsteps:
+    clips:
+    - {fileID: 8300000, guid: d9a50401294cf994db997588f91d42e3, type: 3}
+    - {fileID: 8300000, guid: d6ebde4a3ada7fb4cb40b4aee74b36d5, type: 3}
+    - {fileID: 8300000, guid: 0b287ec04efddae49a2dc3b04bf01485, type: 3}
+    - {fileID: 8300000, guid: 9be71da04af2bc54f86d0d71e776b4f6, type: 3}
+    - {fileID: 8300000, guid: a02e47b49f3156e40ada3797f5a7a5b7, type: 3}
+    - {fileID: 8300000, guid: 6544c41040573c14bb7b76beab3138f9, type: 3}
+    - {fileID: 8300000, guid: fe6f746272be5e34f90fdd09718d3782, type: 3}
+    - {fileID: 8300000, guid: 02d3537f01013d24284d147c8980b37a, type: 3}
+    index: 0
 --- !u!114 &114400003844224730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3050,6 +3173,7 @@ MonoBehaviour:
     maxWalkSpeed: 6
     maxCrouchSpeed: 1
     animationMultiplier: 1
+  soundManager: {fileID: 0}
   attackManager: {fileID: 0}
   character: {fileID: 0}
 --- !u!114 &114529131441529232
@@ -3117,6 +3241,7 @@ MonoBehaviour:
   maxHealth: 0
   currentMana: 0
   maxMana: 0
+  character: {fileID: 0}
 --- !u!114 &114983613245942676
 MonoBehaviour:
   m_ObjectHideFlags: 1

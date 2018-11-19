@@ -24,8 +24,10 @@ public class Stats : MonoBehaviour
     [ShowIf("showForDebug")] public float currentMana;
     [ShowIf("showForDebug")] public float maxMana;
 
+    public Character character;
 
-    public void Setup()
+
+    public void Setup(Character newCharacter)
     {
         if (HealthBarManager.instance && !attributes.disableHealthBar)
             HealthBarManager.instance.AddHealthBar(this);
@@ -33,6 +35,8 @@ public class Stats : MonoBehaviour
         attributes.Start();
         SetStats(attributes.startHealthPercent, attributes.GetMaxHealth(), attributes.startManaPercent, attributes.GetMaxMana());
         showForDebug = true;
+
+        character = newCharacter;
     }
 
     public void Update()
@@ -43,11 +47,21 @@ public class Stats : MonoBehaviour
         maxMana = mana.maximumPoints;
     }
 
+    public void UseRestorative(Restore restorative)
+    {
+        if (restorative.uses == 0) return;
+
+        health.Restore(restorative.healthToRestore);
+        mana.Restore(restorative.manaToRestore);
+        restorative.uses--;
+    }
+
+
     private void SetStats(float startHealth, float maxHealth, float startMana, float maxMana)
     {
         health.Setup((maxHealth * startHealth) / 100, maxHealth, characterName, "Health");
         mana.Setup((maxMana * startMana) / 100, maxMana, characterName, "Mana");
-        level.Setup();
+        level.Setup(this);
     }
 
     private void OnDrawGizmos()

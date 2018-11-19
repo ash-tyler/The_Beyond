@@ -77,6 +77,8 @@ public class ThirdPersonCam : MonoBehaviour
         Rig.position = CameraFocus;
         zoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity * Time.deltaTime;
 
+        if (!player) return;
+
 
         switch (player.firstPerson)
         {

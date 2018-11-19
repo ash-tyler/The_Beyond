@@ -404,6 +404,8 @@ GameObject:
   - component: {fileID: 114700872306844490}
   - component: {fileID: 114624936578666452}
   - component: {fileID: 95404777176813772}
+  - component: {fileID: 114007169663637532}
+  - component: {fileID: 82622050214407092}
   m_Layer: 12
   m_Name: Wolf Model
   m_TagString: Untagged
@@ -826,7 +828,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019471633404834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1799.3646, y: 57.20036, z: 2090.1606}
+  m_LocalPosition: {x: -2996.7097, y: 167.92838, z: 2798.9556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4351837206760198}
@@ -1096,6 +1098,86 @@ Transform:
   m_Father: {fileID: 4641803574941248}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82622050214407092
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674418185648436}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95404777176813772
 Animator:
   serializedVersion: 3
@@ -1113,6 +1195,54 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114007169663637532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674418185648436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cd83c2164918e4c810671778ec5fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle:
+    clips:
+    - {fileID: 8300000, guid: 7b8cfee1018730146b2687b78bb0ee52, type: 3}
+    - {fileID: 8300000, guid: 8d2117b082abc5940a5efe2f59140072, type: 3}
+    index: 0
+  effort:
+    clips:
+    - {fileID: 8300000, guid: 20bf28110becd6544afd1869b90d4e93, type: 3}
+    - {fileID: 8300000, guid: eab1c026234762147a6ac0d769a78d03, type: 3}
+    - {fileID: 8300000, guid: 1eefa288819799e4f8ba525439a6e5dd, type: 3}
+    index: 0
+  pain:
+    clips:
+    - {fileID: 8300000, guid: 541bd5973ef64bb48a58fc8c5925f937, type: 3}
+    index: 0
+  death:
+    clips:
+    - {fileID: 8300000, guid: ae347c77287925f4c92fc8057c97458f, type: 3}
+    index: 0
+  struck:
+    clips: []
+    index: 0
+  combat:
+    clips:
+    - {fileID: 8300000, guid: dc81f2a0670ac3b46980d892d189e488, type: 3}
+    index: 0
+  footsteps:
+    clips:
+    - {fileID: 8300000, guid: d9a50401294cf994db997588f91d42e3, type: 3}
+    - {fileID: 8300000, guid: d6ebde4a3ada7fb4cb40b4aee74b36d5, type: 3}
+    - {fileID: 8300000, guid: 0b287ec04efddae49a2dc3b04bf01485, type: 3}
+    - {fileID: 8300000, guid: 9be71da04af2bc54f86d0d71e776b4f6, type: 3}
+    - {fileID: 8300000, guid: a02e47b49f3156e40ada3797f5a7a5b7, type: 3}
+    - {fileID: 8300000, guid: 6544c41040573c14bb7b76beab3138f9, type: 3}
+    - {fileID: 8300000, guid: fe6f746272be5e34f90fdd09718d3782, type: 3}
+    - {fileID: 8300000, guid: 02d3537f01013d24284d147c8980b37a, type: 3}
+    index: 0
 --- !u!114 &114092527682028654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1173,6 +1303,7 @@ MonoBehaviour:
     startHealthPercent: 100
     startManaPercent: 100
     disableHealthBar: 0
+    healthBarHeight: 2
   level:
     _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
     buff: 0
@@ -1227,6 +1358,7 @@ MonoBehaviour:
     maxWalkSpeed: 6
     maxCrouchSpeed: 1
     animationMultiplier: 1
+  soundManager: {fileID: 0}
   attackManager: {fileID: 0}
   character: {fileID: 0}
 --- !u!114 &114729239432193870
@@ -1252,6 +1384,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
+  freezeMovement: 0
   AggroTypes: 1
   goldDropList: []
   itemDropList: []
@@ -1270,7 +1403,7 @@ MonoBehaviour:
   disableEquipment: 0
   mainWeapon: {fileID: 0}
   offhand: {fileID: 0}
-  fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
+  fistInfo: {fileID: 11400000, guid: 42f7ecac92c501c49972b58996abeeaf, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
 --- !u!114 &114854582731081274

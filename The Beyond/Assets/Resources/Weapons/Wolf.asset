@@ -24,7 +24,7 @@ MonoBehaviour:
   intelligenceBonusPercent: 0
   wisdomBonusPercent: 0
   charismaBonusPercent: 0
-  damageRadius: 2.2
+  damageRadius: 4
   angle: 180
   positionAdjust: {x: 0, y: 0, z: 0}
   rotationAdjust: {x: 0, y: 0, z: 0}

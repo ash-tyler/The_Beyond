@@ -46,7 +46,7 @@ public class Character : MonoBehaviour
         inventory = GetComponent<Inventory>();
 
         model.Setup();
-        stats.Setup();
+        stats.Setup(this);
         equipment.Setup(this);
     }
 
@@ -59,6 +59,7 @@ public class Character : MonoBehaviour
 
     public void EnterCombat()
     {
+        model.soundManager.Play(model.soundManager.combat);
         model.SetEquipmentType(equipment.GetEquipmentType());
         model.SetInCombat(true);
         equipment.EnterCombat();
@@ -108,6 +109,8 @@ public class Character : MonoBehaviour
 
     public virtual void Kill()
     {
+        model.soundManager.PlayDeath();
+
         freezeMovement = true;
 
         Character attacker = stats.health.LastAttacker;
@@ -121,25 +124,6 @@ public class Character : MonoBehaviour
         //onDead.Invoke(this);
         onAnyDead.Invoke(this);
     }
-
-
-    //public IEnumerable<Character> GetVisibleCharacters()
-    //{
-    //    return GetNearbyCharacters(stats.awarenessRadius, visibleLayers);
-    //}
-
-    //public virtual IEnumerable<Character> GetAttackableCharacters(Weapon weapon)
-    //{
-    //    if (!weapon) return new Character[0];
-
-    //    return GetNearbyCharacters(weapon.damageRadius, attackLayers);
-    //}
-
-    //public virtual IEnumerable<Character> GetNearbyCharacters(float radius, LayerMask layers)
-    //{
-    //    Collider[] collidersInRange = Physics.OverlapSphere(model.transform.position, radius, ~layers);
-    //    return collidersInRange.Select(col => col.GetComponent<Character>()).Where(ch => ch);
-    //}
 
     public virtual IEnumerable<Character> GetAttackableCharacters(float radius)
     {
@@ -158,30 +142,4 @@ public class Character : MonoBehaviour
         Collider[] collidersInRange = Physics.OverlapSphere(model.transform.position, radius, visibleLayers);
         return collidersInRange.Select(col => col.GetComponent<Character>()).Where(ch => ch);
     }
-
-    //public void ChangePlayerModel(CharacterModel newPlayerModel)
-    //{
-    //    IEnumerator cm = ChangeModel(newPlayerModel);
-    //    StartCoroutine(cm);
-    //}
-
-    ///// <summary> Sets up the given model GameObject to be used as the playerModel, with animation. </summary>
-    //private IEnumerator ChangeModel(CharacterModel newPlayerModel)
-    //{
-    //    while (controller.State.IsCrouching)
-    //        yield return new WaitForSeconds(.5f);
-
-    //    Quaternion rot = model.transform.rotation;
-    //    GameObject previousModel = model.gameObject;
-    //    Destroy(previousModel);
-
-    //    model = null;
-    //    model = Instantiate(newPlayerModel, transform.position, rot, transform);
-    //    model.character = this;
-
-    //    PModel.SetupAnimationHelper();
-
-    //    equipment.ReEquipWeapon(PModel.leftHand, PModel.rightHand);
-    //    PModel.attackManager.equipment = equipment;
-    //}
 }

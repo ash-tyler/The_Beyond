@@ -12,6 +12,8 @@ public class AttackManager : MonoBehaviour
 
     public void WeaponHit()
     {
+        character.model.soundManager.Play(character.model.soundManager.effort);
+
         Weapon weapon = character.equipment.GetWeaponInfo();
         if (!weapon) return;
 
@@ -30,7 +32,11 @@ public class AttackManager : MonoBehaviour
     {
         Vector3 enemyPos = otherCharacter.model.transform.position;
         if (character != otherCharacter && InAttackAngle(enemyPos) && !SceneryBlocked(enemyPos))
+        {
             otherCharacter.stats.health.Damage(weapon.GetDamage(character.stats.attributes), character);
+            otherCharacter.model.soundManager.PlayPain();
+            otherCharacter.model.soundManager.PlayStruck();
+        }
     }
 
     private bool InAttackAngle(Vector3 otherPos)

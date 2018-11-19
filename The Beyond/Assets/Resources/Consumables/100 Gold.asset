@@ -11,5 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22983387b2733514f881203cb6cee4d0, type: 3}
   m_Name: 100 Gold
   m_EditorClassIdentifier: 
+  canAddToInventory: 1
   defaultValue: 100
+  model: {fileID: 1043180247954826, guid: 163c83b18e499374d83af6d39e2b286e, type: 2}
   lootModel: {fileID: 1043180247954826, guid: 163c83b18e499374d83af6d39e2b286e, type: 2}

@@ -8,8 +8,7 @@ public class QuestLog : MonoBehaviour
     public static QuestLog inst;
     public List<Quest> quests;
 
-
-    void Start()
+    private void Awake()
     {
         inst = this;
     }

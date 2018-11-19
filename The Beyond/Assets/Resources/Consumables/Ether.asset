@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5a66f6e32270d40b9ea0dc78e4ca0e, type: 3}
+  m_Name: Ether
+  m_EditorClassIdentifier: 
+  canAddToInventory: 1
+  defaultValue: 100
+  model: {fileID: 1965962933389292, guid: 9b031078ff9a78a4488980d20661aedc, type: 2}
+  lootModel: {fileID: 1965962933389292, guid: 9b031078ff9a78a4488980d20661aedc, type: 2}
+  inventoryImage: {fileID: 21300000, guid: e7d29a79bc7fae248887c8a08a160303, type: 3}
+  healthToRestore: 25
+  manaToRestore: 25
+  uses: 1

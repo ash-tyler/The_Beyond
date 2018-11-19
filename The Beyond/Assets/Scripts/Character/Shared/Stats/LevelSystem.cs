@@ -17,12 +17,14 @@ public class LevelSystem
     [SerializeField]
     [MinValue(1), MaxValue(100)]    private int level = 1;
     [MinValue(0)]                   private int currentEXP = 0;
+                                    private Stats stats;
     #endregion
 
 
-    public void Setup()
+    public void Setup(Stats newStats)
     {
         SetNewLevel(level);
+        stats = newStats;
     }
 
     public void Setup(int newLevel, int newBuff)
@@ -60,6 +62,9 @@ public class LevelSystem
         if (newLevel > level)
         {
             level = newLevel;
+            stats.health.points = stats.health.maximumPoints;
+            stats.mana.points = stats.mana.maximumPoints;
+            stats.character.model.soundManager.PlayLevelUp();
             return true;
         }
 
@@ -81,40 +86,5 @@ public class LevelSystem
     public float GetEXPPercent()
     {
         return (float)(currentEXP - _settings.GetExperienceByLevel(level)) / (float)(_settings.GetExperienceByLevel(level + 1) - _settings.GetExperienceByLevel(level));
-    }
-
-    //Needs to be tested
-    IEnumerator PlayLevelUpNotification()
-    {
-        if (_settings && _settings.fadeAmount > 0)
-        {
-            yield return new WaitForSeconds(_settings.imageAndSoundDelay);
-
-            if (_settings.levelUpSound)
-                _settings.soundSource.PlayOneShot(_settings.levelUpSound);
-
-            if (_settings.levelUpImage)
-            {
-                for (float f = 0f; f <= 0; f += _settings.fadeAmount)
-                {
-                    Color c = _settings.levelUpImage.material.color;
-                    c.a = f;
-                    _settings.levelUpImage.material.color = c;
-                    yield return new WaitForSeconds(0.02f);
-                }
-
-
-                yield return new WaitForSeconds(_settings.screenTime);
-
-
-                for (float f = 1f; f >= 0; f -= _settings.fadeAmount)
-                {
-                    Color c = _settings.levelUpImage.material.color;
-                    c.a = f;
-                    _settings.levelUpImage.material.color = c;
-                    yield return new WaitForSeconds(0.02f);
-                }
-            }
-        }
     }
 }

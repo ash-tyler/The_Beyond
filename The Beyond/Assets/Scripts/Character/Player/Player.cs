@@ -21,6 +21,11 @@ public class Player : Character
 
     void Start()
     {
+        Setup();
+    }
+
+    public void Setup()
+    {
         model = GetComponentInChildren<PlayerModel>();
         model.character = this;
         pCamera = Camera.main.GetComponent<ThirdPersonCam>();
@@ -34,13 +39,11 @@ public class Player : Character
         controller = GetComponent<ThirdPersonController>();
 
         PModel.Setup();
-        stats.Setup();
+        stats.Setup(this);
         equipment.Setup(this);
         eyesight.Setup(this);
         controller.Setup(this);
         pCamera.Setup(this);
-
-        PlayerManager.instance.SavePlayerState(stats, equipment, inventory);
     }
 
     void Update()
@@ -71,6 +74,8 @@ public class Player : Character
 
     public override void Kill()
     {
+        model.soundManager.PlayDeath();
+
         freezeMovement = true;
         dead = true;
         model.SetDead();

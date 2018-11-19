@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1310994717552816
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1514983088083480
 GameObject:
   m_ObjectHideFlags: 1
@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1575657938912442
 GameObject:
   m_ObjectHideFlags: 1
@@ -226,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310994717552816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1810.17, y: 60.67, z: 2073.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4774136731896596}
@@ -285,7 +285,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.2
   far clip plane: 2048
   field of view: 60
   orthographic: 0
@@ -685,7 +685,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -806,7 +806,7 @@ MonoBehaviour:
   collisionRadius: 0.4
   lockPitch: 0
   lockYaw: 0
-  invertPitch: 0
+  invertPitch: 1
   invertYaw: 0
   player: {fileID: 0}
 --- !u!114 &114332149398608066
@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   underWaterParameters:
-    fogDensity: 0.02
+    fogDensity: 0.05
     fogColor: {r: 0.039359853, g: 0.36816007, b: 0.38235295, a: 0}
     underwaterProfile: {fileID: 11400000, guid: 7c40cee333a071f429d8e3e45ccd33d6,
       type: 2}
@@ -830,7 +830,7 @@ MonoBehaviour:
     mainCamera: {fileID: 1598021375617338}
     waterLens: {fileID: 1252764532708770}
     airLens: {fileID: 1297837742575538}
-    bubble: {fileID: 134262, guid: 8a59534d302a51d4aad125480950b6e7, type: 2}
+    bubble: {fileID: 100000, guid: de824700cdf54a84d859e18c5adc6594, type: 3}
     waterPlanes:
     - {fileID: 0}
     useSquaredPlanes: 0
@@ -959,7 +959,7 @@ MonoBehaviour:
     underwaterVolume: 1
     surfacingVolume: 0.184
     diveVolume: 0.185
-  t: 0
+  t: 0.019470233
   setAfloatFog: 1
   rundown: 1
 --- !u!114 &114463155970270574
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 3446931e2ec00454e9fdffd229622cc3, type: 2}
+  profile: {fileID: 11400000, guid: 13abd7fcdadfdd245bfb2b8b096b12fd, type: 2}
 --- !u!114 &114523122236601236
 MonoBehaviour:
   m_ObjectHideFlags: 1

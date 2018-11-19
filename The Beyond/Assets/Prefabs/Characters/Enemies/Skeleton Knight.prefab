@@ -449,6 +449,8 @@ GameObject:
   - component: {fileID: 114500432448812116}
   - component: {fileID: 114848754731981338}
   - component: {fileID: 95739104750078396}
+  - component: {fileID: 114679956581071694}
+  - component: {fileID: 82625234514102876}
   m_Layer: 12
   m_Name: Skeleton Knight Model
   m_TagString: Untagged
@@ -1820,7 +1822,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178514066907984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1803.14, y: 57.6, z: 2050.27}
+  m_LocalPosition: {x: -2992.7734, y: 168.61783, z: 2808.6438}
   m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
   m_Children:
   - {fileID: 4851968233745118}
@@ -2014,6 +2016,86 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938640858907958}
   m_Mesh: {fileID: 4300004, guid: 9c1b707b80c272f42b8f152b1ca7b827, type: 3}
+--- !u!82 &82625234514102876
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435955521590992}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95739104750078396
 Animator:
   serializedVersion: 3
@@ -2054,6 +2136,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
+  freezeMovement: 0
   AggroTypes: 1
   goldDropList:
   - dropChance: 100
@@ -2114,6 +2197,7 @@ MonoBehaviour:
     maxWalkSpeed: 6
     maxCrouchSpeed: 1
     animationMultiplier: 1
+  soundManager: {fileID: 0}
   attackManager: {fileID: 0}
   character: {fileID: 0}
 --- !u!114 &114668421074771428
@@ -2133,6 +2217,57 @@ MonoBehaviour:
   fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
+--- !u!114 &114679956581071694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435955521590992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cd83c2164918e4c810671778ec5fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle:
+    clips: []
+    index: 0
+  effort:
+    clips: []
+    index: 0
+  pain:
+    clips:
+    - {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
+    - {fileID: 8300000, guid: 86f1cdd7d5e42b542a51632954c80356, type: 3}
+    - {fileID: 8300000, guid: 9747c0ff71f51ee4a81d0a6007ecd793, type: 3}
+    - {fileID: 8300000, guid: e728e93e71346f1488fb1453dad084ac, type: 3}
+    index: 0
+  death:
+    clips:
+    - {fileID: 8300000, guid: 30781832db15e094cb41f9003555db52, type: 3}
+    - {fileID: 8300000, guid: 85016ebdeefa36c41a4439d7d114105e, type: 3}
+    index: 0
+  struck:
+    clips:
+    - {fileID: 8300000, guid: 8c9fbab8a6f9b4741be96014d9bd788a, type: 3}
+    - {fileID: 8300000, guid: 089579859603db64aa0561d68275ad93, type: 3}
+    - {fileID: 8300000, guid: 46175fc52e105c5428088487c137ee54, type: 3}
+    - {fileID: 8300000, guid: aa26989ed992c5e42a4be74dcfbc5e91, type: 3}
+    - {fileID: 8300000, guid: a835cf891cbcfb249be6734b44e494c1, type: 3}
+    index: 0
+  combat:
+    clips: []
+    index: 0
+  footsteps:
+    clips:
+    - {fileID: 8300000, guid: d9a50401294cf994db997588f91d42e3, type: 3}
+    - {fileID: 8300000, guid: d6ebde4a3ada7fb4cb40b4aee74b36d5, type: 3}
+    - {fileID: 8300000, guid: 0b287ec04efddae49a2dc3b04bf01485, type: 3}
+    - {fileID: 8300000, guid: 9be71da04af2bc54f86d0d71e776b4f6, type: 3}
+    - {fileID: 8300000, guid: a02e47b49f3156e40ada3797f5a7a5b7, type: 3}
+    - {fileID: 8300000, guid: 6544c41040573c14bb7b76beab3138f9, type: 3}
+    - {fileID: 8300000, guid: fe6f746272be5e34f90fdd09718d3782, type: 3}
+    - {fileID: 8300000, guid: 02d3537f01013d24284d147c8980b37a, type: 3}
+    index: 0
 --- !u!114 &114816270842532110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2204,6 +2339,7 @@ MonoBehaviour:
     startHealthPercent: 100
     startManaPercent: 100
     disableHealthBar: 0
+    healthBarHeight: 2
   level:
     _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
     buff: 0
@@ -2219,6 +2355,11 @@ MonoBehaviour:
     maximumPoints: 0
     characterName: 
     barName: 
+  showForDebug: 0
+  currentHealth: 0
+  maxHealth: 0
+  currentMana: 0
+  maxMana: 0
 --- !u!136 &136073772062352088
 CapsuleCollider:
   m_ObjectHideFlags: 1

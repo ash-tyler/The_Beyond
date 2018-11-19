@@ -31,7 +31,7 @@ public class NPC : Character
         controller = GetComponent<AIController>();
 
         model.Setup();
-        stats.Setup();
+        stats.Setup(this);
         equipment.Setup(this);
         controller.Setup(this);
         //aggroTypes.Setup();
@@ -45,6 +45,8 @@ public class NPC : Character
 
     public override void Kill()
     {
+        model.soundManager.PlayDeath();
+
         freezeMovement = true;
         controller.aiManager.enableAI = false;
         base.Kill();

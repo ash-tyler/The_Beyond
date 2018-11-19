@@ -3,6 +3,8 @@ using UnityEngine;
 
 [System.Serializable]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(SoundManager))]
 [RequireComponent(typeof(AttackManager))]
 public class CharacterModel : MonoBehaviour
 {
@@ -13,12 +15,14 @@ public class CharacterModel : MonoBehaviour
     public Transform back;
 
     [Space] public AnimationManager         animManager;
+    [HideInInspector] public SoundManager   soundManager;
     [HideInInspector] public AttackManager  attackManager;
 
     [HideInInspector] public Character      character;
 
     public void Setup()
     {
+        soundManager = GetComponent<SoundManager>();
         animManager.SetAnimator(GetComponent<Animator>());
         attackManager = GetComponent<AttackManager>();
         attackManager.Setup(character);
