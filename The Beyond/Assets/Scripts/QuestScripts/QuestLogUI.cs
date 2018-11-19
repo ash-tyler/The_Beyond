@@ -18,9 +18,15 @@ public class QuestLogUI : MonoBehaviour {
         UpdateQuests();
         Quest.onQuestUpdate.AddListener(UpdateQuests);
 	}
-	
-	// Update is called once per frame
-	void UpdateQuests() {
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+            UpdateQuests();
+    }
+
+    // Update is called once per frame
+    void UpdateQuests() {
         foreach (Quest q in questLog.quests)
         {
             // make a prefab if we dont have one yet

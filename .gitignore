@@ -36,3 +36,10 @@ sysinfo.txt
 *.unitypackage
 The Beyond/Assets/Environment/3rd Party Samplers/NatureManufacture/Arrays/CTS_Profile_180424-1317_Albedos.asset
 The Beyond/Assets/Environment/Gaia/3rd Party Samplers/NatureManufacture/Arrays/CTS_Profile_180424-1317_Albedos.asset
+The Beyond/Assets/Store Assets/Environment/AQUAS/Prefabs/SmallBubble.prefab
+The Beyond/Assets/Store Assets/Environment/AQUAS/Prefabs/Bubble.prefab
+The Beyond/Assets/Store Assets/Environment/AQUAS/Materials/Caustics/SecondaryCaustics.mat
+The Beyond/Assets/Store Assets/Environment/AQUAS/Materials/Caustics/PrimaryCaustics.mat
+The Beyond/Assets/Plugins/NaughtyAttributes/Scripts.meta
+The Beyond/Assets/Plugins/NaughtyAttributes.meta
+The Beyond/Assets/Plugins.meta
