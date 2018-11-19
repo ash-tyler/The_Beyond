@@ -20,7 +20,13 @@ public class QuestLogUI : MonoBehaviour
         UpdateQuests();
         Quest.onQuestUpdate.AddListener(UpdateQuests);
 	}
-	
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+            UpdateQuests();
+    }
+
 	void UpdateQuests()
     {
         if (!QuestLog.inst) return;
