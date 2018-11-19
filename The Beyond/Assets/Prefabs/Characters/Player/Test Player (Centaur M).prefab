@@ -1377,6 +1377,7 @@ GameObject:
   - component: {fileID: 114840198635585532}
   - component: {fileID: 114328050934999570}
   - component: {fileID: 114406790485028202}
+  - component: {fileID: 114402368842708280}
   - component: {fileID: 114357790891812150}
   - component: {fileID: 114974660461986558}
   m_Layer: 10
@@ -3499,7 +3500,7 @@ Transform:
   m_GameObject: {fileID: 1415852718141786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_Children:
   - {fileID: 4148156898715292}
   - {fileID: 4887026784861138}
@@ -3583,8 +3584,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1676563981536994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2881.88, y: 182.29108, z: 2596.42}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4972973677715990}
   m_Father: {fileID: 0}
@@ -3644,9 +3645,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Player
-  disableHealthBar: 1
-  statPreset: {fileID: 11400000, guid: b30cd4ae5b827064c820746f0741af1a, type: 2}
   awarenessRadius: 5
+  attributes:
+    strength: 5
+    dexterity: 5
+    constitution: 5
+    intelligence: 5
+    wisdom: 5
+    charisma: 5
+    healthPercent: 10
+    manaPercent: 10
+    startHealthPercent: 100
+    startManaPercent: 100
+    disableHealthBar: 1
+    healthBarHeight: 2
+  level:
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
+    buff: 0
+    killEXP: 0
+    level: 1
   health:
     points: 100
     maximumPoints: 100
@@ -3657,11 +3674,11 @@ MonoBehaviour:
     maximumPoints: 50
     characterName: 
     barName: 
-  level:
-    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
-    buff: 0
-    killEXP: 0
-    currentEXP: 1000
+  showForDebug: 0
+  currentHealth: 0
+  maxHealth: 0
+  currentMana: 0
+  maxMana: 0
 --- !u!114 &114357790891812150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3673,6 +3690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 0
+  gold: 0
   items:
   - {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}
   - {fileID: 0}
@@ -3695,6 +3714,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   userInterface: {fileID: 0}
+--- !u!114 &114402368842708280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1676563981536994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60272c4173154a0479b5ba86a67a2e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests: []
 --- !u!114 &114406790485028202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3706,13 +3737,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableEquipment: 0
   mainWeapon: {fileID: 11400000, guid: 1d0d11bac4625de4e91b653af83a613a, type: 2}
   offhand: {fileID: 0}
   fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
 --- !u!114 &114569819760898886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3724,8 +3754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9890e167c40874da5da4da562784da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 0
   canDie: 1
+  characterType: 1
   attackLayers:
     serializedVersion: 2
     m_Bits: 4608
@@ -3736,10 +3766,11 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
+  freezeMovement: 0
   eyesight:
-    layermask:
+    visibleLayers:
       serializedVersion: 2
-      m_Bits: 17462
+      m_Bits: 6400
     obj: {fileID: 0}
   pCamera: {fileID: 0}
   controller: {fileID: 0}
@@ -3787,6 +3818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 0
+  gold: 0
   items:
   - {fileID: 0}
   - {fileID: 0}
@@ -3938,10 +3971,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.8
+  m_Height: 2.2
   m_Radius: 0.4
   m_SlopeLimit: 50
   m_StepOffset: 0.2
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.01
-  m_Center: {x: 0, y: 1.4, z: 0}
+  m_Center: {x: 0, y: 1.25, z: -0.1}

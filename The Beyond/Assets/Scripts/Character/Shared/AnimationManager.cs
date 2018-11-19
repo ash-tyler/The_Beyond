@@ -42,12 +42,10 @@ public class AnimationManager
     {
         //if (!_animator.gameObject.activeSelf) return;
 
-        float speed = (state.IsCrouching) ? maxCrouchSpeed : ((state.IsWalking) ? maxWalkSpeed : maxRunSpeed);
-
         _animator.SetBool("OnGround", grounded);
-        _animator.SetFloat("Forward", (Mathf.Abs(velocity.x) + Mathf.Abs(velocity.z)) / speed, 0.1f, Time.fixedDeltaTime);
         _animator.SetBool("Crouch", state.IsCrouching);
         _animator.SetFloat("Jump", (state.IsJumping) ? velocity.y : 0f);
+        _animator.SetFloat("Forward", GetMovement(state, velocity), 0.1f, Time.fixedDeltaTime);
 
         _animator.speed = (grounded && velocity.magnitude > 0) ? animationMultiplier : 1;
     }
@@ -70,6 +68,12 @@ public class AnimationManager
     public void TriggerAttack()
     {
         _animator.SetTrigger("AttackTrigger");
+    }
+
+    private float GetMovement(ActionState state, Vector3 velocity)
+    {
+        float speed = (state.IsCrouching) ? maxCrouchSpeed : ((state.IsWalking) ? maxWalkSpeed : maxRunSpeed);
+        return (Mathf.Abs(velocity.x) + Mathf.Abs(velocity.z)) / speed;
     }
 }
 #endregion

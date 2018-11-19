@@ -2,17 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Consumable : MonoBehaviour
+public class Consumable : Item
 {
-
-
-	void Start ()
-    {
-		
-	}
 	
-	void Update ()
-    {
-		
-	}
 }

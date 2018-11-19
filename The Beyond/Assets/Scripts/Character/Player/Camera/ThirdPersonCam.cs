@@ -1,25 +1,19 @@
 ﻿using UnityEngine;
 
-/// <summary>   [Script information | Delete on Final Build]
+
+/// <summary>   [Script information]
 /// 
 /// Purpose:    Provide camera movement.
 /// Use:        RIGHT MOUSE:    Hold and move mouse to orbit camera around player
 ///             SCROLL:         Zoom in or out
 ///             
-/// Status:     Has basic minimum viable product functions.
-/// Bugs:       If you spot any issues or bugs, please text me the issue, I'll look into it asap.
-/// Notes:      
-///             When the camera is trapped between an object closer than the zoomClamp Min, it will
-///             currently just go through the object. I'm in the process of finding out what I can
-///             do instead of this.
-///
 /// </summary>
+
 
 [RequireComponent(typeof(Camera))]
 public class ThirdPersonCam : MonoBehaviour
 {
     #region Public Variables
-
     [Header("Clamp Ranges")]
     public ClampRange pitchClamp;
     public ClampRange firstPersonPitchClamp;
@@ -49,13 +43,15 @@ public class ThirdPersonCam : MonoBehaviour
     #endregion
 
     #region Private Variables
-    //private Camera      _camera;
     private float       zoom;
 
     private static float firstPersonZoom = -0.02f;
 
     private float Xrotation { get { return (lockPitch) ? 0 : ((invertPitch) ? -Input.GetAxis("Mouse Y") : Input.GetAxis("Mouse Y")); } }
     private float Yrotation { get { return (lockYaw) ? 0 : ((invertYaw) ? -Input.GetAxis("Mouse X") : Input.GetAxis("Mouse X")); } }
+
+    private Vector3 CameraFocus { get { return (player) ? player.CameraFocus.position : Vector3.zero; } }
+    private Vector3 FocusDirection { get { return transform.position - CameraFocus; } }
     #endregion
 
 
@@ -70,55 +66,52 @@ public class ThirdPersonCam : MonoBehaviour
             return;
         }
 
-        Rig.position = player.CameraFocus.position;
-        //_camera = GetComponent<Camera>();
+        Rig.position = CameraFocus;
 
         zoom = -zoomClamp.center;
-        transform.localPosition = GetZoomVector(zoom);
+        transform.localPosition = Vector3.back * -zoom;
     }
 
     void LateUpdate()
     {
-        Rig.position = player.CameraFocus.position;
-        if (Input.GetButton("CameraSelect") || player.firstPerson)
-            Rig.Rotate(Xrotation * mouseSensitivity, Yrotation * mouseSensitivity, 0);
-
-        Rig.rotation = pitchClamp.GetEulerXClamp(Rig.eulerAngles.x, Rig.eulerAngles.y, 0);
-
-        // do a raycast to pull the camera in if there's something between us and the rig
-        //Ray ray = new Ray(Rig.position, -Rig.forward);
-        //RaycastHit hit;
-        //if (Physics.Raycast(ray, out hit, zoom))
-        //{
-        //    zoom = hit.distance;
-        //}
-
-        zoom += Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity * Time.deltaTime;
-        if (transform.localPosition.z > -(zoomClamp.min + 0.5f) && zoom > -zoomClamp.min && Input.GetAxis("Mouse ScrollWheel") > 0.18f)
-            player.SwitchToFirstPerson();
+        Rig.position = CameraFocus;
+        zoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity * Time.deltaTime;
 
 
-        if (player.firstPerson)
+        switch (player.firstPerson)
         {
-            zoom = Mathf.Min(zoom, firstPersonZoom);    //Don't allow the player to zoom in
-            if (-zoom > zoomClamp.min)                  //Exit first person mode if the player zooms out enough
-                player.SwitchToThirdPerson();
-        }
-        else
-        {
-            zoomClamp.NegativeClamp(ref zoom);
+            case true:
+                SetRigRotation();
 
-            Debug.DrawRay(player.model.head.position, transform.position - player.model.head.position, Color.red);
-            RaycastHit hit;         //Check for any obstacles in the way of the camera, adjust zoom
-            if (Physics.SphereCast(player.model.head.position, collisionRadius, transform.position - player.model.head.position, out hit, zoomClamp.max + 1, collisionLayers, QueryTriggerInteraction.Ignore))
-            {
-                Debug.Log("Distance = " + hit.distance);
-                Zoom(hit.distance);
-            }
-            else if (!Mathf.Approximately(transform.localPosition.z, zoom))
-                Zoom(zoomClamp.max);
+                zoom = firstPersonZoom;
+                if (ScrollOut(0, -0.1f))            //Exit first person mode if the player zooms out enough
+                    SwitchToThirdPerson();
 
-            transform.LookAt(Rig);
+                break;
+
+
+            case false:
+                zoom = Mathf.Clamp(zoom, zoomClamp.min, zoomClamp.max);
+
+                if (Input.GetButton("CameraSelect"))
+                    SetRigRotation();
+
+
+                Debug.DrawRay(CameraFocus, FocusDirection, Color.red);
+
+                RaycastHit hit;         //Check for any obstacles in the way of the camera, adjust zoom
+                if (Physics.SphereCast(CameraFocus, collisionRadius, FocusDirection, out hit, zoomClamp.max + 1, collisionLayers, QueryTriggerInteraction.Ignore))
+                    Zoom(hit.distance);
+                else if (!Mathf.Approximately(-transform.localPosition.z, zoom))
+                    Zoom(zoomClamp.max);
+
+
+                transform.LookAt(Rig);
+
+                if (ScrollIn(zoomClamp.min + 0.05f, 0.1f))
+                    SwitchToFirstPerson();
+
+                break;
         }
     }
     #endregion
@@ -131,19 +124,20 @@ public class ThirdPersonCam : MonoBehaviour
         if (zoomMax < zoomClamp.min)
             player.SwitchToFirstPerson();
         else
-            transform.localPosition = GetZoomVector(zoomClamp.GetNegativeClampMaxOverride(Mathf.Lerp(transform.localPosition.z, zoom, Time.deltaTime * 2), zoomMax));
+            transform.localPosition = Vector3.back * Mathf.Min(Mathf.Lerp(-transform.localPosition.z, zoom, Time.deltaTime * 2), zoomMax);
     }
 
-    public void SetFirstPersonMode(bool firstPerson)
+    public void SwitchToFirstPerson()
     {
-        if (firstPerson)
-        {
-            zoom = firstPersonZoom;
-            transform.localPosition = GetZoomVector(firstPersonZoom);
-            //_camera.cullingMask &= ~(1 << LayerMask.NameToLayer("Invisible"));
-        }
-        //else
-            //_camera.cullingMask |= 1 << LayerMask.NameToLayer("Invisible");
+        zoom = firstPersonZoom;
+        transform.localPosition = Vector3.forward * firstPersonZoom;
+        player.SwitchToFirstPerson();
+    }
+
+    public void SwitchToThirdPerson()
+    {
+        zoom = zoomClamp.min + 0.2f;
+        player.SwitchToThirdPerson();
     }
 
     public float GetRigYRotation()
@@ -151,9 +145,29 @@ public class ThirdPersonCam : MonoBehaviour
         return Rig.transform.eulerAngles.y;
     }
 
-    private Vector3 GetZoomVector(float localZ)
+
+    private void SetRigRotation()
     {
-        return new Vector3(transform.localPosition.x, transform.localPosition.y, localZ);
+        Rig.Rotate(Xrotation * mouseSensitivity, Yrotation * mouseSensitivity, 0);
+        Rig.rotation = Quaternion.Euler(ClampAngle(Rig.eulerAngles.x), Rig.eulerAngles.y, 0);
+    }
+
+    private float ClampAngle(float angleToClamp)
+    {
+        if (angleToClamp > 180f)
+            angleToClamp = -(360 - angleToClamp);
+
+        return Mathf.Clamp(angleToClamp, pitchClamp.min, pitchClamp.max);
+    }
+
+    private bool ScrollIn(float zoomPos, float strength = 0.2f)
+    {
+        return -transform.localPosition.z < zoomPos && Input.GetAxis("Mouse ScrollWheel") > strength;
+    }
+
+    private bool ScrollOut(float zoomPos, float strength = -0.2f)
+    {
+        return -transform.localPosition.z > zoomPos && Input.GetAxis("Mouse ScrollWheel") < strength;
     }
     #endregion
 }

@@ -8,29 +8,26 @@ public class InventoryUI : ObjectContainerList<Item>
     public bool isQuickBar = false;
     public KeyCode firstKey = KeyCode.None;
 
-    // Use this for initialization
-    void Start()
+    public bool WasSetUp { get; private set; }
+    
+
+    public void Setup()
     {
-        GameObject pmObj = GameObject.FindGameObjectWithTag("PlayerManager");
+        if (!PlayerManager.HasInstanceAndPlayer()) return;
 
-        if (pmObj)
+        Inventory[] inventories = PlayerManager.instance.currentPlayer.GetComponents<Inventory>();
+        if (inventories.Length > 0)
         {
-            PlayerManager playerManager = pmObj.GetComponent<PlayerManager>();
-            if (!playerManager || !playerManager.currentPlayer)
-                return;
-
-            Inventory[] inventories = playerManager.currentPlayer.GetComponents<Inventory>();
-            if (inventories.Length > 0)
-            {
-                if (isQuickBar)
-                    inventory = inventories.Where(x => x.items.Count == 4).First();
-                else
-                    inventory = inventories.Where(x => x.items.Count > 4).First();
-            }
+            if (isQuickBar)
+                inventory = inventories.Where(x => x.items.Count == 4).First();
+            else
+                inventory = inventories.Where(x => x.items.Count > 4).First();
         }
 
         inventory.userInterface = this;
         CreateSlots(inventory.items);
+
+        WasSetUp = true;
     }
 
     public void CreateSlots(int index)
@@ -45,6 +42,14 @@ public class InventoryUI : ObjectContainerList<Item>
 
     private void Update()
     {
+        if (!WasSetUp)
+        {
+            Setup();
+            if (!WasSetUp)
+                return;
+        }
+
+
         if (firstKey == KeyCode.None)
             return;
 
@@ -57,13 +62,14 @@ public class InventoryUI : ObjectContainerList<Item>
                 Item item = objects[i] as Item;
                 if (item)
                 {
-                    // activate!!!
+                    if (item as Weapon)
+                        PlayerManager.instance.currentPlayer.equipment.Equip(item as Weapon);
 
+                    else if (item as Consumable)
+                        ;
                 }
                 else
-                {
                     slots[i].item = null;
-                }
             }
         }
 

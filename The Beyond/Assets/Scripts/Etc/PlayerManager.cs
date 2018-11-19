@@ -1,9 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager instance = null;
+    public TravelObject to;
+
     public Transform spawn;
     public GameObject cameraPrefab;
     [Space]
@@ -23,15 +25,29 @@ public class PlayerManager : MonoBehaviour
 
     public enum PlayerType { MINO_F = 0, MINO_M, SUCCUBUS, CENTAUR }
 
+    private Attributes startAttributes;
+    private LevelSystem startLevel;
+    private HitpointsSystem startHealth;
+    private HitpointsSystem startMana;
+    private Equipment startEquipment;
+    private Inventory startInventory;
+
+    private bool respawning = false;
+
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
-        currentPlayerObject = GameObject.FindGameObjectWithTag("Player");
-
-        if (currentPlayerObject)
-            currentPlayer = currentPlayerObject.GetComponent<Player>();
-        else
-            currentPlayerObject = null;
+        //if (!currentPlayer)
+        //    SetupPlayer(PlayerType.MINO_F);
     }
 
     public bool SetupPlayer(PlayerType pType)
@@ -71,18 +87,49 @@ public class PlayerManager : MonoBehaviour
         return true;
     }
 
-    public void TeleportToSpawn()
+    private void Update()
     {
-        currentPlayer.transform.position = spawn.position;
+        if (!respawning) return;
+
+        if (to.fader.state == FadeImage.TransitionState.IDLE)
+        {
+            respawning = false;
+
+            currentPlayer.stats.attributes = startAttributes;
+            currentPlayer.stats.level = startLevel;
+            currentPlayer.stats.health = startHealth;
+            currentPlayer.stats.mana = startMana;
+
+            currentPlayer.equipment = startEquipment;
+            currentPlayer.inventory = startInventory;
+
+            currentPlayer.freezeMovement = false;
+            currentPlayer.SetNotDead();
+        }
     }
 
-    public void TeleportTo(Transform spawnTransform)
+
+    public void SavePlayerState(Stats stats, Equipment equipment, Inventory inventory)
     {
-        currentPlayer.transform.position = spawnTransform.position;
+        startAttributes = stats.attributes;
+        startLevel = stats.level;
+        startHealth = stats.health;
+        startMana = stats.mana;
+
+        startEquipment = equipment;
+        startInventory = inventory;
     }
 
-    public void TeleportTo(Vector3 spawnPos)
+    public void RespawnPlayer()
     {
-        currentPlayer.transform.position = spawnPos;
+        to.teleportTo = spawn;
+        to.TriggerFade(currentPlayer.gameObject);
+        respawning = true;
+    }
+
+
+    public static bool HasInstanceAndPlayer()
+    {
+        return instance && instance.currentPlayer;
     }
 }

@@ -3,29 +3,20 @@ using UnityEngine.UI;
 
 public class LevelBar : MonoBehaviour
 {
-    public PlayerManager playerManager;
-    public Slider expBar;       // this is the image we'll grow and shrink as the character's health changes
+    //This is the image we'll grow and shrink as the character's EXP changes
+    public Slider expBar;       
     [Space]
     public float fillSpeed = 1f;
 
 
-    private void Start()
-    {
-        GameObject pmObj = GameObject.FindGameObjectWithTag("PlayerManager");
-
-        if (pmObj)
-            playerManager = pmObj.GetComponent<PlayerManager>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (!playerManager || !playerManager.currentPlayer)
+        if (!PlayerManager.HasInstanceAndPlayer())
             return;
 
-        float newPercent = playerManager.currentPlayer.stats.level.GetEXPPercent();
+        float newPercent = PlayerManager.instance.currentPlayer.stats.level.GetEXPPercent();
 
-        // scale the meter
+        //Scale the meter
         if (expBar.value < newPercent)
         {
             float pctEXP = Mathf.Lerp(expBar.value, newPercent, fillSpeed * Time.deltaTime);

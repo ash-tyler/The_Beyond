@@ -21,6 +21,8 @@ public class Character : MonoBehaviour
     [HideInInspector] public Stats stats;
     [HideInInspector] public Equipment equipment;
     [HideInInspector] public Inventory inventory;
+    /*[HideInInspector]*/ public bool freezeMovement = false;
+
 
     protected bool dead = false;
 
@@ -106,6 +108,8 @@ public class Character : MonoBehaviour
 
     public virtual void Kill()
     {
+        freezeMovement = true;
+
         Character attacker = stats.health.LastAttacker;
         if (attacker)
             attacker.stats.level.AddExperience(stats.level.killEXP);
