@@ -72,6 +72,8 @@ public class Sight
         if (!LastObjectSeen)
             return;
 
+        ShowKeyHint.instance.ActivateAndSet("E to use");
+
         if (Input.GetButtonDown("Use"))
         {
             TravelObject to;

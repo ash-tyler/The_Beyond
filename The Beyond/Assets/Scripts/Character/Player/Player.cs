@@ -16,6 +16,7 @@ public class Player : Character
 
     public PlayerModel  PModel { get { return (model as PlayerModel); } }
     public Transform    CameraFocus { get { return (controller.IsCrouching) ? model.crouchHead : model.head; } }
+    public Vector3      RigForward { get { return pCamera.Rig.forward; } }
     
 
     void Start()
@@ -38,6 +39,8 @@ public class Player : Character
         eyesight.Setup(this);
         controller.Setup(this);
         pCamera.Setup(this);
+
+        PlayerManager.instance.SavePlayerState(stats, equipment, inventory);
     }
 
     void Update()
@@ -58,22 +61,27 @@ public class Player : Character
     {
         firstPerson = true;
         SetObjectLayer(transform, LayerMask.NameToLayer("InvisibleToCamera"));
-        pCamera.SetFirstPersonMode(firstPerson);
     }
 
     public void SwitchToThirdPerson()
     {
         firstPerson = false;
         SetObjectLayer(transform, LayerMask.NameToLayer("Player"));
-        pCamera.SetFirstPersonMode(firstPerson);
     }
 
     public override void Kill()
     {
+        freezeMovement = true;
         dead = true;
         model.SetDead();
 
         //onDead.Invoke(this);
         onAnyDead.Invoke(this);
+        PlayerManager.instance.RespawnPlayer();
+    }
+
+    public void SetNotDead()
+    {
+        dead = false;
     }
 }

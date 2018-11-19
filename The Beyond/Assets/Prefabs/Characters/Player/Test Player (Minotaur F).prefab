@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114542430732751326}
   - component: {fileID: 114501055897937130}
   - component: {fileID: 114750160954275420}
+  - component: {fileID: 114497163119986454}
   - component: {fileID: 114870500819141144}
   - component: {fileID: 114721070158039840}
   m_Layer: 10
@@ -1555,8 +1556,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008497686319238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1811.147, y: 58, z: 2074.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2881.888, y: 181.963, z: 2596.682}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4877308713377110}
   m_Father: {fileID: 0}
@@ -2909,6 +2910,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114497163119986454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008497686319238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60272c4173154a0479b5ba86a67a2e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests: []
 --- !u!114 &114501055897937130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2934,6 +2947,7 @@ MonoBehaviour:
     startHealthPercent: 100
     startManaPercent: 100
     disableHealthBar: 1
+    healthBarHeight: 2
   level:
     _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
     buff: 0
@@ -3070,6 +3084,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
+  freezeMovement: 0
   eyesight:
     visibleLayers:
       serializedVersion: 2

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 34ab15178b4259f4aa398ce4ffc49a04
+timeCreated: 1542557318
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ErasmusInline
+  fontNames:
+  - ErasmusInline
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

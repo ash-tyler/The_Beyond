@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 90337c26363fdd5468593525987cb676
+timeCreated: 1542557318
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Erasmus
+  fontNames:
+  - Erasmus
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 195c758c60809584b941b00b4905d4d6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -45,6 +45,7 @@ public class NPC : Character
 
     public override void Kill()
     {
+        freezeMovement = true;
         controller.aiManager.enableAI = false;
         base.Kill();
         DropLoot();

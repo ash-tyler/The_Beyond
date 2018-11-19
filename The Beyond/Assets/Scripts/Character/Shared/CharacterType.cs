@@ -12,7 +12,8 @@ namespace TheBeyond.CharacterTypeEnum
         Wolf = 8,
         Skeleton = 16,
         Ghoul = 32,
-        Spider = 64
+        Spider = 64,
+        Viper = 128
     }
 
 

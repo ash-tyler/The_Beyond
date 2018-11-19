@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Final/0 Menu.unity
+    guid: a151e083984a516489a9358df0e44a4f
+  - enabled: 1
+    path: Assets/Scenes/Final/1 Main.unity
+    guid: 098546e1b80c3b047a3af4a4930e2ec2
+  - enabled: 1
+    path: Assets/Scenes/Final/2 Graveyard.unity
+    guid: a932b1f838f27b147a0a28aab7523246
+  - enabled: 1
+    path: Assets/Scenes/Final/3 Tavern.unity
+    guid: 57a55a2f4f4de9147aa89b61fff6c31d
+  - enabled: 1
+    path: Assets/Scenes/Final/4 Cave.unity
+    guid: 66f70a6dd9a43674696434c03772944f

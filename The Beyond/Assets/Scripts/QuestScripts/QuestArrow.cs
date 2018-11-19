@@ -1,39 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class QuestArrow : MonoBehaviour {
 
-    Transform player;
+public class QuestArrow : MonoBehaviour
+{
     public Quest quest;
 
     bool active = true;
-    MeshRenderer meshRenderer;
+    public GameObject arrow;
 
-	// Use this for initialization
-	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        meshRenderer = GetComponent<MeshRenderer>();
-    }
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update ()
+    {
+        if (!PlayerManager.HasInstanceAndPlayer()) return;
 
         quest = QuestLog.inst.quests.Find(q => q.state == Quest.State.Active);
 
-        meshRenderer.enabled = (quest != null) && active;
-
-        // turn on and off with TAB key
+        //Turn on and off with TAB key
         if (Input.GetKeyDown(KeyCode.Tab))
+        {
             active = !active;
+
+            if (active && quest)
+                arrow.SetActive(true);
+            else
+                arrow.SetActive(false);
+        }
+
 
         if (quest && quest.location)
         {
-            // point at the quest
-            transform.forward = quest.location.transform.position - player.transform.position;
+            //Point at the quest
+            transform.forward = quest.location.transform.position - PlayerManager.instance.currentPlayer.transform.position;
 
-            // position ourselves at the player, plus 1m up, plus forward towards the quest
-            transform.position = player.transform.position + 2 * Vector3.up + 3 * transform.forward;
+            //Position ourselves at the player, plus 1m up, plus forward towards the quest
+            transform.position = PlayerManager.instance.currentPlayer.transform.position + 2 * Vector3.up + 3 * transform.forward;
         }
 	}
 }

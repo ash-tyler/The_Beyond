@@ -26,7 +26,6 @@ public class ThirdPersonController : ControllerBase
     public float CurrentSpeed { get { return (State.IsCrouching) ? crouchSpeed : ((State.IsWalking) ? walkSpeed : runSpeed); } }
     #endregion
 
-
     #region Private Variables
     private Vector3 moveDir = Vector3.zero;
     private CharacterController _controller;
@@ -34,6 +33,7 @@ public class ThirdPersonController : ControllerBase
     private float characterHeight;
 
     private Player player { get { return character as Player; } set { character = value; } }
+    //private Vector3 pGravity { get { return (_controller.isGrounded) ? Vector3.zero : Vector3.up * (moveDir.y + CurrentGravity.y); } }
     #endregion
 
 
@@ -52,100 +52,75 @@ public class ThirdPersonController : ControllerBase
 
     void Update()
     {
-        //Detect Input
         IsNearGround = NearGround();
-        bool combatPressed = Input.GetButtonDown("ReadyCombat");
-        bool crouch = Input.GetButton("Crouch");
-        bool jump = Input.GetButtonDown("Jump");
-        bool walk = Input.GetButton("Walk");
-        bool attack = Input.GetButtonDown("Attack");
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
 
-        // don't trigger attack when we're over a UI object
-        if (EventSystem.current && EventSystem.current.IsPointerOverGameObject())
+        if (!player.freezeMovement)
         {
-            combatPressed = false;
-            attack = false;
-        }
-
-        //Add gravity and player movement to moveDir
-        Vector3 gravity = new Vector3(0, moveDir.y, 0) + CurrentGravity;
-        Vector3 addedMovement = (transform.forward * vertical) + (transform.right * horizontal);
-        moveDir = (addedMovement.normalized * CurrentSpeed) + gravity;
+            //Detect movement input
+            float horizontal    = Input.GetAxis("Horizontal");
+            float vertical      = Input.GetAxis("Vertical");
+            moveDir = GetAddedMovement(vertical, horizontal) + GetGravity();
 
 
-
-        //Handle grounded logic
-        if (_controller.isGrounded)
-        {
-            if (State.IsJumping)
-                State.SetIdle();
-            if (moveDir.y < Physics.gravity.y)
-                moveDir.y = Physics.gravity.y;
-        }
-
-        //Handle nearGround logic
-        if (IsNearGround)
-        {
-            if (!State.IsIdle)
+            //Handle Combat & Attack logic if pointer isn't over a UI element
+            if (EventSystem.current && !EventSystem.current.IsPointerOverGameObject())
             {
-                if (!crouch && State.IsCrouching)
-                    Stand();
-
-                if (!walk && State.IsWalking)
-                    State.SetIdle();
+                if (Input.GetButtonDown("ReadyCombat"))
+                    CombatSwitch();
+                if (Input.GetButtonDown("Attack"))
+                    AttackTrigger();
             }
 
-            else
+
+            //Handle State logic
+            if (IsNearGround)
             {
-                if (crouch)
-                    Crouch();
-
-                else if (jump)
-                    Jump();
-
-                else
+                switch (State._state)
                 {
-                    if (walk)
-                        State.SetWalking();
+                    case ActionState.PlayerState.IDLE:
+                        if (Input.GetButton("Crouch"))
+                            Crouch();
 
-                    if (combatPressed)
-                    {
-                        if (!InCombat)
-                            player.EnterCombat();
+                        else if (Input.GetButtonDown("Jump"))
+                            Jump();
 
-                        else
-                            player.ExitCombat();
+                        else if (Input.GetButton("Walk"))
+                            State.SetWalking();
+                        break;
 
-                        InCombat = !InCombat;
-                    }
+                    case ActionState.PlayerState.CROUCHING:
+                        if (!Input.GetButton("Crouch"))
+                            Stand();
+                        break;
 
-                    if (attack)
-                    {
-                        if (!InCombat)
-                            player.EnterCombat();
+                    case ActionState.PlayerState.JUMPING:
+                        if (_controller.isGrounded)
+                            State.SetIdle();
+                        break;
 
-                        player.TriggerAttack();
-                    }
+                    case ActionState.PlayerState.WALKING:
+                        if (!Input.GetButton("Walk"))
+                            State.SetIdle();
+                        break;
+
+                    default:
+                        break;
                 }
             }
+
+
+            _controller.Move(moveDir * Time.deltaTime);
+
+
+            //Rotate player model
+            if (vertical != 0 || horizontal != 0 || player.firstPerson)
+            {
+                Vector3 lookRotation = (player.firstPerson) ? new Vector3(player.RigForward.x, 0, player.RigForward.z) : new Vector3(moveDir.x, 0, moveDir.z);
+
+                transform.rotation = player.GetMovementQuaternion();
+                player.RotateModel(lookRotation, turnSpeed);
+            }
         }
-
-
-        _controller.Move(moveDir * Time.deltaTime);
-
-
-        //Rotate player model
-        if (vertical != 0 || horizontal != 0)
-        {
-            IsMoving = true;
-
-            transform.rotation = player.GetMovementQuaternion();
-            player.RotateModel(new Vector3(moveDir.x, 0, moveDir.z), turnSpeed);
-        }
-        else
-            IsMoving = false;
 
         //Sets various Animator variables to properly display the animation
         player.model.HandleAnimator(State, _controller.velocity, IsNearGround);
@@ -191,6 +166,16 @@ public class ThirdPersonController : ControllerBase
     public Vector3 GetVelocity()
     {
         return _controller.velocity;
+    }
+
+    public Vector3 GetAddedMovement(float vertical, float horizontal)
+    {
+        return ((transform.forward * vertical) + (transform.right * horizontal)).normalized * CurrentSpeed;
+    }
+
+    public Vector3 GetGravity()
+    {
+        return (_controller.isGrounded) ? Vector3.up * Mathf.Min(moveDir.y + CurrentGravity.y, Physics.gravity.y) : Vector3.up * (moveDir.y + CurrentGravity.y);
     }
 
     /// <summary> Sets the Character Controller center and height. </summary>

@@ -204,7 +204,6 @@ PlayerSettings:
   tvOSSmallIconLayers: []
   tvOSSmallIconLayers2x: []
   tvOSLargeIconLayers: []
-  tvOSLargeIconLayers2x: []
   tvOSTopShelfImageLayers: []
   tvOSTopShelfImageLayers2x: []
   tvOSTopShelfImageWideLayers: []
@@ -556,7 +555,7 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V1;GAIA_PRESENT;AQUAS_PRESENT
+    1: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V1;AQUAS_PRESENT;GAIA_PRESENT
     4: CROSS_PLATFORM_INPUT
     7: CROSS_PLATFORM_INPUT
     14: 

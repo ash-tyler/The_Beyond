@@ -50,6 +50,8 @@ public class Attributes
     [MinValue(0), MaxValue(100)] [Tooltip(smTip)] public float startManaPercent = 100;
     [Space]
     public bool disableHealthBar = false;
+    [HideIf("disableHealthBar")]
+    public float healthBarHeight = 2f;
 
 
     private const string hTip = "Health will be 1000% plus this percent of Constitution";

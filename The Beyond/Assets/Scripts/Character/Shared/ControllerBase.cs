@@ -27,8 +27,8 @@ public class ControllerBase : MonoBehaviour
     public bool IsJumping { get { return State.IsJumping; } }
     public bool IsWalking { get { return State.IsWalking; } }
     public bool IsIdle { get { return State.IsIdle; } }
-    public bool IsMoving { get; protected set; }
     public bool InCombat { get; protected set; }
+    //public bool IsMoving { get; protected set; }
     #endregion
 
 
@@ -48,4 +48,24 @@ public class ControllerBase : MonoBehaviour
         State.SetIdle();
     }
     #endregion
+
+
+    public void CombatSwitch()
+    {
+        if (!InCombat)
+            character.EnterCombat();
+
+        else
+            character.ExitCombat();
+
+        InCombat = !InCombat;
+    }
+
+    public void AttackTrigger()
+    {
+        if (!InCombat)
+            character.EnterCombat();
+
+        character.TriggerAttack();
+    }
 }
