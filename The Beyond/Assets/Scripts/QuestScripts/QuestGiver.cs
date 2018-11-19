@@ -33,22 +33,33 @@ public class QuestGiver : MonoBehaviour
         Quest.onQuestComplete.AddListener(CheckQuests);
     }
 
+    Transform player = null;
 
     void Update()
     {
-        // TODO fix Sight and remove this function
-        if (!PlayerManager.HasInstanceAndPlayer()) return;
-
-        if (Vector3.Distance(PlayerManager.instance.currentPlayer.transform.position, transform.position) < 5.0f)
+        if (player == null)
         {
-            ShowKeyHint.instance.ActivateAndSet("E to talk");
+            GameObject obj = GameObject.FindGameObjectWithTag("Player");
+            if (obj)
+                player = obj.transform;
+        }
+
+        // TODO fix Sight and remove this function
+        //if (!PlayerManager.HasInstanceAndPlayer()) return;
+
+        //if (Vector3.Distance(PlayerManager.instance.currentPlayer.transform.position, transform.position) < 5.0f)
+        if (player && Vector3.Distance(player.position, transform.position) < 5.0f)
+        {
+            if (ShowKeyHint.instance)
+                ShowKeyHint.instance.ActivateAndSet("E to talk");
 
             if (Input.GetKeyDown(KeyCode.E))
                 TalkTo();
         }
 
         else
-            ShowKeyHint.instance.Hide();
+            if (ShowKeyHint.instance)
+                ShowKeyHint.instance.Hide();
     }
 
     // talking to a questgiver...
