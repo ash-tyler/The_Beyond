@@ -8,7 +8,7 @@ public class TargetInRange : AITransition
 
     public override bool Decide(AIController controller)
     {
-        foreach (Character ch in controller.npc.GetVisibleCharacters())
+        foreach (Character ch in controller.Npc.GetVisibleCharacters())
             return true;
 
         return false;

@@ -11,15 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3103a7ddc3dc13043936613082e263a6, type: 3}
   m_Name: One Handed
   m_EditorClassIdentifier: 
-  inventoryImage: {fileID: 21300000, guid: 3870c7dbf0dfb4e4d948354096a393dc, type: 3}
-  lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
-  model: {fileID: 1026959995326938, guid: de318551f17d03b4996f0ca2e1e9befe, type: 2}
-  defaultValue: 30
   canAddToInventory: 1
-  damage: 12
+  defaultValue: 30
+  model: {fileID: 1026959995326938, guid: de318551f17d03b4996f0ca2e1e9befe, type: 2}
+  lootModel: {fileID: 1797998272622086, guid: 887a018929ef4cb41a72072d1ac7a182, type: 2}
+  inventoryImage: {fileID: 21300000, guid: 3870c7dbf0dfb4e4d948354096a393dc, type: 3}
+  baseDamage: 10
+  Bonus: 0
+  strengthBonusPercent: 0
+  dexterityBonusPercent: 0
+  constitutionBonusPercent: 0
+  intelligenceBonusPercent: 0
+  wisdomBonusPercent: 0
+  charismaBonusPercent: 0
   damageRadius: 3.5
   angle: 180
   positionAdjust: {x: 0.098, y: 0.028, z: 0.041}
   rotationAdjust: {x: 180.88, y: 15.6, z: 320.8}
-  scaleAdjust: {x: 2.45, y: 2.12, z: 1.61}
+  scaleAdjust: {x: 0.4, y: 0.34, z: 0.3}
   isOffhand: 0

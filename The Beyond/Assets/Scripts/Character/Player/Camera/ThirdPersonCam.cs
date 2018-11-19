@@ -80,7 +80,7 @@ public class ThirdPersonCam : MonoBehaviour
     void LateUpdate()
     {
         Rig.position = player.CameraFocus.position;
-        if (Input.GetButton("CameraSelect") || Input.GetJoystickNames().Length > 0 || player.firstPerson)
+        if (Input.GetButton("CameraSelect") || player.firstPerson)
             Rig.Rotate(Xrotation * mouseSensitivity, Yrotation * mouseSensitivity, 0);
 
         Rig.rotation = pitchClamp.GetEulerXClamp(Rig.eulerAngles.x, Rig.eulerAngles.y, 0);
@@ -107,9 +107,10 @@ public class ThirdPersonCam : MonoBehaviour
         else
         {
             zoomClamp.NegativeClamp(ref zoom);
-            
+
+            Debug.DrawRay(player.model.head.position, transform.position - player.model.head.position, Color.red);
             RaycastHit hit;         //Check for any obstacles in the way of the camera, adjust zoom
-            if (Physics.SphereCast(Rig.position, collisionRadius, -Rig.forward, out hit, zoomClamp.max + 1, collisionLayers))
+            if (Physics.SphereCast(player.model.head.position, collisionRadius, transform.position - player.model.head.position, out hit, zoomClamp.max + 1, collisionLayers, QueryTriggerInteraction.Ignore))
             {
                 Debug.Log("Distance = " + hit.distance);
                 Zoom(hit.distance);

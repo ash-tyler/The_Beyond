@@ -1421,7 +1421,7 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 256
-  attackWait: 2
+  attackWait: 0
   aiManager:
     enableAI: 1
     startState: {fileID: 11400000, guid: cdac5e859a4bd80499db5513b2995616, type: 2}
@@ -1440,13 +1440,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableEquipment: 1
   mainWeapon: {fileID: 0}
   offhand: {fileID: 0}
   fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
 --- !u!114 &114783620924917918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1470,9 +1469,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Chicken
-  disableHealthBar: 0
-  statPreset: {fileID: 11400000, guid: 8fafd5dbcdc2598439119ccdfd94f60f, type: 2}
   awarenessRadius: 4
+  attributes:
+    strength: 0
+    dexterity: 0
+    constitution: 10
+    intelligence: 0
+    wisdom: 0
+    charisma: 0
+    healthPercent: 5
+    manaPercent: 0
+    startHealthPercent: 100
+    startManaPercent: 0
+    disableHealthBar: 0
+  level:
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
+    buff: 0
+    killEXP: 100
+    level: 1
   health:
     points: 0
     maximumPoints: 0
@@ -1483,11 +1497,6 @@ MonoBehaviour:
     maximumPoints: 0
     characterName: 
     barName: 
-  level:
-    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
-    buff: 0
-    killEXP: 100
-    currentEXP: 0
 --- !u!114 &114852212811771016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1499,11 +1508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231e038caefe61848ac9a79a2aa25117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 1
   canDie: 1
+  characterType: 2
   attackLayers:
     serializedVersion: 2
-    m_Bits: 9728
+    m_Bits: 0
   visibleLayers:
     serializedVersion: 2
     m_Bits: 9216
@@ -1511,10 +1520,9 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
-  aggroTypes:
-    aggroTypes: 00000000
+  AggroTypes: 1
   goldDropList: []
-  dropList: []
+  itemDropList: []
   controller: {fileID: 0}
 --- !u!114 &114934823362418104
 MonoBehaviour:
@@ -1527,6 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 1
   gold: 0
   items: []
   userInterface: {fileID: 0}

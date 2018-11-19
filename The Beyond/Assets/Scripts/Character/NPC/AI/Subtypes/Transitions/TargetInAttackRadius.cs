@@ -10,10 +10,10 @@ public class TargetInAttackRadius : AITransition
 
     public override bool Decide(AIController controller)
     {
-        Weapon weapon = controller.npc.equipment.mainWeapon;
+        Weapon weapon = controller.Npc.equipment.mainWeapon;
         if (!weapon) return false;
 
-        foreach(Character target in controller.npc.GetAttackableCharacters(weapon.damageRadius * multiplier))
+        foreach(Character target in controller.Npc.GetAttackableCharacters(weapon.damageRadius * multiplier))
             return true;
 
         return false;

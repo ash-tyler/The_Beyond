@@ -30,7 +30,7 @@ public class AttackManager : MonoBehaviour
     {
         Vector3 enemyPos = otherCharacter.model.transform.position;
         if (character != otherCharacter && InAttackAngle(enemyPos) && !SceneryBlocked(enemyPos))
-            otherCharacter.stats.health.Damage(weapon.damage, character);
+            otherCharacter.stats.health.Damage(weapon.GetDamage(character.stats.attributes), character);
     }
 
     private bool InAttackAngle(Vector3 otherPos)

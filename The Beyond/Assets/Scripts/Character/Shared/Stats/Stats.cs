@@ -1,46 +1,53 @@
-﻿using System.Collections;
+﻿using NaughtyAttributes;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    [Header("Stat Settings")]
     public string characterName;
-    [Space]
-    [Space]
-    public bool disableHealthBar = false;
-    [Space]
-    public StatsSettings    statPreset;
-    public float            awarenessRadius;
-    [Space]
-    public Attributes attributes = new Attributes();
+    public float awarenessRadius;
 
     [Space]
-    public HitpointsSystem  health;
-    [Space]
-    public HitpointsSystem  mana;
-    [Space]
+    [Space] public Attributes attributes = new Attributes();
+    [Space] public LevelSystem level;
 
-    public LevelSystem      level;
+    [HideInInspector] public HitpointsSystem health;
+    [HideInInspector] public HitpointsSystem mana;
 
+    [HideInInspector] public bool showForDebug = false;
 
+    [Header("Debug HP & Mana Values")]
+    [ShowIf("showForDebug")] public float currentHealth;
+    [ShowIf("showForDebug")] public float maxHealth;
+    [ShowIf("showForDebug")] public float currentMana;
+    [ShowIf("showForDebug")] public float maxMana;
 
 
     public void Setup()
     {
-        if (HealthBarManager.instance && !disableHealthBar)
+        if (HealthBarManager.instance && !attributes.disableHealthBar)
             HealthBarManager.instance.AddHealthBar(this);
 
-        if (statPreset)
-            SetStats(statPreset.hitpoints, statPreset.maximumHitpoints, statPreset.mana, statPreset.maximumMana, statPreset.level, statPreset.buff);
-        else
-            SetStats(health.points, health.maximumPoints, mana.points, mana.maximumPoints);
+        attributes.Start();
+        SetStats(attributes.startHealthPercent, attributes.GetMaxHealth(), attributes.startManaPercent, attributes.GetMaxMana());
+        showForDebug = true;
     }
 
-    private void SetStats(float startHealth, float maxHealth, float startMana, float maxMana, int startLevel = 1, int startBuff = 0)
+    public void Update()
     {
-        health.Setup(startHealth, maxHealth, characterName, "Health");
-        mana.Setup(startMana, maxMana, characterName, "Mana");
-        level.Setup(startLevel, startBuff);
+        currentHealth = health.points;
+        maxHealth = health.maximumPoints;
+        currentMana = mana.points;
+        maxMana = mana.maximumPoints;
+    }
+
+    private void SetStats(float startHealth, float maxHealth, float startMana, float maxMana)
+    {
+        health.Setup((maxHealth * startHealth) / 100, maxHealth, characterName, "Health");
+        mana.Setup((maxMana * startMana) / 100, maxMana, characterName, "Mana");
+        level.Setup();
     }
 
     private void OnDrawGizmos()

@@ -913,7 +913,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1883992361206456}
-  m_LocalRotation: {x: -0.6014867, y: 0.6610749, z: 0.2509748, w: 0.3717599}
+  m_LocalRotation: {x: -0.60148674, y: 0.66107494, z: 0.25097483, w: 0.37175992}
   m_LocalPosition: {x: -0.050521392, y: 0.020660248, z: 0.031481255}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
   m_Children:
@@ -1264,7 +1264,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661182304279048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1828.2158, y: 55.727875, z: 2075.27}
+  m_LocalPosition: {x: -1787.8, y: 55.727875, z: 2024.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4118043490082936}
@@ -1741,9 +1741,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Diseased Ghoul
-  disableHealthBar: 0
-  statPreset: {fileID: 0}
   awarenessRadius: 5
+  attributes:
+    strength: 5
+    dexterity: 5
+    constitution: 5
+    intelligence: 5
+    wisdom: 5
+    charisma: 5
+    healthPercent: 10
+    manaPercent: 10
+    startHealthPercent: 100
+    startManaPercent: 100
+    disableHealthBar: 0
+  level:
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
+    buff: 0
+    killEXP: 800
+    level: 1
   health:
     points: 140
     maximumPoints: 140
@@ -1754,11 +1769,6 @@ MonoBehaviour:
     maximumPoints: 0
     characterName: 
     barName: 
-  level:
-    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
-    buff: 0
-    killEXP: 800
-    currentEXP: 0
 --- !u!114 &114472840652400224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1806,13 +1816,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableEquipment: 0
   mainWeapon: {fileID: 0}
   offhand: {fileID: 0}
   fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
 --- !u!114 &114820529454355570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1824,6 +1833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 1
   gold: 0
   items:
   - {fileID: 0}
@@ -1887,8 +1897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231e038caefe61848ac9a79a2aa25117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 5
   canDie: 1
+  characterType: 32
   attackLayers:
     serializedVersion: 2
     m_Bits: 9728
@@ -1899,10 +1909,9 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
-  aggroTypes:
-    aggroTypes: 00000000
+  AggroTypes: 1
   goldDropList: []
-  dropList: []
+  itemDropList: []
   controller: {fileID: 0}
 --- !u!136 &136626617633278648
 CapsuleCollider:

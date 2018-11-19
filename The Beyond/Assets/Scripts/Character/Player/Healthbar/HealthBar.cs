@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour
 
             if (pmObj)
             {
-                PlayerManager pm = GetComponent<PlayerManager>();
+                PlayerManager pm = pmObj.GetComponent<PlayerManager>();
                 if (pm && pm.currentPlayer)
                     stats = pm.currentPlayer.stats;
             }
@@ -55,8 +55,9 @@ public class HealthBar : MonoBehaviour
                     manager.RemoveHealthBar(this);
                 else
                     Destroy(this.gameObject);
+
+                return;
             }
-            return;
         }
 
 
@@ -72,16 +73,28 @@ public class HealthBar : MonoBehaviour
 
             // billboard the UI element towards the camera every frame
             transform.forward = Camera.main.transform.forward;
+
+
+            // scale the meter
+            if (healthBar)
+                healthBar.fillAmount = stats.health.GetPointsAsPercent();
+
+            if (manaBar)
+                manaBar.fillAmount = stats.mana.GetPointsAsPercent();
+
+            // store the position in screen space of the health bar for sorting purposes
+            screenPos = Camera.main.WorldToScreenPoint(stats.transform.position);
         }
 
-        // scale the meter
-        if (healthBar)
-            healthBar.fillAmount = stats.health.GetPointsAsPercent();
+        else
+        {
+            // scale the meter
+            if (healthBar)
+                healthBar.fillAmount = 1 - stats.health.GetPointsAsPercent();
 
-        if (manaBar)
-            manaBar.fillAmount = stats.mana.GetPointsAsPercent();
+            if (manaBar)
+                manaBar.fillAmount = 1 - stats.mana.GetPointsAsPercent();
+        }
 
-        // store the position in screen space of the health bar for sorting purposes
-        screenPos = Camera.main.WorldToScreenPoint(stats.transform.position);
     }
 }

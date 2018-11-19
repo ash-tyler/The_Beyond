@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PanelActivator : MonoBehaviour
 {
     public GameObject panel;
+    public Text buttonKey;
     public bool pauseWhileActive = false;
     public bool startActive = false;
+    public bool dontChangeOnToggle = false;
     [HideInInspector]
     public bool panelOn = false;
     [HideInInspector]
@@ -26,10 +29,10 @@ public class PanelActivator : MonoBehaviour
             if (pauseWhileActive)
                 Time.timeScale = 0;
 
-            if (toolbar)
+            if (toolbar && !dontChangeOnToggle)
                 toolbar.SetOthersInactive(this);
 
-            panel.SetActive(true);
+            SetPanel(true);
         }
 
         else
@@ -37,13 +40,14 @@ public class PanelActivator : MonoBehaviour
             if (pauseWhileActive)
                 Time.timeScale = 1;
 
-            panel.SetActive(false);
+            SetPanel(false);
         }
     }
 
     public void SetPanel(bool value)
     {
         panel.SetActive(value);
+        panelOn = panel.activeSelf;
 
 
         if (pauseWhileActive)

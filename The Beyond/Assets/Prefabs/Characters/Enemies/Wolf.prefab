@@ -1124,6 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f041d597bb647ab381513de510bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInventory: 1
   gold: 0
   items:
   - {fileID: 0}
@@ -1159,9 +1160,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Forest Wolf
-  disableHealthBar: 0
-  statPreset: {fileID: 0}
   awarenessRadius: 8
+  attributes:
+    strength: 5
+    dexterity: 5
+    constitution: 5
+    intelligence: 5
+    wisdom: 5
+    charisma: 5
+    healthPercent: 10
+    manaPercent: 10
+    startHealthPercent: 100
+    startManaPercent: 100
+    disableHealthBar: 0
+  level:
+    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
+    buff: 0
+    killEXP: 700
+    level: 1
   health:
     points: 110
     maximumPoints: 110
@@ -1172,11 +1188,11 @@ MonoBehaviour:
     maximumPoints: 0
     characterName: 
     barName: 
-  level:
-    _settings: {fileID: 11400000, guid: 22dbe9bbbe14c4b4fa65efa1da84ac07, type: 2}
-    buff: 0
-    killEXP: 700
-    currentEXP: 0
+  showForDebug: 0
+  currentHealth: 0
+  maxHealth: 0
+  currentMana: 0
+  maxMana: 0
 --- !u!114 &114624936578666452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1224,8 +1240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231e038caefe61848ac9a79a2aa25117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 3
   canDie: 1
+  characterType: 8
   attackLayers:
     serializedVersion: 2
     m_Bits: 9728
@@ -1236,10 +1252,9 @@ MonoBehaviour:
   stats: {fileID: 0}
   equipment: {fileID: 0}
   inventory: {fileID: 0}
-  aggroTypes:
-    aggroTypes: 00000000
+  AggroTypes: 1
   goldDropList: []
-  dropList: []
+  itemDropList: []
   controller: {fileID: 0}
 --- !u!114 &114800572295807514
 MonoBehaviour:
@@ -1252,13 +1267,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b903ba9e7168d46aa17bc150979b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableEquipment: 0
   mainWeapon: {fileID: 0}
   offhand: {fileID: 0}
   fistInfo: {fileID: 11400000, guid: 037404b631e13ce4cbeb7e9888e5f28e, type: 2}
   currentlyAttacking: 0
   character: {fileID: 0}
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
 --- !u!114 &114854582731081274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1280,7 +1294,7 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 256
-  attackWait: 1
+  attackWait: 0.6
   aiManager:
     enableAI: 1
     startState: {fileID: 11400000, guid: 7d68be1ef834b8f40a8ae036f03d6c86, type: 2}

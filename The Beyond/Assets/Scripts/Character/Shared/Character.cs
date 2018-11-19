@@ -10,9 +10,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Inventory))]
 public class Character : MonoBehaviour
 {
-    public CharacterType characterType;
-    [Space]
+    [Header("Character Settings")]
     public bool canDie = true;
+    public CharacterType characterType;
     [Space]
     public LayerMask attackLayers;
     public LayerMask visibleLayers;
@@ -106,8 +106,9 @@ public class Character : MonoBehaviour
 
     public virtual void Kill()
     {
-        Character attacker = stats.health.lastAttacker;
-        attacker.stats.level.AddExperience(stats.level.killEXP);
+        Character attacker = stats.health.LastAttacker;
+        if (attacker)
+            attacker.stats.level.AddExperience(stats.level.killEXP);
 
         dead = true;
         model.SetDead();

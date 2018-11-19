@@ -1,12 +1,15 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 
 [System.Serializable]
 public class Equipment : MonoBehaviour
 {
-    public Weapon   mainWeapon;
-    public Weapon   offhand;
+    public bool disableEquipment = false;
     [Space]
-    public Fists    fistInfo;
+    [HideIf("disableEquipment")] public Weapon   mainWeapon;
+    [HideIf("disableEquipment")] public Weapon   offhand;
+    [Space]
+    [HideIf("disableEquipment")] public Fists    fistInfo;
 
     public bool     weaponIsEquiped { get { return !mainWeapon.IsFist; } }
 
@@ -16,13 +19,15 @@ public class Equipment : MonoBehaviour
     [HideInInspector]
     public Character character;
 
-    //should be private
-    public GameObject _leftHand;
-    public GameObject _rightHand;
+
+    private GameObject _leftHand;
+    private GameObject _rightHand;
 
 
     public void Setup(Character newCharacter)
     {
+        if (disableEquipment) return;
+
         character = newCharacter;
 
         if (!fistInfo)
@@ -40,7 +45,7 @@ public class Equipment : MonoBehaviour
 
     public void Equip(Weapon newWeapon)
     {
-        if (!newWeapon || currentlyAttacking) return;
+        if (disableEquipment || !newWeapon || currentlyAttacking) return;
 
         if (newWeapon.IsOneHanded && (newWeapon as OneHandedWeapon).isOffhand)
             SetOffhand(newWeapon, newWeapon.GetInstance(character.model.leftHand));
@@ -54,7 +59,7 @@ public class Equipment : MonoBehaviour
 
     public void Unequip(Weapon weapon)
     {
-        if (weapon.IsFist || currentlyAttacking) return;
+        if (disableEquipment || weapon.IsFist || currentlyAttacking) return;
 
         if (mainWeapon == weapon)
             SetMainhand(fistInfo, null);
@@ -64,7 +69,7 @@ public class Equipment : MonoBehaviour
 
     public void ReEquip()
     {
-        if (currentlyAttacking) return;
+        if (disableEquipment || currentlyAttacking) return;
 
         if (!mainWeapon && !offhand)
             mainWeapon = fistInfo;
@@ -77,16 +82,20 @@ public class Equipment : MonoBehaviour
 
     public void EnterCombat()
     {
-        currentlyAttacking = true;
+        if (!disableEquipment)
+            currentlyAttacking = true;
     }
 
     public void ExitCombat()
     {
-        currentlyAttacking = false;
+        if (!disableEquipment)
+            currentlyAttacking = false;
     }
 
     public void SetMainWeaponParent(Transform newParent, Vector3 pos, Vector3 rot)
     {
+        if (disableEquipment) return;
+
         _rightHand.transform.SetParent(newParent, true);
         _rightHand.transform.localPosition = pos;
         _rightHand.transform.localEulerAngles = rot;
@@ -95,11 +104,15 @@ public class Equipment : MonoBehaviour
 
     public Weapon GetWeaponInfo()
     {
+        if (disableEquipment) return null;
+
         return mainWeapon;
     }
 
     public int GetEquipmentType()
     {
+        if (disableEquipment) return 0;
+
         if (mainWeapon.IsFist)
             return 0;
         if (mainWeapon.IsOneHanded)
@@ -113,6 +126,8 @@ public class Equipment : MonoBehaviour
 
     private void SetMainhand(Weapon weapon, GameObject model)
     {
+        if (disableEquipment) return;
+
         mainWeapon = weapon;
         if (_rightHand)
             DestroyImmediate(_rightHand);
@@ -123,6 +138,8 @@ public class Equipment : MonoBehaviour
 
     private void SetOffhand(Weapon weapon, GameObject model)
     {
+        if (disableEquipment) return;
+
         offhand = weapon;
         if (_leftHand)
             DestroyImmediate(_leftHand);
@@ -134,7 +151,7 @@ public class Equipment : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (!character) return;
+        if (disableEquipment || !character) return;
 
         Vector3 from = -character.model.transform.right;
         UnityEditor.Handles.color = Color.cyan;

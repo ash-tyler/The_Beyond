@@ -40,7 +40,7 @@ public class QuestGiver : MonoBehaviour
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         if (Vector3.Distance(player.position, transform.position) < 5.0f)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.E))
                 TalkTo();
         }
     }

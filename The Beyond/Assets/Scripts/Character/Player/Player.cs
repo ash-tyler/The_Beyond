@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStats))]
 public class Player : Character
 {
-    [Space] public Sight eyesight = new Sight();
+    [Header("Player Sight")]
+    public Sight eyesight = new Sight();
 
     [HideInInspector] public ThirdPersonCam pCamera;
     [HideInInspector] public ThirdPersonController controller;

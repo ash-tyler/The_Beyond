@@ -5,7 +5,6 @@ using UnityEngine;
 public class ControllerBase : MonoBehaviour
 {
     #region Public Variables
-    [Space()]
     [Header("Movement Speed")]
     public float runSpeed = 8;
     public float walkSpeed = 2;
@@ -13,13 +12,11 @@ public class ControllerBase : MonoBehaviour
     public float jumpSpeed = 10;
     public float turnSpeed = 6;
 
-    [Space()]
     [Header("Multipliers")]
     public float gravityMultiplier = 2;
     public float crouchMultiplier = 0.55f;
 
-    [Space()]
-    [Header("Etc")]
+    [Header("Collision Detection")]
     public LayerMask collisionLayers = -1;
 
     public Vector3 CurrentGravity { get { return Physics.gravity * gravityMultiplier * Time.deltaTime; } }
